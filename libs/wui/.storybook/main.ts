@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import { resolve } from 'path';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -17,6 +18,10 @@ const config: StorybookConfig = {
   viteFinal: async (config) => {
     // Configure base path for deployment
     config.base = '/projects/wui/';
+    // Configure output directory to be in libs/wui/dist_storybook
+    if (config.build) {
+      config.build.outDir = resolve(__dirname, '../dist_storybook');
+    }
     return config;
   },
 };

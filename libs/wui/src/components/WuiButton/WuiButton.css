@@ -1,0 +1,62 @@
+.wui-button {
+  font-family: inherit;
+  font-weight: var(--wui-font-weight-medium);
+  border: 1px solid transparent;
+  border-radius: var(--wui-radius-lg);
+  cursor: pointer;
+  transition: all var(--wui-transition-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wui-button:disabled {
+  opacity: var(--wui-opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.wui-button--small {
+  padding: var(--wui-spacing-sm) var(--wui-spacing-lg);
+  font-size: var(--wui-font-size-sm);
+}
+
+.wui-button--medium {
+  padding: var(--wui-spacing-md) var(--wui-spacing-xl);
+  font-size: var(--wui-font-size-md);
+}
+
+.wui-button--large {
+  padding: var(--wui-spacing-lg) var(--wui-spacing-2xl);
+  font-size: var(--wui-font-size-lg);
+}
+
+/* Variants */
+.wui-button--primary {
+  background-color: var(--wui-color-primary);
+  color: var(--wui-color-text);
+}
+
+.wui-button--primary:hover:not(:disabled) {
+  background-color: var(--wui-color-primary-hover);
+}
+
+.wui-button--secondary {
+  background-color: var(--wui-color-secondary);
+  color: var(--wui-color-text);
+}
+
+.wui-button--secondary:hover:not(:disabled) {
+  background-color: var(--wui-color-secondary-hover);
+}
+
+.wui-button--outline {
+  background-color: transparent;
+  color: var(--wui-color-primary);
+  border-color: var(--wui-color-primary);
+}
+
+.wui-button--outline:hover:not(:disabled) {
+  background-color: var(--wui-color-primary);
+  color: var(--wui-color-text);
+}

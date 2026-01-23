@@ -1,0 +1,8 @@
+/* WUI Design System - Bundle CSS */
+/* This file imports all component styles */
+
+/* Import design tokens first */
+@import './tokens.css';
+
+/* Import component styles */
+@import '../components/WuiButton/WuiButton.css';

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { WuiButton } from './WuiButton';
 
 const meta = {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/WuiButton',
+  component: WuiButton,
   parameters: {
     layout: 'centered',
   },
@@ -18,7 +18,7 @@ const meta = {
       options: ['small', 'medium', 'large'],
     },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof WuiButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

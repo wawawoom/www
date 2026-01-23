@@ -17,7 +17,7 @@ pnpm install
 Lancer Storybook pour développer et visualiser les composants :
 
 ```bash
-pnpm storybook
+pnpm dev
 ```
 
 Storybook sera accessible sur `http://localhost:6006`

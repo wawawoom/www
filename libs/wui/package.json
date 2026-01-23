@@ -8,17 +8,18 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "source": "./src/index.ts",
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "development": "./src/index.ts"
     }
   },
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite build --watch",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build && node scripts/post-build-storybook.js",
-    "deploy:next": "pnpm run build-storybook && SOURCE_DIR=\"libs/wui/storybook-static\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy.sh",
-    "deploy:prod": "pnpm run build-storybook && SOURCE_DIR=\"libs/wui/storybook-static\" FTP_DIR=\"/www/projects/wui/\" bash ../../scripts/deploy.sh"
+    "dev": "storybook dev -p 6006",
+    "build:lib": "tsc && vite build",
+    "build:storybook": "storybook build",
+    "build": "pnpm run build:lib && pnpm run build:storybook",
+    "deploy": "pnpm run build:storybook && SOURCE_DIR=\"libs/wui/dist_storybook\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy-wui.sh"
   },
   "dependencies": {
     "react": "^19.2.0",

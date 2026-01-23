@@ -1,6 +1,6 @@
 node_modules
 dist
+dist_storybook
 .DS_Store
-storybook-static
 
 .pnpm-store/

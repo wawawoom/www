@@ -1,0 +1,8 @@
+.wui-title {
+  font-family: inherit;
+  font-weight: var(--wui-font-weight-medium);
+  font-size: var(--wui-font-size-lg);
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}

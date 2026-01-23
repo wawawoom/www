@@ -1,2 +1,5 @@
 // Export all components
-export { Button } from './components/Button/Button';
+export { WuiButton } from "./components/WuiButton/WuiButton";
+export type { WuiButtonProps } from "./components/WuiButton/WuiButton";
+export { WuiTitle } from "./components/WuiTitle/WuiTitle";
+export type { WuiTitleProps } from "./components/WuiTitle/WuiTitle";
