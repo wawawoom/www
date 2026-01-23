@@ -1,0 +1,46 @@
+{
+  "name": "@wawawoom/wui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite build --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build && node scripts/post-build-storybook.js",
+    "deploy:next": "pnpm run build-storybook && SOURCE_DIR=\"libs/wui/storybook-static\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy.sh",
+    "deploy:prod": "pnpm run build-storybook && SOURCE_DIR=\"libs/wui/storybook-static\" FTP_DIR=\"/www/projects/wui/\" bash ../../scripts/deploy.sh"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.15",
+    "@storybook/addon-interactions": "^8.6.15",
+    "@storybook/addon-links": "^8.6.15",
+    "@storybook/blocks": "^8.6.15",
+    "@storybook/react": "^8.6.15",
+    "@storybook/react-vite": "^8.6.15",
+    "@storybook/test": "^8.6.15",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "storybook": "^8.6.15",
+    "typescript": "~5.9.3",
+    "vite": "^6.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
