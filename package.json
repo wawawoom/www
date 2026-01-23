@@ -1,4 +1,10 @@
 {
   "name": "wawawoom",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.28.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {}
 }

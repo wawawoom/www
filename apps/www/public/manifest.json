@@ -1,0 +1,21 @@
+{
+  "name": "Nicolas Payrouse - Web Designer & Développeur front-end",
+  "short_name": "Nicolas Payrouse",
+  "description": "Web designer / Développeur React / Native Senior. 15+ années d'expérience en design d'interfaces et implémentation de solutions web et mobile.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
