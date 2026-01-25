@@ -1,62 +1,60 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { WuiTitle } from './WuiTitle';
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { WuiTitle } from "./WuiTitle";
+import { WuiTitleAs } from "./WuiTitle.props";
 
 const meta = {
-  title: 'Components/WuiTitle',
+  title: "Components/WuiTitle",
   component: WuiTitle,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     as: {
-      control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      control: "select",
+      options: Object.values(WuiTitleAs),
     },
   },
 } satisfies Meta<typeof WuiTitle>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-export const H1: Story = {
+export const Component: Story = {
   args: {
-    as: 'h1',
-    children: 'Heading 1',
+    as: WuiTitleAs.H1,
+    children: "Portez ce vieux whisky au juge blond qui fume.",
   },
 };
 
-export const H2: Story = {
-  args: {
-    as: 'h2',
-    children: 'Heading 2',
-  },
-};
+export const All: Story = {
+  render: () => (
+    <div>
+      <WuiTitle as={WuiTitleAs.H1}>
+        H1 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
 
-export const H3: Story = {
-  args: {
-    as: 'h3',
-    children: 'Heading 3',
-  },
-};
+      <WuiTitle as={WuiTitleAs.H2}>
+        H2 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
 
-export const H4: Story = {
-  args: {
-    as: 'h4',
-    children: 'Heading 4',
-  },
-};
+      <WuiTitle as={WuiTitleAs.H3}>
+        H3 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
 
-export const H5: Story = {
-  args: {
-    as: 'h5',
-    children: 'Heading 5',
-  },
-};
+      <WuiTitle as={WuiTitleAs.H4}>
+        H4 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
 
-export const H6: Story = {
-  args: {
-    as: 'h6',
-    children: 'Heading 6',
-  },
+      <WuiTitle as={WuiTitleAs.H5}>
+        H5 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
+
+      <WuiTitle as={WuiTitleAs.H6}>
+        H6 / Portez ce vieux whisky au juge blond qui fume.
+      </WuiTitle>
+    </div>
+  ),
 };

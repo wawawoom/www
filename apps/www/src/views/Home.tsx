@@ -1,7 +1,6 @@
 import { useLocation, navigateTo } from "../hooks/useLocation.ts";
 import { useEffect } from "react";
-import { WuiButton, WuiTitle } from '@wawawoom/wui';
-
+import { WuiButton, WuiTitle, WuiTitleElement } from "@wawawoom/wui";
 
 const Home = () => {
   // Détecter les changements d'URL et déclencher une action
@@ -32,7 +31,7 @@ const Home = () => {
   return (
     <div id="app">
       <WuiButton>Click me !</WuiButton>
-      <WuiTitle as="h1">Heading 1</WuiTitle>
+      <WuiTitle as={WuiTitleElement.H1}>Heading 1</WuiTitle>
 
       <div className="container">
         <div className="zone me">

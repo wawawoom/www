@@ -1,0 +1,46 @@
+.wui-text {
+  font-family: var(--wui-font-family);
+  font-size: var(--wui-font-size-base);
+  font-weight: var(--wui-font-weight-normal);
+  line-height: var(--wui-line-height-base);
+}
+
+p.wui-text {
+  margin: 0 0 1em 0;
+}
+
+.wui-text--xxs {
+  font-size: var(--wui-text-font-size-xxs);
+}
+
+.wui-text--xs {
+  font-size: var(--wui-text-font-size-xs);
+}
+
+.wui-text--s {
+  font-size: var(--wui-text-font-size-s);
+}
+
+.wui-text--m {
+  font-size: var(--wui-text-font-size-m);
+}
+
+.wui-text--l {
+  font-size: var(--wui-text-font-size-l);
+}
+
+.wui-text--xl {
+  font-size: var(--wui-text-font-size-xl);
+}
+
+.wui-text--xxl {
+  font-size: var(--wui-text-font-size-xxl);
+}
+
+.wui-text--normal {
+  font-weight: var(--wui-font-weight-normal);
+}
+
+.wui-text--bold {
+  font-weight: var(--wui-font-weight-bold);
+}

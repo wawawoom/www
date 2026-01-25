@@ -1,4 +1,30 @@
 :root {
+  /* Typography */
+  --wui-font-size-base: 18px;
+  --wui-font-family: "Newsreader", serif;
+  --wui-line-height-base: 1.4;
+  --wui-font-weight-normal: 400;
+  --wui-font-weight-bold: 700;
+
+  /* Heading */
+  --wui-title-line-height-base: 1.2;
+
+  --wui-title-font-size-h1: 4rem;
+  --wui-title-font-size-h2: 3rem;
+  --wui-title-font-size-h3: 2.2rem;
+  --wui-title-font-size-h4: 1.8rem;
+  --wui-title-font-size-h5: 1.4rem;
+  --wui-title-font-size-h6: 1.2rem;
+
+  /* Text */
+  --wui-text-font-size-xxs: calc(var(--wui-font-size-base) - 4px);
+  --wui-text-font-size-xs: calc(var(--wui-font-size-base) - 2px);
+  --wui-text-font-size-s: calc(var(--wui-font-size-base) - 2px);
+  --wui-text-font-size-m: var(--wui-font-size-base);
+  --wui-text-font-size-l: calc(var(--wui-font-size-base) + 2px);
+  --wui-text-font-size-xl: calc(var(--wui-font-size-base) + 4px);
+  --wui-text-font-size-xxl: calc(var(--wui-font-size-base) + 6px);
+
   /* Colors */
   --wui-color-primary: #007bff;
   --wui-color-primary-hover: #0056b3;

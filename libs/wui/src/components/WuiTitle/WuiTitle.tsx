@@ -1,23 +1,14 @@
-import { type HTMLAttributes, forwardRef } from 'react';
+import { forwardRef } from "react";
 
-export interface WuiTitleProps extends Omit<HTMLAttributes<HTMLHeadingElement>, 'as'> {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-}
+import { clsx } from "../../utils/clsx";
+import { WuiTitleAs, WuiTitleProps } from "./WuiTitle.props";
 
 export const WuiTitle = forwardRef<HTMLHeadingElement, WuiTitleProps>(
-  ({ className = '', as: Tag = 'h1', ...props }, ref) => {
-    const classNames = [
-      'wui-title',
-      className,
-    ]
-      .filter(Boolean)
-      .join(' ');
+  ({ className = "", as: Tag = WuiTitleAs.H1, ...props }, ref) => {
+    const classNames = clsx("wui-title", className);
 
-    return (
-      <Tag ref={ref} className={classNames} {...props} />
-    );
+    return <Tag ref={ref} className={classNames} {...props} />;
   }
 );
 
-
-WuiTitle.displayName = 'WuiTitle';
+WuiTitle.displayName = "WuiTitle";
