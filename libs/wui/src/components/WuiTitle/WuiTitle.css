@@ -29,3 +29,29 @@ h5.wui-title {
 h6.wui-title {
   font-size: var(--wui-title-font-size-h6);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.wui-title--h1 {
+    font-size: var(--wui-title-font-size-h1);
+  }
+  &.wui-title--h2 {
+    font-size: var(--wui-title-font-size-h2);
+  }
+  &.wui-title--h3 {
+    font-size: var(--wui-title-font-size-h3);
+  }
+  &.wui-title--h4 {
+    font-size: var(--wui-title-font-size-h4);
+  }
+  &.wui-title--h5 {
+    font-size: var(--wui-title-font-size-h5);
+  }
+  &.wui-title--h6 {
+    font-size: var(--wui-title-font-size-h6);
+  }
+}

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { WuiTitle } from "./WuiTitle";
-import { WuiTitleAs } from "./WuiTitle.props";
+import { WuiTitleAs, WuiTitleLook } from "./WuiTitle.props";
 
 const meta = {
   title: "Components/WuiTitle",
@@ -14,6 +14,10 @@ const meta = {
     as: {
       control: "select",
       options: Object.values(WuiTitleAs),
+    },
+    look: {
+      control: "select",
+      options: Object.values(WuiTitleLook),
     },
   },
 } satisfies Meta<typeof WuiTitle>;

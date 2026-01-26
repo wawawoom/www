@@ -1,6 +1,15 @@
-import { useLocation, navigateTo } from "../hooks/useLocation.ts";
 import { useEffect } from "react";
-import { WuiButton, WuiTitle, WuiTitleElement } from "@wawawoom/wui";
+
+import {
+  WuiText,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleAs,
+  WuiTitleLook,
+} from "@wawawoom/wui";
+
+import { navigateTo, useLocation } from "../hooks/useLocation.ts";
 
 const Home = () => {
   // Détecter les changements d'URL et déclencher une action
@@ -30,12 +39,11 @@ const Home = () => {
   };
   return (
     <div id="app">
-      <WuiButton>Click me !</WuiButton>
-      <WuiTitle as={WuiTitleElement.H1}>Heading 1</WuiTitle>
-
       <div className="container">
         <div className="zone me">
-          <h2>nico.</h2>
+          <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6}>
+            nico.
+          </WuiTitle>
 
           <article>
             <img
@@ -43,26 +51,16 @@ const Home = () => {
               alt="Nicolas Payrouse"
               className="avatar"
             />
-            <h1>Nicolas Payrouse</h1>
+            <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2}>
+              Nicolas Payrouse
+            </WuiTitle>
 
-            <p>
+            <WuiText as={WuiTextAs.P}>
               I eat JavaScript for breakfast, savor UI for lunch, and fall
               asleep thinking about my next UX challenge.
-            </p>
+            </WuiText>
 
-            <p>
-              📍 357 Chemin de Saquier - 06200 Nice
-              <br />
-              📱 wawawoom[@]gmail.com / 06 31 796 781
-              <br />
-              👨 Né le 5 Décembre 1978, marié, deux enfants.
-              <br />
-              🇬🇧 French, english spoken and written.
-              <br />
-              🚗 Titulaire du permis B
-            </p>
-
-            <p className="badges">
+            <WuiText as={WuiTextAs.P} className="badges">
               <span className="badge">UI</span>
               <span className="badge">UX</span>
               <span className="badge">JavaScript</span>
@@ -72,7 +70,19 @@ const Home = () => {
               <span className="badge">NextJs</span>
               <span className="badge">React</span>
               <span className="badge">React Native</span>
-            </p>
+            </WuiText>
+
+            <WuiText as={WuiTextAs.P} size={WuiTextSize.XS}>
+              📍 357 Chemin de Saquier - 06200 Nice
+              <br />
+              📱 wawawoom[@]gmail.com / 06 31 796 781
+              <br />
+              👨 Né le 5 Décembre 1978, marié, deux enfants.
+              <br />
+              🇬🇧 French, english spoken and written.
+              <br />
+              🚗 Titulaire du permis B
+            </WuiText>
 
             <a href="/nico" className="btn" onClick={handleLinkClick}>
               See more
