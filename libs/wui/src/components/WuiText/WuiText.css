@@ -1,6 +1,5 @@
 .wui-text {
   font-family: var(--wui-font-family);
-  font-size: var(--wui-font-size-base);
   font-weight: var(--wui-font-weight-normal);
   line-height: var(--wui-line-height-base);
 }

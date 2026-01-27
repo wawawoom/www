@@ -7,6 +7,7 @@ import {
   WuiTitle,
   WuiTitleAs,
   WuiTitleLook,
+  WuiColor,
 } from "@wawawoom/wui";
 
 import { navigateTo, useLocation } from "../hooks/useLocation.ts";
@@ -41,7 +42,7 @@ const Home = () => {
     <div id="app">
       <div className="container">
         <div className="zone me">
-          <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6}>
+          <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6} color={WuiColor.NEUTRAL_900}>
             nico.
           </WuiTitle>
 

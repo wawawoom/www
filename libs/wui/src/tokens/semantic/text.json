@@ -1,0 +1,57 @@
+{
+  "text": {
+    "font": {
+      "size": {
+        "xxs": {
+          "value": "12px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "xs": {
+          "value": "14px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "s": {
+          "value": "16px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "m": {
+          "value": "18px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "l": {
+          "value": "20px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "xl": {
+          "value": "24px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "xxl": {
+          "value": "28px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        }
+      }
+    }
+  }
+}

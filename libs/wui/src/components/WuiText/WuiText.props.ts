@@ -1,5 +1,7 @@
 import { type HTMLAttributes } from "react";
 
+import { WuiColorName } from "../../enum";
+
 export type WuiTextElement =
   | HTMLDivElement
   | HTMLParagraphElement
@@ -30,7 +32,8 @@ export interface WuiTextProps extends Omit<
   HTMLAttributes<WuiTextElement>,
   "as"
 > {
+  as?: WuiTextAs;
   size?: WuiTextSize;
   weight?: WuiTextWeight;
-  as?: WuiTextAs;
+  color?: WuiColorName;
 }

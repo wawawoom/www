@@ -1,0 +1,6 @@
+{
+  "space": {
+    "sm": { "value": "4px", "type": "spacing" },
+    "md": { "value": "8px", "type": "spacing" }
+  }
+}

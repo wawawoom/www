@@ -2,9 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { WuiTitle } from "./WuiTitle";
 import { WuiTitleAs, WuiTitleLook } from "./WuiTitle.props";
+import { WuiColorName } from "../../enum";
 
 const meta = {
-  title: "Components/WuiTitle",
+  title: "Components/Typography/WuiTitle",
   component: WuiTitle,
   parameters: {
     layout: "centered",
@@ -18,6 +19,10 @@ const meta = {
     look: {
       control: "select",
       options: Object.values(WuiTitleLook),
+    },
+    color: {
+      control: "select",
+      options: Object.values(WuiColorName),
     },
   },
 } satisfies Meta<typeof WuiTitle>;
@@ -34,31 +39,17 @@ export const Component: Story = {
 };
 
 export const All: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
   render: () => (
     <div>
-      <WuiTitle as={WuiTitleAs.H1}>
-        H1 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
+      {Object.values(WuiTitleLook).map((look) => (
+        <WuiTitle key={look} as={WuiTitleAs.H1} look={look}>
+          {look} / Portez ce vieux whisky au juge blond qui fume.
+        </WuiTitle>
+      ))}
 
-      <WuiTitle as={WuiTitleAs.H2}>
-        H2 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
-
-      <WuiTitle as={WuiTitleAs.H3}>
-        H3 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
-
-      <WuiTitle as={WuiTitleAs.H4}>
-        H4 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
-
-      <WuiTitle as={WuiTitleAs.H5}>
-        H5 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
-
-      <WuiTitle as={WuiTitleAs.H6}>
-        H6 / Portez ce vieux whisky au juge blond qui fume.
-      </WuiTitle>
     </div>
   ),
 };

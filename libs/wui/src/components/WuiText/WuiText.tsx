@@ -21,6 +21,7 @@ export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
     ref
   ) => {
     const Tag = (as ?? WuiTextAs.DIV) as ElementType;
+
     const classNames = clsx(
       "wui-text",
       `wui-text--${size}`,

@@ -1,0 +1,30 @@
+{
+  "font": {
+    "family": {
+      "value": "'Newsreader', serif",
+      "type": "fontFamily"
+    },
+    "size": {
+      "base": {
+        "value": "18px",
+        "type": "fontSize"
+      }
+    },
+    "weight": {
+      "normal": {
+        "value": "400",
+        "type": "fontWeight"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeight"
+      }
+    }
+  },
+  "lineHeight": {
+    "base": {
+      "value": "1.4",
+      "type": "lineHeight"
+    }
+  }
+}

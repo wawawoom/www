@@ -1,0 +1,56 @@
+{
+  "title": {
+    "font": {
+      "size": {
+        "h1": {
+          "value": "50px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h2": {
+          "value": "44px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h3": {
+          "value": "36px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h4": {
+          "value": "32px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h5": {
+          "value": "26px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h6": {
+          "value": "20px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        }
+      }
+    },
+    "lineHeight": {
+      "base": {
+        "value": "1.2",
+        "type": "lineHeight"
+      }
+    }
+  }
+}

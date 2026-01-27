@@ -1,0 +1,7 @@
+{
+  "watch": ["src/tokens"],
+  "ext": "json",
+  "ignore": ["src/styles/tokens.css"],
+  "exec": "pnpm run build:tokens",
+  "delay": 500
+}

@@ -15,10 +15,12 @@
     }
   },
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "concurrently \"pnpm run watch:tokens\" \"storybook dev -p 6006\" --names \"tokens,storybook\" --prefix-colors \"cyan,blue\"",
+    "watch:tokens": "nodemon",
+    "build:tokens": "style-dictionary build --config style-dictionary.config.mjs",
     "build:lib": "tsc && vite build",
     "build:storybook": "storybook build",
-    "build": "pnpm run build:lib && pnpm run build:storybook",
+    "build": "pnpm run build:tokens && pnpm run build:lib && pnpm run build:storybook",
     "deploy": "pnpm run build:storybook && SOURCE_DIR=\"libs/wui/dist_storybook\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy-wui.sh"
   },
   "dependencies": {
@@ -38,7 +40,10 @@
     "@vitejs/plugin-react": "^5.1.1",
     "storybook": "^8.6.15",
     "typescript": "~5.9.3",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "style-dictionary": "^5.2.0",
+    "nodemon": "^3.1.0",
+    "concurrently": "^9.1.0"
   },
   "peerDependencies": {
     "react": "^19.2.0",
