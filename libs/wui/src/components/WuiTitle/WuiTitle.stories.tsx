@@ -9,20 +9,54 @@ const meta = {
   component: WuiTitle,
   parameters: {
     layout: "centered",
+    controls: {
+      expanded: true,
+      sort: 'requiredFirst',
+    },
   },
-  tags: ["autodocs"],
+  tags: ["!autodocs"],
   argTypes: {
     as: {
+      description: "HTML tag to use for the component.",
       control: "select",
       options: Object.values(WuiTitleAs),
+      table: {
+        type: { summary: "WuiTitleAs" },
+        defaultValue: { summary: "WuiTitleAs.H1" },
+      },
     },
     look: {
+      description: "Title look.",
       control: "select",
       options: Object.values(WuiTitleLook),
+      table: {
+        type: { summary: "WuiTitleLook" },
+        defaultValue: { summary: "WuiTitleLook.H1" },
+      },
     },
     color: {
+      description: "Title color.",
       control: "select",
       options: Object.values(WuiColorName),
+      table: {
+        type: { summary: "WuiColorName" },
+        defaultValue: { summary: "-" },
+      },
+    },
+    children: {
+      description: "Text content to display.",
+      control: "text",
+      table: {
+        type: { summary: "ReactNode" },
+        defaultValue: { summary: "-" },
+      },
+    },
+    className: {
+      description: "Additional CSS classes to apply to the component.",
+      control: "text",
+      table: {
+        type: { summary: "string" },
+      },
     },
   },
 } satisfies Meta<typeof WuiTitle>;
@@ -33,14 +67,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Component: Story = {
   args: {
-    as: WuiTitleAs.H1,
     children: "Portez ce vieux whisky au juge blond qui fume.",
-  },
+  }
 };
 
 export const All: Story = {
   parameters: {
-    controls: { disable: true },
+    viewMode: 'docs',
+    controls: { disable: true }
   },
   render: () => (
     <div>
@@ -49,7 +83,6 @@ export const All: Story = {
           {look} / Portez ce vieux whisky au juge blond qui fume.
         </WuiTitle>
       ))}
-
     </div>
   ),
 };

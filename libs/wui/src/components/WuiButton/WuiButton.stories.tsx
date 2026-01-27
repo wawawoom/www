@@ -1,21 +1,51 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { WuiButton } from './WuiButton';
+import { WuiButtonColor, WuiButtonSize } from './WuiButton.props';
 
 const meta = {
   title: 'Components/WuiButton',
   component: WuiButton,
   parameters: {
     layout: 'centered',
+    controls: {
+      expanded: true,
+      sort: 'requiredFirst',
+    },
   },
-  tags: ['autodocs'],
+  tags: ['!autodocs'],
   argTypes: {
-    variant: {
+    color: {
       control: 'select',
-      options: ['primary', 'secondary', 'outline'],
+      options: Object.values(WuiButtonColor),
+      table: {
+        type: { summary: 'WuiButtonColor' },
+        defaultValue: { summary: 'WuiButtonColor.LIGHT' },
+      },
     },
     size: {
       control: 'select',
-      options: ['small', 'medium', 'large'],
+      options: Object.values(WuiButtonSize),
+      table: {
+        type: { summary: 'WuiButtonSize' },
+        defaultValue: { summary: 'WuiButtonSize.M' },
+      },
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    children: {
+      control: 'text',
+      table: {
+        type: { summary: 'ReactNode' },
+        defaultValue: { summary: 'Button' },
+      },
+    },
+    className: {
+      description: "Additional CSS classes to apply to the component.",
+      control: "text",
+      table: {
+        type: { summary: "string" },
+      },
     },
   },
 } satisfies Meta<typeof WuiButton>;
@@ -23,44 +53,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Component: Story = {
   args: {
-    variant: 'primary',
-    children: 'Button',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: 'secondary',
-    children: 'Button',
-  },
-};
-
-export const Outline: Story = {
-  args: {
-    variant: 'outline',
-    children: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    children: 'Small Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    children: 'Large Button',
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    children: 'Disabled Button',
+    children: "I'm a button"
   },
 };

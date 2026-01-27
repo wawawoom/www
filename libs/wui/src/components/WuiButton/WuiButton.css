@@ -1,62 +1,149 @@
 .wui-button {
-  font-family: inherit;
-  font-weight: var(--wui-font-weight-medium);
-  border: 1px solid transparent;
-  border-radius: var(--wui-radius-lg);
+  font-family: var(--wui-font-family);
+  font-weight: var(--wui-font-weight-normal);
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all var(--wui-transition-base);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
 }
 
-.wui-button:disabled {
-  opacity: var(--wui-opacity-disabled);
-  cursor: not-allowed;
+.wui-button:active:not(:disabled) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Sizes */
-.wui-button--small {
-  padding: var(--wui-spacing-sm) var(--wui-spacing-lg);
-  font-size: var(--wui-font-size-sm);
+.wui-button--dark {
+  background-color: var(--wui-color-neutral-900);
+  color: var(--wui-color-neutral-0);
+
+  &:hover {
+    background-color: var(--wui-color-neutral-800);
+  }
+
+  &:active {
+    background-color: var(--wui-color-neutral-700);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-.wui-button--medium {
-  padding: var(--wui-spacing-md) var(--wui-spacing-xl);
-  font-size: var(--wui-font-size-md);
+.wui-button--light {
+  background-color: var(--wui-color-neutral-50);
+  color: var(--wui-color-neutral-900);
+
+  &:hover {
+    background-color: var(--wui-color-neutral-100);
+  }
+
+  &:active {
+    background-color: var(--wui-color-neutral-200);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-.wui-button--large {
-  padding: var(--wui-spacing-lg) var(--wui-spacing-2xl);
-  font-size: var(--wui-font-size-lg);
+.wui-button--success {
+  background-color: var(--wui-color-green-500);
+  color: var(--wui-color-neutral-900);
+
+  &:hover {
+    background-color: var(--wui-color-green-600);
+  }
+
+  &:active {
+    background-color: var(--wui-color-green-700);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-/* Variants */
-.wui-button--primary {
-  background-color: var(--wui-color-primary);
-  color: var(--wui-color-text);
+.wui-button--danger {
+  background-color: var(--wui-color-pink-500);
+  color: var(--wui-color-neutral-0);
+
+  &:hover {
+    background-color: var(--wui-color-pink-600);
+  }
+
+  &:active {
+    background-color: var(--wui-color-pink-700);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-.wui-button--primary:hover:not(:disabled) {
-  background-color: var(--wui-color-primary-hover);
+.wui-button--info {
+  background-color: var(--wui-color-blue-500);
+  color: var(--wui-color-neutral-0);
+
+  &:hover {
+    background-color: var(--wui-color-blue-600);
+  }
+
+  &:active {
+    background-color: var(--wui-color-blue-700);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-.wui-button--secondary {
-  background-color: var(--wui-color-secondary);
-  color: var(--wui-color-text);
+.wui-button--warning {
+  background-color: var(--wui-color-yellow-500);
+  color: var(--wui-color-neutral-900);
+
+  &:hover {
+    background-color: var(--wui-color-yellow-600);
+  }
+
+  &:active {
+    background-color: var(--wui-color-yellow-700);
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-neutral-200);
+    color: var(--wui-color-neutral-400);
+    cursor: not-allowed;
+  }
 }
 
-.wui-button--secondary:hover:not(:disabled) {
-  background-color: var(--wui-color-secondary-hover);
+/* size */
+.wui-button--s {
+  height: 2rem;
+  padding: 0 0.625rem;
+  font-size: 1rem;
 }
 
-.wui-button--outline {
-  background-color: transparent;
-  color: var(--wui-color-primary);
-  border-color: var(--wui-color-primary);
+.wui-button--m {
+  height: 2.5rem;
+  padding: 0 0.875rem;
+  font-size: 1.125rem;
 }
 
-.wui-button--outline:hover:not(:disabled) {
-  background-color: var(--wui-color-primary);
-  color: var(--wui-color-text);
+.wui-button--l {
+  height: 3rem;
+  padding: 0 1.125rem;
+  font-size: 1.25rem;
 }

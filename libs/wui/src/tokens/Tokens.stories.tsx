@@ -4,7 +4,7 @@ import colorTokens from './core/color.json';
 import { WuiText, WuiTextSize } from '../components/WuiText';
 
 const meta = {
-  title: 'Tokens/Colors',
+  title: 'Tokens/Core',
   parameters: {
     controls: { disable: true },
     actions: { disable: true },
@@ -15,7 +15,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Palette: Story = {
+export const Color: Story = {
   render: () => {
     const colors = colorTokens.color;
     const colorNames = Object.keys(colors) as Array<keyof typeof colors>;
@@ -48,7 +48,7 @@ export const Palette: Story = {
 
     return (
       <div>
-        <WuiTitle>Colors Tokens</WuiTitle>
+        <WuiTitle>Color</WuiTitle>
         <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '24px' }}>
           <thead>
             <tr>

@@ -7,6 +7,9 @@ import { WuiTitleAs, WuiTitleLook } from "./WuiTitle/WuiTitle.props";
 
 const meta = {
   title: "Components/Typography",
+  parameters: {
+    controls: { disable: true },
+  },
 } satisfies Meta;
 
 export default meta;

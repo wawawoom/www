@@ -20,7 +20,7 @@ const meta = {
   tags: ["!autodocs"],
   argTypes: {
     as: {
-      description: "L'élément HTML à utiliser pour le rendu du composant.",
+      description: "HTML tag to use for the component.",
       control: "select",
       options: Object.values(WuiTextAs),
       table: {
@@ -29,7 +29,7 @@ const meta = {
       },
     },
     size: {
-      description: "La taille de la police de caractères.",
+      description: "Text size.",
       control: "select",
       options: Object.values(WuiTextSize),
       table: {
@@ -38,7 +38,7 @@ const meta = {
       },
     },
     weight: {
-      description: "Le poids de la police (normal ou bold).",
+      description: "Text weight.",
       control: "select",
       options: Object.values(WuiTextWeight),
       table: {
@@ -47,7 +47,7 @@ const meta = {
       },
     },
     color: {
-      description: "La couleur du texte.",
+      description: "Text color.",
       control: "select",
       options: Object.values(WuiColorName),
       table: {
@@ -56,7 +56,7 @@ const meta = {
       },
     },
     children: {
-      description: "Le contenu texte à afficher.",
+      description: "Text content to display.",
       control: "text",
       table: {
         type: { summary: "ReactNode" },
@@ -64,11 +64,10 @@ const meta = {
       },
     },
     className: {
-      description: "Classes CSS supplémentaires à appliquer au composant.",
+      description: "Additional CSS classes to apply to the component.",
       control: "text",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: '""' },
       },
     },
   },

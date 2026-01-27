@@ -1,22 +1,31 @@
-import { type ButtonHTMLAttributes, forwardRef } from "react";
-import { clsx } from "../../utils/clsx";
+import { forwardRef } from "react";
 
-export interface WuiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
-  size?: "small" | "medium" | "large";
-}
+import { clsx } from "../../utils/clsx";
+import {
+  WuiButtonColor,
+  WuiButtonProps,
+  WuiButtonSize,
+} from "./WuiButton.props";
 
 export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
-  ({ variant = "primary", size = "medium", className = "", ...props }, ref) => {
+  (
+    {
+      color = WuiButtonColor.LIGHT,
+      size = WuiButtonSize.M,
+      className = "",
+      ...props
+    },
+    ref
+  ) => {
     const classNames = clsx(
       "wui-button",
-      `wui-button--${variant}`,
+      `wui-button--${color}`,
       `wui-button--${size}`,
-      className,
+      className
     );
 
     return <button ref={ref} className={classNames} {...props} />;
-  },
+  }
 );
 
 WuiButton.displayName = "WuiButton";
