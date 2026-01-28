@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { WuiColorAlias } from "../../enum";
 import { loremIpsum } from "../../utils/lorem-ipsum";
-
-import { WuiColorName } from "../../enum";
-
 import { WuiText } from "./WuiText";
 import { WuiTextAs, WuiTextSize, WuiTextWeight } from "./WuiText.props";
 
@@ -14,7 +12,7 @@ const meta = {
     layout: "centered",
     controls: {
       expanded: true,
-      sort: 'requiredFirst',
+      sort: "requiredFirst",
     },
   },
   tags: ["!autodocs"],
@@ -49,9 +47,9 @@ const meta = {
     color: {
       description: "Text color.",
       control: "select",
-      options: Object.values(WuiColorName),
+      options: Object.values(WuiColorAlias),
       table: {
-        type: { summary: "WuiColorName" },
+        type: { summary: "WuiColorAlias" },
         defaultValue: { summary: "-" },
       },
     },
@@ -76,7 +74,6 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-
 
 export const Component: Story = {
   args: {

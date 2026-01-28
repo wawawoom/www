@@ -1,9 +1,9 @@
 // Fonction helper pour extraire et traiter les tokens de couleur
-export function getColorEntries(dictionary, valueExtractor) {
+export function getColorEntries(dictionary, tokenName, valueExtractor) {
   // Accéder aux tokens de couleur depuis la structure transformée
   const colorTokens = dictionary.allTokens.filter(
     (token) =>
-      token.path && token.path[0] === "color" && token.path.length >= 3
+      token.path && token.path[0] === tokenName && token.path.length >= 3
   );
 
   const entries = [];

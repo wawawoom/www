@@ -1,43 +1,51 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { WuiButton } from './WuiButton';
-import { WuiButtonColor, WuiButtonSize } from './WuiButton.props';
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { WuiButton } from "./WuiButton";
+import { WuiButtonColor, WuiButtonSize } from "./WuiButton.props";
 
 const meta = {
-  title: 'Components/WuiButton',
+  title: "Components/WuiButton",
   component: WuiButton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     controls: {
       expanded: true,
-      sort: 'requiredFirst',
+      sort: "requiredFirst",
     },
   },
-  tags: ['!autodocs'],
+  tags: ["!autodocs"],
   argTypes: {
     color: {
-      control: 'select',
+      control: "select",
       options: Object.values(WuiButtonColor),
       table: {
-        type: { summary: 'WuiButtonColor' },
-        defaultValue: { summary: 'WuiButtonColor.LIGHT' },
+        type: { summary: "WuiButtonColor" },
+        defaultValue: { summary: "WuiButtonColor.LIGHT" },
       },
     },
     size: {
-      control: 'select',
+      control: "select",
       options: Object.values(WuiButtonSize),
       table: {
-        type: { summary: 'WuiButtonSize' },
-        defaultValue: { summary: 'WuiButtonSize.M' },
+        type: { summary: "WuiButtonSize" },
+        defaultValue: { summary: "WuiButtonSize.M" },
       },
     },
     disabled: {
-      control: 'boolean',
+      control: "boolean",
+    },
+    block: {
+      control: "boolean",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
     },
     children: {
-      control: 'text',
+      control: "text",
       table: {
-        type: { summary: 'ReactNode' },
-        defaultValue: { summary: 'Button' },
+        type: { summary: "ReactNode" },
+        defaultValue: { summary: "Button" },
       },
     },
     className: {
@@ -55,6 +63,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Component: Story = {
   args: {
-    children: "I'm a button"
+    children: "I'm a button",
   },
 };

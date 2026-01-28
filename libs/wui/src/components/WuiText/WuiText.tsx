@@ -1,5 +1,6 @@
 import { type ElementType, forwardRef } from "react";
 
+import { WuiColorAlias } from "../../enum/WuiColorAlias.enum";
 import { clsx } from "../../utils/clsx";
 import {
   WuiTextAs,
@@ -15,6 +16,7 @@ export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
       className = "",
       size = WuiTextSize.M,
       weight = WuiTextWeight.NORMAL,
+      color = WuiColorAlias.NEUTRAL_900,
       as,
       ...props
     },
@@ -26,6 +28,7 @@ export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
       "wui-text",
       `wui-text--${size}`,
       `wui-text--${weight}`,
+      `wui-text--${color}`,
       className
     );
 

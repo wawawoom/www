@@ -18,4 +18,5 @@ export enum WuiButtonSize {
 export interface WuiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: WuiButtonColor;
   size?: WuiButtonSize;
+  block?: boolean;
 }

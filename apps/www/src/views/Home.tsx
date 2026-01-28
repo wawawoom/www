@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 
 import {
+  WuiButton,
+  WuiColorAlias,
+  WuiColorName,
   WuiText,
   WuiTextAs,
   WuiTextSize,
   WuiTitle,
   WuiTitleAs,
   WuiTitleLook,
-  WuiColor,
 } from "@wawawoom/wui";
 
 import { navigateTo, useLocation } from "../hooks/useLocation.ts";
@@ -42,7 +44,11 @@ const Home = () => {
     <div id="app">
       <div className="container">
         <div className="zone me">
-          <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6} color={WuiColor.NEUTRAL_900}>
+          <WuiTitle
+            as={WuiTitleAs.H2}
+            look={WuiTitleLook.H6}
+            color={WuiColorAlias.NEUTRAL_900}
+          >
             nico.
           </WuiTitle>
 
@@ -88,6 +94,8 @@ const Home = () => {
             <a href="/nico" className="btn" onClick={handleLinkClick}>
               See more
             </a>
+
+            <WuiButton>See more</WuiButton>
           </article>
         </div>
 

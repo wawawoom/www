@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 
-import { WuiColorName } from "../../enum";
+import { WuiColorAlias } from "../../enum";
 
 export enum WuiTitleAs {
   H1 = "h1",
@@ -26,5 +26,5 @@ export interface WuiTitleProps extends Omit<
 > {
   as?: WuiTitleAs;
   look?: WuiTitleLook;
-  color?: WuiColorName;
+  color?: WuiColorAlias;
 }

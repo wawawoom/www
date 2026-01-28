@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "concurrently \"pnpm run watch:tokens\" \"storybook dev -p 6006\" --names \"tokens,storybook\" --prefix-colors \"cyan,blue\"",
     "watch:tokens": "nodemon",
-    "build:tokens": "style-dictionary build --config style-dictionary.config.mjs",
+    "build:tokens": "style-dictionary build --config ./style-dictionary/config.mjs",
     "build:lib": "tsc && vite build",
     "build:storybook": "storybook build",
     "build": "pnpm run build:tokens && pnpm run build:lib && pnpm run build:storybook",

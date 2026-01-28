@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { WuiColorAlias } from "../../enum";
 import { WuiTitle } from "./WuiTitle";
 import { WuiTitleAs, WuiTitleLook } from "./WuiTitle.props";
-import { WuiColorName } from "../../enum";
 
 const meta = {
   title: "Components/Typography/WuiTitle",
@@ -11,7 +11,7 @@ const meta = {
     layout: "centered",
     controls: {
       expanded: true,
-      sort: 'requiredFirst',
+      sort: "requiredFirst",
     },
   },
   tags: ["!autodocs"],
@@ -37,9 +37,9 @@ const meta = {
     color: {
       description: "Title color.",
       control: "select",
-      options: Object.values(WuiColorName),
+      options: Object.values(WuiColorAlias),
       table: {
-        type: { summary: "WuiColorName" },
+        type: { summary: "WuiColorAlias" },
         defaultValue: { summary: "-" },
       },
     },
@@ -68,13 +68,13 @@ type Story = StoryObj<typeof meta>;
 export const Component: Story = {
   args: {
     children: "Portez ce vieux whisky au juge blond qui fume.",
-  }
+  },
 };
 
 export const All: Story = {
   parameters: {
-    viewMode: 'docs',
-    controls: { disable: true }
+    viewMode: "docs",
+    controls: { disable: true },
   },
   render: () => (
     <div>

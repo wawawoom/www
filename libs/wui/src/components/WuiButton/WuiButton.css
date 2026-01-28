@@ -2,7 +2,6 @@
   font-family: var(--wui-font-family);
   font-weight: var(--wui-font-weight-normal);
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -16,134 +15,140 @@
 }
 
 .wui-button--dark {
-  background-color: var(--wui-color-neutral-900);
-  color: var(--wui-color-neutral-0);
+  background-color: var(--wui-color-alias-neutral-900);
+  color: var(--wui-color-alias-neutral-0);
 
   &:hover {
-    background-color: var(--wui-color-neutral-800);
+    background-color: var(--wui-color-alias-neutral-800);
   }
 
   &:active {
-    background-color: var(--wui-color-neutral-700);
+    background-color: var(--wui-color-alias-neutral-700);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 .wui-button--light {
-  background-color: var(--wui-color-neutral-50);
-  color: var(--wui-color-neutral-900);
+  background-color: var(--wui-color-alias-neutral-100);
+  color: var(--wui-color-alias-neutral-900);
 
   &:hover {
-    background-color: var(--wui-color-neutral-100);
+    background-color: var(--wui-color-alias-neutral-100);
   }
 
   &:active {
-    background-color: var(--wui-color-neutral-200);
+    background-color: var(--wui-color-alias-neutral-200);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 .wui-button--success {
-  background-color: var(--wui-color-green-500);
-  color: var(--wui-color-neutral-900);
+  background-color: var(--wui-color-alias-success-500);
+  color: var(--wui-color-alias-neutral-900);
 
   &:hover {
-    background-color: var(--wui-color-green-600);
+    background-color: var(--wui-color-alias-success-600);
   }
 
   &:active {
-    background-color: var(--wui-color-green-700);
+    background-color: var(--wui-color-alias-success-700);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 .wui-button--danger {
-  background-color: var(--wui-color-pink-500);
-  color: var(--wui-color-neutral-0);
+  background-color: var(--wui-color-alias-danger-500);
+  color: var(--wui-color-alias-neutral-0);
 
   &:hover {
-    background-color: var(--wui-color-pink-600);
+    background-color: var(--wui-color-alias-danger-600);
   }
 
   &:active {
-    background-color: var(--wui-color-pink-700);
+    background-color: var(--wui-color-alias-danger-700);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 .wui-button--info {
-  background-color: var(--wui-color-blue-500);
-  color: var(--wui-color-neutral-0);
+  background-color: var(--wui-color-alias-info-500);
+  color: var(--wui-color-alias-neutral-0);
 
   &:hover {
-    background-color: var(--wui-color-blue-600);
+    background-color: var(--wui-color-alias-info-600);
   }
 
   &:active {
-    background-color: var(--wui-color-blue-700);
+    background-color: var(--wui-color-alias-info-700);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 .wui-button--warning {
-  background-color: var(--wui-color-yellow-500);
-  color: var(--wui-color-neutral-900);
+  background-color: var(--wui-color-alias-warning-500);
+  color: var(--wui-color-alias-neutral-900);
 
   &:hover {
-    background-color: var(--wui-color-yellow-600);
+    background-color: var(--wui-color-alias-warning-600);
   }
 
   &:active {
-    background-color: var(--wui-color-yellow-700);
+    background-color: var(--wui-color-alias-warning-700);
   }
 
   &:disabled {
-    background-color: var(--wui-color-neutral-200);
-    color: var(--wui-color-neutral-400);
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
     cursor: not-allowed;
   }
 }
 
 /* size */
+/* TODO put this in tokens */
 .wui-button--s {
-  height: 2rem;
+  height: 2.5rem;
   padding: 0 0.625rem;
   font-size: 1rem;
 }
 
 .wui-button--m {
-  height: 2.5rem;
+  height: 3rem;
   padding: 0 0.875rem;
   font-size: 1.125rem;
 }
 
 .wui-button--l {
-  height: 3rem;
+  height: 3.5rem;
   padding: 0 1.125rem;
   font-size: 1.25rem;
+}
+
+/* block */
+.wui-button--block {
+  width: 100%;
 }

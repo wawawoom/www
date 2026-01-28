@@ -12,6 +12,7 @@ export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
     {
       color = WuiButtonColor.LIGHT,
       size = WuiButtonSize.M,
+      block = false,
       className = "",
       ...props
     },
@@ -21,6 +22,7 @@ export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
       "wui-button",
       `wui-button--${color}`,
       `wui-button--${size}`,
+      block ? "wui-button--block" : "",
       className
     );
 

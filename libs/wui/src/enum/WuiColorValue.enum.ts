@@ -2,6 +2,16 @@
 // Generated from tokens/core/color.json
 
 export enum WuiColorValue {
+  BLACK_0 = "#ffffff",
+  BLACK_100 = "#f5f5f5",
+  BLACK_200 = "#e0e0e0",
+  BLACK_300 = "#bdbdbd",
+  BLACK_400 = "#9e9e9e",
+  BLACK_500 = "#757575",
+  BLACK_600 = "#616161",
+  BLACK_700 = "#424242",
+  BLACK_800 = "#212121",
+  BLACK_900 = "#000000",
   BLUE_0 = "#e8f0fe",
   BLUE_100 = "#d1e1fd",
   BLUE_200 = "#a3c3fb",
@@ -22,16 +32,6 @@ export enum WuiColorValue {
   GREEN_700 = "#599c19",
   GREEN_800 = "#478012",
   GREEN_900 = "#35640b",
-  NEUTRAL_0 = "#ffffff",
-  NEUTRAL_100 = "#f5f5f5",
-  NEUTRAL_200 = "#e0e0e0",
-  NEUTRAL_300 = "#bdbdbd",
-  NEUTRAL_400 = "#9e9e9e",
-  NEUTRAL_500 = "#757575",
-  NEUTRAL_600 = "#616161",
-  NEUTRAL_700 = "#424242",
-  NEUTRAL_800 = "#212121",
-  NEUTRAL_900 = "#000000",
   PINK_0 = "#fce8f3",
   PINK_100 = "#f9d1e7",
   PINK_200 = "#f3a3cf",
@@ -48,8 +48,8 @@ export enum WuiColorValue {
   YELLOW_300 = "#ffea75",
   YELLOW_400 = "#ffe347",
   YELLOW_500 = "#ffd500",
-  YELLOW_600 = "#d9b500",
-  YELLOW_700 = "#b39500",
-  YELLOW_800 = "#8d7500",
-  YELLOW_900 = "#675500"
+  YELLOW_600 = "#edc602",
+  YELLOW_700 = "#d4b104",
+  YELLOW_800 = "#b79800",
+  YELLOW_900 = "#a08400"
 }

@@ -1,9 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WuiText } from "./WuiText/WuiText";
-import { WuiTextAs, WuiTextSize, WuiTextWeight } from "./WuiText/WuiText.props";
-import { WuiTitle } from "./WuiTitle/WuiTitle";
-import { WuiTitleAs, WuiTitleLook } from "./WuiTitle/WuiTitle.props";
+import { WuiText } from "../components/WuiText/WuiText";
+import {
+  WuiTextAs,
+  WuiTextSize,
+  WuiTextWeight,
+} from "../components/WuiText/WuiText.props";
+import { WuiTitle } from "../components/WuiTitle/WuiTitle";
+import {
+  WuiTitleAs,
+  WuiTitleLook,
+} from "../components/WuiTitle/WuiTitle.props";
 
 const meta = {
   title: "Components/Typography",

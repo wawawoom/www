@@ -1,56 +1,55 @@
 {
-  "text": {
+  "title": {
     "font": {
       "size": {
-        "xxs": {
-          "value": "12px",
+        "h1": {
+          "value": "60px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
-        "xs": {
-          "value": "14px",
+        "h2": {
+          "value": "44px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
-        "s": {
-          "value": "16px",
+        "h3": {
+          "value": "38px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
-        "m": {
-          "value": "18px",
+        "h4": {
+          "value": "32px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
-        "l": {
+        "h5": {
+          "value": "26px",
+          "type": "fontSize",
+          "extensions": {
+            "transform": "px-to-rem"
+          }
+        },
+        "h6": {
           "value": "20px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
-        },
-        "xl": {
-          "value": "24px",
-          "type": "fontSize",
-          "extensions": {
-            "transform": "px-to-rem"
-          }
-        },
-        "xxl": {
-          "value": "28px",
-          "type": "fontSize",
-          "extensions": {
-            "transform": "px-to-rem"
-          }
         }
+      }
+    },
+    "lineHeight": {
+      "base": {
+        "value": "1.2",
+        "type": "lineHeight"
       }
     }
   }
