@@ -192,10 +192,11 @@ h1 {
 
 .modal {
   position: fixed;
-  top: var(--initial-top);
-  left: var(--initial-left);
-  width: var(--initial-width);
-  height: var(--initial-height);
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
   z-index: 1000;
   overflow: hidden;
   opacity: 0;
@@ -204,7 +205,8 @@ h1 {
     left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal--expanded {
@@ -218,9 +220,9 @@ h1 {
   width: 40px;
   height: 40px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
-  font-size: 32px;
+  background-color: transparent;
+  color: black;
+  font-size: 64px;
   line-height: 1;
   cursor: pointer;
   border-radius: 50%;
@@ -228,22 +230,27 @@ h1 {
   align-items: center;
   justify-content: center;
   z-index: 1001;
-  transition: background-color 0.2s ease;
+  font-weight: 100;
   opacity: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .modal--expanded .modal__close {
   opacity: 1;
 }
 
-.modal__close:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .modal__content {
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding: 3rem 6rem;
 }
 
 .modal--expanded {
@@ -251,21 +258,22 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
+  transform: translate(0, 0);
   opacity: 1;
 }
 
-.modal.me {
+.modal--me {
   background-color: var(--color-me);
 }
 
-.modal.ui {
+.modal--ui {
   background-color: var(--color-ui);
 }
 
-.modal.web {
+.modal--web {
   background-color: var(--color-web);
 }
 
-.modal.mob {
+.modal--mob {
   background-color: var(--color-mobile);
 }

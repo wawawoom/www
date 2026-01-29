@@ -12,6 +12,7 @@ export const LOREM_IPSUM: string =
  * loremIpsum(5) // "Lorem ipsum dolor sit amet."
  * loremIpsum(10) // "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do."
  */
+
 export const loremIpsum = (wordCount: number = 50): string => {
   const words = LOREM_IPSUM.split(/\s+/);
   const selectedWords = words.slice(0, Math.min(wordCount, words.length));

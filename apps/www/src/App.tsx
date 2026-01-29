@@ -8,15 +8,15 @@ import {
 } from "@wawawoom/wui";
 
 import { navigateTo, useLocation } from "./hooks/useLocation.ts";
-import { Section } from "./ts/enum/section.enum.ts";
 import { MeModal } from "./modal/MeModal.component.tsx";
-import { WebModal } from "./modal/WebModal.component.tsx";
 import { MobModal } from "./modal/MobModal.component.tsx";
 import { UiModal } from "./modal/UiModal.component.tsx";
+import { WebModal } from "./modal/WebModal.component.tsx";
+import { Section } from "./ts/enum/section.enum.ts";
 import { MeZone } from "./zone/MeZone.component.tsx";
-import { UiZone } from "./zone/UiZone.component.tsx";
-import { WebZone } from "./zone/WebZone.component copy.tsx";
 import { MobZone } from "./zone/MobZone.component.tsx";
+import { UiZone } from "./zone/UiZone.component.tsx";
+import { WebZone } from "./zone/WebZone.component.tsx";
 
 const App = () => {
   // Détecter les changements d'URL et déclencher une action
@@ -36,64 +36,19 @@ const App = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [section, setSection] = useState<Section | null>(null);
-  const [initialPosition, setInitialPosition] = useState<{
-    top: number;
-    left: number;
-    width: number;
-    height: number;
-  } | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const hasInitializedRef = useRef(false);
 
-  // Fonction pour ouvrir la modal (réutilisable)
+  // Fonction pour ouvrir la modal depuis le centre de l'écran
   const openModal = (section: Section) => {
-    // Capturer la position et taille de la zone source dans son état normal (sans hover)
-    const containerElement = containerRef.current;
+    setIsModalOpen(true);
+    setSection(section);
 
-    if (containerElement) {
-      // Le container fait 50vh x 50vh en état normal (sans hover)
-      const containerSize = Math.min(window.innerHeight * 0.5, window.innerWidth * 0.5);
-      const zoneSize = containerSize / 2; // Chaque zone fait la moitié du container (grille 2x2)
-
-      // Calculer la position du container centré
-      const viewportCenterX = window.innerWidth / 2;
-      const viewportCenterY = window.innerHeight / 2;
-      const containerLeft = viewportCenterX - containerSize / 2;
-      const containerTop = viewportCenterY - containerSize / 2;
-
-      // Calculer la position de la zone selon sa position dans la grille
-      let zoneLeft = containerLeft;
-      let zoneTop = containerTop;
-
-      if (section === Section.UI || section === Section.MOB) {
-        zoneLeft = containerLeft + zoneSize;
-      }
-      if (section === Section.WEB || section === Section.MOB) {
-        zoneTop = containerTop + zoneSize;
-      }
-
-      setInitialPosition({
-        top: zoneTop,
-        left: zoneLeft,
-        width: zoneSize,
-        height: zoneSize,
-      });
-
-      // Démarrer l'animation
-      setIsModalOpen(true);
-      setSection(section);
-
-      // Démarrer l'animation après un court délai pour permettre le rendu
-      requestAnimationFrame(() => {
-        setIsAnimating(true);
-      });
-    }
+    // Démarrer l'animation après un court délai pour permettre le rendu
+    requestAnimationFrame(() => {
+      setIsAnimating(true);
+    });
   };
-
-
-
-
 
   const onOpenModal = (section: Section) => {
     navigateTo(`/${section}`);
@@ -108,8 +63,7 @@ const App = () => {
     setTimeout(() => {
       setIsModalOpen(false);
       setSection(null);
-      setInitialPosition(null);
-      navigateTo('/');
+      navigateTo("/");
     }, 500); // Durée de l'animation CSS
   };
 
@@ -124,19 +78,19 @@ const App = () => {
       case Section.MOB:
         return <MobModal />;
     }
-  }
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isModalOpen) {
+      if (event.key === "Escape" && isModalOpen) {
         handleCloseModal();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isModalOpen]);
 
@@ -144,8 +98,11 @@ const App = () => {
   useEffect(() => {
     if (!hasInitializedRef.current) {
       hasInitializedRef.current = true;
-      const sectionFromPath = currentPath.replace('/', '') as Section | "";
-      if (sectionFromPath && Object.values(Section).includes(sectionFromPath as Section)) {
+      const sectionFromPath = currentPath.replace("/", "") as Section | "";
+      if (
+        sectionFromPath &&
+        Object.values(Section).includes(sectionFromPath as Section)
+      ) {
         // Petit délai pour s'assurer que le DOM est prêt
         setTimeout(() => {
           openModal(sectionFromPath as Section);
@@ -156,7 +113,7 @@ const App = () => {
 
   return (
     <div id="app">
-      <div className="container" ref={containerRef}>
+      <div className="container">
         <div className="zone me">
           <WuiTitle
             as={WuiTitleAs.H2}
@@ -206,15 +163,9 @@ const App = () => {
         </div>
       </div>
 
-      {isModalOpen && initialPosition && section && (
+      {isModalOpen && section && (
         <div
-          className={`modal ${section} ${isAnimating ? 'modal--expanded' : ''}`}
-          style={{
-            '--initial-top': `${initialPosition.top}px`,
-            '--initial-left': `${initialPosition.left}px`,
-            '--initial-width': `${initialPosition.width}px`,
-            '--initial-height': `${initialPosition.height}px`,
-          } as React.CSSProperties}
+          className={`modal modal--${section} ${isAnimating ? "modal--expanded" : ""}`}
         >
           <button
             className="modal__close"
@@ -224,12 +175,10 @@ const App = () => {
             ×
           </button>
 
-          <div className="modal__content">
-            {renderSection()}
-          </div>
+          <div className="modal__content">{renderSection()}</div>
         </div>
       )}
-    </div >
+    </div>
   );
 };
 

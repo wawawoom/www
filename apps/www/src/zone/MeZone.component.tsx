@@ -1,4 +1,14 @@
-import { WuiButton, WuiText, WuiTextAs, WuiTextSize, WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
+import {
+  WuiLink,
+  WuiLinkColor,
+  WuiText,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleAs,
+  WuiTitleLook,
+} from "@wawawoom/wui";
+
 import { Section } from "../ts/enum/section.enum";
 import type { ZoneProps } from "./zone.props";
 
@@ -18,8 +28,8 @@ export const MeZone = (props: ZoneProps) => {
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P}>
-        I eat JavaScript for breakfast, savor UI for lunch, and fall
-        asleep thinking about my next UX challenge.
+        I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
+        thinking about my next UX challenge.
       </WuiText>
 
       <WuiText as={WuiTextAs.P} className="badges">
@@ -46,9 +56,17 @@ export const MeZone = (props: ZoneProps) => {
         🚗 Titulaire du permis B
       </WuiText>
 
-      <WuiButton onClick={() => {
-        onOpenModal(Section.ME);
-      }}>See more</WuiButton>
+      <WuiLink
+        href="/me"
+        color={WuiLinkColor.LIGHT}
+        onClick={(event) => {
+          event.preventDefault();
+
+          onOpenModal(Section.ME);
+        }}
+      >
+        See more
+      </WuiLink>
     </article>
   );
-}
+};
