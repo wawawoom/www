@@ -9,10 +9,10 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
-import { Section } from "../ts/enum/section.enum";
-import type { ZoneProps } from "./zone.props";
+import { Section } from "../../../ts/enum/section.enum";
+import "./MeZone.css";
 
-export const MeZone = (props: ZoneProps) => {
+export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (

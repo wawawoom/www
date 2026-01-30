@@ -3,12 +3,11 @@ import { createRoot } from "react-dom/client";
 
 import "@wawawoom/wui-css";
 
+import App from "./components/App/App.tsx";
 import "./index.css";
-
-import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );

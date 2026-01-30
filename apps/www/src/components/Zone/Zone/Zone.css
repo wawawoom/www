@@ -1,0 +1,80 @@
+.zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+
+  > h2 {
+    font-size: 1rem;
+    font-weight: 100;
+    transition: color 0.3s ease-in-out;
+    z-index: 2;
+    margin: 0;
+  }
+
+  article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    padding: 5%;
+    overflow: hidden;
+
+    /* transition executed when the user rollout */
+    transition: opacity 0.25s ease-in-out;
+
+    p {
+      margin: 0 0 1em 0;
+    }
+  }
+
+  &:hover {
+    color: rgb(255, 255, 255, 1);
+
+    > h2 {
+      display: none;
+    }
+
+    article {
+      opacity: 1;
+      overflow-y: auto;
+
+      /* transition executed when the user rollover */
+      transition: opacity 0.5s ease-in-out 0.15s;
+    }
+  }
+}
+
+.me {
+  grid-area: me;
+  background-color: var(--wui-color-green-500);
+
+  article {
+    color: var(--wui-color-black-900);
+  }
+}
+
+.ui {
+  grid-area: ui;
+  background-color: var(--wui-color-yellow-500);
+
+  article {
+    color: var(--wui-color-black-900);
+  }
+}
+
+.web {
+  grid-area: web;
+  background-color: var(--wui-color-blue-500);
+  color: var(--wui-color-black-0);
+}
+
+.mob {
+  grid-area: mob;
+  background-color: var(--wui-color-pink-500);
+  color: var(--wui-color-black-0);
+}

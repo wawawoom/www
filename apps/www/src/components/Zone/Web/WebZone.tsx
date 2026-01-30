@@ -1,9 +1,8 @@
 import { WuiLink, WuiLinkColor } from "@wawawoom/wui";
 
-import { Section } from "../ts/enum/section.enum";
-import type { ZoneProps } from "./zone.props";
+import { Section } from "../../../ts/enum/section.enum";
 
-export const WebZone = (props: ZoneProps) => {
+export const WebZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (

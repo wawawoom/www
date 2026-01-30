@@ -1,0 +1,50 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  width: 50vh;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "me ui"
+    "web mob";
+  transition:
+    grid-template-columns 0.4s ease-in-out,
+    grid-template-rows 0.4s ease-in-out,
+    width 0.5s ease-in-out;
+
+  max-width: 90vh;
+  max-height: 90vh;
+
+  &:hover {
+    width: 80vw;
+  }
+}
+
+.container:has(.me:hover) {
+  grid-template-columns: 8fr 1fr;
+  grid-template-rows: 8fr 1fr;
+}
+
+.container:has(.ui:hover) {
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 8fr 1fr;
+}
+
+.container:has(.web:hover) {
+  grid-template-columns: 8fr 1fr;
+  grid-template-rows: 1fr 8fr;
+}
+
+.container:has(.mob:hover) {
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 8fr;
+}

@@ -1,0 +1,25 @@
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin: 0 0 1em 0;
+}
+
+.badges {
+  display: flex;
+  gap: 5px;
+}
+
+.badge {
+  border-radius: 40px;
+  padding: 3px 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

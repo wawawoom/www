@@ -1,0 +1,94 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal--expanded {
+  opacity: 1;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 64px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  opacity: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.modal--expanded .modal__close {
+  opacity: 1;
+}
+
+.modal__content {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding: 3rem 6rem;
+}
+
+.modal--expanded {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.modal--me {
+  background-color: var(--wui-color-green-500);
+}
+
+.modal--ui {
+  background-color: var(--wui-color-yellow-500);
+}
+
+.modal--web {
+  background-color: var(--wui-color-blue-500);
+}
+
+.modal--mob {
+  background-color: var(--wui-color-pink-500);
+}
+
+.modal--me .modal__close,
+.modal--ui .modal__close {
+  color: var(--wui-color-alias-neutral-900);
+}
+
+.modal--web .modal__close,
+.modal--mob .modal__close {
+  color: var(--wui-color-alias-neutral-0);
+}
