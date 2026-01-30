@@ -6,7 +6,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (
-    <article>
+    <>
       <h1>React Native developper</h1>
       <p>I'm a mobile React Native developper</p>
 
@@ -21,6 +21,6 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
       >
         See more
       </WuiLink>
-    </article>
+    </>
   );
 };

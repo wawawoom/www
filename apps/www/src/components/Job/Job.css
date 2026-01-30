@@ -1,0 +1,30 @@
+.job {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      border-radius: 100%;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .content {
+    padding-left: 6rem;
+  }
+
+  .badges {
+    margin-top: 1rem;
+  }
+
+  .description {
+    margin-top: 1rem;
+    white-space: pre-line;
+  }
+}

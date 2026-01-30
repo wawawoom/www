@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { WuiColorAlias } from "@wawawoom/wui";
+import { WuiColorAlias, WuiColorValue } from "@wawawoom/wui";
 
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
@@ -77,7 +77,7 @@ const App = () => {
       <div className="container">
         <Zone
           section={Section.ME}
-          title="me."
+          title="nico."
           titleColor={WuiColorAlias.NEUTRAL_900}
           onOpenModal={onOpenModal}
         />
@@ -109,6 +109,7 @@ const App = () => {
           section={section}
           isAnimating={isAnimating}
           onCloseModal={onCloseModal}
+          closeButtonColor={section === Section.WEB || section === Section.MOB ? WuiColorValue.BLACK_0 : WuiColorValue.BLACK_900}
         />
       )}
     </div>

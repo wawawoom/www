@@ -1,4 +1,7 @@
 import {
+  WuiBadge,
+  WuiBadgeColor,
+  WuiBadgeSize,
   WuiLink,
   WuiLinkColor,
   WuiText,
@@ -16,7 +19,7 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (
-    <article>
+    <>
       <img
         src="/img/nicolas-payrouse.webp"
         alt="Nicolas Payrouse"
@@ -33,15 +36,15 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiText as={WuiTextAs.P} className="badges">
-        <span className="badge">UI</span>
-        <span className="badge">UX</span>
-        <span className="badge">JavaScript</span>
-        <span className="badge">Typescript</span>
-        <span className="badge">HTML</span>
-        <span className="badge">CSS</span>
-        <span className="badge">NextJs</span>
-        <span className="badge">React</span>
-        <span className="badge">React Native</span>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>UI</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>UX</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>JavaScript</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>Typescript</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>HTML</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>CSS</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>NextJs</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>React</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>React Native</WuiBadge>
       </WuiText>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XS}>
@@ -67,6 +70,6 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
       >
         See more
       </WuiLink>
-    </article>
+    </>
   );
 };

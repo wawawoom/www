@@ -17,6 +17,7 @@
   --wui-title-font-size-h5: 1.625rem;
   --wui-title-font-size-h6: 1.25rem;
   --wui-title-line-height-base: 1.2;
+  --wui-breakpoint-desktop: 992px;
   --wui-color-black-0: #ffffff;
   --wui-color-black-100: #f5f5f5;
   --wui-color-black-200: #e0e0e0;
@@ -122,6 +123,21 @@
   --wui-color-alias-info-700: #173ca1;
   --wui-color-alias-info-800: #122f7e;
   --wui-color-alias-info-900: #0d225b;
-  --wui-space-sm: 4px;
-  --wui-space-md: 8px;
+  --wui-space-1: 0.056rem;
+  --wui-space-2: 0.112rem;
+  --wui-space-4: 0.224rem;
+  --wui-space-6: 0.336rem;
+  --wui-space-8: 0.448rem;
+  --wui-space-10: 0.56rem;
+  --wui-space-12: 0.672rem;
+  --wui-space-14: 0.784rem;
+  --wui-space-16: 0.896rem;
+  --wui-space-18: 1.008rem;
+  --wui-space-20: 1.12rem;
+  --wui-space-24: 1.344rem;
+  --wui-space-30: 1.68rem;
+  --wui-space-36: 2.016rem;
+  --wui-space-44: 2.464rem;
+  --wui-space-60: 3.36rem;
+  --wui-space-96: 5.376rem;
 }

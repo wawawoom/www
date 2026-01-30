@@ -1,0 +1,8 @@
+{
+  "breakpoint": {
+    "desktop": {
+      "value": "992px",
+      "type": "dimension"
+    }
+  }
+}

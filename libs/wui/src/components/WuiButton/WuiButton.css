@@ -8,6 +8,7 @@
   justify-content: center;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
+  gap: 0.5rem;
 }
 
 .wui-button:active:not(:disabled) {
@@ -129,22 +130,21 @@
 }
 
 /* size */
-/* TODO put this in tokens */
 .wui-button--s {
   height: 2.5rem;
-  padding: 0 0.625rem;
+  padding: 0 var(--wui-space-12);
   font-size: 1rem;
 }
 
 .wui-button--m {
   height: 3rem;
-  padding: 0 0.875rem;
+  padding: 0 var(--wui-space-16);
   font-size: 1.125rem;
 }
 
 .wui-button--l {
   height: 3.5rem;
-  padding: 0 1.125rem;
+  padding: 0 var(--wui-space-20);
   font-size: 1.25rem;
 }
 

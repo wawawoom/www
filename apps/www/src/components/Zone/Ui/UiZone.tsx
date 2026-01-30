@@ -6,7 +6,7 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (
-    <article>
+    <>
       <h1>UI / UX designer</h1>
 
       <p>
@@ -34,6 +34,6 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
       >
         See more
       </WuiLink>
-    </article>
+    </>
   );
 };

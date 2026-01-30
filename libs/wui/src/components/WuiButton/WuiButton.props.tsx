@@ -19,4 +19,6 @@ export interface WuiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> 
   color?: WuiButtonColor;
   size?: WuiButtonSize;
   block?: boolean;
+  leftIcon?: string;
+  rightIcon?: string;
 }

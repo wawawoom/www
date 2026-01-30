@@ -41,6 +41,20 @@ const meta = {
         defaultValue: { summary: "false" },
       },
     },
+    leftIcon: {
+      control: "text",
+      description: "Icon to display on the left of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-left",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    rightIcon: {
+      control: "text",
+      description: "Icon to display on the right of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-right",
+      table: {
+        type: { summary: "string" },
+      },
+    },
     children: {
       control: "text",
       table: {

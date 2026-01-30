@@ -8,6 +8,11 @@
   text-decoration: underline;
 }
 
+.wui-link--ghost {
+  color: inherit;
+  text-decoration: none;
+}
+
 .wui-link--light,
 .wui-link--dark,
 .wui-link--light,

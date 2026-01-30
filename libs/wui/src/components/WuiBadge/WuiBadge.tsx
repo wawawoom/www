@@ -1,0 +1,34 @@
+import { forwardRef } from "react";
+
+import { clsx } from "../../utils/clsx";
+import {
+  WuiBadgeColor,
+  WuiBadgeProps,
+  WuiBadgeSize,
+} from "./WuiBadge.props";
+
+export const WuiBadge = forwardRef<HTMLButtonElement, WuiBadgeProps>(
+  (
+    {
+      color = WuiBadgeColor.DARK,
+      size = WuiBadgeSize.M,
+      children,
+      className = "",
+      ...props
+    },
+    ref
+  ) => {
+    const classNames = clsx(
+      "wui-badge",
+      `wui-badge--${color}`,
+      `wui-badge--${size}`,
+      className
+    );
+
+    return (
+      <span ref={ref} className={classNames} {...props}>{children}</span>
+    );
+  }
+);
+
+WuiBadge.displayName = "WuiButton";

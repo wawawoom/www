@@ -1,6 +1,21 @@
 {
   "space": {
-    "sm": { "value": "4px", "type": "spacing" },
-    "md": { "value": "8px", "type": "spacing" }
+    "1": { "value": "0.056rem", "type": "spacing" },
+    "2": { "value": "0.112rem", "type": "spacing" },
+    "4": { "value": "0.224rem", "type": "spacing" },
+    "6": { "value": "0.336rem", "type": "spacing" },
+    "8": { "value": "0.448rem", "type": "spacing" },
+    "10": { "value": "0.56rem", "type": "spacing" },
+    "12": { "value": "0.672rem", "type": "spacing" },
+    "14": { "value": "0.784rem", "type": "spacing" },
+    "16": { "value": "0.896rem", "type": "spacing" },
+    "18": { "value": "1.008rem", "type": "spacing" },
+    "20": { "value": "1.12rem", "type": "spacing" },
+    "24": { "value": "1.344rem", "type": "spacing" },
+    "30": { "value": "1.68rem", "type": "spacing" },
+    "36": { "value": "2.016rem", "type": "spacing" },
+    "44": { "value": "2.464rem", "type": "spacing" },
+    "60": { "value": "3.36rem", "type": "spacing" },
+    "96": { "value": "5.376rem", "type": "spacing" }
   }
 }

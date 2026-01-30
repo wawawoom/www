@@ -13,6 +13,9 @@ export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
       color = WuiButtonColor.LIGHT,
       size = WuiButtonSize.M,
       block = false,
+      leftIcon,
+      rightIcon,
+      children,
       className = "",
       ...props
     },
@@ -26,7 +29,15 @@ export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
       className
     );
 
-    return <button ref={ref} className={classNames} {...props} />;
+    return (
+      <button ref={ref} className={classNames} {...props}>
+        {leftIcon && <i className={leftIcon}></i>}
+
+        {children}
+
+        {rightIcon && <i className={rightIcon}></i>}
+      </button>
+    );
   }
 );
 

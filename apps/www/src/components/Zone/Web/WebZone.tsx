@@ -6,7 +6,7 @@ export const WebZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (
-    <article>
+    <>
       <h1>React developper</h1>
       <p>
         Je me suis donc tourné vers le développement Javascript natif et jQuery.
@@ -36,6 +36,6 @@ export const WebZone = (props: { onOpenModal: (section: Section) => void }) => {
       >
         See more
       </WuiLink>
-    </article>
+    </>
   );
 };
