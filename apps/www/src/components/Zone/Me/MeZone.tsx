@@ -20,6 +20,19 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
+      <WuiBadge
+        size={WuiBadgeSize.L}
+        color={WuiBadgeColor.WARNING}
+        style={{
+          marginLeft: "7rem",
+          position: "absolute",
+          top: "2rem",
+          width: "max-content",
+        }}
+      >
+        Open to work !
+      </WuiBadge>
+
       <img
         src="/img/nicolas-payrouse.webp"
         alt="Nicolas Payrouse"
@@ -36,27 +49,45 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiText as={WuiTextAs.P} className="badges">
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>UI</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>UX</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>JavaScript</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>Typescript</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>HTML</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>CSS</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>NextJs</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>React</WuiBadge>
-        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>React Native</WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          UI
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          UX
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          JavaScript
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Typescript
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          HTML
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          CSS
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          NextJs
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          React
+        </WuiBadge>
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          React Native
+        </WuiBadge>
       </WuiText>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XS}>
-        📍 357 Chemin de Saquier - 06200 Nice
+        📍 357 Chemin de Saquier – 06200 Nice, France
         <br />
-        📱 wawawoom[@]gmail.com / 06 31 796 781
+        📱 wawawoom[@]gmail.com / +33 (0)6 31 796 781
         <br />
-        👨 Né le 5 Décembre 1978, marié, deux enfants.
+        👨 Born 5 December 1978, married, two children.
         <br />
-        🇬🇧 French, english spoken and written.
+        🌍 French and English: spoken and written.
         <br />
-        🚗 Titulaire du permis B
+        🚗 Full driving licence (Category B)
       </WuiText>
 
       <WuiLink

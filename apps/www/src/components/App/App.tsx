@@ -7,70 +7,85 @@ import { Section } from "../../ts/enum/section.enum.ts";
 import { Modal } from "../Modal/Modal/Modal.tsx";
 import { Zone } from "../Zone/Zone/Zone.tsx";
 import "./App.css";
+import { pathToSection } from "../../utils/path-to-section.ts";
+
+
 
 const App = () => {
-  // Détecter les changements d'URL et déclencher une action
-  const currentPath = useLocation((pathname) => {
-    // Action déclenchée à chaque changement d'URL
-    console.log("URL changée vers:", pathname);
 
-    // Exemple d'actions que vous pouvez faire ici :
-    if (pathname === "/me") {
-      console.log("Action spécifique pour /me");
-      // Ajoutez votre logique ici (animation, scroll, etc.)
-    } else if (pathname === "/") {
-      console.log("Action spécifique pour /");
-      // Ajoutez votre logique ici
-    }
-  });
+  const currentSectionFromURL = useLocation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [section, setSection] = useState<Section | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const hasInitializedRef = useRef(false);
+  const pendingReopenRef = useRef<{ section: Section; updateUrl: boolean } | null>(null);
+
+  const openModal = (section: Section, updateUrl: boolean) => {
+    if (updateUrl) navigateTo(`/${section}`);
+    setSection(section);
+    setIsModalOpen(true);
+    requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+  };
 
   const onOpenModal = (section: Section, updateUrl: boolean = true) => {
-    if (updateUrl) {
-      navigateTo(`/${section}`);
+    if (isModalOpen) {
+      pendingReopenRef.current = { section, updateUrl };
+      onCloseModal();
+    } else {
+      openModal(section, updateUrl);
     }
-
-    setIsModalOpen(true);
-    setSection(section);
-
-    // Démarrer l'animation après un court délai pour permettre le rendu
-    requestAnimationFrame(() => {
-      setIsAnimating(true);
-    });
   };
 
-  const onCloseModal = () => {
-    // Inverser l'animation : retirer la classe expanded
+  const onCloseModal = (updateUrl: boolean = true) => {
     setIsAnimating(false);
 
-    // Fermer la modal après la fin de l'animation
     setTimeout(() => {
+      const pendingOpenModal = pendingReopenRef.current;
+      pendingReopenRef.current = null;
+
       setIsModalOpen(false);
       setSection(null);
-      navigateTo("/");
-    }, 500); // Durée de l'animation CSS
+
+      if (updateUrl) {
+        navigateTo("/");
+      }
+
+      if (pendingOpenModal) {
+        requestAnimationFrame(() => openModal(pendingOpenModal.section, pendingOpenModal.updateUrl));
+      }
+    }, 500);
   };
+
+  // Synchroniser la modal avec l'URL (bouton retour / avant du navigateur)
+  useEffect(() => {
+    if (!hasInitializedRef.current) return;
+
+    const sectionFromUrl = pathToSection(currentSectionFromURL);
+
+    if (!sectionFromUrl) {
+      if (isModalOpen) requestAnimationFrame(() => onCloseModal(false));
+      return;
+    }
+
+    if (!isModalOpen || section !== sectionFromUrl) {
+      requestAnimationFrame(() => openModal(sectionFromUrl, false));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSectionFromURL, isModalOpen, section]);
 
   // Ouvrir automatiquement la modal au chargement si l'URL correspond à une section
   useEffect(() => {
     if (!hasInitializedRef.current) {
       hasInitializedRef.current = true;
-      const sectionFromPath = currentPath.replace("/", "") as Section | "";
-      if (
-        sectionFromPath &&
-        Object.values(Section).includes(sectionFromPath as Section)
-      ) {
-        // Petit délai pour s'assurer que le DOM est prêt
-        setTimeout(() => {
-          onOpenModal(sectionFromPath as Section, false);
-        }, 100);
+
+      const sectionFromUrl = pathToSection(currentSectionFromURL);
+      if (sectionFromUrl) {
+        setTimeout(() => onOpenModal(sectionFromUrl, false), 100);
       }
     }
-  }, [currentPath]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSectionFromURL]);
 
   return (
     <div id="app">
@@ -110,7 +125,11 @@ const App = () => {
           isAnimating={isAnimating}
           onCloseModal={onCloseModal}
           onOpenModal={onOpenModal}
-          closeButtonColor={section === Section.WEB || section === Section.MOB ? WuiColorValue.BLACK_0 : WuiColorValue.BLACK_900}
+          closeButtonColor={
+            section === Section.WEB || section === Section.MOB
+              ? WuiColorValue.BLACK_0
+              : WuiColorValue.BLACK_900
+          }
         />
       )}
     </div>

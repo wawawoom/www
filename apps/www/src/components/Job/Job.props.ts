@@ -4,7 +4,7 @@ export interface JobProps {
   logoUrl: string;
   companyName: string;
   jobTitle: string;
-  description: string | ReactElement;
-  badges?: string[];
+  description?: string | ReactElement;
+  badges?: (string | ReactElement)[];
   duration?: string;
 }

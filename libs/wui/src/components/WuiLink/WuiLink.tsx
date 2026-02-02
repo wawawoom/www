@@ -5,8 +5,6 @@ import { WuiLinkColor, WuiLinkProps, WuiLinkSize } from "./WuiLink.props";
 
 export const WuiLink = forwardRef<HTMLAnchorElement, WuiLinkProps>(
   ({ color = WuiLinkColor.NONE, size, className = "", ...props }, ref) => {
-    console.log(props);
-
     const classNames = clsx(
       "wui-link",
       `wui-link--${color}`,

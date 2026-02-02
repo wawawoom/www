@@ -14,14 +14,28 @@ import {
 } from "@wawawoom/wui";
 import { WuiColorAlias } from "@wawawoom/wui";
 
-import { Job } from "../../Job/Job";
 import { Section } from "../../../ts/enum/section.enum";
+import { Job } from "../../Job/Job";
+import "./MeModal.css";
 
 export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
   return (
     <>
+      <WuiBadge
+        size={WuiBadgeSize.L}
+        color={WuiBadgeColor.WARNING}
+        style={{
+          marginLeft: "7rem",
+          position: "relative",
+          top: "2rem",
+          width: "max-content",
+        }}
+      >
+        Open to work !
+      </WuiBadge>
+
       <img
         src="/img/nicolas-payrouse.webp"
         alt="Nicolas Payrouse"
@@ -34,14 +48,49 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         style={{ marginBottom: 0 }}
       >
         Nicolas Payrouse
-        <WuiBadge
-          size={WuiBadgeSize.L}
-          color={WuiBadgeColor.WARNING}
-          style={{ marginLeft: "1rem", position: "relative", top: "-2rem" }}
-        >
-          Open to work !
-        </WuiBadge>
       </WuiTitle>
+
+      <p className="links">
+        <WuiLink
+          href="https://www.linkedin.com/in/nicolas-payrouse-3016094/"
+          target="_blank"
+          size={WuiLinkSize.L}
+          color={WuiLinkColor.NONE}
+          title="Linkedin profile"
+        >
+          <i className="fa-brands fa-linkedin"></i>
+        </WuiLink>
+
+        <WuiLink
+          href="https://github.com/wawawoom"
+          target="_blank"
+          size={WuiLinkSize.L}
+          color={WuiLinkColor.NONE}
+          title="GitHub profile"
+        >
+          <i className="fa-brands fa-github"></i>
+        </WuiLink>
+
+        <WuiLink
+          href="mailto:wawawoom@gmail.com"
+          target="_blank"
+          size={WuiLinkSize.L}
+          color={WuiLinkColor.NONE}
+          title="Contact me by email"
+        >
+          <i className="fa-solid fa-envelope"></i>
+        </WuiLink>
+
+        <WuiLink
+          href="tel:+33631796781"
+          target="_blank"
+          size={WuiLinkSize.L}
+          color={WuiLinkColor.NONE}
+          title="Contact me by phone"
+        >
+          <i className="fa-solid fa-mobile-screen-button"></i>
+        </WuiLink>
+      </p>
 
       <WuiTitle
         as={WuiTitleAs.H2}
@@ -49,7 +98,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         color={WuiColorAlias.SUCCESS_900}
         style={{ marginBottom: "2rem" }}
       >
-        Web Designer & Développeur front-end
+        Web Designer & Front-end Developer
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL}>
@@ -58,63 +107,59 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Graphiste de formation, je me suis rapidement tourné vers le
-        développement web, car je souhaitais en tant que webmaster à mon compte
-        ne pas dépendre d'un développeur pour créer ma société. Après de longues
-        nuits à apprendre les bases du développement web, j'ai pu créer tout
-        d'abord des sites vitrines très simples, puis de plus en plus complexes.
-        Adobe Flash a été une grande révélation à l'époque, je pouvais enfin
-        concilier mes idées graphiques et l'interaction que nécessitait un site
-        web original et attractif. Rapidement je parlais l'ActionScript 3 en
-        deuxième langue :) Je me souviens encore parfaitement de l'annonce de
-        Steve Jobs lors de la présentation de l'iPhone 1. « All the web on a
-        smartphone »… Pas vraiment, il venait de tuer la technologie Flash…
+        Trained as a graphic designer, I quickly moved into web development
+        because as a freelance webmaster I wanted to build my company without
+        depending on a developer. After many late nights learning the basics of
+        web development, I started by creating very simple showcase sites, then
+        increasingly complex ones. Adobe Flash was a major revelation at the
+        time: I could finally combine my design ideas with the interaction that
+        an original, engaging website required. I soon spoke ActionScript 3 like
+        a second language :) I still remember Steve Jobs’s announcement at the
+        iPhone 1 keynote. “All the web on a smartphone”… Not quite—he had just
+        killed Flash technology…
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Je me suis donc tourné vers le développement Javascript natif et jQuery.
-        Le projet sur lequel je travaillais à ce moment-là, nécessitait une
-        interface responsive pour les navigateurs web mobiles. Les media-queries
-        et Bootstrap n'avaient alors plus de secrets pour moi. Mais… Il est
-        évident que ce n'était pas une solution parfaite. Le développement natif
-        procurait de meilleures performances UX. Il a alors fallu attendre la
-        sortie de React Native pour que je trouve mon Graal. Développement JS
-        mais performances très proches du Natif ! Et cerise sur le gâteau, un
-        seul code pour iOs et Android. Je plonge alors corps et âme dans ce
-        framework en créant deux apps mobiles (en production) en étroite
-        collaboration avec deux développeurs backend qui me fournissent l'accès
-        aux données au travers d'API Rest et GraphQL. En parallèle je m'occupe
-        de la UI / UX et du développement Front-end de la webapp associée à
-        l'app mobile.
+        I therefore turned to native JavaScript and jQuery development. The
+        project I was working on at the time required a responsive interface for
+        mobile web browsers. Media queries and Bootstrap soon held no secrets
+        for me. But… it was clear that this wasn’t a perfect solution. Native
+        development delivered better UX performance. I had to wait for React
+        Native to find my holy grail: JS development with performance close to
+        native, and the icing on the cake—a single codebase for iOS and Android.
+        I threw myself into this framework, building two mobile apps (now in
+        production) in close collaboration with two backend developers who
+        provide data access via REST and GraphQL APIs. In parallel, I handle the
+        UI/UX and front-end development of the web app that goes with the mobile
+        app.
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Actuellement je travaille pour Smood en tant que développeur front-end
-        du site web dédié aux end users. Nous développons sur NextJs en
-        TypeScript.
+        I currently work at Smood as a front-end developer on the website for
+        end users. We develop with Next.js and TypeScript.
+      </WuiText>
+
+      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
+        Are you looking for a Senior Web or React Native developer with a strong
+        sense of design and user experience? Let’s talk! +33 6 31 796 781
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
         Nicolas.
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Vous recherchez un développeur Web ou React Native Senior doté d'un sens
-        du design et de l'expérience utilisateur ? Parlons en ! 06 31 796 781
-      </WuiText>
-
       <WuiTitle
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
-        Expériences professionnelles
+        Work Experience
       </WuiTitle>
 
       <Job
         logoUrl="/img/job/logo-smood.png"
         companyName="Smood"
-        duration="Depuis Nov. 2021 ± 4 ans"
-        jobTitle="Développeur Front-end &amp; Design system"
+        duration="Since Nov. 2021 (~4 years)"
+        jobTitle="Front-end Developer &amp; Design system"
         badges={[
           "React",
           "NextJs",
@@ -130,26 +175,39 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "Web Performance",
           "Web SEO",
         ]}
-        description="Développement du site web de la société Suise Smood.ch, spécialisée dans la commande et la livraison de repas, fleurs, courses... Site web responsive développé sur le framework NextJs en React et TypeScript. Développement de tests unitaires en Jest et tests e2e / composants avec Cypress. Développement d'une librairie de composants UI documentés avec Storybook."
+        description={
+          <>
+            Development of the website for Swiss company Smood.ch, which
+            specialises in ordering and delivery of meals, flowers, groceries
+            and more. Responsive web app built with the Next.js framework in
+            React and TypeScript. Unit testing with Jest and e2e/component
+            testing with Cypress. Development of a documented UI component
+            library with Storybook.{" "}
+            <WuiLink
+              href="https://smood.ch"
+              target="_blank"
+              color={WuiLinkColor.NONE}
+            >
+              https://smood.ch
+            </WuiLink>
+          </>
+        }
       />
 
       <Job
         logoUrl="/img/job/logo-gtl.png"
         companyName="GTL Studio"
-        duration="Nov. 2018 à Nov. 2021 ± 3 ans"
-        jobTitle="Développeur mobile"
-        badges={[
-          "React native",
-          "Firebase",
-        ]}
-        description="Développement d'une app mobile en React Native pour la société Eyescyou. Le développement de cette application m'a permis de toucher à différents domaines comme les Notifications Firebase, l'enregistrement et la diffusion de vidéos, la géolocalisation, le stockage de données en LocalStorage, appels vers une API graphQL, et des problématiques spécifiques liées à Android et / ou iOs..."
+        duration="Nov. 2018 – Nov. 2021 (~3 years)"
+        jobTitle="Mobile Developer"
+        badges={["React native", "Firebase"]}
+        description="Development of a React Native mobile app for Eyescyou. Building this app allowed me to work across several areas: Firebase notifications, video recording and streaming, geolocation, LocalStorage data persistence, GraphQL API integration, and Android and iOS-specific challenges."
       />
 
       <Job
         logoUrl="/img/job/logo-stent.png"
         companyName="Stent AI"
-        duration="Nov. 2018 à Nov. 2021 ± 3 ans"
-        jobTitle="Graphiste & développeur front-end & mobile"
+        duration="Nov. 2018 – Nov. 2021 (~3 years)"
+        jobTitle="Graphic Designer & Front-end & Mobile Developer"
         badges={[
           "HTML",
           "CSS",
@@ -160,14 +218,14 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "Illustrator",
           "Photoshop",
         ]}
-        description="Développement d'une web app de gestion de campagnes de recrutement et de génération de leads sur LinkedIn. Recueil des besoins métiers, maquettes des écrans pour validation avec les différentes équipes basées en France et au Canada. Framework maison à base de javascript natif et jQuery. Charte graphique, maquettes, UI et UX de l'application mobile développée en React Native. (React 16.8 Hooks)"
+        description="Development of a web app for managing recruitment campaigns and generating leads on LinkedIn. Gathering business needs, wireframes for validation with different teams based in France and Canada. Home-made framework based on native JavaScript and jQuery. Graphic charter, wireframes, UI and UX of the mobile app developed in React Native. (React 16.8 Hooks)"
       />
 
       <Job
         logoUrl="/img/job/logo-hoozin.png"
         companyName="Hoozin"
-        duration="Fév. 2012 à Nov. 2018 ± 6 ans"
-        jobTitle="Graphiste & développeur front-end"
+        duration="Feb. 2012 – Nov. 2018 (~6 years)"
+        jobTitle="Graphic Designer & Front-end Developer"
         badges={[
           "HTML",
           "CSS",
@@ -180,13 +238,13 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "Illustrator",
           "Photoshop",
         ]}
-        description="En tant que lead graphique, ma mission consiste à maquetter sur Illustrator chaque écran du réseau social d'entreprise hoozin, créé par Prexens en début d'année 2012. Chaque écran doit être étudié pour répondre aux différentes contraintes des terminaux sur lesquels le site sera consulté : écrans de bureau, tablettes et smartphones. J'ai également pour mission d'intégrer ces écrans en utilisant les standards actuels, le HTML, le CSS (Less), et le Javascript. Un des aspects importants de mon travail a été d'organiser le code JavaScript sous forme de modules pour proposer à d'autres développeurs de créer leurs propres applications dans l'app store de hoozin."
+        description="As graphic lead, my role was to design each screen of the hoozin enterprise social network (created by Prexens in early 2012) in Illustrator. Each screen had to be designed to meet the constraints of the devices on which the site would be viewed: desktop, tablets and smartphones. I was also responsible for implementing these screens using current standards: HTML, CSS (Less) and JavaScript. A key part of my work was organising the JavaScript code into modules so that other developers could build their own applications for the hoozin app store."
       />
 
       <Job
         logoUrl="/img/job/logo-wawawoom.png"
         companyName="WaWaWooM"
-        duration="Avril 2005 à Juin 2012 ± 7 ans"
+        duration="Apr. 2005 – Jun. 2012 (~7 years)"
         jobTitle="Webmaster Freelance"
         badges={[
           "HTML",
@@ -200,86 +258,123 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "Illustrator",
           "Photoshop",
         ]}
-        description={`Infographiste et développeur web freelance.
-Création de sites internet statiques et dynamiques.
-Réalisation de vidéos 3D.
-Mise en place de solutions de gestion de bases de données Filemaker.
-Création de charte graphique.
-Solutions e-commerce.
-Paiement en ligne.
-Développement de projets personnels orientés Web.`}
+        description={`Freelance graphic designer and web developer.
+Creation of static and dynamic websites.
+3D video production.
+Implementation of Filemaker database management solutions.
+Brand identity and visual guidelines.
+E-commerce solutions.
+Online payment integration.
+Development of web-oriented personal projects.`}
       />
 
       <Job
         logoUrl="/img/job/logo-genghis-mind.png"
         companyName="Genghis Mind"
-        duration="Mai 2003 à Avril 2005 ± 2 ans"
+        duration="May 2003 – Apr. 2005 (~2 years)"
         jobTitle="Webmaster Freelance"
-        badges={["Flash / ActionScript 3", "Illustrator", "Photoshop", "Filemaker"]}
-        description={`Co-réalisateur d'un automate de distribution de denrées alimentaires ouvert 24/24. Projet à l'état de prototype. Responsable de l'interface de commande et du programme qui gère l'emplacement de chaque produit dans l'espace de stockage.`}
+        badges={[
+          "Flash / ActionScript 3",
+          "Illustrator",
+          "Photoshop",
+          "Filemaker",
+        ]}
+        description={`Co-developer of a 24/7 food vending machine. Prototype-stage project. Responsible for the ordering interface and the programme managing the location of each product in the storage area.`}
       />
 
       <Job
         logoUrl="/img/job/logo-jsshark.png"
         companyName="JS Shark"
-        duration="Oct. 2002 à Avril 2003 ± 6 mois"
+        duration="Oct. 2002 – Apr. 2003 (~6 months)"
         jobTitle="Day trader"
         badges={["TradeStation", "Filemaker"]}
-        description={`Gestion de portefeuille boursier, sur le marché américain (NASDAQ). Création de programmes de trading automatisés sur la plateforme TradeStation 7. Création d'une base de données Filemaker permettant de gérer les trades effectués.`}
+        description={`Stock portfolio management on the US market (NASDAQ). Creation of automated trading programmes on the TradeStation 7 platform. Development of a Filemaker database to manage executed trades.`}
       />
 
       <Job
         logoUrl="/img/job/logo-exhibit.png"
         companyName="Exhib'It"
-        duration="Oct. 2002 à Avril 2003 ± 6 mois"
-        jobTitle="Infographiste"
+        duration="Oct. 2002 – Apr. 2003 (~6 months)"
+        jobTitle="Graphic Designer"
         badges={["Illustrator", "Photoshop"]}
-        description={`Responsable de l'utilisation d'une imprimante grand format de type VUTEK. Calibrage couleurs, gestion RIP, impression grand et très grand format sur différents supports. Création graphique d'affiches grand format pour des sociétés comme TF1, Festival de Cannes, Citroën, Carrefour...`}
+        description={`Responsible for operating a VUTEK large-format printer. Colour calibration, RIP management, large and extra-large format printing on various media. Graphic design of large-format posters for companies such as TF1, Cannes Film Festival, Citroën, Carrefour and others.`}
       />
 
       <Job
         logoUrl="/img/job/logo-design70.png"
         companyName="Design 70"
-        duration="Fév. 2001 à Mars 2002 ± 1 an"
-        jobTitle="Infographiste & Développeur Web"
-        badges={["HTML", "CSS", "Javascript", "PHP", "Illustrator", "Photoshop", "Filemaker"]}
-        description={`Gestion d'une interface web, destinée à vendre du mobilier de collection. Création et utilisation d'une base de données Filemaker Pro servant à suivre les demandes et les commandes des clients. Gestion automatisée des emails entrant par le site Web. Utilisation quotidienne de logiciels de création graphique de sites Web, Macromedia Dreamweaver & Flash.`}
+        duration="Feb. 2001 – Mar. 2002 (~1 year)"
+        jobTitle="Graphic Designer & Web Developer"
+        badges={[
+          "HTML",
+          "CSS",
+          "Javascript",
+          "PHP",
+          "Illustrator",
+          "Photoshop",
+          "Filemaker",
+        ]}
+        description={`Management of a web interface for selling collectible furniture. Creation and use of a Filemaker Pro database to track customer enquiries and orders. Automated handling of incoming emails via the website. Daily use of web design software: Macromedia Dreamweaver & Flash.`}
       />
 
       <Job
         logoUrl="/img/job/logo-octo.png"
         companyName="Octo Communication"
-        duration="Sept. 1998 à Déc. 2000 ± 2 ans"
-        jobTitle="Infographiste"
+        duration="Sep. 1998 – Dec. 2000 (~2 years)"
+        jobTitle="Graphic Designer"
         badges={["Illustrator", "Photoshop", "Filemaker"]}
-        description={`Création graphique de dépliants publicitaires destinés à la vente par correspondance. Mise en place d'un système de gestion de commande client et de fabrication automatisé. Utilisation quotidienne de machines de découpe d'adhésifs de type SUMMAGRAPHICS, ainsi que d'une imprimante sur vinyle de type GERBER.`}
+        description={`Graphic design of advertising leaflets for mail-order sales. Implementation of a customer order management and automated production system. Daily use of SUMMAGRAPHICS adhesive cutting machines and a GERBER vinyl printer.`}
       />
 
       <WuiTitle
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
-        Compétences
+        Skills
       </WuiTitle>
 
       <Job
         logoUrl="/img/job/logo-graphisme.jpg"
         companyName="UI / UX"
-        jobTitle="Graphiste"
-        badges={["Figma", "Illustrator", "Photoshop", "UI / UX", "Wireframes", "Prototyping"]}
-        description={<>Maîtrise complète des outils de création graphique Adobe (Illustrator, Photoshop) pour la conception d'interfaces utilisateur modernes et intuitives. Spécialisé dans la création de wireframes, maquettes haute-fidélité et prototypes interactifs. Approche centrée utilisateur avec une attention particulière aux détails et à l'expérience utilisateur optimale sur tous les supports (desktop, tablette, mobile).<br /><br /><WuiLink href="/ui" onClick={(event) => {
-
-          event.preventDefault();
-          onOpenModal(Section.UI);
-
-        }} color={WuiLinkColor.LIGHT} size={WuiLinkSize.S}>En savoir plus</WuiLink></>}
+        jobTitle="Graphic Designer"
+        badges={[
+          "Figma",
+          "Illustrator",
+          "Photoshop",
+          "UI / UX",
+          "Wireframes",
+          "Prototyping",
+        ]}
+        description={
+          <>
+            Full command of Adobe design tools (Illustrator, Photoshop) for
+            designing modern, intuitive user interfaces. Specialised in
+            wireframes, high-fidelity mockups and interactive prototypes.
+            User-centric approach with strong focus on detail and optimal user
+            experience across all devices (desktop, tablet, mobile).
+            <br />
+            <br />
+            <WuiLink
+              href="/ui"
+              onClick={(event) => {
+                event.preventDefault();
+                onOpenModal(Section.UI);
+              }}
+              color={WuiLinkColor.LIGHT}
+              size={WuiLinkSize.S}
+            >
+              Learn more
+            </WuiLink>
+          </>
+        }
       />
 
       <Job
         logoUrl="/img/job/logo-dev.jpg"
         companyName="Web"
-        jobTitle="Développeur web"
-        badges={["HTML",
+        jobTitle="Web Developer"
+        badges={[
+          "HTML",
           "CSS",
           "Javascript",
           "React",
@@ -292,39 +387,322 @@ Développement de projets personnels orientés Web.`}
           "Bootstrap",
           "Git",
           "Storybook",
-          "Web Responsive"]}
-        description={<>Développement d'applications web modernes avec React, Next.js et TypeScript. Expertise en HTML5, CSS3 (SASS/LESS) et JavaScript ES6+ pour créer des interfaces utilisateur performantes et responsives. Maîtrise des outils de test (Jest, Cypress), de versioning (Git) et de documentation (Storybook). Optimisation des performances web, SEO et accessibilité. Expérience avec Canvas, SVG et les technologies web avancées.<br /><br /><WuiLink href="/web" color={WuiLinkColor.LIGHT} size={WuiLinkSize.S}>En savoir plus</WuiLink></>}
+          "Web Responsive",
+        ]}
+        description={
+          <>
+            Development of modern web applications with React, Next.js and
+            TypeScript. Expertise in HTML5, CSS3 (SASS/LESS) and JavaScript ES6+
+            to build performant, responsive user interfaces. Proficiency in
+            testing (Jest, Cypress), version control (Git) and documentation
+            (Storybook). Web performance, SEO and accessibility optimisation.
+            Experience with Canvas, SVG and advanced web technologies.
+            <br />
+            <br />
+            <WuiLink
+              href="/web"
+              onClick={(event) => {
+                event.preventDefault();
+                onOpenModal(Section.WEB);
+              }}
+              color={WuiLinkColor.LIGHT}
+              size={WuiLinkSize.S}
+            >
+              Learn more
+            </WuiLink>
+          </>
+        }
       />
 
       <Job
         logoUrl="/img/job/logo-dev-mobile.jpg"
         companyName="Mobile"
-        jobTitle="Développeur mobile"
+        jobTitle="Mobile Developer"
         badges={["React Native", "Firebase"]}
-        description={<>Développement d'applications mobiles cross-platform avec React Native pour iOS et Android. Intégration de services Firebase (authentification, base de données, notifications push, analytics). Gestion des fonctionnalités natives (caméra, géolocalisation, stockage local) et optimisation des performances. Publication sur les stores Apple et Google Play avec suivi des métriques et mises à jour continues.<br /><br /><WuiLink href="/mob" color={WuiLinkColor.LIGHT} size={WuiLinkSize.S}>En savoir plus</WuiLink></>}
+        description={
+          <>
+            Development of cross-platform mobile applications with React Native
+            for iOS and Android. Integration of Firebase services
+            (authentication, database, push notifications, analytics).
+            Management of native features (camera, geolocation, local storage)
+            and performance optimisation. Publication on the Apple and Google
+            Play stores with metrics tracking and continuous updates.
+            <br />
+            <br />
+            <WuiLink
+              href="/mob"
+              onClick={(event) => {
+                event.preventDefault();
+                onOpenModal(Section.MOB);
+              }}
+              color={WuiLinkColor.LIGHT}
+              size={WuiLinkSize.S}
+            >
+              Learn more
+            </WuiLink>
+          </>
+        }
       />
 
       <WuiTitle
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
-        Cursus scolaire
+        Personal projects
+      </WuiTitle>
+
+      <Job
+        logoUrl="/img/job/logo-kalei.png"
+        companyName="Kaleï"
+        jobTitle="Draw Kaleïdoscope !"
+        badges={["Canvas", "Javascript", "Math"]}
+        description={
+          <>
+            Become a Kaleï artist ! Kaleï is a little app to draw easily
+            beautiful kaleïdoscopes and Mandalas. Click and move, change colors,
+            pencil and start making hypnotic drawings.
+            <br />
+            <br />
+            <WuiLink
+              href="/projects/kalei"
+              color={WuiLinkColor.LIGHT}
+              size={WuiLinkSize.S}
+            >
+              Try it now !
+            </WuiLink>
+          </>
+        }
+      />
+
+      <Job
+        logoUrl="/img/job/logo-tictac.png"
+        companyName="TicTac tracker"
+        jobTitle="Track time spent on differents tasks."
+        badges={["Javascript", "HTML", "CSS", "PHP", "MySQL"]}
+        description={
+          <>
+            TicTac is a simple and efficient tool to track the time spent on
+            your different tasks. Create your projects, start the timer and
+            analyse your productivity. Manage your tasks easily and visualise
+            your work time in real time.
+            <br />
+            <br />
+            <WuiLink
+              href="/projects/tictac"
+              color={WuiLinkColor.LIGHT}
+              size={WuiLinkSize.S}
+            >
+              Try it now !
+            </WuiLink>
+          </>
+        }
+      />
+
+      <WuiTitle
+        as={WuiTitleAs.H3}
+        style={{ marginTop: "3rem", marginBottom: "2rem" }}
+      >
+        Education
       </WuiTitle>
 
       <Job
         logoUrl="/img/job/logo-arenes.jpg"
         companyName="BTS"
-        duration="Juin 1998"
-        jobTitle="Étudiant en Communication visuelle"
-        description="Mention assez bien"
+        duration="Jun. 1998"
+        jobTitle="Visual Communication Student"
       />
 
       <Job
         logoUrl="/img/job/logo-ltgc.jpg"
         companyName="Baccalauréat F12"
-        duration="Juin 1996"
-        jobTitle="Étudiant en Arts Appliqués"
-        description="Mention bien"
+        duration="Jun. 1996"
+        jobTitle="Applied Arts Student"
+      />
+
+      <WuiTitle
+        as={WuiTitleAs.H3}
+        style={{ marginTop: "3rem", marginBottom: "2rem" }}
+      >
+        But also...
+      </WuiTitle>
+
+      <Job
+        logoUrl="/img/job/logo-outdoor.jpg"
+        companyName="Outdoor activities"
+        duration="Passionate about a lot of things!"
+        jobTitle="Passionate about nature and driven by curiosity"
+        description={
+          <p className="links">
+            <WuiLink
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+              href="https://www.instagram.com/familleyoooo/"
+              target="_blank"
+            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-instagram.png"
+                  width="14"
+                  height="14"
+                  alt="Instagram"
+                  style={{ marginRight: 5 }}
+                />Spent time in nature with my family
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+              href="https://www.youtube.com/@familleyoooo"
+              target="_blank"
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-youtube.png"
+                  width="14"
+                  height="14"
+                  alt="Youtube"
+                  style={{ marginRight: 5 }}
+                />
+                Fishing
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+              href="https://www.youtube.com/@familleyoooo"
+              target="_blank"
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-youtube.png"
+                  width="14"
+                  height="14"
+                  alt="Youtube"
+                  style={{ marginRight: 5 }}
+                />
+                Canyoning
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              VTTAE
+            </WuiBadge>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              Climbing
+            </WuiBadge>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              Slackline
+            </WuiBadge>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              Apnea
+            </WuiBadge>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              Hiking
+            </WuiBadge>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              Camping
+            </WuiBadge>
+
+            <WuiLink
+              href="https://www.youtube.com/@familleyoooo"
+              target="_blank"
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                Mushrooms
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+              href="https://www.instagram.com/familleyoooo/"
+              target="_blank"
+            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-instagram.png"
+                  width="14"
+                  height="14"
+                  alt="Instagram"
+                  style={{ marginRight: 5 }}
+                />Photography
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+              href="https://www.instagram.com/familleyoooo/"
+              target="_blank"
+            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-instagram.png"
+                  width="14"
+                  height="14"
+                  alt="Instagram"
+                  style={{ marginRight: 5 }}
+                />Video
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              href="https://www.youtube.com/@familleyoooo"
+              target="_blank"
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                Search for stones and crystals
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiLink
+              href="https://www.geocaching.com/p/?guid=48f1b1dd-83d0-425d-b958-4fb057f4c0a9&wid=e95a42eb-df39-4192-a76d-2300d3dc44cf&ds=2"
+              target="_blank"
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-geocaching.png"
+                  width="14"
+                  height="14"
+                  alt="Geocaching"
+                  style={{ marginRight: 5 }}
+                />Geocaching
+              </WuiBadge>
+            </WuiLink>
+
+
+            <WuiLink
+              href="/projects/wawawood"
+              target="_blank"
+              color={WuiLinkColor.NONE}
+              size={WuiLinkSize.S}
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+                <img
+                  src="/img/job/logo-wawawood.png"
+                  width="14"
+                  height="14"
+                  alt="Geocaching"
+                  style={{ marginRight: 5 }}
+                />Wood Lamp making
+              </WuiBadge>
+            </WuiLink>
+
+            <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+              LEGO
+            </WuiBadge>
+          </p>
+        }
       />
     </>
   );

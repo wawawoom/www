@@ -1,6 +1,7 @@
 import { WuiText, WuiTextAs, WuiTitle, WuiTitleAs, WuiTextSize, WuiColorAlias, WuiBadge, WuiBadgeColor, WuiBadgeSize } from "@wawawoom/wui";
 import "./Job.css";
 import type { JobProps } from "./Job.props";
+import type { ReactElement } from "react";
 
 export const Job = (props: JobProps) => {
   const { logoUrl, companyName, duration, jobTitle, badges, description } = props;
@@ -28,15 +29,21 @@ export const Job = (props: JobProps) => {
 
         {badges && badges.length > 0 && (
           <div className="badges">
-            {badges.map((badge: string) => (
-              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>{badge}</WuiBadge>
-            ))}
+            {badges.map((badge: string | ReactElement) => {
+              if (typeof badge === 'string') {
+                return (
+                  <WuiBadge key={`badge_${badge}`} color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>{badge}</WuiBadge>
+                )
+              } else {
+                return badge;
+              }
+            })}
           </div>
         )}
 
-        <WuiText as={WuiTextAs.P} className="description">
+        {description && <WuiText as={WuiTextAs.P} className="description">
           {description}
-        </WuiText>
+        </WuiText>}
       </div>
     </article>
   );

@@ -7,7 +7,7 @@ import {
   WuiBadgeSize,
 } from "./WuiBadge.props";
 
-export const WuiBadge = forwardRef<HTMLButtonElement, WuiBadgeProps>(
+export const WuiBadge = forwardRef<HTMLSpanElement, WuiBadgeProps>(
   (
     {
       color = WuiBadgeColor.DARK,
@@ -31,4 +31,4 @@ export const WuiBadge = forwardRef<HTMLButtonElement, WuiBadgeProps>(
   }
 );
 
-WuiBadge.displayName = "WuiButton";
+WuiBadge.displayName = "WuiBadge";
