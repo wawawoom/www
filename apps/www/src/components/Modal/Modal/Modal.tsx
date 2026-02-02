@@ -11,7 +11,7 @@ import "./Modal.css";
 import type { ModalProps } from "./Modal.props.ts";
 
 export const Modal = (props: ModalProps) => {
-  const { section, isAnimating, closeButtonColor = WuiColorValue.BLACK_900, onCloseModal } = props;
+  const { section, isAnimating, closeButtonColor = WuiColorValue.BLACK_900, onCloseModal, onOpenModal } = props;
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -49,7 +49,7 @@ export const Modal = (props: ModalProps) => {
       </WuiLink>
 
       <div className="modal__content">
-        {section === Section.ME && <MeModal />}
+        {section === Section.ME && <MeModal onOpenModal={onOpenModal} />}
         {section === Section.UI && <UiModal />}
         {section === Section.WEB && <WebModal />}
         {section === Section.MOB && <MobModal />}

@@ -109,6 +109,7 @@ const App = () => {
           section={section}
           isAnimating={isAnimating}
           onCloseModal={onCloseModal}
+          onOpenModal={onOpenModal}
           closeButtonColor={section === Section.WEB || section === Section.MOB ? WuiColorValue.BLACK_0 : WuiColorValue.BLACK_900}
         />
       )}

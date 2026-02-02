@@ -15,8 +15,11 @@ import {
 import { WuiColorAlias } from "@wawawoom/wui";
 
 import { Job } from "../../Job/Job";
+import { Section } from "../../../ts/enum/section.enum";
 
-export const MeModal = () => {
+export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
+  const { onOpenModal } = props;
+
   return (
     <>
       <img
@@ -264,7 +267,12 @@ Développement de projets personnels orientés Web.`}
         companyName="UI / UX"
         jobTitle="Graphiste"
         badges={["Figma", "Illustrator", "Photoshop", "UI / UX", "Wireframes", "Prototyping"]}
-        description={<>Maîtrise complète des outils de création graphique Adobe (Illustrator, Photoshop) pour la conception d'interfaces utilisateur modernes et intuitives. Spécialisé dans la création de wireframes, maquettes haute-fidélité et prototypes interactifs. Approche centrée utilisateur avec une attention particulière aux détails et à l'expérience utilisateur optimale sur tous les supports (desktop, tablette, mobile).<br /><br /><WuiLink href="/ui" color={WuiLinkColor.LIGHT} size={WuiLinkSize.S}>En savoir plus</WuiLink></>}
+        description={<>Maîtrise complète des outils de création graphique Adobe (Illustrator, Photoshop) pour la conception d'interfaces utilisateur modernes et intuitives. Spécialisé dans la création de wireframes, maquettes haute-fidélité et prototypes interactifs. Approche centrée utilisateur avec une attention particulière aux détails et à l'expérience utilisateur optimale sur tous les supports (desktop, tablette, mobile).<br /><br /><WuiLink href="/ui" onClick={(event) => {
+
+          event.preventDefault();
+          onOpenModal(Section.UI);
+
+        }} color={WuiLinkColor.LIGHT} size={WuiLinkSize.S}>En savoir plus</WuiLink></>}
       />
 
       <Job

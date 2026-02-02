@@ -7,4 +7,5 @@ export interface ModalProps {
   isAnimating: boolean;
   closeButtonColor?: WuiColorValue;
   onCloseModal: () => void;
+  onOpenModal: (section: Section) => void;
 }
