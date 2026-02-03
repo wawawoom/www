@@ -1,7 +1,12 @@
+import { useRef } from "react";
+
 import {
   WuiBadge,
   WuiBadgeColor,
   WuiBadgeSize,
+  WuiButton,
+  WuiButtonColor,
+  WuiButtonSize,
   WuiLink,
   WuiLinkColor,
   WuiLinkSize,
@@ -20,6 +25,20 @@ import "./MeModal.css";
 
 export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
+
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const workExperienceRef = useRef<HTMLHeadingElement>(null);
+  const skillsRef = useRef<HTMLHeadingElement>(null);
+  const personalProjectsRef = useRef<HTMLHeadingElement>(null);
+  const educationRef = useRef<HTMLHeadingElement>(null);
+  const butAlsoRef = useRef<HTMLHeadingElement>(null);
 
   return (
     <>
@@ -48,6 +67,15 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         style={{ marginBottom: 0 }}
       >
         Nicolas Payrouse
+      </WuiTitle>
+
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H5}
+        color={WuiColorAlias.SUCCESS_900}
+        style={{ marginBottom: "2rem", marginTop: 0 }}
+      >
+        Web Designer & Front-end Developer
       </WuiTitle>
 
       <p className="links">
@@ -92,19 +120,67 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         </WuiLink>
       </p>
 
-      <WuiTitle
-        as={WuiTitleAs.H2}
-        look={WuiTitleLook.H5}
-        color={WuiColorAlias.SUCCESS_900}
-        style={{ marginBottom: "2rem" }}
-      >
-        Web Designer & Front-end Developer
-      </WuiTitle>
-
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL}>
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
         thinking about my next UX challenge.
       </WuiText>
+
+      <p className="links" style={{ marginBottom: '4rem' }}>
+        <WuiButton
+          color={WuiButtonColor.LIGHT}
+          size={WuiButtonSize.S}
+          onClick={() => {
+            scrollTo("work-experience");
+          }}
+          leftIcon="fa-solid fa-angle-down"
+        >
+          Work Experience
+        </WuiButton>
+
+        <WuiButton
+          color={WuiButtonColor.LIGHT}
+          size={WuiButtonSize.S}
+          onClick={() => {
+            scrollTo("work-experience");
+          }}
+          leftIcon="fa-solid fa-angle-down"
+        >
+          Skills
+        </WuiButton>
+
+        <WuiButton
+          color={WuiButtonColor.LIGHT}
+          size={WuiButtonSize.S}
+          onClick={() => {
+            scrollTo("work-experience");
+          }}
+          leftIcon="fa-solid fa-angle-down"
+        >
+          Personal projects
+        </WuiButton>
+
+        <WuiButton
+          color={WuiButtonColor.LIGHT}
+          size={WuiButtonSize.S}
+          onClick={() => {
+            scrollTo("work-experience");
+          }}
+          leftIcon="fa-solid fa-angle-down"
+        >
+          Education
+        </WuiButton>
+
+        <WuiButton
+          color={WuiButtonColor.LIGHT}
+          size={WuiButtonSize.S}
+          onClick={() => {
+            scrollTo("work-experience");
+          }}
+          leftIcon="fa-solid fa-angle-down"
+        >
+          But also...
+        </WuiButton>
+      </p>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
         Trained as a graphic designer, I quickly moved into web development
@@ -149,6 +225,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiTitle
+        ref={workExperienceRef as React.RefObject<HTMLHeadingElement>}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
@@ -538,14 +615,16 @@ Development of web-oriented personal projects.`}
               size={WuiLinkSize.S}
               href="https://www.instagram.com/familleyoooo/"
               target="_blank"
-            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
                 <img
                   src="/img/job/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
                   style={{ marginRight: 5 }}
-                />Spent time in nature with my family
+                />
+                Spent time in nature with my family
               </WuiBadge>
             </WuiLink>
 
@@ -625,14 +704,16 @@ Development of web-oriented personal projects.`}
               size={WuiLinkSize.S}
               href="https://www.instagram.com/familleyoooo/"
               target="_blank"
-            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
                 <img
                   src="/img/job/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
                   style={{ marginRight: 5 }}
-                />Photography
+                />
+                Photography
               </WuiBadge>
             </WuiLink>
 
@@ -641,14 +722,16 @@ Development of web-oriented personal projects.`}
               size={WuiLinkSize.S}
               href="https://www.instagram.com/familleyoooo/"
               target="_blank"
-            ><WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
+            >
+              <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
                 <img
                   src="/img/job/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
                   style={{ marginRight: 5 }}
-                />Video
+                />
+                Video
               </WuiBadge>
             </WuiLink>
 
@@ -676,10 +759,10 @@ Development of web-oriented personal projects.`}
                   height="14"
                   alt="Geocaching"
                   style={{ marginRight: 5 }}
-                />Geocaching
+                />
+                Geocaching
               </WuiBadge>
             </WuiLink>
-
 
             <WuiLink
               href="/projects/wawawood"
@@ -694,7 +777,8 @@ Development of web-oriented personal projects.`}
                   height="14"
                   alt="Geocaching"
                   style={{ marginRight: 5 }}
-                />Wood Lamp making
+                />
+                Wood Lamp making
               </WuiBadge>
             </WuiLink>
 
