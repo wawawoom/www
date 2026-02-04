@@ -27,6 +27,11 @@
     /* transition executed when the user rollout */
     transition: opacity 0.25s ease-in-out;
 
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 0.2em 0;
+    }
+
     p {
       margin: 0 0 1em 0;
     }

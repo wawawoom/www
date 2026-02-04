@@ -5,8 +5,15 @@
 
   header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 992px) {
+      align-items: center;
+      flex-direction: row;
+    }
 
     img {
       border-radius: 100%;
@@ -16,7 +23,11 @@
   }
 
   .content {
-    padding-left: 6rem;
+    padding-left: 0;
+
+    @media (min-width: 992px) {
+      padding-left: 6rem;
+    }
   }
 
   .badges {

@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 export interface JobProps {
   logoUrl: string;
   companyName: string;
-  jobTitle: string;
+  jobTitle?: string;
   description?: string | ReactElement;
   badges?: (string | ReactElement)[];
   duration?: string;

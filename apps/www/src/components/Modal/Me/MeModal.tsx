@@ -26,11 +26,9 @@ import "./MeModal.css";
 export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (ref: React.RefObject<HTMLHeadingElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -42,29 +40,26 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
-      <WuiBadge
-        size={WuiBadgeSize.L}
-        color={WuiBadgeColor.WARNING}
-        style={{
-          marginLeft: "7rem",
-          position: "relative",
-          top: "2rem",
-          width: "max-content",
-        }}
-      >
-        Open to work !
-      </WuiBadge>
+      <div className="avatar-container">
+        <WuiBadge
+          size={WuiBadgeSize.L}
+          color={WuiBadgeColor.WARNING}
+          className="work-badge"
+        >
+          Open to work !
+        </WuiBadge>
 
-      <img
-        src="/img/nicolas-payrouse.webp"
-        alt="Nicolas Payrouse"
-        className="avatar"
-      />
+        <img
+          src="/img/nicolas-payrouse.webp"
+          alt="Nicolas Payrouse"
+          className="avatar"
+        />
+      </div>
 
       <WuiTitle
         as={WuiTitleAs.H1}
         color={WuiColorAlias.NEUTRAL_900}
-        style={{ marginBottom: 0 }}
+        className="name"
       >
         Nicolas Payrouse
       </WuiTitle>
@@ -73,7 +68,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         as={WuiTitleAs.H2}
         look={WuiTitleLook.H5}
         color={WuiColorAlias.SUCCESS_900}
-        style={{ marginBottom: "2rem", marginTop: 0 }}
+        className="job-title"
       >
         Web Designer & Front-end Developer
       </WuiTitle>
@@ -120,19 +115,19 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         </WuiLink>
       </p>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL} className="bio">
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
         thinking about my next UX challenge.
       </WuiText>
 
-      <p className="links" style={{ marginBottom: '4rem' }}>
+      <p className="links" style={{ marginBottom: "3rem" }}>
         <WuiButton
           color={WuiButtonColor.LIGHT}
           size={WuiButtonSize.S}
           onClick={() => {
-            scrollTo("work-experience");
+            scrollTo(workExperienceRef as React.RefObject<HTMLHeadingElement>);
           }}
-          leftIcon="fa-solid fa-angle-down"
+          leftIcon="fa-solid fa-arrow-down"
         >
           Work Experience
         </WuiButton>
@@ -141,9 +136,9 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           color={WuiButtonColor.LIGHT}
           size={WuiButtonSize.S}
           onClick={() => {
-            scrollTo("work-experience");
+            scrollTo(skillsRef as React.RefObject<HTMLHeadingElement>);
           }}
-          leftIcon="fa-solid fa-angle-down"
+          leftIcon="fa-solid fa-arrow-down"
         >
           Skills
         </WuiButton>
@@ -152,9 +147,11 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           color={WuiButtonColor.LIGHT}
           size={WuiButtonSize.S}
           onClick={() => {
-            scrollTo("work-experience");
+            scrollTo(
+              personalProjectsRef as React.RefObject<HTMLHeadingElement>
+            );
           }}
-          leftIcon="fa-solid fa-angle-down"
+          leftIcon="fa-solid fa-arrow-down"
         >
           Personal projects
         </WuiButton>
@@ -163,9 +160,9 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           color={WuiButtonColor.LIGHT}
           size={WuiButtonSize.S}
           onClick={() => {
-            scrollTo("work-experience");
+            scrollTo(educationRef as React.RefObject<HTMLHeadingElement>);
           }}
-          leftIcon="fa-solid fa-angle-down"
+          leftIcon="fa-solid fa-arrow-down"
         >
           Education
         </WuiButton>
@@ -174,9 +171,9 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           color={WuiButtonColor.LIGHT}
           size={WuiButtonSize.S}
           onClick={() => {
-            scrollTo("work-experience");
+            scrollTo(butAlsoRef as React.RefObject<HTMLHeadingElement>);
           }}
-          leftIcon="fa-solid fa-angle-down"
+          leftIcon="fa-solid fa-arrow-down"
         >
           But also...
         </WuiButton>
@@ -225,7 +222,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiTitle
-        ref={workExperienceRef as React.RefObject<HTMLHeadingElement>}
+        ref={workExperienceRef}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
@@ -349,7 +346,7 @@ Development of web-oriented personal projects.`}
         logoUrl="/img/job/logo-genghis-mind.png"
         companyName="Genghis Mind"
         duration="May 2003 – Apr. 2005 (~2 years)"
-        jobTitle="Webmaster Freelance"
+        jobTitle="Developer and UI/UX Designer"
         badges={[
           "Flash / ActionScript 3",
           "Illustrator",
@@ -404,6 +401,7 @@ Development of web-oriented personal projects.`}
       />
 
       <WuiTitle
+        ref={skillsRef}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
@@ -413,7 +411,6 @@ Development of web-oriented personal projects.`}
       <Job
         logoUrl="/img/job/logo-graphisme.jpg"
         companyName="UI / UX"
-        jobTitle="Graphic Designer"
         badges={[
           "Figma",
           "Illustrator",
@@ -440,7 +437,7 @@ Development of web-oriented personal projects.`}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
             >
-              Learn more
+              Details
             </WuiLink>
           </>
         }
@@ -448,8 +445,7 @@ Development of web-oriented personal projects.`}
 
       <Job
         logoUrl="/img/job/logo-dev.jpg"
-        companyName="Web"
-        jobTitle="Web Developer"
+        companyName="Web Development"
         badges={[
           "HTML",
           "CSS",
@@ -473,7 +469,7 @@ Development of web-oriented personal projects.`}
             to build performant, responsive user interfaces. Proficiency in
             testing (Jest, Cypress), version control (Git) and documentation
             (Storybook). Web performance, SEO and accessibility optimisation.
-            Experience with Canvas, SVG and advanced web technologies.
+            Experience with Canvas, SVG and Web Sockets.
             <br />
             <br />
             <WuiLink
@@ -485,7 +481,7 @@ Development of web-oriented personal projects.`}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
             >
-              Learn more
+              Details
             </WuiLink>
           </>
         }
@@ -493,8 +489,7 @@ Development of web-oriented personal projects.`}
 
       <Job
         logoUrl="/img/job/logo-dev-mobile.jpg"
-        companyName="Mobile"
-        jobTitle="Mobile Developer"
+        companyName="Mobile development"
         badges={["React Native", "Firebase"]}
         description={
           <>
@@ -515,13 +510,14 @@ Development of web-oriented personal projects.`}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
             >
-              Learn more
+              Details
             </WuiLink>
           </>
         }
       />
 
       <WuiTitle
+        ref={personalProjectsRef}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
@@ -576,6 +572,7 @@ Development of web-oriented personal projects.`}
       />
 
       <WuiTitle
+        ref={educationRef}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
@@ -597,6 +594,7 @@ Development of web-oriented personal projects.`}
       />
 
       <WuiTitle
+        ref={butAlsoRef}
         as={WuiTitleAs.H3}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
