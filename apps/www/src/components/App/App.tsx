@@ -4,8 +4,8 @@ import { WuiColorAlias, WuiColorValue } from "@wawawoom/wui";
 
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
-import { Modal } from "../Modal/Modal/Modal.tsx";
-import { Zone } from "../Zone/Zone/Zone.tsx";
+import { Modal } from "../layout/Modal/Modal/Modal.tsx";
+import { Zone } from "../layout/Zone/Zone/Zone.tsx";
 import "./App.css";
 import { pathToSection } from "../../utils/path-to-section.ts";
 

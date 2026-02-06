@@ -1,23 +1,10 @@
-import type { ReactElement } from "react";
-
-import {
-  WuiBadge,
-  WuiBadgeColor,
-  WuiBadgeSize,
-  WuiColorAlias,
-  WuiText,
-  WuiTextAs,
-  WuiTextSize,
-  WuiTitle,
-  WuiTitleAs,
-} from "@wawawoom/wui";
-
+import { WuiText, WuiTextAs, WuiTitle, WuiTitleAs, WuiTextSize, WuiColorAlias, WuiBadge, WuiBadgeColor, WuiBadgeSize } from "@wawawoom/wui";
 import "./Job.css";
 import type { JobProps } from "./Job.props";
+import type { ReactElement } from "react";
 
 export const Job = (props: JobProps) => {
-  const { logoUrl, companyName, duration, jobTitle, badges, description } =
-    props;
+  const { logoUrl, companyName, duration, jobTitle, badges, description } = props;
 
   return (
     <article className="job">
@@ -31,43 +18,22 @@ export const Job = (props: JobProps) => {
         />
 
         <div>
-          <WuiTitle as={WuiTitleAs.H4} style={{ margin: 0 }}>
-            {companyName}
-          </WuiTitle>
+          <WuiTitle as={WuiTitleAs.H4} style={{ margin: 0 }}>{companyName}</WuiTitle>
 
-          {Boolean(duration) && (
-            <WuiText
-              as={WuiTextAs.P}
-              style={{ margin: 0 }}
-              size={WuiTextSize.S}
-              color={WuiColorAlias.SUCCESS_900}
-            >
-              {duration}
-            </WuiText>
-          )}
+          {Boolean(duration) && <WuiText as={WuiTextAs.P} style={{ margin: 0 }} size={WuiTextSize.S} color={WuiColorAlias.SUCCESS_900}>{duration}</WuiText>}
         </div>
       </header>
 
       <div className="content">
-        {jobTitle && (
-          <WuiTitle as={WuiTitleAs.H5} style={{ margin: 0 }}>
-            {jobTitle}
-          </WuiTitle>
-        )}
+        <WuiTitle as={WuiTitleAs.H5} style={{ margin: 0 }}>{jobTitle}</WuiTitle>
 
         {badges && badges.length > 0 && (
           <div className="badges">
             {badges.map((badge: string | ReactElement) => {
-              if (typeof badge === "string") {
+              if (typeof badge === 'string') {
                 return (
-                  <WuiBadge
-                    key={`badge_${badge}`}
-                    color={WuiBadgeColor.TRANSPARENT}
-                    size={WuiBadgeSize.L}
-                  >
-                    {badge}
-                  </WuiBadge>
-                );
+                  <WuiBadge key={`badge_${badge}`} color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>{badge}</WuiBadge>
+                )
               } else {
                 return badge;
               }
@@ -75,12 +41,11 @@ export const Job = (props: JobProps) => {
           </div>
         )}
 
-        {description && (
-          <WuiText as={WuiTextAs.P} className="description">
-            {description}
-          </WuiText>
-        )}
+        {description ? typeof description === "string" ? (<WuiText as={WuiTextAs.P} className="description">
+          {description}
+        </WuiText>) : <>{description}</> : null}
+
       </div>
-    </article>
+    </article >
   );
 };
