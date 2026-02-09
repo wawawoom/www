@@ -1,6 +1,6 @@
+import "./Gallery.css";
 import type { GalleryProps } from "./Gallery.props";
 import GalleryItem from "./GalleryItem/GalleryItem";
-import "./Gallery.css";
 
 export const Gallery = (props: GalleryProps) => {
   const { items } = props;
@@ -11,8 +11,8 @@ export const Gallery = (props: GalleryProps) => {
 
   return (
     <div className="gallery">
-      {items.map((item) => (
-        <GalleryItem key={item.name} imgAlt={item.name} imgUrl={item.imgUrl} name={item.name} />
+      {items.map((item, i) => (
+        <GalleryItem key={`galleryItem_${i}`} {...item} />
       ))}
     </div>
   );

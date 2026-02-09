@@ -39,41 +39,6 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
         had just killed Flash technology…
       </WuiText>
 
-      <h2>I'm passionate about :</h2>
-
-      <Gallery items={[
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "UI",
-          name: "UI",
-        },
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "UX",
-          name: "User XP",
-        },
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "CSS",
-          name: "CSS design",
-        },
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "UI",
-          name: "Photography",
-        },
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "UI",
-          name: "Videos",
-        },
-        {
-          imgUrl: "/img/job/logo-graphisme.jpg",
-          imgAlt: "UI",
-          name: "Painting",
-        },
-      ]} />
-
       <WuiLink
         href="/ui"
         color={WuiLinkColor.LIGHT}
@@ -85,6 +50,46 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
       >
         See more
       </WuiLink>
+
+      <h2>I'm passionate about :</h2>
+
+      <Gallery
+        items={[
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "UI",
+            name: "UI",
+            onClick: () => {
+              alert("UI");
+            },
+          },
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "UX",
+            name: "User XP",
+          },
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "CSS",
+            name: "CSS design",
+          },
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "UI",
+            name: "Photography",
+          },
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "UI",
+            name: "Videos",
+          },
+          {
+            imgUrl: "/img/job/logo-graphisme.jpg",
+            imgAlt: "UI",
+            name: "Painting",
+          },
+        ]}
+      />
     </>
   );
 };

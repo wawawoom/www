@@ -1,3 +1,4 @@
+import "./formats/css-spacing-utilities.js";
 import "./formats/enum-color-alias.js";
 import "./formats/enum-color-name.js";
 import "./formats/enum-color-value.js";
@@ -27,6 +28,10 @@ export default {
           options: {
             selector: ":root",
           },
+        },
+        {
+          destination: "utils.css",
+          format: "css/spacing-utilities",
         },
       ],
     },

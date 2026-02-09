@@ -1,5 +1,6 @@
 export interface GalleryItemProps {
   imgUrl: string;
   imgAlt: string;
-  name: string;
+  name?: string;
+  onClick?: () => void;
 }
