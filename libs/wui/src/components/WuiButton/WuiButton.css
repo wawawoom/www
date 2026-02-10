@@ -53,6 +53,32 @@
   }
 }
 
+.wui-button--ghost {
+  background-color: transparent;
+  color: var(--wui-color-alias-neutral-900);
+  box-shadow: none;
+
+  &:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: transparent;
+    box-shadow: none;
+
+    &:not(:disabled) {
+      box-shadow: none;
+    }
+  }
+
+  &:disabled {
+    background-color: var(--wui-color-alias-neutral-200);
+    color: var(--wui-color-alias-neutral-400);
+    cursor: not-allowed;
+  }
+}
+
 .wui-button--success {
   background-color: var(--wui-color-alias-success-500);
   color: var(--wui-color-alias-neutral-900);

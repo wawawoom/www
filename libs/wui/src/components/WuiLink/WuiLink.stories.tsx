@@ -63,7 +63,9 @@ export const Component: Story = {
 };
 
 export const Example: Story = {
+  tags: ["!dev"],
   parameters: {
+    docsOnly: true,
     layout: "padded",
     controls: { disable: true },
   },

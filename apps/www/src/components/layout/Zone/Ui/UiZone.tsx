@@ -2,6 +2,9 @@ import {
   WuiColorAlias,
   WuiLink,
   WuiLinkColor,
+  WuiModal,
+  WuiButton,
+  WuiButtonColor,
   WuiText,
   WuiTextAs,
   WuiTextSize,
@@ -11,9 +14,12 @@ import {
 
 import { Section } from "../../../../ts/enum/section.enum";
 import Gallery from "../../../Gallery/Gallery";
+import { useState } from "react";
 
 export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
+
+  const [openTestModal, setOpenTestModal] = useState(false);
 
   return (
     <>
@@ -60,7 +66,7 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
             imgAlt: "UI",
             name: "UI",
             onClick: () => {
-              alert("UI");
+              setOpenTestModal(true);
             },
           },
           {
@@ -90,6 +96,19 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
           },
         ]}
       />
+
+      <WuiModal
+        open={openTestModal}
+        onClose={() => setOpenTestModal(false)}
+        title="Modal title"
+        footer={
+          <WuiButton color={WuiButtonColor.DARK} onClick={() => setOpenTestModal(false)}>
+            Close
+          </WuiButton>
+        }
+      >
+        <WuiText as={WuiTextAs.P}>Your content here.</WuiText>
+      </WuiModal>
     </>
   );
 };

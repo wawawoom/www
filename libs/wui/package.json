@@ -19,9 +19,11 @@
     "watch:tokens": "nodemon",
     "build:tokens": "style-dictionary build --config ./style-dictionary/config.mjs",
     "build:lib": "tsc && vite build",
-    "build:storybook": "storybook build",
-    "build": "pnpm run build:tokens && pnpm run build:lib && pnpm run build:storybook",
-    "deploy": "pnpm run build:storybook && SOURCE_DIR=\"libs/wui/dist_storybook\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy-wui.sh"
+    "build:storybook": "storybook build --output-dir dist_storybook",
+    "build": "pnpm run build:tokens && pnpm run test && pnpm run build:lib && pnpm run build:storybook",
+    "deploy": "pnpm run build:storybook && SOURCE_DIR=\"libs/wui/dist_storybook\" FTP_DIR=\"/www/next/projects/wui/\" bash ../../scripts/deploy-wui.sh",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -43,7 +45,13 @@
     "vite": "^6.0.0",
     "style-dictionary": "^5.2.0",
     "nodemon": "^3.1.0",
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.2.5"
   },
   "peerDependencies": {
     "react": "^19.2.0",

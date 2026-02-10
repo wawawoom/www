@@ -84,14 +84,16 @@ export const Component: Story = {
 };
 
 export const All: Story = {
+  tags: ["!dev"],
   parameters: {
+    docsOnly: true,
     controls: { disable: true },
   },
   render: () => (
     <div>
       {Object.values(WuiTextSize).map((size) => (
         <WuiText key={size} as={WuiTextAs.DIV} size={size}>
-          {size} / Portez ce vieux whisky au juge blond qui fume.
+          {size} / The quick brown fox jumps over the lazy dog.
         </WuiText>
       ))}
     </div>

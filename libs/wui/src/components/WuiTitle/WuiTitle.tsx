@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 
 import { WuiColorAlias } from "../../enum";
 import { clsx } from "../../utils/clsx";
-import { WuiTitleAs, WuiTitleProps } from "./WuiTitle.props";
+import { WuiTitleAs, type WuiTitleProps } from "./WuiTitle.props";
 
 export const WuiTitle = forwardRef<HTMLHeadingElement, WuiTitleProps>(
   (

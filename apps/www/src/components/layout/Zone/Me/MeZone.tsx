@@ -10,6 +10,8 @@ import {
   WuiTitle,
   WuiTitleAs,
   WuiTitleLook,
+  WuiAlert,
+  WuiAlertColor,
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
@@ -48,6 +50,11 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
         thinking about my next UX challenge.
       </WuiText>
+
+      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-36">
+        I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
+        thinking about my next UX challenge.
+      </WuiAlert >
 
       <WuiText as={WuiTextAs.P} className="badges">
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>

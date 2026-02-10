@@ -4,11 +4,10 @@ import { WuiColorAlias } from "../../enum/WuiColorAlias.enum";
 import { clsx } from "../../utils/clsx";
 import {
   WuiTextAs,
-  WuiTextElement,
-  WuiTextProps,
   WuiTextSize,
   WuiTextWeight,
 } from "./WuiText.props";
+import type { WuiTextElement, WuiTextProps } from "./WuiText.props";
 
 export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
   (

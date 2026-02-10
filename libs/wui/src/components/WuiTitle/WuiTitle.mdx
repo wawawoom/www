@@ -1,0 +1,38 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiTitleStories from "./WuiTitle.stories";
+
+<Meta of={WuiTitleStories} />
+
+# WuiTitle
+
+Title component with semantic heading levels (h1–h6) and matching visual looks. All looks at a glance:
+
+<Canvas of={WuiTitleStories.All} sourceState="none" />
+
+## Props
+
+`WuiTitle` extends the HTML attributes of heading elements (`h1`–`h6`).
+All other props from `HTMLAttributes` (e.g. `id`, `style`, `aria-*`) are supported.
+
+<ArgTypes />
+
+## Implementation
+
+h1 heading (default):
+
+```tsx
+import { WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
+
+<WuiTitle as={WuiTitleAs.H1}>Page title</WuiTitle>;
+```
+
+h1 heading with a specific look of h3:
+
+```tsx
+import { WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
+
+<WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H3}>
+  Section heading
+</WuiTitle>;
+```

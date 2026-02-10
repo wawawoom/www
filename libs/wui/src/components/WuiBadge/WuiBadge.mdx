@@ -1,0 +1,49 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiBadgeStories from "./WuiBadge.stories";
+
+<Meta of={WuiBadgeStories} />
+
+# WuiBadge
+
+Badge component with color and size colors. All colors at a glance:
+
+<Canvas of={WuiBadgeStories.All} sourceState="none" />
+
+## Props
+
+`WuiBadge` extends the HTML attributes of `span`.
+
+<ArgTypes />
+
+All other props from `HTMLAttributes` (e.g. `id`, `style`, `aria-*`) are supported.
+
+## Implementation
+
+Default badge (dark, medium):
+
+```tsx
+import { WuiBadge } from "@wawawoom/wui";
+
+<WuiBadge>New</WuiBadge>;
+```
+
+With color and size:
+
+```tsx
+import { WuiBadge, WuiBadgeColor, WuiBadgeSize } from "@wawawoom/wui";
+
+<WuiBadge color={WuiBadgeColor.SUCCESS} size={WuiBadgeSize.S}>
+  Done
+</WuiBadge>;
+```
+
+Status-style badges:
+
+```tsx
+import { WuiBadge, WuiBadgeColor } from "@wawawoom/wui";
+
+<WuiBadge color={WuiBadgeColor.DANGER}>Error</WuiBadge>
+<WuiBadge color={WuiBadgeColor.WARNING}>Pending</WuiBadge>
+<WuiBadge color={WuiBadgeColor.INFO}>Info</WuiBadge>
+```

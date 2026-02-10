@@ -1,0 +1,52 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiModalStories from "./WuiModal.stories";
+
+<Meta of={WuiModalStories} />
+
+# WuiModal
+
+Modal built on the native `<dialog>` element. On mobile it slides up from the bottom; on desktop it is centered with a scale + fade animation. It provides a header (single-line title with ellipsis, close button), a scrollable body, and an optional footer. You can use standard `<dialog>` attributes to control the modal.
+
+## Example
+
+<Canvas of={WuiModalStories.Component} sourceState="none" />
+
+## Implementation
+
+Minimal example with local state and closing via the button or close icon:
+
+```tsx
+import { useState } from "react";
+
+import {
+  WuiButton,
+  WuiButtonColor,
+  WuiModal,
+  WuiText,
+  WuiTextAs,
+} from "@wawawoom/wui";
+
+function MyComponent() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <WuiButton onClick={() => setOpen(true)}>Open modal</WuiButton>
+
+      <WuiModal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Modal title"
+        footer={
+          <WuiButton color={WuiButtonColor.DARK} onClick={() => setOpen(false)}>
+            Close
+          </WuiButton>
+        }
+      >
+        <WuiText as={WuiTextAs.P}>Your content here.</WuiText>
+      </WuiModal>
+    </>
+  );
+}
+```

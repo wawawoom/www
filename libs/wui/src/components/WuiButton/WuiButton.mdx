@@ -1,0 +1,55 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiButtonStories from "./WuiButton.stories";
+
+<Meta of={WuiButtonStories} />
+
+# WuiButton
+
+Button component with color and size colors. All colors at a glance:
+
+<Canvas of={WuiButtonStories.All} sourceState="none" />
+
+## Props
+
+`WuiButton` extends the HTML attributes of `button`.
+All other props from `ButtonHTMLAttributes` (e.g. `disabled`, `type`, `onClick`, `aria-*`) are supported.
+
+<ArgTypes />
+
+## Implementation
+
+Default button (light, medium):
+
+```tsx
+import { WuiButton } from "@wawawoom/wui";
+
+<WuiButton>Submit</WuiButton>;
+```
+
+With color and size:
+
+```tsx
+import { WuiButton, WuiButtonColor, WuiButtonSize } from "@wawawoom/wui";
+
+<WuiButton color={WuiButtonColor.DARK} size={WuiButtonSize.L}>
+  Primary action
+</WuiButton>;
+```
+
+Block button (full width):
+
+```tsx
+import { WuiButton } from "@wawawoom/wui";
+
+<WuiButton block>Full width button</WuiButton>;
+```
+
+With icon (e.g. Font Awesome classes):
+
+```tsx
+import { WuiButton } from "@wawawoom/wui";
+
+<WuiButton leftIcon="fa-solid fa-arrow-left">Back</WuiButton>
+<WuiButton rightIcon="fa-solid fa-arrow-right">Next</WuiButton>
+```

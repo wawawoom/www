@@ -1,0 +1,60 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiAlertStories from "./WuiAlert.stories";
+
+<Meta of={WuiAlertStories} />
+
+# WuiAlert
+
+Alert component for feedback messages. Colors: success, error, warning, info. All Colors at a glance:
+
+<Canvas of={WuiAlertStories.Documentation} sourceState="none" />
+
+## Props
+
+`WuiAlert` extends the HTML attributes of `div`.
+
+<ArgTypes />
+
+All other props from `HTMLAttributes` (e.g. `id`, `style`, `aria-*`) are supported. The root element has `role="alert"` for accessibility.
+
+## Implementation
+
+Success alert:
+
+```tsx
+import { WuiAlert, WuiAlertColor } from "@wawawoom/wui";
+
+<WuiAlert color={WuiAlertColor.SUCCESS}>Your account has been saved.</WuiAlert>;
+```
+
+Error and warning:
+
+```tsx
+import { WuiAlert, WuiAlertColor } from "@wawawoom/wui";
+
+<WuiAlert color={WuiAlertColor.ERROR}>
+  Your email address is invalid.
+</WuiAlert>
+<WuiAlert variant={WuiAlertColor.WARNING}>
+  You are currently on the Free plan.
+</WuiAlert>
+```
+
+Info (default color):
+
+```tsx
+import { WuiAlert } from "@wawawoom/wui";
+
+<WuiAlert>We've updated a few things.</WuiAlert>;
+```
+
+Custom icon (e.g. Font Awesome):
+
+```tsx
+import { WuiAlert, WuiAlertColor } from "@wawawoom/wui";
+
+<WuiAlert variant={WuiAlertColor.INFO} icon="fa-solid fa-lightbulb">
+  Custom icon message.
+</WuiAlert>;
+```

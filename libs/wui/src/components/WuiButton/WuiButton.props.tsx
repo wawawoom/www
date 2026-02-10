@@ -1,6 +1,7 @@
 import { type ButtonHTMLAttributes } from "react";
 
 export enum WuiButtonColor {
+  GHOST = "ghost",
   LIGHT = "light",
   DARK = "dark",
   SUCCESS = "success",

@@ -72,15 +72,16 @@ export const Component: Story = {
 };
 
 export const All: Story = {
+  tags: ["!dev"],
   parameters: {
-    viewMode: "docs",
+    docsOnly: true,
     controls: { disable: true },
   },
   render: () => (
     <div>
       {Object.values(WuiTitleLook).map((look) => (
         <WuiTitle key={look} as={WuiTitleAs.H1} look={look}>
-          {look} / Portez ce vieux whisky au juge blond qui fume.
+          {look} / The quick brown fox jumps over the lazy dog.
         </WuiTitle>
       ))}
     </div>

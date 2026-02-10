@@ -1,0 +1,59 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiTextStories from "./WuiText.stories";
+
+<Meta of={WuiTextStories} />
+
+# WuiText
+
+Text component with size and weight colors. All sizes at a glance:
+
+<Canvas of={WuiTextStories.All} sourceState="none" />
+
+## Props
+
+`WuiText` extends the HTML attributes of `div`, `p`, and `span`.
+
+<ArgTypes />
+
+All other props from `HTMLAttributes` (e.g. `id`, `style`, `aria-*`) are supported.
+
+## Implementation
+
+Default paragraph (size M):
+
+```tsx
+import { WuiText, WuiTextAs } from "@wawawoom/wui";
+
+<WuiText as={WuiTextAs.P}>Body text with default size and weight.</WuiText>;
+```
+
+With size and weight:
+
+```tsx
+import { WuiText, WuiTextAs, WuiTextSize, WuiTextWeight } from "@wawawoom/wui";
+
+<WuiText as={WuiTextAs.P} size={WuiTextSize.L} weight={WuiTextWeight.BOLD}>
+  Large bold lead paragraph.
+</WuiText>;
+```
+
+With color (e.g. on dark background):
+
+```tsx
+import { WuiColorAlias, WuiText, WuiTextAs } from "@wawawoom/wui";
+
+<WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+  Light text for dark backgrounds.
+</WuiText>;
+```
+
+Inline text (span):
+
+```tsx
+import { WuiText, WuiTextAs, WuiTextSize } from "@wawawoom/wui";
+
+<WuiText as={WuiTextAs.SPAN} size={WuiTextSize.S}>
+  Small inline caption
+</WuiText>;
+```

@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { WuiTitle } from "../WuiTitle/WuiTitle";
+import { WuiTitleAs, WuiTitleLook } from "../WuiTitle/WuiTitle.props";
 import { WuiBadge } from "./WuiBadge";
 import { WuiBadgeColor, WuiBadgeSize } from "./WuiBadge.props";
 
@@ -20,7 +22,7 @@ const meta = {
       options: Object.values(WuiBadgeColor),
       table: {
         type: { summary: "WuiBadgeColor" },
-        defaultValue: { summary: "WuiBadgeColor.LIGHT" },
+        defaultValue: { summary: "WuiBadgeColor.DARK" },
       },
     },
     size: {
@@ -55,4 +57,72 @@ export const Component: Story = {
   args: {
     children: "badge",
   },
+};
+
+export const All: Story = {
+  tags: ["!dev"],
+  parameters: {
+    docsOnly: true,
+    controls: { disable: true },
+  },
+  render: () => (
+    <div>
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiBadge at WuiBadgeSize.L:
+      </WuiTitle>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.5rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
+        {Object.values(WuiBadgeColor).map((color) => (
+          <WuiBadge key={color} color={color} size={WuiBadgeSize.L}>
+            {color}
+          </WuiBadge>
+        ))}
+      </div>
+
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiBadge at WuiBadgeSize.M (default):
+      </WuiTitle>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.5rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
+        {Object.values(WuiBadgeColor).map((color) => (
+          <WuiBadge key={color} color={color}>
+            {color}
+          </WuiBadge>
+        ))}
+      </div>
+
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiBadge at WuiBadgeSize.S:
+      </WuiTitle>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.5rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
+        {Object.values(WuiBadgeColor).map((color) => (
+          <WuiBadge key={color} color={color} size={WuiBadgeSize.S}>
+            {color}
+          </WuiBadge>
+        ))}
+      </div>
+    </div>
+  ),
 };

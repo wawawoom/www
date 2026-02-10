@@ -1,0 +1,94 @@
+.wui-alert {
+  display: flex;
+  align-items: center;
+  gap: var(--wui-space-16);
+  padding: var(--wui-space-16) var(--wui-space-20);
+  font-family: var(--wui-font-family);
+  font-size: var(--wui-font-size-base);
+  font-weight: var(--wui-font-weight-normal);
+  line-height: var(--wui-line-height-base);
+}
+
+.wui-alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  color: var(--wui-color-alias-neutral-0);
+}
+
+.wui-alert__icon i {
+  font-size: 0.75rem;
+}
+
+.wui-alert__message {
+  color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-alert--success {
+  background-color: var(--wui-color-alias-success-100);
+}
+
+.wui-alert--success .wui-alert__icon {
+  background-color: var(--wui-color-alias-success-500);
+}
+
+.wui-alert--success .wui-alert__icon i {
+  color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-alert--error {
+  background-color: var(--wui-color-alias-danger-100);
+}
+
+.wui-alert--error .wui-alert__icon {
+  background-color: var(--wui-color-alias-danger-500);
+}
+
+.wui-alert--warning {
+  background-color: var(--wui-color-alias-warning-100);
+}
+
+.wui-alert--warning .wui-alert__icon {
+  background-color: var(--wui-color-alias-warning-500);
+}
+
+.wui-alert--warning .wui-alert__icon i {
+  color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-alert--info {
+  background-color: var(--wui-color-alias-info-100);
+}
+
+.wui-alert--info .wui-alert__icon {
+  background-color: var(--wui-color-alias-info-500);
+}
+
+.wui-alert--light {
+  background-color: var(--wui-color-alias-neutral-0);
+}
+
+.wui-alert--light .wui-alert__icon {
+  background-color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-alert--dark {
+  background-color: var(--wui-color-alias-neutral-900);
+  color: var(--wui-color-alias-neutral-0);
+}
+
+.wui-alert--dark .wui-alert__message {
+  color: var(--wui-color-alias-neutral-0);
+}
+
+.wui-alert--dark .wui-alert__icon {
+  background-color: var(--wui-color-alias-neutral-0);
+}
+
+.wui-alert--dark .wui-alert__icon i {
+  color: var(--wui-color-alias-neutral-900);
+}

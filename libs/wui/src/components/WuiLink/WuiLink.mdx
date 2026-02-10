@@ -1,0 +1,53 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiLinkStories from "./WuiLink.stories";
+
+<Meta of={WuiLinkStories} />
+
+# WuiLink
+
+Link component with color and size colors. Examples of inline use in text and as button-style links.
+
+<Canvas of={WuiLinkStories.Example} sourceState="none" />
+
+## Props
+
+`WuiLink` extends the HTML attributes of `a` (anchor element).
+
+<ArgTypes />
+
+## Implementation
+
+Simple link:
+
+```tsx
+import { WuiLink } from "@wawawoom/wui";
+
+<WuiLink href="https://example.com" target="_blank">
+  View site
+</WuiLink>;
+```
+
+Link in a paragraph with color and size:
+
+```tsx
+import {
+  WuiLink,
+  WuiLinkColor,
+  WuiLinkSize,
+  WuiText,
+  WuiTextAs,
+} from "@wawawoom/wui";
+
+<WuiText as={WuiTextAs.P}>
+  Lorem ipsum{" "}
+  <WuiLink
+    href="https://example.com"
+    color={WuiLinkColor.LIGHT}
+    size={WuiLinkSize.L}
+  >
+    dolor sit amet
+  </WuiLink>
+  , consectetur adipiscing elit.
+</WuiText>;
+```

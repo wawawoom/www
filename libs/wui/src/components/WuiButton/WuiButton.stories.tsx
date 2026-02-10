@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { WuiButton } from "./WuiButton";
 import { WuiButtonColor, WuiButtonSize } from "./WuiButton.props";
+import { WuiTitle } from "../WuiTitle/WuiTitle";
+import { WuiTitleAs, WuiTitleLook } from "../..";
 
 const meta = {
   title: "Components/WuiButton",
@@ -79,4 +81,50 @@ export const Component: Story = {
   args: {
     children: "I'm a button",
   },
+};
+
+export const All: Story = {
+  tags: ["!dev"],
+  parameters: {
+    docsOnly: true,
+    controls: { disable: true },
+  },
+  render: () => (
+    <div>
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.L:</WuiTitle>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
+        {Object.values(WuiButtonColor).map((color) => (
+          <WuiButton key={color} color={color} size={WuiButtonSize.L} >
+            {color}
+          </WuiButton>
+        ))
+        }
+      </div>
+
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.M (default):</WuiTitle>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
+        {
+          Object.values(WuiButtonColor).map((color) => (
+            <WuiButton key={color} color={color} >
+              {color}
+            </WuiButton>
+          ))
+        }
+      </div>
+
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.S :</WuiTitle>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
+        {
+          Object.values(WuiButtonColor).map((color) => (
+            <WuiButton key={color} color={color} size={WuiButtonSize.S}>
+              {color}
+            </WuiButton>
+          ))
+        }
+      </div>
+    </div>
+  ),
 };

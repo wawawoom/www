@@ -42,6 +42,7 @@
   }
 }
 
+/* Hover : agrandit la zone survolée */
 .container:has(.me:hover) {
   grid-template-columns: 1fr;
   grid-template-rows: 12fr 1fr 1fr 1fr;
