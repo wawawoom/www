@@ -1,8 +1,6 @@
 import { useRef } from "react";
 
 import {
-  WuiAlert,
-  WuiAlertColor,
   WuiBadge,
   WuiBadgeColor,
   WuiBadgeSize,
@@ -44,6 +42,11 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
 
   const { openDreamJobModal } = useModal();
 
+  const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    openDreamJobModal();
+  };
+
   return (
     <>
       <div className="avatar-container">
@@ -83,7 +86,11 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL} className="bio">
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge.
+        thinking about my next UX challenge. I’m currently actively seeking a new professional opportunity as a
+        designer and React developer.{" "}
+        <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
+          Check my ideal role description.
+        </WuiLink>
       </WuiText>
 
       <p className="links" style={{ marginBottom: "3rem" }}>
@@ -181,16 +188,6 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
         Nicolas.
       </WuiText>
-
-      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-30">
-        <WuiText as={WuiTextAs.P} className="my-0" size={WuiTextSize.S}>
-          I’m currently actively seeking a new professional opportunity as a
-          designer and React developer.{" "}
-          <WuiLink href="#" onClick={openDreamJobModal} color={WuiLinkColor.NONE}>
-            Check my ideal role description.
-          </WuiLink>
-        </WuiText>
-      </WuiAlert >
 
       <WuiTitle
         ref={workExperienceRef}

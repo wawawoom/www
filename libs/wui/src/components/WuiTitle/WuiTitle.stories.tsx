@@ -67,7 +67,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Component: Story = {
   args: {
-    children: "Portez ce vieux whisky au juge blond qui fume.",
+    children: "The quick brown fox jumps over the lazy dog.",
   },
 };
 

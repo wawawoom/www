@@ -31,6 +31,7 @@ export const Modal = (props: ModalProps) => {
   return (
     <div
       className={`modal modal--${section} ${isAnimating ? "modal--expanded" : ""}`}
+      onClick={(e) => e.stopPropagation()}
     >
       <WuiLink
         href="/"

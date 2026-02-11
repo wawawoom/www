@@ -7,4 +7,6 @@ export interface ZoneProps {
   title: string;
   titleColor: WuiColorAlias;
   onOpenModal: (section: Section) => void;
+  expandedZone: Section | null;
+  onZoneClick: (section: Section) => void;
 }

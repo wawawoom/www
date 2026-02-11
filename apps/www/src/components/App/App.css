@@ -7,7 +7,16 @@
   width: 100vw;
 }
 
+.app__collapse-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  cursor: alias;
+}
+
 .container {
+  position: relative;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   aspect-ratio: 1/1;
@@ -22,11 +31,14 @@
   transition:
     grid-template-columns 0.4s ease-in-out,
     grid-template-rows 0.4s ease-in-out,
-    width 0.5s ease-in-out;
+    width 0.5s ease-in-out,
+    height 0.5s ease-in-out,
+    max-width 0.5s ease-in-out,
+    max-height 0.5s ease-in-out;
 
   @media (min-width: 992px) {
     width: 50vh;
-    height: unset;
+    height: 50vh;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
@@ -35,15 +47,19 @@
       "web mob";
     max-width: 90vh;
     max-height: 90vh;
-
-    &:hover {
-      width: 80vw;
-    }
   }
 }
 
-/* Hover : agrandit la zone survolée */
-.container:has(.me:hover) {
+#app.app--zone-expanded .container {
+  @media (min-width: 992px) {
+    width: 80vmin;
+    height: 80vmin;
+    max-width: 80vmin;
+    max-height: 80vmin;
+  }
+}
+
+.container--me-expanded {
   grid-template-columns: 1fr;
   grid-template-rows: 12fr 1fr 1fr 1fr;
 
@@ -53,7 +69,7 @@
   }
 }
 
-.container:has(.ui:hover) {
+.container--ui-expanded {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 12fr 1fr 1fr;
 
@@ -63,7 +79,7 @@
   }
 }
 
-.container:has(.web:hover) {
+.container--web-expanded {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 12fr 1fr;
 
@@ -73,7 +89,7 @@
   }
 }
 
-.container:has(.mob:hover) {
+.container--mob-expanded {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 12fr;
 

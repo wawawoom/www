@@ -7,6 +7,7 @@ import {
   WuiTextSize,
   WuiTitle,
   WuiTitleAs,
+  WuiTitleLook,
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
@@ -16,7 +17,7 @@ export const WebZone = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
-      <WuiTitle as={WuiTitleAs.H1} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2} color={WuiColorAlias.NEUTRAL_0}>
         Web developper
       </WuiTitle>
 

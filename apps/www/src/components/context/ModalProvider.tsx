@@ -45,13 +45,16 @@ export const ModalProvider = (props: { children: ReactNode }) => {
           well-structured design system is critical for organizations because it
           ensures visual and functional consistency, accelerates product
           development, improves collaboration across teams, and ultimately
-          reduces long-term maintenance costs.
+          reduces long-term maintenance costs. <WuiLink>TODO: Check the figma file</WuiLink> I used for my website.
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
           I especially enjoy translating these design systems into
           production-ready React component libraries, documented and showcased
-          with Storybook. This approach enables teams to work with reliable,
+          with Storybook. <WuiLink>TODO: Check the storybook</WuiLink> I used for this website.
+        </WuiText>
+
+        <WuiText as={WuiTextAs.P}> This approach enables teams to work with reliable,
           reusable, and well-tested components, improving development speed and
           product quality. Storybook also serves as a shared reference between
           stakeholders, designers, and developers, making the system transparent,

@@ -19,6 +19,7 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [section, setSection] = useState<Section | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [expandedZone, setExpandedZone] = useState<Section | null>(null);
   const hasInitializedRef = useRef(false);
   const pendingReopenRef = useRef<{ section: Section; updateUrl: boolean } | null>(null);
 
@@ -90,13 +91,29 @@ const App = () => {
 
   return (
     <ModalProvider>
-      <div id="app">
-        <div className="container">
+      <div id="app" className={expandedZone ? "app--zone-expanded" : undefined}>
+        {expandedZone != null && (
+          <div
+            className="app__collapse-backdrop"
+            onClick={() => setExpandedZone(null)}
+            aria-hidden
+          />
+        )}
+        <div
+          className={[
+            "container",
+            expandedZone ? `container--${expandedZone}-expanded` : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           <Zone
             section={Section.ME}
             title="nico."
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
+            expandedZone={expandedZone}
+            onZoneClick={setExpandedZone}
           />
 
           <Zone
@@ -104,6 +121,8 @@ const App = () => {
             title="u(i/x)."
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
+            expandedZone={expandedZone}
+            onZoneClick={setExpandedZone}
           />
 
           <Zone
@@ -111,6 +130,8 @@ const App = () => {
             title="web."
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
+            expandedZone={expandedZone}
+            onZoneClick={setExpandedZone}
           />
 
           <Zone
@@ -118,6 +139,8 @@ const App = () => {
             title="mob."
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
+            expandedZone={expandedZone}
+            onZoneClick={setExpandedZone}
           />
         </div>
 

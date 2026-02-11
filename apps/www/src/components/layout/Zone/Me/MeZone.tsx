@@ -10,19 +10,16 @@ import {
   WuiTitle,
   WuiTitleAs,
   WuiTitleLook,
-  WuiAlert,
-  WuiAlertColor,
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
-import "./MeZone.css";
 import { useModal } from "../../../context/ModalContext.ts";
+import "./MeZone.css";
 
 export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
   const { openDreamJobModal } = useModal();
-
 
   const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -56,18 +53,18 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
 
       <WuiText as={WuiTextAs.P}>
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge.
+        thinking about my next UX challenge. I’m currently actively seeking a new professional opportunity as a
+        designer and React developer. <WuiLink
+          href="#"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClickDreamJob(e);
+          }}
+          color={WuiLinkColor.NONE}
+        >
+          Check my ideal role description.
+        </WuiLink>
       </WuiText>
-
-      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-30">
-        <WuiText as={WuiTextAs.P} className="my-0" size={WuiTextSize.S}>
-          I’m currently actively seeking a new professional opportunity as a
-          designer and React developer.{" "}
-          <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
-            Check my ideal role description.
-          </WuiLink>
-        </WuiText>
-      </WuiAlert >
 
       <WuiText as={WuiTextAs.P} className="badges">
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
@@ -107,19 +104,23 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
         </WuiBadge>
       </WuiText>
 
-      <SocialLinks />
-
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XS}>
-        <i className="fa-regular fa-compass"></i> 357 Chemin de Saquier – 06200 Nice, France
+        <i className="fa-regular fa-compass"></i> 357 Chemin de Saquier – 06200
+        Nice, France
         <br />
-        <i className="fa-regular fa-address-card"></i> wawawoom[@]gmail.com / +33 (0)6 31 796 781
+        <i className="fa-regular fa-address-card"></i> wawawoom[@]gmail.com /
+        +33 (0)6 31 796 781
         <br />
-        <i className="fa-solid fa-people-roof"></i> Born 5 December 1978, married, two children.
+        <i className="fa-solid fa-people-roof"></i> Born 5 December 1978,
+        married, two children.
         <br />
-        <i className="fa-solid fa-language"></i> French and English: spoken and written.
+        <i className="fa-solid fa-language"></i> French and English: spoken and
+        written.
         <br />
         <i className="fa-solid fa-car"></i> Full driving licence (Category B)
       </WuiText>
+
+      <SocialLinks />
 
       <WuiLink
         href="/me"

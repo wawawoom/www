@@ -126,10 +126,15 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
       }
     };
 
+    const handleDialogClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+      e.stopPropagation();
+    };
+
     return (
       <dialog
         ref={setRef}
         className={classNames}
+        onClick={handleDialogClick}
         {...props}
       >
         <div className="wui-modal__container">

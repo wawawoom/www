@@ -1,4 +1,4 @@
-import { WuiColorAlias, WuiLink, WuiLinkColor, WuiText, WuiTextAs, WuiTextSize } from "@wawawoom/wui";
+import { WuiColorAlias, WuiLink, WuiLinkColor, WuiText, WuiTextAs, WuiTextSize, WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
 
@@ -7,7 +7,10 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
-      <h1>React Native developper</h1>
+      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2} color={WuiColorAlias.NEUTRAL_0}>
+        React Native developper
+      </WuiTitle>
+
 
       <WuiText as={WuiTextAs.P} className="description" color={WuiColorAlias.NEUTRAL_0} size={WuiTextSize.S}>
         Je me suis donc tourné vers le développement Javascript natif et jQuery.

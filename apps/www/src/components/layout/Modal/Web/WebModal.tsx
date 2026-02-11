@@ -5,7 +5,6 @@ import {
   WuiTextSize,
   WuiTitle,
   WuiTitleAs,
-  WuiTitleLook,
 } from "@wawawoom/wui";
 
 export const WebModal = () => {
@@ -13,7 +12,6 @@ export const WebModal = () => {
     <>
       <WuiTitle
         as={WuiTitleAs.H1}
-        look={WuiTitleLook.H3}
         color={WuiColorAlias.NEUTRAL_0}
         style={{ marginTop: 0 }}
       >

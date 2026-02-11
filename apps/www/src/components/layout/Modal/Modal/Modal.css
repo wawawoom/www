@@ -1,3 +1,4 @@
+/* Les clics ne remontent pas : stopPropagation dans le composant Modal */
 .modal {
   position: fixed;
   top: 50%;

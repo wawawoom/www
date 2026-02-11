@@ -10,6 +10,7 @@ import {
   WuiTextSize,
   WuiTitle,
   WuiTitleAs,
+  WuiTitleLook,
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
@@ -23,10 +24,11 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
-      <h1></h1>
-      <WuiTitle as={WuiTitleAs.H1} color={WuiColorAlias.NEUTRAL_900}>
+      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2}>
         UI / UX designer
       </WuiTitle>
+
+
 
       <WuiText
         as={WuiTextAs.P}

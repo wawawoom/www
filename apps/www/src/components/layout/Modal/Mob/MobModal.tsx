@@ -1,9 +1,9 @@
-import { WuiColorAlias, WuiText, WuiTextAs, WuiTextSize, WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
+import { WuiColorAlias, WuiText, WuiTextAs, WuiTextSize, WuiTitle, WuiTitleAs } from "@wawawoom/wui";
 
 export const MobModal = () => {
   return (
     <>
-      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H3} color={WuiColorAlias.NEUTRAL_0} style={{ marginTop: 0 }}>
+      <WuiTitle as={WuiTitleAs.H1} color={WuiColorAlias.NEUTRAL_0} style={{ marginTop: 0 }}>
         React Native developper
       </WuiTitle>
 
