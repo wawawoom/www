@@ -8,6 +8,7 @@ import { Modal } from "../layout/Modal/Modal/Modal.tsx";
 import { Zone } from "../layout/Zone/Zone/Zone.tsx";
 import "./App.css";
 import { pathToSection } from "../../utils/path-to-section.ts";
+import { ModalProvider } from "../context/ModalProvider.tsx";
 
 
 
@@ -88,51 +89,53 @@ const App = () => {
   }, [currentSectionFromURL]);
 
   return (
-    <div id="app">
-      <div className="container">
-        <Zone
-          section={Section.ME}
-          title="nico."
-          titleColor={WuiColorAlias.NEUTRAL_900}
-          onOpenModal={onOpenModal}
-        />
+    <ModalProvider>
+      <div id="app">
+        <div className="container">
+          <Zone
+            section={Section.ME}
+            title="nico."
+            titleColor={WuiColorAlias.NEUTRAL_900}
+            onOpenModal={onOpenModal}
+          />
 
-        <Zone
-          section={Section.UI}
-          title="u(i/x)."
-          titleColor={WuiColorAlias.NEUTRAL_900}
-          onOpenModal={onOpenModal}
-        />
+          <Zone
+            section={Section.UI}
+            title="u(i/x)."
+            titleColor={WuiColorAlias.NEUTRAL_900}
+            onOpenModal={onOpenModal}
+          />
 
-        <Zone
-          section={Section.WEB}
-          title="web."
-          titleColor={WuiColorAlias.NEUTRAL_0}
-          onOpenModal={onOpenModal}
-        />
+          <Zone
+            section={Section.WEB}
+            title="web."
+            titleColor={WuiColorAlias.NEUTRAL_0}
+            onOpenModal={onOpenModal}
+          />
 
-        <Zone
-          section={Section.MOB}
-          title="mob."
-          titleColor={WuiColorAlias.NEUTRAL_0}
-          onOpenModal={onOpenModal}
-        />
+          <Zone
+            section={Section.MOB}
+            title="mob."
+            titleColor={WuiColorAlias.NEUTRAL_0}
+            onOpenModal={onOpenModal}
+          />
+        </div>
+
+        {isModalOpen && section && (
+          <Modal
+            section={section}
+            isAnimating={isAnimating}
+            onCloseModal={onCloseModal}
+            onOpenModal={onOpenModal}
+            closeButtonColor={
+              section === Section.WEB || section === Section.MOB
+                ? WuiColorValue.BLACK_0
+                : WuiColorValue.BLACK_900
+            }
+          />
+        )}
       </div>
-
-      {isModalOpen && section && (
-        <Modal
-          section={section}
-          isAnimating={isAnimating}
-          onCloseModal={onCloseModal}
-          onOpenModal={onOpenModal}
-          closeButtonColor={
-            section === Section.WEB || section === Section.MOB
-              ? WuiColorValue.BLACK_0
-              : WuiColorValue.BLACK_900
-          }
-        />
-      )}
-    </div>
+    </ModalProvider>
   );
 };
 

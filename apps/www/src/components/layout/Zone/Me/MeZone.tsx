@@ -17,9 +17,17 @@ import {
 import { Section } from "../../../../ts/enum/section.enum";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
 import "./MeZone.css";
+import { useModal } from "../../../context/ModalContext.ts";
 
 export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
+  const { openDreamJobModal } = useModal();
+
+
+  const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    openDreamJobModal();
+  };
 
   return (
     <>
@@ -51,36 +59,49 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
         thinking about my next UX challenge.
       </WuiText>
 
-      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-36">
-        I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge.
+      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-30">
+        <WuiText as={WuiTextAs.P} className="my-0" size={WuiTextSize.S}>
+          I’m currently actively seeking a new professional opportunity as a
+          designer and React developer.{" "}
+          <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
+            Check my ideal role description.
+          </WuiLink>
+        </WuiText>
       </WuiAlert >
 
       <WuiText as={WuiTextAs.P} className="badges">
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           UI
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           UX
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           JavaScript
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           Typescript
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           HTML
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           CSS
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           NextJs
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           React
         </WuiBadge>
+
         <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
           React Native
         </WuiBadge>

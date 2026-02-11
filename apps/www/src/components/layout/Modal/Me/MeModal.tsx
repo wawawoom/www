@@ -1,6 +1,8 @@
 import { useRef } from "react";
 
 import {
+  WuiAlert,
+  WuiAlertColor,
   WuiBadge,
   WuiBadgeColor,
   WuiBadgeSize,
@@ -21,8 +23,9 @@ import { WuiColorAlias } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
 import { Job } from "../../../Job/Job";
-import "./MeModal.css";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
+import { useModal } from "../../../context/ModalContext";
+import "./MeModal.css";
 
 export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
@@ -38,6 +41,8 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
   const personalProjectsRef = useRef<HTMLHeadingElement>(null);
   const educationRef = useRef<HTMLHeadingElement>(null);
   const butAlsoRef = useRef<HTMLHeadingElement>(null);
+
+  const { openDreamJobModal } = useModal();
 
   return (
     <>
@@ -174,13 +179,18 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Are you looking for a Senior Web or React Native developer with a strong
-        sense of design and user experience? Let’s talk! +33 6 31 796 781
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
         Nicolas.
       </WuiText>
+
+      <WuiAlert color={WuiAlertColor.SUCCESS} className="mb-30">
+        <WuiText as={WuiTextAs.P} className="my-0" size={WuiTextSize.S}>
+          I’m currently actively seeking a new professional opportunity as a
+          designer and React developer.{" "}
+          <WuiLink href="#" onClick={openDreamJobModal} color={WuiLinkColor.NONE}>
+            Check my ideal role description.
+          </WuiLink>
+        </WuiText>
+      </WuiAlert >
 
       <WuiTitle
         ref={workExperienceRef}
@@ -211,7 +221,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "Web SEO",
         ]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Development of the website for Swiss company Smood.ch, which
             specialises in ordering and delivery of meals, flowers, groceries
             and more. Responsive web app built with the Next.js framework in
@@ -381,7 +391,7 @@ Development of web-oriented personal projects.`}
           "Prototyping",
         ]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Full command of Adobe design tools (Illustrator, Photoshop) for
             designing modern, intuitive user interfaces. Specialised in
             wireframes, high-fidelity mockups and interactive prototypes.
@@ -424,9 +434,9 @@ Development of web-oriented personal projects.`}
           "Web Responsive",
         ]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Development of modern web applications with React, Next.js and
-            TypeScript. Expertise in HTML5, CSS3 (SASS/LESS) and JavaScript ES6+
+            TypeScript. Expertise in HTML5, CSS3, SASS and JavaScript ES6+
             to build performant, responsive user interfaces. Proficiency in
             testing (Jest, Cypress), version control (Git) and documentation
             (Storybook). Web performance, SEO and accessibility optimisation.
@@ -453,7 +463,7 @@ Development of web-oriented personal projects.`}
         companyName="Mobile development"
         badges={["React Native", "Firebase"]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Development of cross-platform mobile applications with React Native
             for iOS and Android. Integration of Firebase services
             (authentication, database, push notifications, analytics).
@@ -491,7 +501,7 @@ Development of web-oriented personal projects.`}
         jobTitle="Draw Kaleïdoscope !"
         badges={["Canvas", "Javascript", "Math"]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Become a Kaleï artist ! Kaleï is a little app to draw easily
             beautiful kaleïdoscopes and Mandalas. Click and move, change colors,
             pencil and start making hypnotic drawings.
@@ -514,7 +524,7 @@ Development of web-oriented personal projects.`}
         jobTitle="Track time spent on differents tasks."
         badges={["Javascript", "HTML", "CSS", "PHP", "MySQL"]}
         description={
-          <WuiText as={WuiTextAs.P} style={{ paddingTop: '1rem' }}>
+          <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             TicTac is a simple and efficient tool to track the time spent on
             your different tasks. Create your projects, start the timer and
             analyse your productivity. Manage your tasks easily and visualise
@@ -568,11 +578,15 @@ Development of web-oriented personal projects.`}
         duration="Passionate about a lot of things!"
         jobTitle="Passionate about nature and driven by curiosity"
         description={
-          <WuiText as={WuiTextAs.P} style={{
-            paddingTop: '1rem', display: 'flex',
-            gap: '10px',
-            flexWrap: 'wrap'
-          }}>
+          <WuiText
+            as={WuiTextAs.P}
+            style={{
+              paddingTop: "1rem",
+              display: "flex",
+              gap: "10px",
+              flexWrap: "wrap",
+            }}
+          >
             <WuiLink
               color={WuiLinkColor.NONE}
               size={WuiLinkSize.S}
@@ -748,7 +762,7 @@ Development of web-oriented personal projects.`}
             <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.L}>
               LEGO
             </WuiBadge>
-          </WuiText >
+          </WuiText>
         }
       />
     </>

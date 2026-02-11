@@ -4,6 +4,46 @@
  * Direction: a=all, x=left+right, y=top+bottom, t=top, b=bottom, l=left, r=right
  */
 
+.pa-0 { padding: var(--wui-space-0) !important; }
+
+.px-0 {
+  padding-left: var(--wui-space-0) !important;
+  padding-right: var(--wui-space-0) !important;
+}
+
+.py-0 {
+  padding-top: var(--wui-space-0) !important;
+  padding-bottom: var(--wui-space-0) !important;
+}
+
+.pt-0 { padding-top: var(--wui-space-0) !important; }
+
+.pb-0 { padding-bottom: var(--wui-space-0) !important; }
+
+.pl-0 { padding-left: var(--wui-space-0) !important; }
+
+.pr-0 { padding-right: var(--wui-space-0) !important; }
+
+.ma-0 { margin: var(--wui-space-0) !important; }
+
+.mx-0 {
+  margin-left: var(--wui-space-0) !important;
+  margin-right: var(--wui-space-0) !important;
+}
+
+.my-0 {
+  margin-top: var(--wui-space-0) !important;
+  margin-bottom: var(--wui-space-0) !important;
+}
+
+.mt-0 { margin-top: var(--wui-space-0) !important; }
+
+.mb-0 { margin-bottom: var(--wui-space-0) !important; }
+
+.ml-0 { margin-left: var(--wui-space-0) !important; }
+
+.mr-0 { margin-right: var(--wui-space-0) !important; }
+
 .pa-1 { padding: var(--wui-space-1) !important; }
 
 .px-1 {

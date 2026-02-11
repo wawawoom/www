@@ -1,5 +1,6 @@
 {
   "space": {
+    "0": { "value": "0", "type": "spacing" },
     "1": { "value": "0.056rem", "type": "spacing" },
     "2": { "value": "0.112rem", "type": "spacing" },
     "4": { "value": "0.224rem", "type": "spacing" },

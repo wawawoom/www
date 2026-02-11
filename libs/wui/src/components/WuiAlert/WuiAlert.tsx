@@ -41,7 +41,7 @@ export const WuiAlert = forwardRef<HTMLDivElement, WuiAlertProps>(
           <i className={iconClass} />
         </span>
 
-        <span className={`${componentName}__message`}>{children}</span>
+        {typeof children === "string" ? <span className={`${componentName}__message`}>{children}</span> : <div className={`${componentName}__message`}>{children}</div>}
       </div>
     );
   }
