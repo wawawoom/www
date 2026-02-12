@@ -55,7 +55,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           color={WuiBadgeColor.WARNING}
           className="work-badge"
         >
-          Open to work !
+          Open to work!
         </WuiBadge>
 
         <img
@@ -86,7 +86,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL} className="bio">
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge. I’m currently actively seeking a new professional opportunity as a
+        thinking about my next UX challenge. I’m currently seeking a new professional opportunity as a
         designer and React developer.{" "}
         <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
           Check my ideal role description.
@@ -206,7 +206,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "React",
           "NextJs",
           "HTML",
-          "CSS / SASS",
+          "CSS/SASS",
           "Javascript",
           "Typescript",
           "Jest",
@@ -220,7 +220,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         description={
           <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Development of the website for Swiss company Smood.ch, which
-            specialises in ordering and delivery of meals, flowers, groceries
+            specializes in ordering and delivery of meals, flowers, groceries
             and more. Responsive web app built with the Next.js framework in
             React and TypeScript. Unit testing with Jest and e2e/component
             testing with Cypress. Development of a documented UI component
@@ -241,7 +241,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
         companyName="GTL Studio"
         duration="Nov. 2018 – Nov. 2021 (~3 years)"
         jobTitle="Mobile Developer"
-        badges={["React native", "Firebase"]}
+        badges={["React Native", "Firebase"]}
         description="Development of a React Native mobile app for Eyescyou. Building this app allowed me to work across several areas: Firebase notifications, video recording and streaming, geolocation, LocalStorage data persistence, GraphQL API integration, and Android and iOS-specific challenges."
       />
 
@@ -255,7 +255,7 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
           "CSS",
           "Javascript",
           "jQuery",
-          "React native",
+          "React Native",
           "React",
           "Illustrator",
           "Photoshop",
@@ -378,12 +378,12 @@ Development of web-oriented personal projects.`}
 
       <Job
         logoUrl="/img/job/logo-graphisme.jpg"
-        companyName="UI / UX"
+        companyName="UI/UX"
         badges={[
           "Figma",
           "Illustrator",
           "Photoshop",
-          "UI / UX",
+          "UI/UX",
           "Wireframes",
           "Prototyping",
         ]}
@@ -437,7 +437,7 @@ Development of web-oriented personal projects.`}
             to build performant, responsive user interfaces. Proficiency in
             testing (Jest, Cypress), version control (Git) and documentation
             (Storybook). Web performance, SEO and accessibility optimisation.
-            Experience with Canvas, SVG and Web Sockets.
+            Experience with Canvas, SVG, and WebSockets.
             <br />
             <br />
             <WuiLink
@@ -465,7 +465,7 @@ Development of web-oriented personal projects.`}
             for iOS and Android. Integration of Firebase services
             (authentication, database, push notifications, analytics).
             Management of native features (camera, geolocation, local storage)
-            and performance optimisation. Publication on the Apple and Google
+            and performance optimization. Publication on the Apple and Google
             Play stores with metrics tracking and continuous updates.
             <br />
             <br />
@@ -499,8 +499,8 @@ Development of web-oriented personal projects.`}
         badges={["Canvas", "Javascript", "Math"]}
         description={
           <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
-            Become a Kaleï artist ! Kaleï is a little app to draw easily
-            beautiful kaleïdoscopes and Mandalas. Click and move, change colors,
+            Become a Kaleï artist! Kaleï is a little app to draw easily
+            beautiful kaleidoscopes and Mandalas. Click and move, change colors,
             pencil and start making hypnotic drawings.
             <br />
             <br />
@@ -509,7 +509,7 @@ Development of web-oriented personal projects.`}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
             >
-              Try it now !
+              Try it now!
             </WuiLink>
           </WuiText>
         }
@@ -518,7 +518,7 @@ Development of web-oriented personal projects.`}
       <Job
         logoUrl="/img/job/logo-tictac.png"
         companyName="TicTac tracker"
-        jobTitle="Track time spent on differents tasks."
+        jobTitle="Track time spent on different tasks."
         badges={["Javascript", "HTML", "CSS", "PHP", "MySQL"]}
         description={
           <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
@@ -533,7 +533,7 @@ Development of web-oriented personal projects.`}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
             >
-              Try it now !
+              Try it now!
             </WuiLink>
           </WuiText>
         }

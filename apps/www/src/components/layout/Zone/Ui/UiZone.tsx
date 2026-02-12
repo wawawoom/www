@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 import {
+  WuiBadge,
+  WuiBadgeColor,
+  WuiBadgeSize,
+  WuiButton,
+  WuiButtonColor,
   WuiColorAlias,
   WuiLink,
   WuiLinkColor,
   WuiModal,
-  WuiButton,
-  WuiButtonColor,
   WuiText,
   WuiTextAs,
   WuiTextSize,
@@ -14,8 +19,6 @@ import {
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
-import Gallery from "../../../Gallery/Gallery";
-import { useState } from "react";
 
 export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
   const { onOpenModal } = props;
@@ -28,23 +31,45 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
         UI / UX designer
       </WuiTitle>
 
+      <WuiText
+        as={WuiTextAs.P}
+        color={WuiColorAlias.NEUTRAL_900}
+      >
+        My background in graphic arts enables me to design and implement clear, consistent, and user-centered web and mobile interfaces.
+      </WuiText>
 
+      <WuiText as={WuiTextAs.P} className="badges">
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Figma
+        </WuiBadge>
+
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          CSS
+        </WuiBadge>
+
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Illustrator
+        </WuiBadge>
+
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Photoshop
+        </WuiBadge>
+
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Photography
+        </WuiBadge>
+
+        <WuiBadge color={WuiBadgeColor.TRANSPARENT} size={WuiBadgeSize.M}>
+          Painting
+        </WuiBadge>
+      </WuiText>
 
       <WuiText
         as={WuiTextAs.P}
         color={WuiColorAlias.NEUTRAL_900}
         size={WuiTextSize.S}
       >
-        Trained as a graphic designer, I quickly turned to web development
-        because as a freelance webmaster I did not want to depend on a developer
-        to build my company. After many late nights learning the basics of web
-        development, I was able to create first very simple showcase sites, then
-        increasingly complex ones. Adobe Flash was a major revelation at the
-        time—I could finally combine my graphic ideas with the interaction that
-        an original and attractive website required. I soon spoke ActionScript 3
-        as a second language :) I still remember Steve Jobs’s announcement at
-        the iPhone 1 presentation. « All the web on a smartphone »… Not quite—he
-        had just killed Flash technology…
+        My passion for graphic arts began with drawing and naturally evolved into painting, where I developed a strong interest in applied arts and visual communication. These disciplines taught me how to use composition, color, contrast, and visual balance to convey meaning effectively. I also practice analog photography, which deepened my understanding of light, framing, and attention to detail, as well as the discipline required by the film development process. My interest later expanded into video, where I explored motion and visual storytelling. Today, these artistic foundations are central to my work as a UI/UX designer, enabling me to imagine, sketch, and design clear, consistent, and user-centered interfaces, and to implement them effectively for web and mobile platforms by combining visual sensitivity with technical precision.
       </WuiText>
 
       <WuiLink
@@ -56,55 +81,18 @@ export const UiZone = (props: { onOpenModal: (section: Section) => void }) => {
           onOpenModal(Section.UI);
         }}
       >
-        See more
+        Let’s dive in
       </WuiLink>
-
-      <h2>I'm passionate about :</h2>
-
-      <Gallery
-        items={[
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "UI",
-            name: "UI",
-            onClick: () => {
-              setOpenTestModal(true);
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "UX",
-            name: "User XP",
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "CSS",
-            name: "CSS design",
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "UI",
-            name: "Photography",
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "UI",
-            name: "Videos",
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "UI",
-            name: "Painting",
-          },
-        ]}
-      />
 
       <WuiModal
         open={openTestModal}
         onClose={() => setOpenTestModal(false)}
         title="Modal title"
         footer={
-          <WuiButton color={WuiButtonColor.DARK} onClick={() => setOpenTestModal(false)}>
+          <WuiButton
+            color={WuiButtonColor.DARK}
+            onClick={() => setOpenTestModal(false)}
+          >
             Close
           </WuiButton>
         }

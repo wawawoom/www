@@ -1,4 +1,18 @@
-import { WuiColorAlias, WuiLink, WuiLinkColor, WuiText, WuiTextAs, WuiTextSize, WuiTitle, WuiTitleAs, WuiTitleLook } from "@wawawoom/wui";
+import {
+  WuiBadge,
+  WuiBadgeColor,
+  WuiBadgeSize,
+  WuiColorAlias,
+  WuiColorValue,
+  WuiLink,
+  WuiLinkColor,
+  WuiText,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleAs,
+  WuiTitleLook,
+} from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum";
 
@@ -7,26 +21,57 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
 
   return (
     <>
-      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiTitle
+        as={WuiTitleAs.H1}
+        look={WuiTitleLook.H2}
+        color={WuiColorAlias.NEUTRAL_0}
+      >
         React Native developper
       </WuiTitle>
 
+      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+        I design and build scalable, user-centered mobile applications using the
+        React native framework.
+      </WuiText>
 
-      <WuiText as={WuiTextAs.P} className="description" color={WuiColorAlias.NEUTRAL_0} size={WuiTextSize.S}>
-        Je me suis donc tourné vers le développement Javascript natif et jQuery.
-        Le projet sur lequel je travaillais à ce moment-là, nécessitait une
-        interface responsive pour les navigateurs web mobiles. Les media-queries
-        et Bootstrap n'avaient alors plus de secrets pour moi. Mais… Il est
-        évident que ce n'était pas une solution parfaite. Le développement natif
-        procurait de meilleures performances UX. Il a alors fallu attendre la
-        sortie de React Native pour que je trouve mon Graal. Développement JS
-        mais performances très proches du Natif ! Et cerise sur le gâteau, un
-        seul code pour iOs et Android. Je plonge alors corps et âme dans ce
-        framework en créant deux apps mobiles (en production) en étroite
-        collaboration avec deux développeurs backend qui me fournissent l'accès
-        aux données au travers d'API Rest et GraphQL. En parallèle je m'occupe
-        de la UI / UX et du développement Front-end de la webapp associée à
-        l'app mobile.
+      <WuiText as={WuiTextAs.P} className="badges">
+        <WuiBadge
+          color={WuiBadgeColor.TRANSPARENT}
+          size={WuiBadgeSize.M}
+          style={{ color: WuiColorValue.PINK_100 }}
+        >
+          React Native
+        </WuiBadge>
+
+        <WuiBadge
+          color={WuiBadgeColor.TRANSPARENT}
+          size={WuiBadgeSize.M}
+          style={{ color: WuiColorValue.PINK_100 }}
+        >
+          Google Play store
+        </WuiBadge>
+
+        <WuiBadge
+          color={WuiBadgeColor.TRANSPARENT}
+          size={WuiBadgeSize.M}
+          style={{ color: WuiColorValue.PINK_100 }}
+        >
+          App Store
+        </WuiBadge>
+      </WuiText>
+
+      <WuiText
+        as={WuiTextAs.P}
+        color={WuiColorAlias.NEUTRAL_0}
+        size={WuiTextSize.S}
+      >
+        In 2012, on the Hoozin project, I experimented with responsive web
+        design and saw its inherent limits. Later, on other projects, I adopted
+        React Native: it let me use React—a stack I already knew—to build
+        near-native apps for both iOS and Android from one codebase. I went on
+        to ship two production mobile apps with two backend developers (REST and
+        GraphQL APIs) and was responsible for UI/UX and frontend for both the
+        apps and their companion web app.
       </WuiText>
 
       <WuiLink
@@ -38,7 +83,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
           onOpenModal(Section.MOB);
         }}
       >
-        See more
+        Under the hood
       </WuiLink>
     </>
   );

@@ -31,7 +31,11 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
 
       if (open) {
         isClosingRef.current = false;
-        dialog.showModal();
+        if (typeof dialog.showModal === "function") {
+          dialog.showModal();
+        } else {
+          (dialog as HTMLDialogElement & { open: boolean }).open = true;
+        }
         const raf = requestAnimationFrame(() => {
           requestAnimationFrame(() => setIsAnimatedOpen(true));
         });
@@ -58,7 +62,11 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
         }
 
         isClosingRef.current = false;
-        dialog.close();
+        if (typeof dialog.close === "function") {
+          dialog.close();
+        } else {
+          (dialog as HTMLDialogElement & { open: boolean }).open = false;
+        }
         onClose();
       };
 

@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 .app__collapse-backdrop {
@@ -17,8 +17,8 @@
 .container {
   position: relative;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   aspect-ratio: 1/1;
   display: grid;
   grid-template-columns: 1fr;
@@ -37,16 +37,16 @@
     max-height 0.5s ease-in-out;
 
   @media (min-width: 992px) {
-    width: 50vh;
-    height: 50vh;
+    width: 50dvh;
+    height: 50dvh;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
     grid-template-areas:
       "me ui"
       "web mob";
-    max-width: 90vh;
-    max-height: 90vh;
+    max-width: 90dvh;
+    max-height: 90dvh;
   }
 }
 

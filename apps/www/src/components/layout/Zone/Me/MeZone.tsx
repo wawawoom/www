@@ -131,7 +131,7 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
           onOpenModal(Section.ME);
         }}
       >
-        See more
+        Check my work experience
       </WuiLink>
     </>
   );
