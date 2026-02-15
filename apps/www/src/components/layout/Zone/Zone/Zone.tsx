@@ -5,7 +5,8 @@ import "./Zone.css";
 import type { ZoneProps } from "./Zone.props";
 
 export const Zone = (props: ZoneProps) => {
-  const { section, title, onOpenModal, titleColor, expandedZone, onZoneClick } = props;
+  const { section, title, onOpenModal, titleColor, expandedZone, onZoneClick } =
+    props;
   const isExpanded = expandedZone === section;
 
   const handleClick = (e: React.MouseEvent) => {

@@ -1,6 +1,7 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+
+import "@testing-library/jest-dom";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import { WuiButton } from "./WuiButton";
 import { WuiButtonColor, WuiButtonSize } from "./WuiButton.props";
@@ -12,7 +13,9 @@ describe("WuiButton", () => {
 
   it("renders children", () => {
     render(<WuiButton>Click me</WuiButton>);
-    expect(screen.getByRole("button", { name: /click me/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /click me/i })
+    ).toBeInTheDocument();
   });
 
   it("renders with default color and size classes (LIGHT, M)", () => {
@@ -50,18 +53,14 @@ describe("WuiButton", () => {
   });
 
   it("renders left icon when leftIcon is provided", () => {
-    render(
-      <WuiButton leftIcon="fa-solid fa-arrow-left">Back</WuiButton>
-    );
+    render(<WuiButton leftIcon="fa-solid fa-arrow-left">Back</WuiButton>);
     const button = screen.getByRole("button", { name: /back/i });
     const leftIcon = button.querySelector("i.fa-solid.fa-arrow-left");
     expect(leftIcon).toBeInTheDocument();
   });
 
   it("renders right icon when rightIcon is provided", () => {
-    render(
-      <WuiButton rightIcon="fa-solid fa-arrow-right">Next</WuiButton>
-    );
+    render(<WuiButton rightIcon="fa-solid fa-arrow-right">Next</WuiButton>);
     const button = screen.getByRole("button", { name: /next/i });
     const rightIcon = button.querySelector("i.fa-solid.fa-arrow-right");
     expect(rightIcon).toBeInTheDocument();
@@ -69,10 +68,7 @@ describe("WuiButton", () => {
 
   it("renders both left and right icons when both are provided", () => {
     render(
-      <WuiButton
-        leftIcon="fa fa-left"
-        rightIcon="fa fa-right"
-      >
+      <WuiButton leftIcon="fa fa-left" rightIcon="fa fa-right">
         Both
       </WuiButton>
     );

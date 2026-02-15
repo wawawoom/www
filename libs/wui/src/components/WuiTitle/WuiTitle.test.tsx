@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { WuiColorAlias } from "../../enum";
@@ -15,7 +16,10 @@ describe("WuiTitle", () => {
     render(<WuiTitle data-testid="title">Hello</WuiTitle>);
     const el = screen.getByTestId("title");
     expect(el.tagName).toBe("H1");
-    expect(el).toHaveClass("wui-title", `wui-title--${WuiColorAlias.NEUTRAL_900}`);
+    expect(el).toHaveClass(
+      "wui-title",
+      `wui-title--${WuiColorAlias.NEUTRAL_900}`
+    );
   });
 
   it("applies look + custom color + className and supports changing the heading tag", () => {
@@ -58,7 +62,8 @@ describe("WuiTitle", () => {
       </WuiTitle>
     );
     expect(ref.current).toBeInstanceOf(HTMLHeadingElement);
-    expect(ref.current).toBe(screen.getByRole("heading", { name: "Ref", level: 2 }));
+    expect(ref.current).toBe(
+      screen.getByRole("heading", { name: "Ref", level: 2 })
+    );
   });
 });
-

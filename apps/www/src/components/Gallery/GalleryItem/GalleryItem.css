@@ -16,7 +16,7 @@
 
 .gallery-item-name {
   display: -webkit-box;
-  -webkit-line-clamp: 1; /* Nombre de lignes souhaitées */
+  -webkit-line-clamp: 3; /* Nombre de lignes souhaitées */
   -webkit-box-orient: vertical;
   overflow: hidden;
   width: 100%;

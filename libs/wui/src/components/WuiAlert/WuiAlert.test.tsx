@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { WuiAlert } from "./WuiAlert";
@@ -34,7 +35,9 @@ describe("WuiAlert", () => {
     );
     const alert = screen.getByRole("alert", { name: "Alert label" });
     expect(alert).toHaveClass("wui-alert--error", "custom");
-    expect(alert.querySelector(".wui-alert__icon i.fa-solid.fa-bug")).toBeInTheDocument();
+    expect(
+      alert.querySelector(".wui-alert__icon i.fa-solid.fa-bug")
+    ).toBeInTheDocument();
   });
 
   it("forwards ref to the root element", () => {
@@ -44,4 +47,3 @@ describe("WuiAlert", () => {
     expect(ref.current).toBe(screen.getByRole("alert"));
   });
 });
-

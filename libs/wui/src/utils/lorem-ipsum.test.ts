@@ -26,4 +26,3 @@ describe("loremIpsum", () => {
     expect(huge).toBe(LOREM_IPSUM);
   });
 });
-

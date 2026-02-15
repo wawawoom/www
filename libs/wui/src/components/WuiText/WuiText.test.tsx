@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { WuiColorAlias } from "../../enum";
@@ -56,4 +57,3 @@ describe("WuiText", () => {
     expect(ref.current).toBe(screen.getByText("Ref"));
   });
 });
-

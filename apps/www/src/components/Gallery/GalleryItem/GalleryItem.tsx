@@ -1,10 +1,16 @@
-import { WuiText, WuiTextAs, WuiTextSize } from "@wawawoom/wui";
+import { WuiColorAlias, WuiText, WuiTextAs, WuiTextSize } from "@wawawoom/wui";
 
 import "./GalleryItem.css";
 import type { GalleryItemProps } from "./GalleryItem.props";
 
 export const GalleryItem = (props: GalleryItemProps) => {
-  const { imgUrl, imgAlt, name, onClick } = props;
+  const {
+    imgUrl,
+    imgAlt,
+    name,
+    onClick,
+    textColor = WuiColorAlias.NEUTRAL_900,
+  } = props;
 
   const componentName = "gallery-item";
 
@@ -17,9 +23,11 @@ export const GalleryItem = (props: GalleryItemProps) => {
       <img src={imgUrl} alt={imgAlt} className={`${componentName}-image`} />
 
       <WuiText
-        as={WuiTextAs.SPAN}
+        as={WuiTextAs.DIV}
         size={WuiTextSize.S}
         className={`${componentName}-name`}
+        color={textColor}
+        style={{ lineHeight: 1.3 }}
       >
         {name}
       </WuiText>

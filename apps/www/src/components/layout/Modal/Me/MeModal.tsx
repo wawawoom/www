@@ -19,10 +19,10 @@ import {
 } from "@wawawoom/wui";
 import { WuiColorAlias } from "@wawawoom/wui";
 
+import { useModal } from "../../../../context/ModalContext";
 import { Section } from "../../../../ts/enum/section.enum";
 import { Job } from "../../../Job/Job";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
-import { useModal } from "../../../context/ModalContext";
 import "./MeModal.css";
 
 export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
@@ -86,8 +86,8 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL} className="bio">
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge. I’m currently seeking a new professional opportunity as a
-        designer and React developer.{" "}
+        thinking about my next UX challenge. I’m currently seeking a new
+        professional opportunity as a designer and React developer.{" "}
         <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
           Check my ideal role description.
         </WuiLink>
@@ -433,9 +433,9 @@ Development of web-oriented personal projects.`}
         description={
           <WuiText as={WuiTextAs.P} style={{ paddingTop: "1rem" }}>
             Development of modern web applications with React, Next.js and
-            TypeScript. Expertise in HTML5, CSS3, SASS and JavaScript ES6+
-            to build performant, responsive user interfaces. Proficiency in
-            testing (Jest, Cypress), version control (Git) and documentation
+            TypeScript. Expertise in HTML5, CSS3, SASS and JavaScript ES6+ to
+            build performant, responsive user interfaces. Proficiency in testing
+            (Jest, Cypress), version control (Git) and documentation
             (Storybook). Web performance, SEO and accessibility optimisation.
             Experience with Canvas, SVG, and WebSockets.
             <br />

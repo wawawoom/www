@@ -27,7 +27,7 @@ export const Color: Story = {
     //   value: string;
     // }> = [];
 
-    return <></>
+    return <></>;
     // console.log({ colors });
 
     // return (

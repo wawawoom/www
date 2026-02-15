@@ -43,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const Component: Story = {
   args: {
     open: false,
-    onClose: () => { },
+    onClose: () => {},
     children: "",
     title: "This a very long title example to show ellipsis",
     footer: undefined,
@@ -62,7 +62,9 @@ export const Component: Story = {
         <WuiModal
           open={open}
           onClose={() => setOpen(false)}
-          title={args.title ?? "This a very long title example to show ellipsis"}
+          title={
+            args.title ?? "This a very long title example to show ellipsis"
+          }
           footer={
             <>
               <WuiButton

@@ -1,9 +1,7 @@
 import { forwardRef } from "react";
 
 import { clsx } from "../../utils/clsx";
-import {
-  WuiAlertColor,
-} from "./WuiAlert.props";
+import { WuiAlertColor } from "./WuiAlert.props";
 import type { WuiAlertProps } from "./WuiAlert.props";
 
 const DEFAULT_ICONS: Record<WuiAlertColor, string> = {
@@ -17,13 +15,7 @@ const DEFAULT_ICONS: Record<WuiAlertColor, string> = {
 
 export const WuiAlert = forwardRef<HTMLDivElement, WuiAlertProps>(
   (
-    {
-      color = WuiAlertColor.INFO,
-      icon,
-      children,
-      className = "",
-      ...props
-    },
+    { color = WuiAlertColor.INFO, icon, children, className = "", ...props },
     ref
   ) => {
     const componentName = "wui-alert";
@@ -41,7 +33,11 @@ export const WuiAlert = forwardRef<HTMLDivElement, WuiAlertProps>(
           <i className={iconClass} />
         </span>
 
-        {typeof children === "string" ? <span className={`${componentName}__message`}>{children}</span> : <div className={`${componentName}__message`}>{children}</div>}
+        {typeof children === "string" ? (
+          <span className={`${componentName}__message`}>{children}</span>
+        ) : (
+          <div className={`${componentName}__message`}>{children}</div>
+        )}
       </div>
     );
   }

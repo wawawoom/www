@@ -12,9 +12,9 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
+import { useModal } from "../../../../context/ModalContext.ts";
 import { Section } from "../../../../ts/enum/section.enum";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
-import { useModal } from "../../../context/ModalContext.ts";
 import "./MeZone.css";
 
 export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
@@ -53,8 +53,9 @@ export const MeZone = (props: { onOpenModal: (section: Section) => void }) => {
 
       <WuiText as={WuiTextAs.P}>
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
-        thinking about my next UX challenge. I’m currently actively seeking a new professional opportunity as a
-        designer and React developer. <WuiLink
+        thinking about my next UX challenge. I’m currently actively seeking a
+        new professional opportunity as a designer and React developer.{" "}
+        <WuiLink
           href="#"
           onClick={(e) => {
             e.stopPropagation();

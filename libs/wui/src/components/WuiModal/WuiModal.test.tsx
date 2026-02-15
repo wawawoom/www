@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 
 import { WuiModal } from "./WuiModal";
@@ -28,7 +29,8 @@ describe("WuiModal", () => {
 
     // Ensure these exist so we can spy in tests
     if (!(globalThis as any).requestAnimationFrame) {
-      (globalThis as any).requestAnimationFrame = (_cb: FrameRequestCallback) => 1;
+      (globalThis as any).requestAnimationFrame = (_cb: FrameRequestCallback) =>
+        1;
     }
     if (!(globalThis as any).cancelAnimationFrame) {
       (globalThis as any).cancelAnimationFrame = () => {};
@@ -36,15 +38,11 @@ describe("WuiModal", () => {
   });
 
   beforeEach(() => {
-    jest
-      .spyOn(globalThis, "requestAnimationFrame")
-      .mockImplementation((cb) => {
-        cb(0);
-        return 1;
-      });
-    jest
-      .spyOn(globalThis, "cancelAnimationFrame")
-      .mockImplementation(() => {});
+    jest.spyOn(globalThis, "requestAnimationFrame").mockImplementation((cb) => {
+      cb(0);
+      return 1;
+    });
+    jest.spyOn(globalThis, "cancelAnimationFrame").mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -57,7 +55,10 @@ describe("WuiModal", () => {
 
   it("renders title/body/footer and opens with animation when open=true", () => {
     const onClose = jest.fn();
-    const showModalSpy = jest.spyOn(HTMLDialogElement.prototype as any, "showModal");
+    const showModalSpy = jest.spyOn(
+      HTMLDialogElement.prototype as any,
+      "showModal"
+    );
 
     render(
       <WuiModal
@@ -104,7 +105,9 @@ describe("WuiModal", () => {
     );
 
     const dialog = document.querySelector("dialog") as HTMLDialogElement;
-    const container = dialog.querySelector(".wui-modal__container") as HTMLDivElement;
+    const container = dialog.querySelector(
+      ".wui-modal__container"
+    ) as HTMLDivElement;
 
     expect(dialog).toHaveClass("wui-modal--open");
     fireEvent.click(screen.getByLabelText("Close"));
@@ -233,7 +236,9 @@ describe("WuiModal", () => {
     );
 
     expect(fnRef).toHaveBeenCalled();
-    expect(fnRef.mock.calls.some((call) => call[0] instanceof HTMLDialogElement)).toBe(true);
+    expect(
+      fnRef.mock.calls.some((call) => call[0] instanceof HTMLDialogElement)
+    ).toBe(true);
 
     expect(objRef.current).toBeInstanceOf(HTMLDialogElement);
   });
@@ -257,4 +262,3 @@ describe("WuiModal", () => {
   // Note: we intentionally don't unit-test the impossible "innerRef.current is null after mount"
   // defensive branches; React sets refs before running effects.
 });
-

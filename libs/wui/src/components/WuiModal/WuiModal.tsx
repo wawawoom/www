@@ -1,28 +1,24 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
 
 import { clsx } from "../../utils/clsx";
-import type { WuiModalProps } from "./WuiModal.props";
-import { WuiText, WuiTextAs, WuiTextSize } from "../WuiText";
 import { WuiButton, WuiButtonColor, WuiButtonSize } from "../WuiButton";
+import { WuiText, WuiTextAs, WuiTextSize } from "../WuiText";
+import type { WuiModalProps } from "./WuiModal.props";
 
 export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
   (
-    {
-      open,
-      onClose,
-      title,
-      children,
-      footer,
-      className = "",
-      ...props
-    },
+    { open, onClose, title, children, footer, className = "", ...props },
     ref
   ) => {
     const innerRef = useRef<HTMLDialogElement>(null);
     const [isAnimatedOpen, setIsAnimatedOpen] = useState(false);
     const isClosingRef = useRef(false);
 
-    const classNames = clsx("wui-modal", isAnimatedOpen && "wui-modal--open", className);
+    const classNames = clsx(
+      "wui-modal",
+      isAnimatedOpen && "wui-modal--open",
+      className
+    );
 
     useEffect(() => {
       const dialog = innerRef.current;
@@ -72,7 +68,8 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
 
       const handleTransitionEnd = (e: TransitionEvent) => {
         if (e.target !== dialog || !isClosingRef.current) return;
-        if (e.propertyName !== "transform" && e.propertyName !== "opacity") return;
+        if (e.propertyName !== "transform" && e.propertyName !== "opacity")
+          return;
         finishClose();
       };
 
@@ -80,7 +77,7 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
 
       return () => {
         return dialog.removeEventListener("transitionend", handleTransitionEnd);
-      }
+      };
     }, [onClose]);
 
     /* Cancel (Escape / backdrop): prevent close, run closing animation then close */
@@ -120,11 +117,10 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
       innerRef.current = node;
       if (typeof ref === "function") {
         ref(node);
+      } else if (ref != null) {
+        (ref as React.MutableRefObject<HTMLDialogElement | null>).current =
+          node;
       }
-      else if (ref != null) {
-        (ref as React.MutableRefObject<HTMLDialogElement | null>).current = node;
-      }
-
     };
 
     const handleCloseClick = () => {
@@ -148,10 +144,22 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
         <div className="wui-modal__container">
           <header className="wui-modal__header">
             {title != null && (
-              <WuiText as={WuiTextAs.DIV} size={WuiTextSize.XL} className="wui-modal__title">{title}</WuiText>
+              <WuiText
+                as={WuiTextAs.DIV}
+                size={WuiTextSize.XL}
+                className="wui-modal__title"
+              >
+                {title}
+              </WuiText>
             )}
 
-            <WuiButton color={WuiButtonColor.GHOST} size={WuiButtonSize.L} onClick={handleCloseClick} aria-label="Close" leftIcon="fa-solid fa-xmark" />
+            <WuiButton
+              color={WuiButtonColor.GHOST}
+              size={WuiButtonSize.L}
+              onClick={handleCloseClick}
+              aria-label="Close"
+              leftIcon="fa-solid fa-xmark"
+            />
           </header>
 
           <div className="wui-modal__body">{children}</div>

@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { WuiLink } from "./WuiLink";
@@ -52,4 +53,3 @@ describe("WuiLink", () => {
     expect(ref.current).toBe(link);
   });
 });
-

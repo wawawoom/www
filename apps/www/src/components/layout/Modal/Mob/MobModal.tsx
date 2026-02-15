@@ -8,8 +8,9 @@ import {
   WuiTitle,
   WuiTitleAs,
 } from "@wawawoom/wui";
+
+import { useModal } from "../../../../context/ModalContext";
 import Gallery from "../../../Gallery/Gallery";
-import { useModal } from "../../../context/ModalContext";
 
 export const MobModal = () => {
   const { openDreamJobModal } = useModal();
@@ -70,7 +71,14 @@ export const MobModal = () => {
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        As I am looking for new opportunities, I aim to specialize in the creation and implementation of design systems—from defining scalable, consistent systems in design tools to translating them into production-ready React component libraries documented with Storybook. My combined experience in design and development allows me to approach this from both perspectives and deliver interfaces that are both functional and visually coherent.  <WuiLink
+        As I am looking for new opportunities, I aim to specialize in the
+        creation and implementation of design systems—from defining scalable,
+        consistent systems in design tools to translating them into
+        production-ready React component libraries documented with Storybook. My
+        combined experience in design and development allows me to approach this
+        from both perspectives and deliver interfaces that are both functional
+        and visually coherent.{" "}
+        <WuiLink
           href="#"
           onClick={(e) => {
             e.stopPropagation();
@@ -96,11 +104,13 @@ export const MobModal = () => {
             imgUrl: "/img/job/logo-graphisme.jpg",
             imgAlt: "Eyescyou",
             name: "Eyescyou",
+            textColor: WuiColorAlias.NEUTRAL_0,
           },
           {
             imgUrl: "/img/job/logo-graphisme.jpg",
             imgAlt: "Stent AI",
             name: "Stent AI",
+            textColor: WuiColorAlias.NEUTRAL_0,
           },
         ]}
       />

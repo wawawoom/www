@@ -1,10 +1,7 @@
 import { forwardRef } from "react";
 
 import { clsx } from "../../utils/clsx";
-import {
-  WuiButtonColor,
-  WuiButtonSize,
-} from "./WuiButton.props";
+import { WuiButtonColor, WuiButtonSize } from "./WuiButton.props";
 import type { WuiButtonProps } from "./WuiButton.props";
 
 export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(

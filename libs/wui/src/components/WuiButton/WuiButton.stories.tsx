@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { WuiTitleAs, WuiTitleLook } from "../..";
+import { WuiTitle } from "../WuiTitle/WuiTitle";
 import { WuiButton } from "./WuiButton";
 import { WuiButtonColor, WuiButtonSize } from "./WuiButton.props";
-import { WuiTitle } from "../WuiTitle/WuiTitle";
-import { WuiTitleAs, WuiTitleLook } from "../..";
 
 const meta = {
   title: "Components/WuiButton",
@@ -45,14 +45,16 @@ const meta = {
     },
     leftIcon: {
       control: "text",
-      description: "Icon to display on the left of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-left",
+      description:
+        "Icon to display on the left of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-left",
       table: {
         type: { summary: "string" },
       },
     },
     rightIcon: {
       control: "text",
-      description: "Icon to display on the right of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-right",
+      description:
+        "Icon to display on the right of the children. Use the font-awesome classes.<br />Example: fa-solid fa-arrow-right",
       table: {
         type: { summary: "string" },
       },
@@ -91,39 +93,64 @@ export const All: Story = {
   },
   render: () => (
     <div>
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.L:</WuiTitle>
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiButton at WuiButtonSize.L:
+      </WuiTitle>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
         {Object.values(WuiButtonColor).map((color) => (
-          <WuiButton key={color} color={color} size={WuiButtonSize.L} >
+          <WuiButton key={color} color={color} size={WuiButtonSize.L}>
             {color}
           </WuiButton>
-        ))
-        }
+        ))}
       </div>
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.M (default):</WuiTitle>
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiButton at WuiButtonSize.M (default):
+      </WuiTitle>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
-        {
-          Object.values(WuiButtonColor).map((color) => (
-            <WuiButton key={color} color={color} >
-              {color}
-            </WuiButton>
-          ))
-        }
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
+        {Object.values(WuiButtonColor).map((color) => (
+          <WuiButton key={color} color={color}>
+            {color}
+          </WuiButton>
+        ))}
       </div>
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>WuiButton at WuiButtonSize.S :</WuiTitle>
+      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H5}>
+        WuiButton at WuiButtonSize.S :
+      </WuiTitle>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
-        {
-          Object.values(WuiButtonColor).map((color) => (
-            <WuiButton key={color} color={color} size={WuiButtonSize.S}>
-              {color}
-            </WuiButton>
-          ))
-        }
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1rem",
+          alignItems: "center",
+          marginBottom: "3rem",
+        }}
+      >
+        {Object.values(WuiButtonColor).map((color) => (
+          <WuiButton key={color} color={color} size={WuiButtonSize.S}>
+            {color}
+          </WuiButton>
+        ))}
       </div>
     </div>
   ),

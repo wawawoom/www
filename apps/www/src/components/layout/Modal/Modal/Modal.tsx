@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 
-import { WuiColorValue, WuiLink, WuiLinkColor, WuiLinkSize } from "@wawawoom/wui";
+import {
+  WuiColorValue,
+  WuiLink,
+  WuiLinkColor,
+  WuiLinkSize,
+} from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum.ts";
 import { MeModal } from "../Me/MeModal.tsx";
@@ -11,7 +16,13 @@ import "./Modal.css";
 import type { ModalProps } from "./Modal.props.ts";
 
 export const Modal = (props: ModalProps) => {
-  const { section, isAnimating, closeButtonColor = WuiColorValue.BLACK_900, onCloseModal, onOpenModal } = props;
+  const {
+    section,
+    isAnimating,
+    closeButtonColor = WuiColorValue.BLACK_900,
+    onCloseModal,
+    onOpenModal,
+  } = props;
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -46,7 +57,7 @@ export const Modal = (props: ModalProps) => {
         color={WuiLinkColor.GHOST}
         style={{ color: closeButtonColor }}
       >
-        <i className="fa-solid fa-xmark" ></i>
+        <i className="fa-solid fa-xmark"></i>
       </WuiLink>
 
       <div className="modal__content">

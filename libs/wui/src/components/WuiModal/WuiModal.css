@@ -80,7 +80,10 @@
   min-height: 0;
   height: auto;
   max-height: 92dvh;
-  padding-bottom: env(safe-area-inset-bottom, 0); /* iPhone: évite le home indicator */
+  padding-bottom: env(
+    safe-area-inset-bottom,
+    0
+  ); /* iPhone: évite le home indicator */
 }
 
 @media (min-width: 992px) {

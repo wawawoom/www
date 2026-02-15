@@ -1,5 +1,6 @@
-import "@testing-library/jest-dom";
 import { createRef } from "react";
+
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { WuiBadge } from "./WuiBadge";
@@ -41,4 +42,3 @@ describe("WuiBadge", () => {
     expect(ref.current).toBe(screen.getByText("Ref"));
   });
 });
-

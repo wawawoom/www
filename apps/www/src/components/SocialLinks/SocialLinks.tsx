@@ -1,4 +1,5 @@
 import { WuiLink, WuiLinkColor, WuiLinkSize } from "@wawawoom/wui";
+
 import "./SocialLinks.css";
 
 const SocialLinks = () => {

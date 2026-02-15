@@ -1,10 +1,7 @@
 import { forwardRef } from "react";
 
 import { clsx } from "../../utils/clsx";
-import {
-  WuiBadgeColor,
-  WuiBadgeSize,
-} from "./WuiBadge.props";
+import { WuiBadgeColor, WuiBadgeSize } from "./WuiBadge.props";
 import type { WuiBadgeProps } from "./WuiBadge.props";
 
 export const WuiBadge = forwardRef<HTMLSpanElement, WuiBadgeProps>(
@@ -26,7 +23,9 @@ export const WuiBadge = forwardRef<HTMLSpanElement, WuiBadgeProps>(
     );
 
     return (
-      <span ref={ref} className={classNames} {...props}>{children}</span>
+      <span ref={ref} className={classNames} {...props}>
+        {children}
+      </span>
     );
   }
 );

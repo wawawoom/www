@@ -2,18 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 import { WuiColorAlias, WuiColorValue } from "@wawawoom/wui";
 
+import { ModalProvider } from "../../context/ModalProvider.tsx";
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
+import { pathToSection } from "../../utils/path-to-section.ts";
 import { Modal } from "../layout/Modal/Modal/Modal.tsx";
 import { Zone } from "../layout/Zone/Zone/Zone.tsx";
 import "./App.css";
-import { pathToSection } from "../../utils/path-to-section.ts";
-import { ModalProvider } from "../context/ModalProvider.tsx";
-
-
 
 const App = () => {
-
   const currentSectionFromURL = useLocation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,13 +18,18 @@ const App = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [expandedZone, setExpandedZone] = useState<Section | null>(null);
   const hasInitializedRef = useRef(false);
-  const pendingReopenRef = useRef<{ section: Section; updateUrl: boolean } | null>(null);
+  const pendingReopenRef = useRef<{
+    section: Section;
+    updateUrl: boolean;
+  } | null>(null);
 
   const openModal = (section: Section, updateUrl: boolean) => {
     if (updateUrl) navigateTo(`/${section}`);
     setSection(section);
     setIsModalOpen(true);
-    requestAnimationFrame(() => requestAnimationFrame(() => setIsAnimating(true)));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => setIsAnimating(true))
+    );
   };
 
   const onOpenModal = (section: Section, updateUrl: boolean = true) => {
@@ -54,7 +56,9 @@ const App = () => {
       }
 
       if (pendingOpenModal) {
-        requestAnimationFrame(() => openModal(pendingOpenModal.section, pendingOpenModal.updateUrl));
+        requestAnimationFrame(() =>
+          openModal(pendingOpenModal.section, pendingOpenModal.updateUrl)
+        );
       }
     }, 500);
   };

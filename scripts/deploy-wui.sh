@@ -44,7 +44,7 @@ if [ -z "$FTP_PASS" ]; then
 fi
 
 SOURCE_DIR="${SOURCE_DIR:-libs/wui/dist_storybook}"
-FTP_DIR="${FTP_DIR:-/www/next/projects/wui/}"
+FTP_DIR="${FTP_DIR:-/www/next/projects/wui/storybook/}"
 
 echo "🚀 Début de l'upload FTP..."
 echo "📁 Dossier de destination: $FTP_DIR"
@@ -71,10 +71,10 @@ if [ -f "$INDEX_HTML" ]; then
         # Utiliser sed pour ajouter la balise <base> juste après <head>
         if [[ "$OSTYPE" == "darwin"* ]]; then
             # macOS
-            sed -i '' 's|<head>|<head>\n  <base href="/projects/wui/">|' "$INDEX_HTML"
+            sed -i '' 's|<head>|<head>\n  <base href="/projects/wui/storybook/">|' "$INDEX_HTML"
         else
             # Linux
-            sed -i 's|<head>|<head>\n  <base href="/projects/wui/">|' "$INDEX_HTML"
+            sed -i 's|<head>|<head>\n  <base href="/projects/wui/storybook/">|' "$INDEX_HTML"
         fi
         echo "✅ Balise <base> ajoutée avec succès dans index.html"
     else

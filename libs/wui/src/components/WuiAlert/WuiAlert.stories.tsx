@@ -65,7 +65,14 @@ export const Documentation: Story = {
     controls: { disable: true },
   },
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", minWidth: "24rem" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        minWidth: "24rem",
+      }}
+    >
       <WuiAlert color={WuiAlertColor.SUCCESS}>
         Your account has been saved.
       </WuiAlert>
