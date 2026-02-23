@@ -1,0 +1,63 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiInputStories from "./WuiInput.stories";
+
+<Meta of={WuiInputStories} />
+
+# WuiInput
+
+Input field with sizes (S, M, L), states (default, error), full-width option and optional label. All sizes:
+
+<Canvas of={WuiInputStories.Component} sourceState="none" />
+
+## Props
+
+`WuiInput` extends the HTML attributes of `input`. Additional props: `label` (label text associated with the field), `height`, `status`, `block`. Other props from `InputHTMLAttributes` (e.g. `type`, `placeholder`, `disabled`, `id`, `aria-*`) are supported. If `label` is provided without `id`, an `id` is generated to link the label to the field.
+
+<ArgTypes />
+
+## Implementation
+
+Default input (size M, default state):
+
+```tsx
+import { WuiInput } from "@wawawoom/wui";
+
+<WuiInput placeholder="Enter text..." />;
+```
+
+With size and state:
+
+```tsx
+import { WuiInput, WuiInputHeight, WuiInputStatus } from "@wawawoom/wui";
+
+<WuiInput
+  height={WuiInputHeight.L}
+  status={WuiInputStatus.ERROR}
+  placeholder="Invalid value"
+/>;
+```
+
+With label (recommended for accessibility):
+
+```tsx
+import { WuiInput } from "@wawawoom/wui";
+
+<WuiInput label="Email" type="email" placeholder="you@example.com" />;
+```
+
+With label and custom id:
+
+```tsx
+import { WuiInput } from "@wawawoom/wui";
+
+<WuiInput label="Username" id="username" placeholder="johndoe" />;
+```
+
+Disabled:
+
+```tsx
+import { WuiInput } from "@wawawoom/wui";
+
+<WuiInput disabled placeholder="Disabled" />;
+```

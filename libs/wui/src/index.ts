@@ -8,3 +8,4 @@ export * from "./components/WuiButton";
 export * from "./components/WuiBadge";
 export * from "./components/WuiModal";
 export * from "./components/WuiAlert";
+export * from "./components/WuiInput";

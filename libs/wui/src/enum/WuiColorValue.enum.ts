@@ -51,5 +51,5 @@ export enum WuiColorValue {
   YELLOW_600 = "#edc602",
   YELLOW_700 = "#d4b104",
   YELLOW_800 = "#b79800",
-  YELLOW_900 = "#a08400"
+  YELLOW_900 = "#836e02"
 }
