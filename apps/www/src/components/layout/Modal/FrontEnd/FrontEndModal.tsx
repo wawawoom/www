@@ -15,10 +15,10 @@ import {
 } from "@wawawoom/wui";
 
 import { getEnv } from "../../../../config/env.ts";
-import { useModal } from "../../../../context/ModalContext";
-import { Gallery } from "../../../Gallery/Gallery";
+import { useModal } from "../../../../context/ModalContext.ts";
+import { Gallery } from "../../../Gallery/Gallery.tsx";
 
-export const WebModal = () => {
+export const FrontEndModal = () => {
   const { openDreamJobModal } = useModal();
 
   const [modalSourceCodeWebsiteIsOpen, setModalSourceCodeWebsiteIsOpen] =
@@ -39,7 +39,7 @@ export const WebModal = () => {
         color={WuiColorAlias.NEUTRAL_0}
         style={{ marginTop: 0 }}
       >
-        Web developer
+        Front End
       </WuiTitle>
 
       <WuiText

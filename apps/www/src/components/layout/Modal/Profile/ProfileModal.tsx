@@ -23,9 +23,11 @@ import { useModal } from "../../../../context/ModalContext";
 import { Section } from "../../../../ts/enum/section.enum";
 import { Job } from "../../../Job/Job";
 import SocialLinks from "../../../SocialLinks/SocialLinks";
-import "./MeModal.css";
+import "./ProfileModal.css";
 
-export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
+export const ProfileModal = (props: {
+  onOpenModal: (section: Section) => void;
+}) => {
   const { onOpenModal } = props;
 
   const scrollTo = (ref: React.RefObject<HTMLHeadingElement>) => {
@@ -87,7 +89,8 @@ export const MeModal = (props: { onOpenModal: (section: Section) => void }) => {
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XXL} className="bio">
         I eat JavaScript for breakfast, savor UI for lunch, and fall asleep
         thinking about my next UX challenge. I’m currently seeking a new
-        professional opportunity as a designer and React developer.{" "}
+        professional opportunity as a Product UI architecture & Design systems
+        engineer.{" "}
         <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
           Check my ideal role description.
         </WuiLink>
@@ -400,7 +403,7 @@ Development of web-oriented personal projects.`}
               href="/ui"
               onClick={(event) => {
                 event.preventDefault();
-                onOpenModal(Section.UI);
+                onOpenModal(Section.DESIGN_SYSTEM);
               }}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
@@ -444,7 +447,7 @@ Development of web-oriented personal projects.`}
               href="/web"
               onClick={(event) => {
                 event.preventDefault();
-                onOpenModal(Section.WEB);
+                onOpenModal(Section.FRONT_END);
               }}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}
@@ -470,10 +473,10 @@ Development of web-oriented personal projects.`}
             <br />
             <br />
             <WuiLink
-              href="/mob"
+              href="/portfolio"
               onClick={(event) => {
                 event.preventDefault();
-                onOpenModal(Section.MOB);
+                onOpenModal(Section.PORTFOLIO);
               }}
               color={WuiLinkColor.LIGHT}
               size={WuiLinkSize.S}

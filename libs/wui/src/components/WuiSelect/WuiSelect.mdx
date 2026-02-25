@@ -1,0 +1,102 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiSelectStories from "./WuiSelect.stories";
+
+<Meta of={WuiSelectStories} />
+
+# WuiSelect
+
+Select dropdown based on the native HTML `<select>` element. Supports sizes (S, M, L), states (default, error, valid), optional label and optional helper messages.
+
+<Canvas of={WuiSelectStories.Component} sourceState="none" />
+
+## Props
+
+`WuiSelect` extends the HTML attributes of `<select>`. Additional props: `label` (label text associated with the field), `height`, `status`, `helpers`. Other props from `SelectHTMLAttributes` (e.g. `disabled`, `id`, `aria-*`, `value`, `onChange`, `multiple`, `required`) are supported. Children should be `<option>` elements.
+
+**Helpers:** pass an array of `{ message: string, status?: WuiInputHelperStatus }` to display one or more helper lines under the select (default, error, or valid style).
+
+<ArgTypes />
+
+## Implementation
+
+Default select (size M, default state) with options:
+
+```tsx
+import { WuiSelect } from "@wawawoom/wui";
+
+<WuiSelect label="Country">
+  <option value="">Choose an option</option>
+  <option value="fr">France</option>
+  <option value="de">Germany</option>
+  <option value="uk">United Kingdom</option>
+</WuiSelect>
+```
+
+With height and status:
+
+```tsx
+import { WuiSelect, WuiSelectHeight, WuiSelectStatus } from "@wawawoom/wui";
+
+<WuiSelect
+  label="Country"
+  height={WuiSelectHeight.L}
+  status={WuiSelectStatus.ERROR}
+>
+  <option value="">Choose</option>
+  <option value="fr">France</option>
+</WuiSelect>
+```
+
+Controlled select (value + onChange):
+
+```tsx
+import { useState } from "react";
+import { WuiSelect } from "@wawawoom/wui";
+
+function MyForm() {
+  const [country, setCountry] = useState("");
+
+  return (
+    <WuiSelect
+      label="Country"
+      value={country}
+      onChange={(e) => setCountry(e.target.value)}
+    >
+      <option value="">Choose</option>
+      <option value="fr">France</option>
+      <option value="de">Germany</option>
+    </WuiSelect>
+  );
+}
+```
+
+With helper message:
+
+```tsx
+import { WuiSelect, WuiInputHelperStatus } from "@wawawoom/wui";
+
+<WuiSelect
+  label="Country"
+  helpers={[
+    {
+      status: WuiInputHelperStatus.DEFAULT,
+      message: "Select your country of residence.",
+    },
+  ]}
+>
+  <option value="">Choose</option>
+  <option value="fr">France</option>
+</WuiSelect>
+```
+
+Disabled:
+
+```tsx
+import { WuiSelect } from "@wawawoom/wui";
+
+<WuiSelect label="Country" disabled>
+  <option value="">Choose</option>
+  <option value="fr">France</option>
+</WuiSelect>
+```

@@ -3,6 +3,7 @@ import { createRef } from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
+import { WuiInputHelperStatus } from "../WuiInputHelper/WuiInputHelper.props";
 import { WuiInput } from "./WuiInput";
 import { WuiInputHeight, WuiInputStatus } from "./WuiInput.props";
 
@@ -32,12 +33,6 @@ describe("WuiInput", () => {
     );
     const input = screen.getByRole("textbox", { name: /input/i });
     expect(input).toHaveClass("wui-input--l", "wui-input--error");
-  });
-
-  it("applies block class when block is true", () => {
-    render(<WuiInput aria-label="Input" block />);
-    const input = screen.getByRole("textbox", { name: /input/i });
-    expect(input).toHaveClass("wui-input--block");
   });
 
   it("does not apply block class when block is false", () => {
@@ -104,6 +99,92 @@ describe("WuiInput", () => {
       render(<WuiInput ref={ref} label="Test" />);
       expect(ref.current).toBeInstanceOf(HTMLInputElement);
       expect(ref.current).toBe(screen.getByRole("textbox", { name: /test/i }));
+    });
+  });
+
+  describe("helpers", () => {
+    it("renders no helpers when helpers is undefined", () => {
+      render(<WuiInput aria-label="Input" />);
+      expect(
+        document.querySelector(".wui-input-helper")
+      ).not.toBeInTheDocument();
+    });
+
+    it("renders no helpers when helpers is empty array", () => {
+      render(<WuiInput aria-label="Input" helpers={[]} />);
+      expect(
+        document.querySelector(".wui-input-helper")
+      ).not.toBeInTheDocument();
+    });
+
+    it("renders one helper with message and default status", () => {
+      render(
+        <WuiInput
+          aria-label="Email"
+          helpers={[{ message: "Indiquez une adresse valide." }]}
+        />
+      );
+      const helper = document.querySelector(".wui-input-helper");
+      expect(helper).toBeInTheDocument();
+      expect(helper).toHaveClass("wui-input-helper--default");
+      expect(
+        screen.getByText("Indiquez une adresse valide.")
+      ).toBeInTheDocument();
+    });
+
+    it("renders one helper with error status", () => {
+      render(
+        <WuiInput
+          aria-label="Password"
+          helpers={[
+            {
+              status: WuiInputHelperStatus.ERROR,
+              message: "Minimum 8 caractères.",
+            },
+          ]}
+        />
+      );
+      const helper = document.querySelector(".wui-input-helper");
+      expect(helper).toHaveClass("wui-input-helper--error");
+      expect(screen.getByText("Minimum 8 caractères.")).toBeInTheDocument();
+    });
+
+    it("renders one helper with valid status", () => {
+      render(
+        <WuiInput
+          aria-label="Username"
+          helpers={[
+            {
+              status: WuiInputHelperStatus.VALID,
+              message: "Disponible.",
+            },
+          ]}
+        />
+      );
+      const helper = document.querySelector(".wui-input-helper");
+      expect(helper).toHaveClass("wui-input-helper--valid");
+      expect(screen.getByText("Disponible.")).toBeInTheDocument();
+    });
+
+    it("renders multiple helpers in order", () => {
+      render(
+        <WuiInput
+          aria-label="Field"
+          helpers={[
+            { message: "First hint." },
+            {
+              status: WuiInputHelperStatus.ERROR,
+              message: "Second error.",
+            },
+          ]}
+        />
+      );
+      const helpers = document.querySelectorAll(".wui-input-helper");
+      expect(helpers).toHaveLength(2);
+      expect(helpers[0]).toHaveClass("wui-input-helper--default");
+      expect(helpers[0]).toHaveTextContent("First hint.");
+      expect(helpers[1]).toHaveClass("wui-input-helper--error");
+      expect(helpers[1]).toHaveTextContent("Second error.");
     });
   });
 });

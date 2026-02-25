@@ -12,7 +12,9 @@ Input field with sizes (S, M, L), states (default, error), full-width option and
 
 ## Props
 
-`WuiInput` extends the HTML attributes of `input`. Additional props: `label` (label text associated with the field), `height`, `status`, `block`. Other props from `InputHTMLAttributes` (e.g. `type`, `placeholder`, `disabled`, `id`, `aria-*`) are supported. If `label` is provided without `id`, an `id` is generated to link the label to the field.
+`WuiInput` extends the HTML attributes of `input`. Additional props: `label` (label text associated with the field), `height`, `status`, `block`, `helpers`. Other props from `InputHTMLAttributes` (e.g. `type`, `placeholder`, `disabled`, `id`, `aria-*`, `value`, `onChange`) are supported. For a controlled input, use `value` with `onChange`. If `label` is provided without `id`, an `id` is generated to link the label to the field.
+
+**Helpers:** pass an array of `{ message: string, status?: WuiInputHelperStatus }` to display one or more helper lines under the input (default, error, or valid style). Each helper shows an icon and the given message.
 
 <ArgTypes />
 
@@ -46,6 +48,26 @@ import { WuiInput } from "@wawawoom/wui";
 <WuiInput label="Email" type="email" placeholder="you@example.com" />;
 ```
 
+Controlled input (state + value + onChange):
+
+```tsx
+import { useState } from "react";
+import { WuiInput } from "@wawawoom/wui";
+
+function MyForm() {
+  const [value, setValue] = useState("");
+
+  return (
+    <WuiInput
+      label="Name"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Enter your name..."
+    />
+  );
+}
+```
+
 With label and custom id:
 
 ```tsx
@@ -60,4 +82,98 @@ Disabled:
 import { WuiInput } from "@wawawoom/wui";
 
 <WuiInput disabled placeholder="Disabled" />;
+```
+
+Controlled password (with visibility toggle):
+
+```tsx
+import { useState } from "react";
+import { WuiInput } from "@wawawoom/wui";
+
+function LoginForm() {
+  const [password, setPassword] = useState("");
+
+  return (
+    <WuiInput
+      label="Password"
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Enter password..."
+    />
+  );
+}
+```
+
+With helpers (hint or validation messages under the input):
+
+```tsx
+import {
+  WuiInput,
+  WuiInputHelperStatus,
+} from "@wawawoom/wui";
+
+<WuiInput
+  label="Email"
+  type="email"
+  placeholder="you@example.com"
+  helpers={[
+    {
+      status: WuiInputHelperStatus.DEFAULT,
+      message: "Nous ne partagerons jamais votre email.",
+    },
+  ]}
+/>
+```
+
+With error or valid helpers:
+
+```tsx
+import {
+  WuiInput,
+  WuiInputStatus,
+  WuiInputHelperStatus,
+} from "@wawawoom/wui";
+
+<WuiInput
+  label="Mot de passe"
+  type="password"
+  status={WuiInputStatus.ERROR}
+  helpers={[
+    {
+      status: WuiInputHelperStatus.ERROR,
+      message: "Le mot de passe doit contenir au moins 8 caractères.",
+    },
+  ]}
+/>
+
+<WuiInput
+  label="Username"
+  value="johndoe"
+  status={WuiInputStatus.VALID}
+  helpers={[
+    {
+      status: WuiInputHelperStatus.VALID,
+      message: "Ce nom d'utilisateur est disponible.",
+    },
+  ]}
+/>
+```
+
+Multiple helpers:
+
+```tsx
+import { WuiInput, WuiInputHelperStatus } from "@wawawoom/wui";
+
+<WuiInput
+  label="Password"
+  type="password"
+  helpers={[
+    { message: "Minimum 8 caractères." },
+    {
+      status: WuiInputHelperStatus.ERROR,
+      message: "Doit contenir un chiffre.",
+    },
+  ]}
+/>
 ```

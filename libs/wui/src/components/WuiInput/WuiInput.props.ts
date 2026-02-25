@@ -1,4 +1,6 @@
-import type { InputHTMLAttributes } from "react";
+import type { HTMLInputTypeAttribute, InputHTMLAttributes } from "react";
+
+import { WuiInputHelperProps } from "../WuiInputHelper/WuiInputHelper.props";
 
 export enum WuiInputHeight {
   S = "s",
@@ -17,4 +19,6 @@ export interface WuiInputProps extends InputHTMLAttributes<HTMLInputElement> {
   status?: WuiInputStatus;
   block?: boolean;
   label?: string;
+  type?: HTMLInputTypeAttribute;
+  helpers?: WuiInputHelperProps[];
 }

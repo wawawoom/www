@@ -5,8 +5,15 @@ import "./Zone.css";
 import type { ZoneProps } from "./Zone.props";
 
 export const Zone = (props: ZoneProps) => {
-  const { section, title, onOpenModal, titleColor, expandedZone, onZoneClick } =
-    props;
+  const {
+    section,
+    title,
+    titleBack,
+    onOpenModal,
+    titleColor,
+    expandedZone,
+    onZoneClick,
+  } = props;
   const isExpanded = expandedZone === section;
 
   const handleClick = (e: React.MouseEvent) => {
@@ -28,9 +35,20 @@ export const Zone = (props: ZoneProps) => {
       tabIndex={0}
       aria-expanded={isExpanded}
     >
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6} color={titleColor}>
-        {title}
-      </WuiTitle>
+      <div className="zone__cylinder">
+        <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H6} color={titleColor}>
+          {title}
+        </WuiTitle>
+
+        <WuiTitle
+          as={WuiTitleAs.H2}
+          look={WuiTitleLook.H6}
+          color={titleColor}
+          className="zone__title-back"
+        >
+          {titleBack}
+        </WuiTitle>
+      </div>
 
       <ZoneExpanded section={section} onOpenModal={onOpenModal} />
     </div>

@@ -78,28 +78,28 @@
   opacity: 1;
 }
 
-.modal--me {
-  background-color: var(--wui-color-green-500);
-}
-
-.modal--ui {
+.modal--design-system {
   background-color: var(--wui-color-yellow-500);
 }
 
-.modal--web {
+.modal--front-end {
+  background-color: var(--wui-color-green-500);
+}
+
+.modal--portfolio {
   background-color: var(--wui-color-blue-500);
 }
 
-.modal--mob {
+.modal--profile {
   background-color: var(--wui-color-pink-500);
 }
 
-.modal--me .modal__close,
-.modal--ui .modal__close {
+.modal--portfolio .modal__close,
+.modal--profile .modal__close {
   color: var(--wui-color-alias-neutral-900);
 }
 
-.modal--web .modal__close,
-.modal--mob .modal__close {
+.modal--front-end .modal__close,
+.modal--portfolio .modal__close {
   color: var(--wui-color-alias-neutral-0);
 }

@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { WuiInputHelperStatus } from "../WuiInputHelper/WuiInputHelper.props";
 import { WuiInput } from "./WuiInput";
 import { WuiInputHeight, WuiInputStatus } from "./WuiInput.props";
 
 const meta = {
-  title: "Components/WuiInput",
+  title: "Components/Form/WuiInput",
   component: WuiInput,
   parameters: {
     layout: "centered",
@@ -15,6 +16,38 @@ const meta = {
   },
   tags: ["!autodocs"],
   argTypes: {
+    type: {
+      description: "Native HTML input type (HTMLInputTypeAttribute).",
+      control: "select",
+      options: [
+        "button",
+        "checkbox",
+        "color",
+        "date",
+        "datetime-local",
+        "email",
+        "file",
+        "hidden",
+        "image",
+        "month",
+        "number",
+        "password",
+        "radio",
+        "range",
+        "reset",
+        "search",
+        "submit",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week",
+      ] as const,
+      table: {
+        type: { summary: "HTMLInputTypeAttribute" },
+        defaultValue: { summary: '"text"' },
+      },
+    },
     height: {
       control: "select",
       options: Object.values(WuiInputHeight),
@@ -55,6 +88,16 @@ const meta = {
         type: { summary: "string" },
       },
     },
+    helpers: {
+      description:
+        "Optional array of helper items { message, status? } to show hint or validation messages under the input (WuiInputHelper).",
+      control: false,
+      table: {
+        type: {
+          summary: "Array<{ message: string; status?: WuiInputHelperStatus }>",
+        },
+      },
+    },
   },
 } satisfies Meta<typeof WuiInput>;
 
@@ -63,6 +106,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Component: Story = {
   args: {
-    placeholder: "Enter text...",
+    label: "Email",
+    type: "email",
+    placeholder: "you@example.com",
+    helpers: [
+      {
+        status: WuiInputHelperStatus.DEFAULT,
+        message: "We will never share your email with anyone else.",
+      },
+    ],
   },
 };

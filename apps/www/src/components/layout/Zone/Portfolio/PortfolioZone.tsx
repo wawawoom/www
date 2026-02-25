@@ -16,8 +16,11 @@ import {
 
 import { Section } from "../../../../ts/enum/section.enum";
 
-export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
+export const PortfolioZone = (props: {
+  onOpenModal: (section: Section) => void;
+}) => {
   const { onOpenModal } = props;
+  const badgeColor = WuiColorValue.BLUE_0;
 
   return (
     <>
@@ -26,7 +29,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
         look={WuiTitleLook.H2}
         color={WuiColorAlias.NEUTRAL_0}
       >
-        React Native developper
+        Selected work
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
@@ -38,7 +41,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
         <WuiBadge
           color={WuiBadgeColor.TRANSPARENT}
           size={WuiBadgeSize.M}
-          style={{ color: WuiColorValue.PINK_100 }}
+          style={{ color: badgeColor }}
         >
           React Native
         </WuiBadge>
@@ -46,7 +49,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
         <WuiBadge
           color={WuiBadgeColor.TRANSPARENT}
           size={WuiBadgeSize.M}
-          style={{ color: WuiColorValue.PINK_100 }}
+          style={{ color: badgeColor }}
         >
           Google Play store
         </WuiBadge>
@@ -54,7 +57,7 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
         <WuiBadge
           color={WuiBadgeColor.TRANSPARENT}
           size={WuiBadgeSize.M}
-          style={{ color: WuiColorValue.PINK_100 }}
+          style={{ color: badgeColor }}
         >
           App Store
         </WuiBadge>
@@ -75,12 +78,12 @@ export const MobZone = (props: { onOpenModal: (section: Section) => void }) => {
       </WuiText>
 
       <WuiLink
-        href="/mob"
+        href="/portfolio"
         color={WuiLinkColor.LIGHT}
         onClick={(event) => {
           event.preventDefault();
 
-          onOpenModal(Section.MOB);
+          onOpenModal(Section.PORTFOLIO);
         }}
       >
         Under the hood

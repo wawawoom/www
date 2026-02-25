@@ -1,8 +1,8 @@
 import { Section } from "../../../../ts/enum/section.enum.ts";
-import { MeZone } from "../Me/MeZone.tsx";
-import { MobZone } from "../Mob/MobZone.tsx";
-import { UiZone } from "../Ui/UiZone.tsx";
-import { WebZone } from "../Web/WebZone.tsx";
+import { DesignSystemZone } from "../DesignSystem/DesignSystem.tsx";
+import { FrontEndZone } from "../FrontEnd/FrontEnd.tsx";
+import { PortfolioZone } from "../Portfolio/PortfolioZone.tsx";
+import { ProfileZone } from "../Profile/ProfileZone.tsx";
 import type { ZoneExpandedProps } from "./ZoneExpanded.props.ts";
 
 export const ZoneExpanded = (props: ZoneExpandedProps) => {
@@ -10,10 +10,16 @@ export const ZoneExpanded = (props: ZoneExpandedProps) => {
 
   return (
     <article>
-      {section === Section.ME && <MeZone onOpenModal={onOpenModal} />}
-      {section === Section.UI && <UiZone onOpenModal={onOpenModal} />}
-      {section === Section.WEB && <WebZone onOpenModal={onOpenModal} />}
-      {section === Section.MOB && <MobZone onOpenModal={onOpenModal} />}
+      {section === Section.PROFILE && <ProfileZone onOpenModal={onOpenModal} />}
+      {section === Section.DESIGN_SYSTEM && (
+        <DesignSystemZone onOpenModal={onOpenModal} />
+      )}
+      {section === Section.FRONT_END && (
+        <FrontEndZone onOpenModal={onOpenModal} />
+      )}
+      {section === Section.PORTFOLIO && (
+        <PortfolioZone onOpenModal={onOpenModal} />
+      )}
     </article>
   );
 };

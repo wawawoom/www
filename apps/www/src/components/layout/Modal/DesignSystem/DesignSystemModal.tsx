@@ -9,7 +9,7 @@ import {
 
 import Gallery from "../../../Gallery/Gallery";
 
-export const UiModal = () => {
+export const DesignSystemModal = () => {
   return (
     <>
       <WuiTitle
@@ -17,7 +17,7 @@ export const UiModal = () => {
         color={WuiColorAlias.NEUTRAL_900}
         style={{ marginTop: 0 }}
       >
-        UI/UX designer
+        Design System
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.XL}>

@@ -1,0 +1,42 @@
+.wui-input-helper {
+  display: flex;
+  align-items: center;
+  gap: var(--wui-space-8);
+  font-family: var(--wui-font-family);
+  font-size: var(--wui-font-size-sm, 0.875rem);
+  font-weight: var(--wui-font-weight-normal);
+  line-height: var(--wui-line-height-base);
+}
+
+.wui-input-helper__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.3em;
+}
+
+.wui-input-helper__icon i {
+  font-size: 0.75rem;
+}
+
+.wui-input-helper__text {
+  flex: 1;
+}
+
+.wui-input-helper--default .wui-input-helper__icon,
+.wui-input-helper--default .wui-input-helper__text {
+  color: var(--wui-color-alias-neutral-500);
+}
+
+.wui-input-helper--error .wui-input-helper__icon,
+.wui-input-helper--error .wui-input-helper__text {
+  color: var(--wui-color-alias-danger-500);
+}
+
+.wui-input-helper--valid .wui-input-helper__icon,
+.wui-input-helper--valid .wui-input-helper__text {
+  color: var(--wui-color-alias-success-500);
+}

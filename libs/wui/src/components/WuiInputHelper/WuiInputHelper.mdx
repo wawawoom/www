@@ -1,0 +1,54 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiInputHelperStories from "./WuiInputHelper.stories.tsx";
+
+<Meta of={WuiInputHelperStories} />
+
+# WuiInputHelper
+
+Helper text placed under a `WuiInput` to display information. Three statuses: default (info icon, gray text), error (x icon, danger color), valid (check icon, success color).
+
+<Canvas of={WuiInputHelperStories.Component} sourceState="none" />
+
+## Props
+
+`WuiInputHelper` extends the HTML attributes of `div`. Additional prop: `status` (`WuiInputHelperStatus`: default, error, valid). Other props from `HTMLAttributes` (e.g. `id`, `className`, `aria-*`) are supported.
+
+<ArgTypes />
+
+## Implementation
+
+Default (info icon, gray text):
+
+```tsx
+import { WuiInputHelper } from "@wawawoom/wui";
+
+<WuiInputHelper>Nous ne partagerons jamais votre email.</WuiInputHelper>;
+```
+
+With status (error / valid):
+
+```tsx
+import { WuiInputHelper, WuiInputHelperStatus } from "@wawawoom/wui";
+
+<WuiInputHelper status={WuiInputHelperStatus.ERROR}>
+  Le mot de passe doit contenir au moins 8 caractères.
+</WuiInputHelper>
+
+<WuiInputHelper status={WuiInputHelperStatus.VALID}>
+  Ce nom d'utilisateur est disponible.
+</WuiInputHelper>
+```
+
+Under a WuiInput:
+
+```tsx
+import { WuiInput, WuiInputHelper, WuiInputHelperStatus } from "@wawawoom/wui";
+
+<>
+  <WuiInput label="Email" type="email" placeholder="you@example.com" />
+  <WuiInputHelper status={WuiInputHelperStatus.DEFAULT}>
+    Indiquez une adresse email valide.
+  </WuiInputHelper>
+</>;
+```

@@ -1,6 +1,6 @@
 export enum Section {
-  ME = "me",
-  UI = "ui",
-  WEB = "web",
-  MOB = "mob",
+  PROFILE = "profile",
+  DESIGN_SYSTEM = "design-system",
+  FRONT_END = "front-end",
+  PORTFOLIO = "portfolio",
 }

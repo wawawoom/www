@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-import { WuiColorAlias, WuiColorValue } from "@wawawoom/wui";
+import {
+  WuiColorAlias,
+  WuiColorValue,
+  WuiLink,
+  WuiLinkColor,
+  WuiLinkSize,
+} from "@wawawoom/wui";
 
 import { ModalProvider } from "../../context/ModalProvider.tsx";
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
@@ -103,6 +109,8 @@ const App = () => {
             aria-hidden
           />
         )}
+
+        {/* SectionsZones */}
         <div
           className={[
             "container",
@@ -112,8 +120,9 @@ const App = () => {
             .join(" ")}
         >
           <Zone
-            section={Section.ME}
-            title="nico."
+            section={Section.DESIGN_SYSTEM}
+            title="Design system"
+            titleBack="Token-Driven systems"
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -121,8 +130,9 @@ const App = () => {
           />
 
           <Zone
-            section={Section.UI}
-            title="u(i/x)."
+            section={Section.FRONT_END}
+            title="Front-end"
+            titleBack="Interface Implementation"
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -130,8 +140,9 @@ const App = () => {
           />
 
           <Zone
-            section={Section.WEB}
-            title="web."
+            section={Section.PORTFOLIO}
+            title="Selected work"
+            titleBack="Production case studies"
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -139,8 +150,9 @@ const App = () => {
           />
 
           <Zone
-            section={Section.MOB}
-            title="mob."
+            section={Section.PROFILE}
+            title="Profile"
+            titleBack="Nicolas Payrouse"
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -148,6 +160,7 @@ const App = () => {
           />
         </div>
 
+        {/* Section Modal */}
         {isModalOpen && section && (
           <Modal
             section={section}
@@ -155,12 +168,67 @@ const App = () => {
             onCloseModal={onCloseModal}
             onOpenModal={onOpenModal}
             closeButtonColor={
-              section === Section.WEB || section === Section.MOB
+              section === Section.PROFILE || section === Section.PORTFOLIO
                 ? WuiColorValue.BLACK_0
                 : WuiColorValue.BLACK_900
             }
           />
         )}
+
+        <footer className="app__footer">
+          <ul>
+            <li>fr</li>
+            <li>en</li>
+
+            <li>
+              <WuiLink
+                href="https://www.linkedin.com/in/nicolas-payrouse-3016094/"
+                target="_blank"
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                title="Linkedin profile"
+              >
+                <i className="fa-brands fa-linkedin"></i>
+              </WuiLink>
+            </li>
+
+            <li>
+              <WuiLink
+                href="mailto:wawawoom@gmail.com"
+                target="_blank"
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                title="Contact me by email"
+              >
+                <i className="fa-solid fa-envelope"></i>
+              </WuiLink>
+            </li>
+
+            <li>
+              <WuiLink
+                href="https://github.com/wawawoom"
+                target="_blank"
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                title="GitHub profile"
+              >
+                <i className="fa-brands fa-github"></i>
+              </WuiLink>
+            </li>
+
+            <li>
+              <WuiLink
+                href="tel:+33631796781"
+                target="_blank"
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                title="Contact me by phone"
+              >
+                <i className="fa-solid fa-mobile-screen-button"></i>
+              </WuiLink>
+            </li>
+          </ul>
+        </footer>
       </div>
     </ModalProvider>
   );

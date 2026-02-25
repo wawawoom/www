@@ -5,13 +5,48 @@
   font-weight: bold;
   position: relative;
   cursor: pointer;
+  perspective: 1200px;
 
-  > h2 {
+  .zone__cylinder {
+    position: relative;
+    width: 80%;
+    min-height: 2.5em;
+    transform-style: preserve-3d;
+    transform: translateZ(12px) rotateX(0deg) translateZ(-12px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:not(.expanded):hover .zone__cylinder {
+    transform: translateZ(12px) rotateX(180deg) translateZ(-12px);
+  }
+
+  .zone__cylinder > h2 {
     font-size: 1rem;
     font-weight: 100;
-    transition: color 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
     z-index: 2;
     margin: 0;
+    text-align: center;
+  }
+
+  .zone__cylinder > h2:first-child {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(0deg);
+  }
+
+  .zone__cylinder > h2.zone__title-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(180deg) translateZ(1px);
+    -webkit-font-smoothing: subpixel-antialiased;
   }
 
   article {
@@ -39,7 +74,7 @@
     cursor: default;
     color: rgb(255, 255, 255, 1);
 
-    > h2 {
+    .zone__cylinder {
       display: none;
     }
 
@@ -52,52 +87,36 @@
   }
 }
 
-.me {
-  grid-area: me;
-  background-color: var(--wui-color-green-500);
-  transition: background-color 0.2s ease-in-out;
-
-  &:not(.expanded):hover {
-    background-color: var(--wui-color-green-600);
-  }
-
-  article {
-    color: var(--wui-color-black-900);
-  }
-}
-
-.ui {
-  grid-area: ui;
+.design-system {
+  grid-area: design-system;
   background-color: var(--wui-color-yellow-500);
   transition: background-color 0.2s ease-in-out;
+}
 
-  &:not(.expanded):hover {
-    background-color: var(--wui-color-yellow-600);
+.front-end {
+  grid-area: front-end;
+  background-color: var(--wui-color-green-500);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.profile {
+  grid-area: profile;
+  background-color: var(--wui-color-pink-500);
+  transition: background-color 0.2s ease-in-out;
+  color: var(--wui-color-black-0);
+
+  article {
+    color: var(--wui-color-black-0);
   }
+}
+
+.portfolio {
+  grid-area: portfolio;
+  transition: background-color 0.2s ease-in-out;
+  background-color: var(--wui-color-blue-500);
+  color: var(--wui-color-black-0);
 
   article {
     color: var(--wui-color-black-900);
-  }
-}
-
-.web {
-  grid-area: web;
-  background-color: var(--wui-color-blue-500);
-  transition: background-color 0.2s ease-in-out;
-  color: var(--wui-color-black-0);
-
-  &:not(.expanded):hover {
-    background-color: var(--wui-color-blue-600);
-  }
-}
-
-.mob {
-  grid-area: mob;
-  transition: background-color 0.2s ease-in-out;
-  background-color: var(--wui-color-pink-500);
-  color: var(--wui-color-black-0);
-
-  &:not(.expanded):hover {
-    background-color: var(--wui-color-pink-600);
   }
 }

@@ -12,7 +12,7 @@ import {
 import { useModal } from "../../../../context/ModalContext";
 import Gallery from "../../../Gallery/Gallery";
 
-export const MobModal = () => {
+export const PortfolioModal = () => {
   const { openDreamJobModal } = useModal();
 
   const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -27,7 +27,7 @@ export const MobModal = () => {
         color={WuiColorAlias.NEUTRAL_0}
         style={{ marginTop: 0 }}
       >
-        React Native developer
+        Portfolio modal
       </WuiTitle>
 
       <WuiText

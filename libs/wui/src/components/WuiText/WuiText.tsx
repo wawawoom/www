@@ -1,4 +1,4 @@
-import { type ElementType, forwardRef } from "react";
+import { type ElementType, type Ref, forwardRef } from "react";
 
 import { WuiColorAlias } from "../../enum/WuiColorAlias.enum";
 import { clsx } from "../../utils/clsx";
@@ -27,7 +27,9 @@ export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
       className
     );
 
-    return <Tag ref={ref as any} className={classNames} {...props} />;
+    return (
+      <Tag ref={ref as Ref<HTMLElement>} className={classNames} {...props} />
+    );
   }
 );
 

@@ -8,10 +8,10 @@ import {
 } from "@wawawoom/wui";
 
 import { Section } from "../../../../ts/enum/section.enum.ts";
-import { MeModal } from "../Me/MeModal.tsx";
-import { MobModal } from "../Mob/MobModal.tsx";
-import { UiModal } from "../Ui/UiModal.tsx";
-import { WebModal } from "../Web/WebModal.tsx";
+import { DesignSystemModal } from "../DesignSystem/DesignSystemModal.tsx";
+import { FrontEndModal } from "../FrontEnd/FrontEndModal.tsx";
+import { PortfolioModal } from "../Portfolio/PortfolioModal.tsx";
+import { ProfileModal } from "../Profile/ProfileModal.tsx";
 import "./Modal.css";
 import type { ModalProps } from "./Modal.props.ts";
 
@@ -61,10 +61,12 @@ export const Modal = (props: ModalProps) => {
       </WuiLink>
 
       <div className="modal__content">
-        {section === Section.ME && <MeModal onOpenModal={onOpenModal} />}
-        {section === Section.UI && <UiModal />}
-        {section === Section.WEB && <WebModal />}
-        {section === Section.MOB && <MobModal />}
+        {section === Section.DESIGN_SYSTEM && <DesignSystemModal />}
+        {section === Section.FRONT_END && <FrontEndModal />}
+        {section === Section.PORTFOLIO && <PortfolioModal />}
+        {section === Section.PROFILE && (
+          <ProfileModal onOpenModal={onOpenModal} />
+        )}
       </div>
     </div>
   );

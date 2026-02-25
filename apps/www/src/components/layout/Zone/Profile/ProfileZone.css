@@ -5,9 +5,3 @@
   border-radius: 100%;
   margin: 0 0 1em 0;
 }
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
