@@ -5,6 +5,7 @@ import {
   WuiBadgeColor,
   WuiBadgeSize,
   WuiColorAlias,
+  WuiColorValue,
   WuiText,
   WuiTextAs,
   WuiTextSize,
@@ -31,16 +32,22 @@ export const Job = (props: JobProps) => {
         />
 
         <div>
-          <WuiTitle as={WuiTitleAs.H4} style={{ margin: 0 }}>
-            {companyName}
-          </WuiTitle>
+          {Boolean(companyName) && (
+            <WuiTitle
+              as={WuiTitleAs.H4}
+              style={{ margin: 0 }}
+              color={WuiColorAlias.NEUTRAL_0}
+            >
+              {companyName}
+            </WuiTitle>
+          )}
 
           {Boolean(duration) && (
             <WuiText
               as={WuiTextAs.P}
               style={{ margin: 0 }}
               size={WuiTextSize.S}
-              color={WuiColorAlias.SUCCESS_900}
+              color={WuiColorAlias.DANGER_100}
             >
               {duration}
             </WuiText>
@@ -49,9 +56,15 @@ export const Job = (props: JobProps) => {
       </header>
 
       <div className="content">
-        <WuiTitle as={WuiTitleAs.H5} style={{ margin: 0 }}>
-          {jobTitle}
-        </WuiTitle>
+        {Boolean(jobTitle) && (
+          <WuiTitle
+            as={WuiTitleAs.H5}
+            color={WuiColorAlias.NEUTRAL_0}
+            style={{ margin: 0 }}
+          >
+            {jobTitle}
+          </WuiTitle>
+        )}
 
         {badges && badges.length > 0 && (
           <div className="badges">
@@ -62,6 +75,7 @@ export const Job = (props: JobProps) => {
                     key={`badge_${badge}`}
                     color={WuiBadgeColor.TRANSPARENT}
                     size={WuiBadgeSize.L}
+                    style={{ color: WuiColorValue.PINK_0 }}
                   >
                     {badge}
                   </WuiBadge>
@@ -75,7 +89,11 @@ export const Job = (props: JobProps) => {
 
         {description ? (
           typeof description === "string" ? (
-            <WuiText as={WuiTextAs.P} className="description">
+            <WuiText
+              as={WuiTextAs.P}
+              color={WuiColorAlias.NEUTRAL_0}
+              className="description"
+            >
               {description}
             </WuiText>
           ) : (

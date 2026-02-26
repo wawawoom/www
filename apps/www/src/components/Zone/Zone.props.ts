@@ -1,6 +1,6 @@
 import { WuiColorAlias } from "@wawawoom/wui";
 
-import type { Section } from "../../../../ts/enum/section.enum";
+import type { Section } from "../../ts/enum/section.enum";
 
 export interface ZoneProps {
   section: Section;

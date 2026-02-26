@@ -1,0 +1,302 @@
+{
+  "zones": {
+    "designSystem": {
+      "title": "Design system",
+      "titleBack": "Token-Driven systems"
+    },
+    "frontEnd": {
+      "title": "Front-end",
+      "titleBack": "UI/UX Implementation"
+    },
+    "portfolio": {
+      "title": "Selected work",
+      "titleBack": "Production case studies"
+    },
+    "profile": {
+      "title": "Profile",
+      "titleBack": "Nicolas Payrouse"
+    }
+  },
+  "footer": {
+    "linkedinTitle": "Linkedin profile",
+    "emailTitle": "Contact me by email",
+    "githubTitle": "GitHub profile",
+    "phoneTitle": "Contact me by phone"
+  },
+  "modal": {
+    "closeAriaLabel": "Close modal"
+  },
+  "profileZone": {
+    "openToWork": "Open to work !",
+    "name": "Nicolas Payrouse",
+    "bio1": "I design and structure scalable UI systems that bridge product vision and frontend architecture.",
+    "bio2": "I operate at the intersection of design, engineering, and product strategy — ensuring that interfaces are not just visually coherent, but structurally sound and built to scale across teams and platforms.",
+    "bio3": "Currently open to opportunities where UI architecture and design systems are considered strategic assets within product-driven organizations. {{link}}.",
+    "bio3Before": "Currently open to opportunities where UI architecture and design systems are considered strategic assets within product-driven organizations. ",
+    "discoverIdealRole": "Discover my ideal role",
+    "location": "Nice, France",
+    "contact": "wawawoom[@]gmail.com / +33 (0)6 31 796 781",
+    "birth": "Born 5 December 1978",
+    "languages": "French and English: spoken and written.",
+    "drivingLicence": "Full driving licence (Category B)",
+    "viewExperience": "View professional experience"
+  },
+  "profileModal": {
+    "openToWork": "Open to work!",
+    "name": "Nicolas Payrouse",
+    "jobTitle": "UI Engineering & Design Systems",
+    "bio": "I build and scale interface systems that connect product strategy, visual design, and frontend architecture.",
+    "checkIdealRole": "Check my ideal role description.",
+    "workExperience": "Work Experience",
+    "skills": "Skills",
+    "personalProjects": "Personal projects",
+    "education": "Education",
+    "butAlso": "Outside of work",
+    "bioParagraph": "With a background in graphic design and over 15 years of frontend evolution, I developed a hybrid expertise that allows me to translate visual intent into robust, maintainable technical systems. My work progressively moved from UI execution to UI structuring: component architecture, scalable styling strategies, documentation workflows, and cross-team alignment between design and engineering. Today, I focus on design systems, token-driven foundations, React/Next.js architecture, and production-grade frontend engineering.",
+    "details": "Details",
+    "uiUxDescription": [
+      "Token-based styling strategies",
+      "Component-driven development",
+      "Storybook documentation",
+      "Cross-team alignment",
+      "Accessibility & consistency standards"
+    ],
+    "webDevDescription": [
+      "React / Next.js / TypeScript",
+      "React Native development",
+      "Performance optimization",
+      "Testing strategy (Jest, Cypress)",
+      "Responsive & adaptive UI",
+      "API integration (REST / GraphQL)"
+    ],
+    "mobileDevDescription": "Development of cross-platform mobile applications with React Native for iOS and Android. Integration of Firebase services (authentication, database, push notifications, analytics). Management of native features (camera, geolocation, local storage) and performance optimization. Publication on the Apple and Google Play stores with metrics tracking and continuous updates.",
+    "kaleiTitle": "Draw Kaleïdoscope !",
+    "kaleiDescription": "Kaleï is an experimental drawing tool based on geometric symmetry and real-time canvas rendering. The project explores generative interaction patterns, event-driven drawing logic, and mathematical transformations to create dynamic kaleidoscopic visuals. It demonstrates my interest in low-level rendering, performance-conscious UI behavior, and intuitive creative tooling.",
+    "tryItNow": "Try it now!",
+    "tictacTitle": "Lightweight time-tracking web application",
+    "tictacDescription": "TicTac is a minimalist productivity tool designed to track task duration with clarity and efficiency. Built with a custom frontend and a structured backend, it focuses on real-time feedback, simple data visualization, and pragmatic database design. This project reflects my ability to design small but complete systems — from UI structure to persistence layer.",
+    "visualCommunicationStudent": "Visual Communication Student",
+    "appliedArtsStudent": "Applied Arts Student",
+    "outdoorDuration": "Nature and hands-on experimentation keep my thinking grounded and creative.",
+    "spentTimeInNature": "Spent time in nature with my family",
+    "fishing": "Fishing",
+    "canyoning": "Canyoning",
+    "woodLampMaking": "Wood Lamp making",
+    "searchStonesCrystals": "Search for stones and crystals",
+    "geocaching": "Geocaching",
+    "photography": "Photography",
+    "video": "Video",
+    "mushrooms": "Mushrooms",
+    "lego": "LEGO",
+    "smoodDescription": [
+      "Development of a large-scale e-commerce platform (Next.js / TypeScript)",
+      "Implementation and maintenance of a documented UI component library (Storybook)",
+      "Contribution to scalable styling architecture",
+      "Unit & e2e testing strategy (Jest, Cypress)",
+      "Performance, SEO and responsive optimization",
+      "Collaboration with product, backend and design teams"
+    ],
+    "gtlDescription": [
+      "Cross-platform mobile app (iOS & Android)",
+      "REST & GraphQL integration",
+      "Native feature integration",
+      "Production deployment & performance optimization"
+    ],
+    "stentDescription": [
+      "Design of web and mobile interfaces (wireframes, UI, UX)",
+      "Development of a custom JavaScript framework (native JS + jQuery)",
+      "React Native mobile application (Hooks-based architecture)",
+      "Cross-team collaboration (France & Canada)",
+      "Alignment between business requirements and technical execution",
+      "Transition phase toward structured component-based development."
+    ],
+    "hoozinDescription": [
+      "UI design of an enterprise social network",
+      "Multi-device interface adaptation (desktop, tablet, mobile)",
+      "Frontend implementation (HTML, CSS, Less, JavaScript)",
+      "Modular JavaScript organization enabling third-party extensions",
+      "Early component thinking and system organization",
+      "Strong involvement in visual consistency and scalable UI structuring."
+    ],
+    "wawawoomDescription": [
+      "Brand identity and visual guidelines",
+      "Static and dynamic website development",
+      "E-commerce solutions and online payment integration",
+      "Database-driven applications (PHP / MySQL / FileMaker)",
+      "Early experimentation with interaction-driven interfaces (Flash / AS3)",
+      "Built complete projects from concept to production."
+    ],
+    "genghisMindDescription": [
+      "Design and development of a real-time ordering interface",
+      "Logic implementation for product-location management",
+      "Interface experimentation in constrained hardware environments",
+      "Early exploration of UI logic and interaction systems."
+    ],
+    "jsSharkDescription": [
+      "Independent Trader & Automation Developer",
+      "Custom database for trade management (FileMaker)",
+      "Development of algorithmic logic and data structuring skills."
+    ],
+    "exhibitDescription": [
+      "Large-format print production",
+      "Color calibration and industrial printing workflows",
+      "High-precision visual production for major brands",
+      "Built strong visual rigor and production discipline."
+    ],
+    "design70Description": [
+      "Web interface management for collectible furniture sales",
+      "Database automation and email workflow systems",
+      "Early web development with PHP and HTML"
+    ],
+    "octoDescription": [
+      "Advertising materials production",
+      "Automated production systems",
+      "Industrial printing workflows",
+      "Foundation in structured visual communication."
+    ]
+  },
+  "dreamJobModal": {
+    "title": "The dream job !",
+    "letsTalk": "Let's talk about it.",
+    "paragraph1": "My ideal role sits at the intersection of product, design, and engineering, leading the strategy and adoption of scalable design systems.",
+    "paragraph2": "I translate design foundations into production-ready React architectures—from tokens and component APIs to documentation and adoption strategy—ensuring reliability and extensibility.",
+    "paragraph3": "I bridge design and development, making pragmatic architectural decisions, anticipating integration challenges, and eliminating friction between teams. The result: faster iteration, higher quality, and measurable efficiency gains.",
+    "paragraph4": "I seek a role where design system thinking is strategic, in a product-driven organization valuing technical excellence, cross-functional ownership, and long-term scalability, in hybrid or remote-first settings.",
+    "paragraph5": "I am seeking a role where design system thinking is considered a strategic asset rather than a side initiative. Ideally, this would be within a product-driven organization that values technical excellence, cross-functional ownership, and long-term scalability.",
+    "paragraph6": "I am open to hybrid or remote-first environments and looking for a position that reflects the strategic and architectural impact of the role, with compensation aligned to senior-level UI Engineering or Design System leadership responsibilities."
+  },
+  "frontEndModal": {
+    "title": "Front End implementation",
+    "intro": "I translate design foundations into production-ready React architectures, ensuring that every pixel is backed by scalable code and rigorous testing."
+  },
+  "designSystemModal": {
+    "title": "Build a design System",
+    "intro": "I bridge the gap between Figma and React by building automated, scalable design systems that eliminate repetitive tasks and UI inconsistencies.",
+    "phase1Title": "Phase 1: UI Audit & Alignment",
+    "phase1Intro": "Before building, I identify what is broken. A design system must solve existing friction, not create new overhead.",
+    "phase1Item1Badge": "Pattern Inventory",
+    "phase1Item1Text": "Cataloging every button, color, and pattern to identify redundancy and design debt.",
+    "phase1Item2Badge": "Gap Analysis",
+    "phase1Item2Text": "Defining exactly where the current workflow fails (e.g., manual handoffs, hardcoded values).",
+    "phase1Item3Badge": "Technical Constraints",
+    "phase1Item3Text": "Aligning with engineering on the stack (React, Tailwind, CSS-in-JS) to ensure the system is actually usable in production.",
+    "phase2Title": "Phase 2: Visual Exploration",
+    "phase2Intro": "I leverage my graphic arts background to define a high-fidelity visual direction that aligns with the brand's identity.",
+    "phase2Item1Badge": "Style Concepting",
+    "phase2Item1Text": "Experimenting with typography, color theory, and grid systems to establish a unique visual signature.",
+    "phase2Item2Badge": "Moodboarding & Rhythm",
+    "phase2Item2Text": "Defining the \"look and feel\" through iterative drafts before locking in the system's foundations.",
+    "phase3Title": "Phase 3: Design in Figma",
+    "phase3Intro": "I build robust, scalable foundations within Figma, treating the file as an engineering tool.",
+    "phase3Item1Badge": "Core Foundations",
+    "phase3Item1Text": "Setting up global styles for typography, effects, and layout grids.",
+    "phase3Item2Badge": "Structure",
+    "phase3Item2Text": "Organizing the workspace to support multi-product or multi-brand environments from the start.",
+    "phase4Title": "Phase 4: Token Architecture",
+    "phase4Intro": "I treat design decisions as data. This is where I define the logic that will drive the entire system.",
+    "phase4Item1Badge": "Structure",
+    "phase4Item1Text": "Implementing a 3-layer system: Primitives (atomic values), molecular (functional names like danger-bg), and organism (specific overrides).",
+    "phase4Item2Badge": "Figma Variables",
+    "phase4Item2Text": "Utilizing Variables and Modes to manage complex logic like Light/Dark themes or Density scales directly in the design tool.",
+    "phase5Title": "Phase 5: Component Engineering",
+    "phase5Intro": "I design and build components as modular, interactive pieces of software.",
+    "phase5Item1Badge": "Advanced Figma Features",
+    "phase5Item1Text": "Using Auto-layout 5.0, slot components, and properties (Boolean, Instance swap) to mimic real React behavior.",
+    "phase5Item2Badge": "States & Edge Cases",
+    "phase5Item2Text": "Defining every state (Hover, Focus, Loading, Error) to ensure a seamless handoff to development.",
+    "phase6Title": "Phase 6: Token Export & Documentation",
+    "phase6Intro": "The final step is establishing the \"Single Source of Truth\" and ensuring the system is usable by the entire team.",
+    "phase6Item1Badge": "Automated Sync",
+    "phase6Item1Text": "I set up a \"Design-to-Code\" pipeline using Style Dictionary or custom plugins to export Figma Variables into JSON.",
+    "phase6Item2Badge": "Code Integration",
+    "phase6Item2Text": "Automating the transformation of tokens into CSS variables or Tailwind configurations, ensuring any design update propagates to the codebase via CI/CD.",
+    "phase6Item3Badge": "Live Documentation",
+    "phase6Item3Text": "I build interactive documentation via Storybook that serves as a functional handbook.",
+    "phase6Item4Badge": "Usage Guidelines",
+    "phase6Item4Text": "Writing clear \"Do's and Don'ts,\" accessibility rules, and implementation examples to prevent system fragmentation and ensure long-term adoption."
+  },
+  "designSystemZone": {
+    "title": "Design system",
+    "intro": "Design systems reduce friction, increase speed, and bring consistency at scale — I build the architecture that makes that possible.",
+    "designTokens": "Design Tokens",
+    "componentArchitecture": "Component Architecture",
+    "systemGovernance": "System Governance",
+    "documentation": "Documentation",
+    "versioning": "Versioning",
+    "crossFunctionalAlignment": "Cross-Functional Alignment",
+    "figmaFoundations": "Figma Foundations",
+    "storybook": "Storybook",
+    "paragraph1": "A well-structured design system transforms UI from isolated components into a scalable product foundation. I help organizations design, implement, and evolve systems that ensure consistency, efficiency, and long-term maintainability.",
+    "paragraph2": "My approach starts with strong foundations: design tokens, semantic structures, and clearly defined component layers. The objective is not only visual alignment, but operational clarity across teams and products.",
+    "paragraph3": "I connect Figma foundations to production-ready React libraries, ensuring that design intent translates accurately into technical reality. From token hierarchies to component APIs and documentation environments, every layer is designed to scale.",
+    "paragraph4": "Beyond structure, I establish contribution workflows, versioning strategies, and collaboration models that allow the system to evolve without fragmentation. The result is a governed, resilient system that supports product growth rather than slowing it down.",
+    "letsDiveIn": "Let's dive in",
+    "modalTitle": "Modal title",
+    "modalClose": "Close",
+    "modalContent": "Your content here."
+  },
+  "frontEndZone": {
+    "title": "Front end implementation",
+    "intro": "UI/UX implementation is where design becomes a reliable, scalable product layer — I ensure it is robust, maintainable, and aligned with system foundations.",
+    "reactArchitecture": "React Architecture",
+    "typescript": "TypeScript",
+    "scalableComponents": "Scalable Components",
+    "performance": "Performance",
+    "accessibility": "Accessibility",
+    "testingStrategy": "Testing Strategy",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "responsiveDesign": "Responsive Design",
+    "uxDesign": "UX Design",
+    "paragraph1": "Frontend implementation is where design foundations become reliable, scalable product interfaces. I ensure that every implementation is robust, maintainable, and aligned with system principles defined upstream.",
+    "paragraph2": "I build production-grade React architectures based on token-driven styling, clear component APIs, and modular structures. Each decision is made with long-term maintainability, performance, and accessibility as baseline requirements.",
+    "paragraph3": "Interfaces are designed to adapt seamlessly across devices — from mobile to tablet, laptop, and large desktop environments. I structure layouts and interaction patterns to remain consistent and predictable regardless of screen size or context of use.",
+    "paragraph4": "By bridging system thinking and real-world product constraints, I help teams ship faster without sacrificing structural integrity. The result is a frontend layer that scales with the product rather than becoming a source of fragmentation or technical debt.",
+    "underTheHood": "Under the hood"
+  },
+  "portfolioZone": {
+    "title": "Selected work",
+    "intro": "I design and build scalable, user-centered mobile applications using the React native framework.",
+    "reactNative": "React Native",
+    "googlePlayStore": "Google Play store",
+    "appStore": "App Store",
+    "paragraph": "In 2012, on the Hoozin project, I experimented with responsive web design and saw its inherent limits. Later, on other projects, I adopted React Native: it let me use React—a stack I already knew—to build near-native apps for both iOS and Android from one codebase. I went on to ship two production mobile apps with two backend developers (REST and GraphQL APIs) and was responsible for UI/UX and frontend for both the apps and their companion web app.",
+    "underTheHood": "Under the hood"
+  },
+  "portfolioModal": {
+    "title": "Portfolio modal",
+    "intro": "I design and build scalable, user-centered mobile applications using the React Native framework.",
+    "paragraph1": "Back in 2012, I was working on the Hoozin website and got to experiment with responsive web design for mobile browsers, using JavaScript, jQuery, media queries and Bootstrap. I quickly saw the limits of that approach: it was not a perfect solution, and native development still offered a better user experience.",
+    "paragraph2": "Later, on other projects, I was able to work with React Native and see how well the framework fit my needs. I could keep using a technology I already knew—React—and deliver both an iOS and an Android app from a single codebase, with performance close to native. I committed fully to it and made it my main focus for building mobile products.",
+    "paragraph3": "I shipped two production mobile apps in close collaboration with two backend developers, who exposed data through REST and GraphQL APIs, while I was responsible for the UI/UX and frontend development of the web app associated with the mobile apps.",
+    "andNow": "And now?",
+    "andNowParagraph": "As I am looking for new opportunities, I aim to specialize in the creation and implementation of design systems—from defining scalable, consistent systems in design tools to translating them into production-ready React component libraries documented with Storybook. My combined experience in design and development allows me to approach this from both perspectives and deliver interfaces that are both functional and visually coherent. {{link}}",
+    "andNowParagraphBefore": "As I am looking for new opportunities, I aim to specialize in the creation and implementation of design systems—from defining scalable, consistent systems in design tools to translating them into production-ready React component libraries documented with Storybook. My combined experience in design and development allows me to approach this from both perspectives and deliver interfaces that are both functional and visually coherent. ",
+    "letMeShowYou": "Let me show you"
+  },
+  "job": {
+    "smoodDuration": "Since Nov. 2021 (~4 years)",
+    "smoodTitle": "Front-end Developer & Design System Contributor",
+    "gtlDuration": "Nov. 2018 – Nov. 2021 (~3 years)",
+    "gtlTitle": "React Native Developer",
+    "stentDuration": "Nov. 2018 – Nov. 2021 (~3 years)",
+    "stentTitle": "Graphic Designer, Front-end & Mobile Developer",
+    "hoozinDuration": "Feb. 2012 – Nov. 2018 (~6 years)",
+    "hoozinTitle": "Graphic Designer & Front-end Developer",
+    "wawawoomDuration": "Apr. 2005 – Jun. 2012 (~7 years)",
+    "wawawoomTitle": "Freelance Web Designer & Developer",
+    "genghisMindDuration": "May 2003 – Apr. 2005 (~2 years)",
+    "genghisMindTitle": "Developer and UI/UX Designer",
+    "jsSharkDuration": "Oct. 2002 – Apr. 2003 (~6 months)",
+    "jsSharkTitle": "Independent Trader & Automation Developer",
+    "exhibitDuration": "Oct. 2002 – Apr. 2003 (~6 months)",
+    "exhibitTitle": "Graphic Designer",
+    "design70Duration": "Feb. 2001 – Mar. 2002 (~1 year)",
+    "design70Title": "Graphic Designer & Web Developer",
+    "octoDuration": "Sep. 1998 – Dec. 2000 (~2 years)",
+    "octoTitle": "Graphic Designer",
+    "btsDuration": "Jun. 1998",
+    "bacDuration": "Jun. 1996",
+    "logoAlt": "Logo {{companyName}}"
+  }
+}

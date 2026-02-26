@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { WuiLink, WuiLinkColor, WuiLinkSize } from "@wawawoom/wui";
 
 import "./SocialLinks.css";
 
 const SocialLinks = () => {
+  const { t } = useTranslation();
   return (
     <p className="links">
       <WuiLink
@@ -10,7 +12,7 @@ const SocialLinks = () => {
         target="_blank"
         size={WuiLinkSize.L}
         color={WuiLinkColor.NONE}
-        title="Linkedin profile"
+        title={t("footer.linkedinTitle")}
       >
         <i className="fa-brands fa-linkedin"></i>
       </WuiLink>
@@ -20,7 +22,7 @@ const SocialLinks = () => {
         target="_blank"
         size={WuiLinkSize.L}
         color={WuiLinkColor.NONE}
-        title="GitHub profile"
+        title={t("footer.githubTitle")}
       >
         <i className="fa-brands fa-github"></i>
       </WuiLink>
@@ -30,7 +32,7 @@ const SocialLinks = () => {
         target="_blank"
         size={WuiLinkSize.L}
         color={WuiLinkColor.NONE}
-        title="Contact me by email"
+        title={t("footer.emailTitle")}
       >
         <i className="fa-solid fa-envelope"></i>
       </WuiLink>
@@ -40,7 +42,7 @@ const SocialLinks = () => {
         target="_blank"
         size={WuiLinkSize.L}
         color={WuiLinkColor.NONE}
-        title="Contact me by phone"
+        title={t("footer.phoneTitle")}
       >
         <i className="fa-solid fa-mobile-screen-button"></i>
       </WuiLink>

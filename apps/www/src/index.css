@@ -14,3 +14,9 @@ body {
   line-height: 1.4;
   background: var(--wui-color-alias-neutral-900);
 }
+
+code {
+  font-size: 0.875em;
+  color: var(--wui-color-alias-danger-500);
+  word-wrap: break-word;
+}

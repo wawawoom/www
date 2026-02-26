@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   WuiBadgeColor,
@@ -18,13 +19,14 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
-import { Section } from "../../../../ts/enum/section.enum";
-import { Badges } from "../../../Badges/Badges";
+import { Section } from "../../ts/enum/section.enum";
+import { Badges } from "../Badges/Badges";
 
 export const DesignSystemZone = (props: {
   onOpenModal: (section: Section) => void;
 }) => {
   const { onOpenModal } = props;
+  const { t } = useTranslation();
 
   const [openTestModal, setOpenTestModal] = useState(false);
 
@@ -37,77 +39,64 @@ export const DesignSystemZone = (props: {
   return (
     <>
       <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2}>
-        Design system
+        {t("designSystemZone.title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
-        Design systems reduce friction, increase speed, and bring consistency at
-        scale — I build the architecture that makes that possible.
+        {t("designSystemZone.intro")}
       </WuiText>
 
       <Badges
         badges={[
           {
             ...badgeConfiguration,
-            label: "Design Tokens",
+            label: t("designSystemZone.designTokens"),
           },
           {
             ...badgeConfiguration,
-            label: "Component Architecture",
+            label: t("designSystemZone.componentArchitecture"),
           },
           {
             ...badgeConfiguration,
-            label: "System Governance",
+            label: t("designSystemZone.systemGovernance"),
           },
           {
             ...badgeConfiguration,
-            label: "Documentation",
+            label: t("designSystemZone.documentation"),
           },
           {
             ...badgeConfiguration,
-            label: "Versioning",
+            label: t("designSystemZone.versioning"),
           },
           {
             ...badgeConfiguration,
-            label: "Cross-Functional Alignment",
+            label: t("designSystemZone.crossFunctionalAlignment"),
           },
           {
             ...badgeConfiguration,
-            label: "Figma Foundations",
+            label: t("designSystemZone.figmaFoundations"),
           },
           {
             ...badgeConfiguration,
-            label: "Storybook",
+            label: t("designSystemZone.storybook"),
           },
         ]}
       />
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
-        A well-structured design system transforms UI from isolated components
-        into a scalable product foundation. I help organizations design,
-        implement, and evolve systems that ensure consistency, efficiency, and
-        long-term maintainability.
+        {t("designSystemZone.paragraph1")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
-        My approach starts with strong foundations: design tokens, semantic
-        structures, and clearly defined component layers. The objective is not
-        only visual alignment, but operational clarity across teams and
-        products.
+        {t("designSystemZone.paragraph2")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
-        I connect Figma foundations to production-ready React libraries,
-        ensuring that design intent translates accurately into technical
-        reality. From token hierarchies to component APIs and documentation
-        environments, every layer is designed to scale.
+        {t("designSystemZone.paragraph3")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
-        Beyond structure, I establish contribution workflows, versioning
-        strategies, and collaboration models that allow the system to evolve
-        without fragmentation. The result is a governed, resilient system that
-        supports product growth rather than slowing it down.
+        {t("designSystemZone.paragraph4")}
       </WuiText>
 
       <WuiLink
@@ -119,23 +108,23 @@ export const DesignSystemZone = (props: {
           onOpenModal(Section.DESIGN_SYSTEM);
         }}
       >
-        Let’s dive in
+        {t("designSystemZone.letsDiveIn")}
       </WuiLink>
 
       <WuiModal
         open={openTestModal}
         onClose={() => setOpenTestModal(false)}
-        title="Modal title"
+        title={t("designSystemZone.modalTitle")}
         footer={
           <WuiButton
             color={WuiButtonColor.DARK}
             onClick={() => setOpenTestModal(false)}
           >
-            Close
+            {t("designSystemZone.modalClose")}
           </WuiButton>
         }
       >
-        <WuiText as={WuiTextAs.P}>Your content here.</WuiText>
+        <WuiText as={WuiTextAs.P}>{t("designSystemZone.modalContent")}</WuiText>
       </WuiModal>
     </>
   );

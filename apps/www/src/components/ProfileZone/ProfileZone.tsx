@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import {
   WuiBadge,
   WuiBadgeColor,
@@ -14,9 +16,9 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
-import { useModal } from "../../../../context/ModalContext.ts";
-import { Section } from "../../../../ts/enum/section.enum.ts";
-import SocialLinks from "../../../SocialLinks/SocialLinks.tsx";
+import { useModal } from "../../context/ModalContext.ts";
+import { Section } from "../../ts/enum/section.enum.ts";
+import SocialLinks from "../SocialLinks/SocialLinks.tsx";
 import "./ProfileZone.css";
 
 export const ProfileZone = (props: {
@@ -24,6 +26,7 @@ export const ProfileZone = (props: {
 }) => {
   const { onOpenModal } = props;
   const { openDreamJobModal } = useModal();
+  const { t } = useTranslation();
 
   const badgeColor = WuiBadgeColor.TRANSPARENT;
   const badgeTextColor = WuiColorValue.PINK_0;
@@ -46,7 +49,7 @@ export const ProfileZone = (props: {
           width: "max-content",
         }}
       >
-        Open to work !
+        {t("profileZone.openToWork")}
       </WuiBadge>
 
       <img
@@ -60,23 +63,19 @@ export const ProfileZone = (props: {
         look={WuiTitleLook.H2}
         color={WuiColorAlias.NEUTRAL_0}
       >
-        Nicolas Payrouse
+        {t("profileZone.name")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        I design and structure scalable UI systems that bridge product vision
-        and frontend architecture.
+        {t("profileZone.bio1")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        I operate at the intersection of design, engineering, and product
-        strategy — ensuring that interfaces are not just visually coherent, but
-        structurally sound and built to scale across teams and platforms.
+        {t("profileZone.bio2")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        Currently open to opportunities where UI architecture and design systems
-        are considered strategic assets within product-driven organizations.{" "}
+        {t("profileZone.bio3Before")}
         <WuiLink
           href="#"
           onClick={(e) => {
@@ -85,7 +84,7 @@ export const ProfileZone = (props: {
           }}
           color={WuiLinkColor.NONE}
         >
-          Discover my ideal role
+          {t("profileZone.discoverIdealRole")}
         </WuiLink>
         .
       </WuiText>
@@ -169,17 +168,16 @@ export const ProfileZone = (props: {
         size={WuiTextSize.XS}
         color={WuiColorAlias.NEUTRAL_0}
       >
-        <i className="fa-regular fa-compass"></i> Nice, France
+        <i className="fa-regular fa-compass"></i> {t("profileZone.location")}
         <br />
-        <i className="fa-regular fa-address-card"></i> wawawoom[@]gmail.com /
-        +33 (0)6 31 796 781
+        <i className="fa-regular fa-address-card"></i>{" "}
+        {t("profileZone.contact")}
         <br />
-        <i className="fa-solid fa-people-roof"></i> Born 5 December 1978
+        <i className="fa-solid fa-people-roof"></i> {t("profileZone.birth")}
         <br />
-        <i className="fa-solid fa-language"></i> French and English: spoken and
-        written.
+        <i className="fa-solid fa-language"></i> {t("profileZone.languages")}
         <br />
-        <i className="fa-solid fa-car"></i> Full driving licence (Category B)
+        <i className="fa-solid fa-car"></i> {t("profileZone.drivingLicence")}
       </WuiText>
 
       <SocialLinks />
@@ -193,7 +191,7 @@ export const ProfileZone = (props: {
           onOpenModal(Section.PROFILE);
         }}
       >
-        View professional experience
+        {t("profileZone.viewExperience")}
       </WuiLink>
     </>
   );

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   WuiColorValue,
@@ -7,11 +8,11 @@ import {
   WuiLinkSize,
 } from "@wawawoom/wui";
 
-import { Section } from "../../../../ts/enum/section.enum.ts";
-import { DesignSystemModal } from "../DesignSystem/DesignSystemModal.tsx";
-import { FrontEndModal } from "../FrontEnd/FrontEndModal.tsx";
-import { PortfolioModal } from "../Portfolio/PortfolioModal.tsx";
-import { ProfileModal } from "../Profile/ProfileModal.tsx";
+import { Section } from "../../ts/enum/section.enum.ts";
+import { DesignSystemModal } from "../DesignSystemModal/DesignSystemModal.tsx";
+import { FrontEndModal } from "../FrontEndModal/FrontEndModal.tsx";
+import { PortfolioModal } from "../PortfolioModal/PortfolioModal.tsx";
+import { ProfileModal } from "../ProfileModal/ProfileModal.tsx";
 import "./Modal.css";
 import type { ModalProps } from "./Modal.props.ts";
 
@@ -21,8 +22,8 @@ export const Modal = (props: ModalProps) => {
     isAnimating,
     closeButtonColor = WuiColorValue.BLACK_900,
     onCloseModal,
-    onOpenModal,
   } = props;
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -53,7 +54,7 @@ export const Modal = (props: ModalProps) => {
 
           onCloseModal();
         }}
-        aria-label="Close modal"
+        aria-label={t("modal.closeAriaLabel")}
         color={WuiLinkColor.GHOST}
         style={{ color: closeButtonColor }}
       >
@@ -64,9 +65,7 @@ export const Modal = (props: ModalProps) => {
         {section === Section.DESIGN_SYSTEM && <DesignSystemModal />}
         {section === Section.FRONT_END && <FrontEndModal />}
         {section === Section.PORTFOLIO && <PortfolioModal />}
-        {section === Section.PROFILE && (
-          <ProfileModal onOpenModal={onOpenModal} />
-        )}
+        {section === Section.PROFILE && <ProfileModal />}
       </div>
     </div>
   );

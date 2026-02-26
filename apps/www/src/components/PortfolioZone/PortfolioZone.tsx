@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import {
   WuiBadge,
   WuiBadgeColor,
@@ -14,12 +16,13 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
-import { Section } from "../../../../ts/enum/section.enum";
+import { Section } from "../../ts/enum/section.enum";
 
 export const PortfolioZone = (props: {
   onOpenModal: (section: Section) => void;
 }) => {
   const { onOpenModal } = props;
+  const { t } = useTranslation();
   const badgeColor = WuiColorValue.BLUE_0;
 
   return (
@@ -29,12 +32,11 @@ export const PortfolioZone = (props: {
         look={WuiTitleLook.H2}
         color={WuiColorAlias.NEUTRAL_0}
       >
-        Selected work
+        {t("portfolioZone.title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        I design and build scalable, user-centered mobile applications using the
-        React native framework.
+        {t("portfolioZone.intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.P} className="badges">
@@ -43,7 +45,7 @@ export const PortfolioZone = (props: {
           size={WuiBadgeSize.M}
           style={{ color: badgeColor }}
         >
-          React Native
+          {t("portfolioZone.reactNative")}
         </WuiBadge>
 
         <WuiBadge
@@ -51,7 +53,7 @@ export const PortfolioZone = (props: {
           size={WuiBadgeSize.M}
           style={{ color: badgeColor }}
         >
-          Google Play store
+          {t("portfolioZone.googlePlayStore")}
         </WuiBadge>
 
         <WuiBadge
@@ -59,7 +61,7 @@ export const PortfolioZone = (props: {
           size={WuiBadgeSize.M}
           style={{ color: badgeColor }}
         >
-          App Store
+          {t("portfolioZone.appStore")}
         </WuiBadge>
       </WuiText>
 
@@ -68,13 +70,7 @@ export const PortfolioZone = (props: {
         color={WuiColorAlias.NEUTRAL_0}
         size={WuiTextSize.S}
       >
-        In 2012, on the Hoozin project, I experimented with responsive web
-        design and saw its inherent limits. Later, on other projects, I adopted
-        React Native: it let me use React—a stack I already knew—to build
-        near-native apps for both iOS and Android from one codebase. I went on
-        to ship two production mobile apps with two backend developers (REST and
-        GraphQL APIs) and was responsible for UI/UX and frontend for both the
-        apps and their companion web app.
+        {t("portfolioZone.paragraph")}
       </WuiText>
 
       <WuiLink
@@ -86,7 +82,7 @@ export const PortfolioZone = (props: {
           onOpenModal(Section.PORTFOLIO);
         }}
       >
-        Under the hood
+        {t("portfolioZone.underTheHood")}
       </WuiLink>
     </>
   );

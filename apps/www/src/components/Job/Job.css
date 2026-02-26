@@ -34,4 +34,8 @@
     padding-top: 1rem;
     white-space: pre-line;
   }
+
+  .badges {
+    margin-top: 0.5rem;
+  }
 }

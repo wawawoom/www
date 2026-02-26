@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   WuiLink,
@@ -15,6 +16,7 @@ import type { ModalContextValue } from "./ModalContext";
 
 export const ModalProvider = (props: { children: ReactNode }) => {
   const { children } = props;
+  const { t } = useTranslation();
 
   const [isDreamJobModalOpen, setIsDreamJobModalOpen] = useState(false);
 
@@ -35,55 +37,39 @@ export const ModalProvider = (props: { children: ReactNode }) => {
       <WuiModal
         open={isDreamJobModalOpen}
         onClose={closeDreamJobModal}
-        title="The dream job !"
+        title={t("dreamJobModal.title")}
         footer={
           <WuiLink
             href="tel:+33631796781"
             color={WuiLinkColor.DARK}
             style={{ flex: 1 }}
           >
-            Let's talk about it.
+            {t("dreamJobModal.letsTalk")}
           </WuiLink>
         }
       >
         <WuiText as={WuiTextAs.P} weight={WuiTextWeight.BOLD}>
-          My ideal role sits at the intersection of product, design, and
-          engineering, leading the strategy and adoption of scalable design
-          systems.
+          {t("dreamJobModal.paragraph1")}
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
-          I translate design foundations into production-ready React
-          architectures—from tokens and component APIs to documentation and
-          adoption strategy—ensuring reliability and extensibility.
+          {t("dreamJobModal.paragraph2")}
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
-          I bridge design and development, making pragmatic architectural
-          decisions, anticipating integration challenges, and eliminating
-          friction between teams. The result: faster iteration, higher quality,
-          and measurable efficiency gains.
+          {t("dreamJobModal.paragraph3")}
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
-          I seek a role where design system thinking is strategic, in a
-          product-driven organization valuing technical excellence,
-          cross-functional ownership, and long-term scalability, in hybrid or
-          remote-first settings.
+          {t("dreamJobModal.paragraph4")}
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
-          I am seeking a role where design system thinking is considered a
-          strategic asset rather than a side initiative. Ideally, this would be
-          within a product-driven organization that values technical excellence,
-          cross-functional ownership, and long-term scalability.
+          {t("dreamJobModal.paragraph5")}
         </WuiText>
 
         <WuiText as={WuiTextAs.P}>
-          I am open to hybrid or remote-first environments and looking for a
-          position that reflects the strategic and architectural impact of the
-          role, with compensation aligned to senior-level UI Engineering or
-          Design System leadership responsibilities.
+          {t("dreamJobModal.paragraph6")}
         </WuiText>
       </WuiModal>
     </ModalContext.Provider>

@@ -1,4 +1,4 @@
-import type { Section } from "../../../../ts/enum/section.enum";
+import type { Section } from "../../ts/enum/section.enum";
 
 export interface ZoneExpandedProps {
   section: Section;

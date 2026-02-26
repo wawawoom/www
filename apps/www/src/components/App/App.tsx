@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   WuiColorAlias,
@@ -8,16 +9,23 @@ import {
   WuiLinkSize,
 } from "@wawawoom/wui";
 
+import {
+  DEFAULT_LOCALE,
+  getLocaleFromPathname,
+} from "../../constants/locale.ts";
 import { ModalProvider } from "../../context/ModalProvider.tsx";
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
+import i18n from "../../i18n.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
 import { pathToSection } from "../../utils/path-to-section.ts";
-import { Modal } from "../layout/Modal/Modal/Modal.tsx";
-import { Zone } from "../layout/Zone/Zone/Zone.tsx";
+import { Modal } from "../Modal/Modal.tsx";
+import { Zone } from "../Zone/Zone.tsx";
 import "./App.css";
 
 const App = () => {
-  const currentSectionFromURL = useLocation();
+  const pathname = useLocation();
+  const locale = getLocaleFromPathname(pathname) ?? DEFAULT_LOCALE;
+  const { t } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [section, setSection] = useState<Section | null>(null);
@@ -29,8 +37,25 @@ const App = () => {
     updateUrl: boolean;
   } | null>(null);
 
+  // Redirect root to locale-prefixed path
+  useEffect(() => {
+    if (pathname === "/") {
+      const preferred =
+        typeof navigator !== "undefined" && navigator.language.startsWith("en")
+          ? "en"
+          : DEFAULT_LOCALE;
+      navigateTo(`/${preferred}`);
+      return;
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    i18n.changeLanguage(locale);
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   const openModal = (section: Section, updateUrl: boolean) => {
-    if (updateUrl) navigateTo(`/${section}`);
+    if (updateUrl) navigateTo(`/${locale}/${section}`);
     setSection(section);
     setIsModalOpen(true);
     requestAnimationFrame(() =>
@@ -58,7 +83,7 @@ const App = () => {
       setSection(null);
 
       if (updateUrl) {
-        navigateTo("/");
+        navigateTo(`/${locale}`);
       }
 
       if (pendingOpenModal) {
@@ -73,7 +98,7 @@ const App = () => {
   useEffect(() => {
     if (!hasInitializedRef.current) return;
 
-    const sectionFromUrl = pathToSection(currentSectionFromURL);
+    const sectionFromUrl = pathToSection(pathname);
 
     if (!sectionFromUrl) {
       if (isModalOpen) requestAnimationFrame(() => onCloseModal(false));
@@ -84,20 +109,24 @@ const App = () => {
       requestAnimationFrame(() => openModal(sectionFromUrl, false));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSectionFromURL, isModalOpen, section]);
+  }, [pathname, isModalOpen, section]);
 
   // Ouvrir automatiquement la modal au chargement si l'URL correspond à une section
   useEffect(() => {
     if (!hasInitializedRef.current) {
       hasInitializedRef.current = true;
 
-      const sectionFromUrl = pathToSection(currentSectionFromURL);
+      const sectionFromUrl = pathToSection(pathname);
       if (sectionFromUrl) {
         setTimeout(() => onOpenModal(sectionFromUrl, false), 100);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSectionFromURL]);
+  }, [pathname]);
+
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <ModalProvider>
@@ -121,8 +150,8 @@ const App = () => {
         >
           <Zone
             section={Section.DESIGN_SYSTEM}
-            title="Design system"
-            titleBack="Token-Driven systems"
+            title={t("zones.designSystem.title")}
+            titleBack={t("zones.designSystem.titleBack")}
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -131,8 +160,8 @@ const App = () => {
 
           <Zone
             section={Section.FRONT_END}
-            title="Front-end"
-            titleBack="Interface Implementation"
+            title={t("zones.frontEnd.title")}
+            titleBack={t("zones.frontEnd.titleBack")}
             titleColor={WuiColorAlias.NEUTRAL_900}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -141,8 +170,8 @@ const App = () => {
 
           <Zone
             section={Section.PORTFOLIO}
-            title="Selected work"
-            titleBack="Production case studies"
+            title={t("zones.portfolio.title")}
+            titleBack={t("zones.portfolio.titleBack")}
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -151,8 +180,8 @@ const App = () => {
 
           <Zone
             section={Section.PROFILE}
-            title="Profile"
-            titleBack="Nicolas Payrouse"
+            title={t("zones.profile.title")}
+            titleBack={t("zones.profile.titleBack")}
             titleColor={WuiColorAlias.NEUTRAL_0}
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
@@ -177,8 +206,36 @@ const App = () => {
 
         <footer className="app__footer">
           <ul>
-            <li>fr</li>
-            <li>en</li>
+            <li>
+              <WuiLink
+                href={section ? `/fr/${section}` : `/fr`}
+                onClick={(event) => {
+                  event.preventDefault();
+
+                  navigateTo(section ? `/fr/${section}` : "/fr");
+                }}
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                aria-current={locale === "fr" ? "true" : undefined}
+              >
+                fr
+              </WuiLink>
+            </li>
+            <li>
+              <WuiLink
+                href={section ? `/en/${section}` : `/en`}
+                onClick={(event) => {
+                  event.preventDefault();
+
+                  navigateTo(section ? `/en/${section}` : "/en");
+                }}
+                size={WuiLinkSize.L}
+                color={WuiLinkColor.NONE}
+                aria-current={locale === "en" ? "true" : undefined}
+              >
+                en
+              </WuiLink>
+            </li>
 
             <li>
               <WuiLink
@@ -186,7 +243,7 @@ const App = () => {
                 target="_blank"
                 size={WuiLinkSize.L}
                 color={WuiLinkColor.NONE}
-                title="Linkedin profile"
+                title={t("footer.linkedinTitle")}
               >
                 <i className="fa-brands fa-linkedin"></i>
               </WuiLink>
@@ -198,7 +255,7 @@ const App = () => {
                 target="_blank"
                 size={WuiLinkSize.L}
                 color={WuiLinkColor.NONE}
-                title="Contact me by email"
+                title={t("footer.emailTitle")}
               >
                 <i className="fa-solid fa-envelope"></i>
               </WuiLink>
@@ -210,7 +267,7 @@ const App = () => {
                 target="_blank"
                 size={WuiLinkSize.L}
                 color={WuiLinkColor.NONE}
-                title="GitHub profile"
+                title={t("footer.githubTitle")}
               >
                 <i className="fa-brands fa-github"></i>
               </WuiLink>
@@ -222,7 +279,7 @@ const App = () => {
                 target="_blank"
                 size={WuiLinkSize.L}
                 color={WuiLinkColor.NONE}
-                title="Contact me by phone"
+                title={t("footer.phoneTitle")}
               >
                 <i className="fa-solid fa-mobile-screen-button"></i>
               </WuiLink>

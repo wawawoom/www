@@ -1,8 +1,8 @@
-import { Section } from "../../../../ts/enum/section.enum.ts";
-import { DesignSystemZone } from "../DesignSystem/DesignSystem.tsx";
-import { FrontEndZone } from "../FrontEnd/FrontEnd.tsx";
-import { PortfolioZone } from "../Portfolio/PortfolioZone.tsx";
-import { ProfileZone } from "../Profile/ProfileZone.tsx";
+import { Section } from "../../ts/enum/section.enum.ts";
+import { DesignSystemZone } from "../DesignSystemZone/DesignSystemZone.tsx";
+import { FrontEndZone } from "../FrontEndZone/FrontEndZone.tsx";
+import { PortfolioZone } from "../PortfolioZone/PortfolioZone.tsx";
+import { ProfileZone } from "../ProfileZone/ProfileZone.tsx";
 import type { ZoneExpandedProps } from "./ZoneExpanded.props.ts";
 
 export const ZoneExpanded = (props: ZoneExpandedProps) => {

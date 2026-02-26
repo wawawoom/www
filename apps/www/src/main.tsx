@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import "@wawawoom/wui-css";
 
+import "./i18n";
 import App from "./components/App/App.tsx";
 import "./index.css";
 
