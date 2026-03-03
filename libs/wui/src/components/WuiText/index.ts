@@ -4,3 +4,4 @@ export { WuiTextSize } from "./WuiText.props";
 export type { WuiTextElement } from "./WuiText.props";
 export { WuiTextAs } from "./WuiText.props";
 export { WuiTextWeight } from "./WuiText.props";
+export { WuiFontFamily } from "./WuiText.props";

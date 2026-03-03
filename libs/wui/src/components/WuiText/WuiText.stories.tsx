@@ -3,7 +3,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { WuiColorAlias } from "../../enum";
 import { loremIpsum } from "../../utils/lorem-ipsum";
 import { WuiText } from "./WuiText";
-import { WuiTextAs, WuiTextSize, WuiTextWeight } from "./WuiText.props";
+import {
+  WuiFontFamily,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTextWeight,
+} from "./WuiText.props";
 
 const meta = {
   title: "Components/Typography/WuiText",
@@ -51,6 +56,15 @@ const meta = {
       table: {
         type: { summary: "WuiColorAlias" },
         defaultValue: { summary: "-" },
+      },
+    },
+    fontFamily: {
+      description: "Font family.",
+      control: "select",
+      options: Object.values(WuiFontFamily),
+      table: {
+        type: { summary: "WuiFontFamily" },
+        defaultValue: { summary: "WuiFontFamily.SERIF" },
       },
     },
     children: {

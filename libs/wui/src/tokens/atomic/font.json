@@ -4,6 +4,10 @@
       "value": "'Newsreader', serif",
       "type": "fontFamily"
     },
+    "familySansSerif": {
+      "value": "\"Segoe UI\", Tahoma, Geneva, Verdana, sans-serif",
+      "type": "fontFamily"
+    },
     "size": {
       "base": {
         "value": "18px",

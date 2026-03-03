@@ -1,0 +1,39 @@
+.palette-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wui-space-36);
+}
+
+.color-token-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wui-space-10);
+}
+
+.colors-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wui-space-10);
+}
+
+.color-item-container {
+  width: 190px;
+  height: 190px;
+  padding: var(--wui-space-20);
+  font-family: var(--wui-font-family-sans-serif);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .color-item-text {
+      bottom: var(--wui-space-8);
+    }
+  }
+}
+
+.color-item-text {
+  width: auto;
+  position: absolute;
+  bottom: -100%;
+  transition: bottom 0.3s ease-in-out;
+}

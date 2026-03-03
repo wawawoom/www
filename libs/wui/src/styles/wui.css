@@ -2,7 +2,7 @@
 /* This file imports all component styles */
 
 /* Import design tokens first */
-@import "./tokens.css";
+@import "./variables.css";
 @import "./utils.css";
 
 /* Import component styles */

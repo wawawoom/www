@@ -28,6 +28,11 @@ export enum WuiTextWeight {
   BOLD = "bold",
 }
 
+export enum WuiFontFamily {
+  SERIF = "serif",
+  SANS_SERIF = "sans-serif",
+}
+
 export interface WuiTextProps extends Omit<
   HTMLAttributes<WuiTextElement>,
   "as"
@@ -36,4 +41,5 @@ export interface WuiTextProps extends Omit<
   size?: WuiTextSize;
   weight?: WuiTextWeight;
   color?: WuiColorAlias;
+  fontFamily?: WuiFontFamily;
 }

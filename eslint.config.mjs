@@ -27,7 +27,7 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   // Resolve tsconfig from repo root when multiple TS projects exist (apps/www, libs/wui)
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    files: ["**/*.ts", "**/*.tsx", "**/*.mjs", "**/*.cjs", "**/*.js"],
     languageOptions: {
       parserOptions: {
         tsconfigRootDir: __dirname,

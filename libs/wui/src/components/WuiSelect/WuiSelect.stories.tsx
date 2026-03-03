@@ -79,18 +79,6 @@ export const Component: Story = {
   args: {
     label: "Country",
     children: defaultOptions,
-  },
-  render: (args) => (
-    <div style={{ minWidth: 280 }}>
-      <WuiSelect {...args}>{defaultOptions}</WuiSelect>
-    </div>
-  ),
-};
-
-export const WithHelper: Story = {
-  args: {
-    label: "Country",
-    children: defaultOptions,
     helpers: [
       {
         status: WuiInputHelperStatus.DEFAULT,
@@ -98,28 +86,5 @@ export const WithHelper: Story = {
       },
     ],
   },
-  render: (args) => (
-    <div style={{ minWidth: 280 }}>
-      <WuiSelect {...args}>{defaultOptions}</WuiSelect>
-    </div>
-  ),
-};
-
-export const WithError: Story = {
-  args: {
-    label: "Country",
-    status: WuiSelectStatus.ERROR,
-    children: defaultOptions,
-    helpers: [
-      {
-        status: WuiInputHelperStatus.ERROR,
-        message: "Please select a country.",
-      },
-    ],
-  },
-  render: (args) => (
-    <div style={{ minWidth: 280 }}>
-      <WuiSelect {...args}>{defaultOptions}</WuiSelect>
-    </div>
-  ),
+  render: (args) => <WuiSelect {...args}>{defaultOptions}</WuiSelect>,
 };

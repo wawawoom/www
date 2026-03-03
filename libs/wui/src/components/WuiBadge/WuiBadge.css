@@ -1,5 +1,5 @@
 .wui-badge {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--wui-font-family-sans-serif);
   font-weight: var(--wui-font-weight-normal);
   display: inline-flex;
   align-items: center;

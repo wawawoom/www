@@ -1,4 +1,5 @@
-import "./formats/css-spacing-utilities.js";
+import "./formats/css-utils.js";
+import "./formats/css-utils.js";
 import "./formats/enum-color-alias.js";
 import "./formats/enum-color-name.js";
 import "./formats/enum-color-value.js";
@@ -23,15 +24,16 @@ export default {
       buildPath: "src/styles/",
       files: [
         {
-          destination: "tokens.css",
+          destination: "variables.css",
           format: "css/variables",
           options: {
             selector: ":root",
+            outputReferences: true,
           },
         },
         {
           destination: "utils.css",
-          format: "css/spacing-utilities",
+          format: "css/utils",
         },
       ],
     },

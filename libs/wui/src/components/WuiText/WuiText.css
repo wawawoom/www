@@ -1,7 +1,14 @@
 .wui-text {
-  font-family: var(--wui-font-family);
   font-weight: var(--wui-font-weight-normal);
   line-height: var(--wui-line-height-base);
+}
+
+.wui-text--serif {
+  font-family: var(--wui-font-family);
+}
+
+.wui-text--sans-serif {
+  font-family: var(--wui-font-family-sans-serif);
 }
 
 p.wui-text {
