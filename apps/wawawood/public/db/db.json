@@ -1,0 +1,135 @@
+[
+  {
+    "id": 0,
+    "name": "Issa Nissa",
+    "slug": "issa-nissa",
+    "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    "logo": "issa-nissa.svg",
+    "video": "P1110549.MP4",
+    "images": ["P1110538.JPG", "P1110547.JPG"],
+    "tag": "Nouveau"
+  },
+
+  {
+    "id": 1,
+    "isFeatured": true,
+    "name": "CUB OMBRA FRESCA",
+    "slug": "cub-ombra-fresca-2",
+    "description": "Le CUB en platane de Saint Laurent du Var.",
+    "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",
+    "technic": [
+      "Bois de platane brut, résine noire teintée noire",
+      "Ampoule EGLO LED E27 dimmable, forme globe, Big Size, filament vintage spirale, ampoule Edison cuivrée vaporisée, 4 watts, 40 lumens, blanc chaud, 1600 Kelvin, G200, diamètre 20 cm",
+      "Cable en tissu polyester, couleur noire, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 500 gr."
+    ],
+    "video": "cub-ombra-fresca-2.mp4",
+    "images": [
+      "cub_ombra_fresca_2_1-1.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg",
+      "cub_ombra_fresca_2_1-2.jpg"
+    ],
+    "tag": "En stock",
+    "price": 499
+  },
+
+  {
+    "id": 2,
+    "name": "Candeletta",
+    "slug": "candeletta",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    "images": ["candeletta-1.jpg"]
+  },
+
+  {
+    "id": 3,
+    "name": "Serenella",
+    "slug": "serenella",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    "video": "example.mp4",
+    "images": ["fake-1.webp"]
+  },
+
+  {
+    "id": 4,
+    "name": "Elegance",
+    "slug": "elegance",
+    "video": "example.mp4",
+    "images": ["fake-2.webp"]
+  },
+
+  {
+    "id": 5,
+    "name": "Rustic",
+    "slug": "rustic",
+    "video": "example.mp4",
+    "images": ["fake-3.jpg"]
+  },
+
+  {
+    "id": 6,
+    "name": "Modern",
+    "slug": "modern-1",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 7,
+    "name": "Modern",
+    "slug": "modern-2",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 8,
+    "name": "Modern",
+    "slug": "modern-3",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 9,
+    "name": "Modern",
+    "slug": "modern-4",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 10,
+    "name": "Modern",
+    "slug": "modern-5",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 11,
+    "name": "Modern",
+    "slug": "modern-6",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  },
+
+  {
+    "id": 12,
+    "name": "Modern",
+    "slug": "modern-7",
+    "video": "example.mp4",
+    "images": ["fake-4.webp"]
+  }
+]

@@ -1,0 +1,47 @@
+.lamp-card {
+  flex-shrink: 0;
+  position: relative;
+  opacity: 0.45;
+  flex-basis: calc(
+    (
+      (
+          100vw - (var(--card-count) - 1) * var(--cards-gap) -
+            var(--main-x-padding) * 2
+        ) / var(--card-count)
+    )
+  );
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.lamp-media {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  display: block;
+  transition: height 0.6s cubic-bezier(0.45, 0.01, 0, 0.99);
+  position: relative;
+  z-index: 2;
+}
+
+.lamp-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out,
+    height 0.6s cubic-bezier(0.45, 0.01, 0, 0.99);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.lamp-video.visible {
+  opacity: 1;
+}
+
+.lamp-card:hover {
+  opacity: 1;
+}

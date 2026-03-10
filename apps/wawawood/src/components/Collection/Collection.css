@@ -1,0 +1,98 @@
+.collection {
+  display: none;
+
+  @media (min-width: 768px) {
+    padding: 0 0 20px 0;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &:after {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -500px;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0) 99%
+      );
+      z-index: -1;
+      opacity: 0;
+      transition: bottom 1s cubic-bezier(0.45, 0.01, 0, 0.99),
+        opacity 1s cubic-bezier(0.45, 0.01, 0, 0.99);
+    }
+
+    &:has(.collection-images:hover),
+    &:has(.collection-nav:hover) {
+      z-index: 3;
+    }
+
+    &:has(.collection-images:hover):after,
+    &:has(.collection-nav:hover):after {
+      opacity: 0.8;
+      bottom: 0;
+    }
+
+    .collection-images {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: var(--cards-gap);
+      overflow-x: hidden;
+      align-items: flex-end;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 0 var(--main-x-padding);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .collection-nav {
+      background: transparent;
+      /*border: 1px solid red;*/
+      color: #f2eaea;
+      font-size: 80px;
+      font-weight: 100;
+      width: var(--main-x-padding);
+      height: 130px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+      flex-shrink: 0;
+      line-height: 1;
+      padding: 0;
+      position: absolute;
+      bottom: var(--cards-gap);
+
+      &[data-active='false'] {
+        opacity: 0.1;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+
+    .collection-nav-prev {
+      left: 0;
+    }
+
+    .collection-nav-next {
+      right: 0;
+    }
+  }
+}

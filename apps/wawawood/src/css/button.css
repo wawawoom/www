@@ -1,0 +1,26 @@
+.button-primary {
+  background-color: transparent;
+  color: #f2eaea;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid #f2eaea;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Geologica', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
+  font-size: 18px;
+  width: auto;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: #f2eaea;
+    color: #1a1919;
+  }
+}
+
+.button-sm {
+  padding: 7px 14px;
+}

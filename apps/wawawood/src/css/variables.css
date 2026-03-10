@@ -1,0 +1,20 @@
+:root {
+  --desktop-width: 768px;
+
+  --main-x-padding: 20px;
+  --main-x-padding-desktop: 80px;
+
+  --header-height: 60px;
+  --header-height-desktop: 80px;
+  --header-x-padding: var(--main-x-padding);
+  --header-x-padding-desktop: var(--main-x-padding-desktop);
+
+  --hero-content-padding-x: var(--main-x-padding);
+  --hero-content-padding-x-desktop: var(--main-x-padding-desktop);
+
+  --hero-logo-width: 50vw;
+  --hero-logo-width-desktop: 250px;
+
+  --card-count: 6;
+  --cards-gap: 20px;
+}

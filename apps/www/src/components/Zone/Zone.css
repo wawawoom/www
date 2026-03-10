@@ -90,19 +90,16 @@
 .design-system {
   grid-area: design-system;
   background-color: var(--wui-color-yellow-500);
-  transition: background-color 0.2s ease-in-out;
 }
 
 .front-end {
   grid-area: front-end;
   background-color: var(--wui-color-green-500);
-  transition: background-color 0.2s ease-in-out;
 }
 
 .profile {
   grid-area: profile;
   background-color: var(--wui-color-pink-500);
-  transition: background-color 0.2s ease-in-out;
   color: var(--wui-color-black-0);
 
   article {
@@ -112,7 +109,6 @@
 
 .portfolio {
   grid-area: portfolio;
-  transition: background-color 0.2s ease-in-out;
   background-color: var(--wui-color-blue-500);
   color: var(--wui-color-black-0);
 

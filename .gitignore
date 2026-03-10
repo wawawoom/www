@@ -66,3 +66,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+#cdn
+apps/cdn/**
