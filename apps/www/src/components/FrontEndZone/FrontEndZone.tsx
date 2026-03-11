@@ -14,6 +14,7 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
+import { useTheme } from "../../context/ThemeContext";
 import { Section } from "../../ts/enum/section.enum";
 import { Badges } from "../Badges/Badges";
 
@@ -23,6 +24,8 @@ export const FrontEndZone = (props: {
   const { onOpenModal } = props;
   const { t } = useTranslation();
 
+  const { theme, getBlackColor } = useTheme();
+
   const badgeConfiguration = {
     color: WuiBadgeColor.TRANSPARENT,
     textColor: WuiColorValue.GREEN_900,
@@ -31,11 +34,17 @@ export const FrontEndZone = (props: {
 
   return (
     <>
-      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2}>
+      <WuiTitle
+        as={WuiTitleAs.H1}
+        look={WuiTitleLook.H2}
+        color={getBlackColor()}
+      >
         {t("frontEndZone.title")}
       </WuiTitle>
 
-      <WuiText as={WuiTextAs.P}>{t("frontEndZone.intro")}</WuiText>
+      <WuiText as={WuiTextAs.P} color={getBlackColor()}>
+        {t("frontEndZone.intro")}
+      </WuiText>
 
       <Badges
         badges={[
@@ -82,25 +91,25 @@ export const FrontEndZone = (props: {
         ]}
       />
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("frontEndZone.paragraph1")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("frontEndZone.paragraph2")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("frontEndZone.paragraph3")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("frontEndZone.paragraph4")}
       </WuiText>
 
       <WuiLink
         href="/front-end"
-        color={WuiLinkColor.LIGHT}
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
         onClick={(event) => {
           event.preventDefault();
 

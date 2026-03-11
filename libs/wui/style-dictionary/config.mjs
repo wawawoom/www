@@ -6,7 +6,12 @@ import "./formats/enum-color-value.js";
 import "./transforms/px-to-rem.js";
 
 export default {
-  source: ["src/tokens/**/*.json"],
+  source: [
+    "src/tokens/atomic/**/*.json",
+    "src/tokens/semantic/color.json",
+    "src/tokens/semantic/space.json",
+    "src/tokens/components/**/*.json",
+  ],
   clean: true,
   log: {
     verbosity: "verbose",

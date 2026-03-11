@@ -13,12 +13,21 @@ import {
   WuiTitleAs,
 } from "@wawawoom/wui";
 
+import { useTheme } from "../../context/ThemeContext";
 import "./Job.css";
 import type { JobProps } from "./Job.props";
 
 export const Job = (props: JobProps) => {
   const { logoUrl, companyName, duration, jobTitle, badges, description } =
     props;
+
+  const { theme, getWhiteColor } = useTheme();
+
+  const getDurationColor = (): WuiColorAlias => {
+    return theme === "dark"
+      ? WuiColorAlias.DANGER_700
+      : WuiColorAlias.DANGER_100;
+  };
 
   return (
     <article className="job">
@@ -36,7 +45,7 @@ export const Job = (props: JobProps) => {
             <WuiTitle
               as={WuiTitleAs.H4}
               style={{ margin: 0 }}
-              color={WuiColorAlias.NEUTRAL_0}
+              color={getWhiteColor()}
             >
               {companyName}
             </WuiTitle>
@@ -47,7 +56,7 @@ export const Job = (props: JobProps) => {
               as={WuiTextAs.P}
               style={{ margin: 0 }}
               size={WuiTextSize.S}
-              color={WuiColorAlias.DANGER_100}
+              color={getDurationColor()}
             >
               {duration}
             </WuiText>
@@ -59,7 +68,7 @@ export const Job = (props: JobProps) => {
         {Boolean(jobTitle) && (
           <WuiTitle
             as={WuiTitleAs.H5}
-            color={WuiColorAlias.NEUTRAL_0}
+            color={getWhiteColor()}
             style={{ margin: 0 }}
           >
             {jobTitle}
@@ -91,7 +100,7 @@ export const Job = (props: JobProps) => {
           typeof description === "string" ? (
             <WuiText
               as={WuiTextAs.P}
-              color={WuiColorAlias.NEUTRAL_0}
+              color={getWhiteColor()}
               className="description"
             >
               {description}

@@ -3,6 +3,8 @@
 
 /* Import design tokens first */
 @import "./variables.css";
+@import "./variables-dark.css";
+@import "./variables-dark-prefers.css";
 @import "./utils.css";
 
 /* Import component styles */

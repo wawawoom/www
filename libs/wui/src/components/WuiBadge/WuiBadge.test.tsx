@@ -11,11 +11,15 @@ describe("WuiBadge", () => {
     expect(WuiBadge.displayName).toBe("WuiBadge");
   });
 
-  it("renders with default color (dark) and size (m)", () => {
+  it("renders with default color (secondary) and size (m)", () => {
     render(<WuiBadge>Default</WuiBadge>);
     const badge = screen.getByText("Default");
     expect(badge.tagName).toBe("SPAN");
-    expect(badge).toHaveClass("wui-badge", "wui-badge--dark", "wui-badge--m");
+    expect(badge).toHaveClass(
+      "wui-badge",
+      "wui-badge--secondary",
+      "wui-badge--m"
+    );
   });
 
   it("applies color/size overrides, spreads props, and merges className", () => {

@@ -7,7 +7,7 @@ import type { WuiBadgeProps } from "./WuiBadge.props";
 export const WuiBadge = forwardRef<HTMLSpanElement, WuiBadgeProps>(
   (
     {
-      color = WuiBadgeColor.DARK,
+      color = WuiBadgeColor.SECONDARY,
       size = WuiBadgeSize.M,
       children,
       className = "",

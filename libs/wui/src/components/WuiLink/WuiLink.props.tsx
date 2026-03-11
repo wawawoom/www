@@ -3,8 +3,8 @@ import { type AnchorHTMLAttributes } from "react";
 export enum WuiLinkColor {
   NONE = "none",
   GHOST = "ghost",
-  DARK = "dark",
-  LIGHT = "light",
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
   SUCCESS = "success",
   DANGER = "danger",
   WARNING = "warning",

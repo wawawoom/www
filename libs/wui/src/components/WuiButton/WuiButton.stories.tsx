@@ -22,7 +22,7 @@ const meta = {
       options: Object.values(WuiButtonColor),
       table: {
         type: { summary: "WuiButtonColor" },
-        defaultValue: { summary: "WuiButtonColor.LIGHT" },
+        defaultValue: { summary: "WuiButtonColor.PRIMARY" },
       },
     },
     size: {

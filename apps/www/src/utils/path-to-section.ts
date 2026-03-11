@@ -1,5 +1,5 @@
 import { Section } from "../ts/enum/section.enum";
-import { pathWithoutLocale } from "../constants/locale.ts";
+import { pathWithoutLocale } from "./locale.ts";
 
 export const pathToSection = (pathname: string): Section | null => {
   const path = pathWithoutLocale(pathname);

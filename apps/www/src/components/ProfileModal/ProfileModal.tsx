@@ -22,12 +22,15 @@ import {
 import { WuiColorAlias } from "@wawawoom/wui";
 
 import { useModal } from "../../context/ModalContext";
+import { useTheme } from "../../context/ThemeContext";
 import { Job } from "../Job/Job";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import "./ProfileModal.css";
 
 export const ProfileModal = () => {
   const { t } = useTranslation();
+
+  const { theme, getWhiteColor } = useTheme();
 
   const scrollTo = (ref: React.RefObject<HTMLHeadingElement>) => {
     if (ref.current) {
@@ -53,7 +56,7 @@ export const ProfileModal = () => {
     const items = Array.isArray(raw) ? raw : [raw];
 
     return (
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         <ul style={{ margin: 0, paddingTop: "1rem", paddingLeft: "1.25rem" }}>
           {items.map((item, index) => (
             <li key={index}>{item}</li>
@@ -63,6 +66,10 @@ export const ProfileModal = () => {
         {after}
       </WuiText>
     );
+  };
+
+  const getButtonColor = (): WuiButtonColor => {
+    return theme === "dark" ? WuiButtonColor.SECONDARY : WuiButtonColor.PRIMARY;
   };
 
   return (
@@ -83,18 +90,16 @@ export const ProfileModal = () => {
         />
       </div>
 
-      <WuiTitle
-        as={WuiTitleAs.H1}
-        color={WuiColorAlias.NEUTRAL_0}
-        className="name"
-      >
+      <WuiTitle as={WuiTitleAs.H1} color={getWhiteColor()} className="name">
         {t("profileModal.name")}
       </WuiTitle>
 
       <WuiTitle
         as={WuiTitleAs.H2}
         look={WuiTitleLook.H5}
-        color={WuiColorAlias.DANGER_100}
+        color={
+          theme === "dark" ? WuiColorAlias.DANGER_800 : WuiColorAlias.DANGER_100
+        }
         className="job-title"
       >
         {t("profileModal.jobTitle")}
@@ -106,7 +111,7 @@ export const ProfileModal = () => {
         as={WuiTextAs.P}
         size={WuiTextSize.XXL}
         className="bio"
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
       >
         {t("profileModal.bio")}{" "}
         <WuiLink href="#" onClick={onClickDreamJob} color={WuiLinkColor.NONE}>
@@ -116,7 +121,7 @@ export const ProfileModal = () => {
 
       <nav className="links" style={{ marginBottom: "3rem" }}>
         <WuiButton
-          color={WuiButtonColor.LIGHT}
+          color={getButtonColor()}
           size={WuiButtonSize.S}
           onClick={() => {
             scrollTo(workExperienceRef as React.RefObject<HTMLHeadingElement>);
@@ -127,7 +132,7 @@ export const ProfileModal = () => {
         </WuiButton>
 
         <WuiButton
-          color={WuiButtonColor.LIGHT}
+          color={getButtonColor()}
           size={WuiButtonSize.S}
           onClick={() => {
             scrollTo(skillsRef as React.RefObject<HTMLHeadingElement>);
@@ -138,7 +143,7 @@ export const ProfileModal = () => {
         </WuiButton>
 
         <WuiButton
-          color={WuiButtonColor.LIGHT}
+          color={getButtonColor()}
           size={WuiButtonSize.S}
           onClick={() => {
             scrollTo(
@@ -151,7 +156,7 @@ export const ProfileModal = () => {
         </WuiButton>
 
         <WuiButton
-          color={WuiButtonColor.LIGHT}
+          color={getButtonColor()}
           size={WuiButtonSize.S}
           onClick={() => {
             scrollTo(educationRef as React.RefObject<HTMLHeadingElement>);
@@ -162,7 +167,7 @@ export const ProfileModal = () => {
         </WuiButton>
 
         <WuiButton
-          color={WuiButtonColor.LIGHT}
+          color={getButtonColor()}
           size={WuiButtonSize.S}
           onClick={() => {
             scrollTo(butAlsoRef as React.RefObject<HTMLHeadingElement>);
@@ -173,14 +178,14 @@ export const ProfileModal = () => {
         </WuiButton>
       </nav>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         {t("profileModal.bioParagraph")}
       </WuiText>
 
       <WuiTitle
         ref={workExperienceRef}
         as={WuiTitleAs.H3}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
         {t("profileModal.workExperience")}
@@ -348,7 +353,7 @@ export const ProfileModal = () => {
       <WuiTitle
         ref={skillsRef}
         as={WuiTitleAs.H3}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
         {t("profileModal.skills")}
@@ -400,7 +405,7 @@ export const ProfileModal = () => {
       <WuiTitle
         ref={personalProjectsRef}
         as={WuiTitleAs.H3}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
         {t("profileModal.personalProjects")}
@@ -414,7 +419,7 @@ export const ProfileModal = () => {
         description={
           <WuiText
             as={WuiTextAs.P}
-            color={WuiColorAlias.NEUTRAL_0}
+            color={getWhiteColor()}
             style={{ paddingTop: "1rem" }}
           >
             {t("profileModal.kaleiDescription")}
@@ -422,7 +427,9 @@ export const ProfileModal = () => {
             <br />
             <WuiLink
               href="/projects/kalei"
-              color={WuiLinkColor.LIGHT}
+              color={
+                theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY
+              }
               size={WuiLinkSize.S}
             >
               {t("profileModal.tryItNow")}
@@ -439,7 +446,7 @@ export const ProfileModal = () => {
         description={
           <WuiText
             as={WuiTextAs.P}
-            color={WuiColorAlias.NEUTRAL_0}
+            color={getWhiteColor()}
             style={{ paddingTop: "1rem" }}
           >
             {t("profileModal.tictacDescription")}
@@ -447,7 +454,9 @@ export const ProfileModal = () => {
             <br />
             <WuiLink
               href="/projects/tictac"
-              color={WuiLinkColor.LIGHT}
+              color={
+                theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY
+              }
               size={WuiLinkSize.S}
             >
               {t("profileModal.tryItNow")}
@@ -459,7 +468,7 @@ export const ProfileModal = () => {
       <WuiTitle
         ref={educationRef}
         as={WuiTitleAs.H3}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
         {t("profileModal.education")}
@@ -482,7 +491,7 @@ export const ProfileModal = () => {
       <WuiTitle
         ref={butAlsoRef}
         as={WuiTitleAs.H3}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
         style={{ marginTop: "3rem", marginBottom: "2rem" }}
       >
         {t("profileModal.butAlso")}

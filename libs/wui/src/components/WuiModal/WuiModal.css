@@ -30,7 +30,11 @@
 }
 
 .wui-modal::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  background: color-mix(
+    in srgb,
+    var(--wui-color-alias-neutral-900) 60%,
+    transparent
+  );
   opacity: 0;
   transition: opacity 0.3s ease-out;
   pointer-events: auto;

@@ -22,7 +22,7 @@ const meta = {
       options: Object.values(WuiBadgeColor),
       table: {
         type: { summary: "WuiBadgeColor" },
-        defaultValue: { summary: "WuiBadgeColor.DARK" },
+        defaultValue: { summary: "WuiBadgeColor.SECONDARY" },
       },
     },
     size: {

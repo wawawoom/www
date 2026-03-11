@@ -75,7 +75,7 @@ export const Component: Story = {
               </WuiButton>
 
               <WuiButton
-                color={WuiButtonColor.DARK}
+                color={WuiButtonColor.SECONDARY}
                 onClick={() => setOpen(false)}
               >
                 Confirm

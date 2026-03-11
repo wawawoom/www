@@ -110,14 +110,14 @@
   top: 0;
   right: 0;
   height: 100dvw;
-  width: 48px;
-  border-left: 1px solid var(--wui-color-alias-neutral-700);
+  width: var(--footer-width);
+  border-left: 1px solid var(--wui-color-alias-neutral-200);
   display: flex;
   justify-content: center;
-  color: var(--wui-color-alias-neutral-0);
+  color: var(--wui-color-alias-neutral-900);
 
   @media (min-width: 992px) {
-    width: 60px;
+    width: var(--footer-width-desktop);
   }
 
   ul {
@@ -132,21 +132,21 @@
     li {
       margin: 0;
       padding: 0;
-      color: var(--wui-color-alias-neutral-0);
+      color: var(--wui-color-alias-neutral-900);
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 48px;
+      height: var(--footer-width);
 
       @media (min-width: 992px) {
-        height: 60px;
+        height: var(--footer-width-desktop);
       }
 
-      border-bottom: 1px solid var(--wui-color-alias-neutral-700);
+      border-bottom: 1px solid var(--wui-color-alias-neutral-200);
       cursor: pointer;
 
       &:hover {
-        background-color: var(--wui-color-alias-neutral-700);
+        background-color: var(--wui-color-alias-neutral-100);
       }
 
       a {
@@ -159,9 +159,23 @@
         color: inherit;
 
         &[aria-current="true"] {
-          background-color: var(--wui-color-alias-neutral-400);
+          background-color: var(--wui-color-alias-neutral-100);
           color: var(--wui-color-alias-neutral-900);
         }
+      }
+
+      .app__theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        border: none;
+        background: none;
+        color: inherit;
+        cursor: pointer;
+        font-size: 1.25rem;
       }
     }
   }

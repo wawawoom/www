@@ -50,7 +50,7 @@ To use the components in an app within the monorepo:
 import { Button } from "@wawawoom/wui";
 
 function MyComponent() {
-  return <Button color={WuiButtonColor.DARK}>Click me</Button>;
+  return <Button color={WuiButtonColor.SECONDARY}>Click me</Button>;
 }
 ```
 

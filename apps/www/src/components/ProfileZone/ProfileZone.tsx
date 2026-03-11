@@ -4,7 +4,6 @@ import {
   WuiBadge,
   WuiBadgeColor,
   WuiBadgeSize,
-  WuiColorAlias,
   WuiColorValue,
   WuiLink,
   WuiLinkColor,
@@ -17,7 +16,9 @@ import {
 } from "@wawawoom/wui";
 
 import { useModal } from "../../context/ModalContext.ts";
+import { useTheme } from "../../context/ThemeContext.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
+import { Badges } from "../Badges/Badges.tsx";
 import SocialLinks from "../SocialLinks/SocialLinks.tsx";
 import "./ProfileZone.css";
 
@@ -28,9 +29,13 @@ export const ProfileZone = (props: {
   const { openDreamJobModal } = useModal();
   const { t } = useTranslation();
 
-  const badgeColor = WuiBadgeColor.TRANSPARENT;
-  const badgeTextColor = WuiColorValue.PINK_0;
-  const badgeSize = WuiBadgeSize.M;
+  const { theme, getWhiteColor } = useTheme();
+
+  const badgeConfiguration = {
+    color: WuiBadgeColor.TRANSPARENT,
+    textColor: WuiColorValue.PINK_0,
+    size: WuiBadgeSize.M,
+  };
 
   const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -61,20 +66,20 @@ export const ProfileZone = (props: {
       <WuiTitle
         as={WuiTitleAs.H1}
         look={WuiTitleLook.H2}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
       >
         {t("profileZone.name")}
       </WuiTitle>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         {t("profileZone.bio1")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         {t("profileZone.bio2")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         {t("profileZone.bio3Before")}
         <WuiLink
           href="#"
@@ -89,85 +94,48 @@ export const ProfileZone = (props: {
         .
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} className="badges">
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          UI
-        </WuiBadge>
+      <Badges
+        badges={[
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.ui"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.ux"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.javascript"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.typescript"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.html"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.css"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.nextjs"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.react"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("profileZone.reactNative"),
+          },
+        ]}
+      />
 
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          UX
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          JavaScript
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          Typescript
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          HTML
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          CSS
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          NextJs
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          React
-        </WuiBadge>
-
-        <WuiBadge
-          color={badgeColor}
-          size={badgeSize}
-          style={{ color: badgeTextColor }}
-        >
-          React Native
-        </WuiBadge>
-      </WuiText>
-
-      <WuiText
-        as={WuiTextAs.P}
-        size={WuiTextSize.XS}
-        color={WuiColorAlias.NEUTRAL_0}
-      >
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.XS} color={getWhiteColor()}>
         <i className="fa-regular fa-compass"></i> {t("profileZone.location")}
         <br />
         <i className="fa-regular fa-address-card"></i>{" "}
@@ -184,7 +152,7 @@ export const ProfileZone = (props: {
 
       <WuiLink
         href="/profile"
-        color={WuiLinkColor.LIGHT}
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
         onClick={(event) => {
           event.preventDefault();
 

@@ -1,12 +1,12 @@
 import { type HTMLAttributes } from "react";
 
 export enum WuiAlertColor {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
   SUCCESS = "success",
-  ERROR = "error",
+  DANGER = "danger",
   WARNING = "warning",
   INFO = "info",
-  LIGHT = "light",
-  DARK = "dark",
 }
 
 export interface WuiAlertProps extends HTMLAttributes<HTMLDivElement> {

@@ -5,10 +5,13 @@ import "@wawawoom/wui-css";
 
 import "./i18n";
 import App from "./components/App/App.tsx";
+import { ThemeProvider } from "./context/ThemeProvider.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );

@@ -1,3 +1,8 @@
+:root {
+  --footer-width: 48px;
+  --footer-width-desktop: 60px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +17,7 @@ body {
   font-size: 18px;
   font-style: normal;
   line-height: 1.4;
-  background: var(--wui-color-alias-neutral-900);
+  background: var(--wui-color-alias-neutral-0);
 }
 
 code {

@@ -18,10 +18,10 @@ describe("WuiButton", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders with default color and size classes (LIGHT, M)", () => {
+  it("renders with default color and size classes (PRIMARY, M)", () => {
     render(<WuiButton>Default</WuiButton>);
     const button = screen.getByRole("button", { name: /default/i });
-    expect(button).toHaveClass("wui-button--light", "wui-button--m");
+    expect(button).toHaveClass("wui-button--primary", "wui-button--m");
   });
 
   it("renders as a button with type submit when specified", () => {
@@ -32,12 +32,12 @@ describe("WuiButton", () => {
 
   it("applies color and size classes", () => {
     render(
-      <WuiButton color={WuiButtonColor.DARK} size={WuiButtonSize.L}>
+      <WuiButton color={WuiButtonColor.SECONDARY} size={WuiButtonSize.L}>
         Action
       </WuiButton>
     );
     const button = screen.getByRole("button", { name: /action/i });
-    expect(button).toHaveClass("wui-button--dark", "wui-button--l");
+    expect(button).toHaveClass("wui-button--secondary", "wui-button--l");
   });
 
   it("applies block class when block is true", () => {

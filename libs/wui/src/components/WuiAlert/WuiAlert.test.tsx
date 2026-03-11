@@ -25,7 +25,7 @@ describe("WuiAlert", () => {
   it("uses the icon prop when provided, and applies color + className + spreads props", () => {
     render(
       <WuiAlert
-        color={WuiAlertColor.ERROR}
+        color={WuiAlertColor.DANGER}
         icon="fa-solid fa-bug"
         className="custom"
         aria-label="Alert label"
@@ -34,7 +34,7 @@ describe("WuiAlert", () => {
       </WuiAlert>
     );
     const alert = screen.getByRole("alert", { name: "Alert label" });
-    expect(alert).toHaveClass("wui-alert--error", "custom");
+    expect(alert).toHaveClass("wui-alert--danger", "custom");
     expect(
       alert.querySelector(".wui-alert__icon i.fa-solid.fa-bug")
     ).toBeInTheDocument();

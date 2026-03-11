@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WuiColorAlias } from "../..";
-import { WuiColorValue } from "../..";
 import { WuiText, WuiTextAs } from "../WuiText";
 import { WuiTitle, WuiTitleAs, WuiTitleLook } from "../WuiTitle";
 import { WuiLink } from "./WuiLink";
@@ -80,18 +78,6 @@ export const Example: Story = {
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P}>
-        Lorem ipsum dolor sit amet,{" "}
-        <WuiLink href="https://www.lipsum.com" target="_blank">
-          consectetur adipiscing elit
-        </WuiLink>
-        . Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </WuiText>
-
-      <WuiText
-        as={WuiTextAs.P}
-        color={WuiColorAlias.NEUTRAL_0}
-        style={{ padding: "1rem", backgroundColor: WuiColorValue.BLACK_900 }}
-      >
         Lorem ipsum dolor sit amet,{" "}
         <WuiLink href="https://www.lipsum.com" target="_blank">
           consectetur adipiscing elit

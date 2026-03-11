@@ -5,12 +5,12 @@ import { WuiAlertColor } from "./WuiAlert.props";
 import type { WuiAlertProps } from "./WuiAlert.props";
 
 const DEFAULT_ICONS: Record<WuiAlertColor, string> = {
+  [WuiAlertColor.PRIMARY]: "fa-solid fa-info",
+  [WuiAlertColor.SECONDARY]: "fa-solid fa-info",
   [WuiAlertColor.SUCCESS]: "fa-solid fa-check",
-  [WuiAlertColor.ERROR]: "fa-solid fa-exclamation",
+  [WuiAlertColor.DANGER]: "fa-solid fa-exclamation",
   [WuiAlertColor.WARNING]: "fa-solid fa-triangle-exclamation",
   [WuiAlertColor.INFO]: "fa-solid fa-info",
-  [WuiAlertColor.LIGHT]: "fa-solid fa-info",
-  [WuiAlertColor.DARK]: "fa-solid fa-info",
 };
 
 export const WuiAlert = forwardRef<HTMLDivElement, WuiAlertProps>(

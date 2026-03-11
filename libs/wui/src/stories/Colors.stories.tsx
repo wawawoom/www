@@ -31,7 +31,9 @@ export const AtomicColors: Story = {
   parameters: {
     docsOnly: true,
   },
-  render: () => {
+  render: (_args, { globals }) => {
+    const theme = globals?.theme ?? "light";
+
     const colorValuesEnum = WuiColorValue;
     const colorNamesEnum = WuiColorName;
 
@@ -64,11 +66,21 @@ export const AtomicColors: Story = {
       });
     });
 
+    const getColorAlias = (shade: string) => {
+      if (parseInt(shade, 10) >= 600) {
+        return theme === "light"
+          ? WuiColorAlias.NEUTRAL_0
+          : WuiColorAlias.NEUTRAL_900;
+      }
+      return theme === "light"
+        ? WuiColorAlias.NEUTRAL_900
+        : WuiColorAlias.NEUTRAL_0;
+    };
+
     return (
       <div className="palette-container">
         {Object.keys(colors).map((colorKey, colorIndex) => {
           const color = colors[colorKey];
-          console.log({ color });
 
           return (
             <div key={colorIndex} className="color-token-container">
@@ -89,11 +101,7 @@ export const AtomicColors: Story = {
                           size={WuiTextSize.XXS}
                           as={WuiTextAs.DIV}
                           fontFamily={WuiFontFamily.SANS_SERIF}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           CSS variable
                         </WuiText>
@@ -104,11 +112,7 @@ export const AtomicColors: Story = {
                           fontFamily={WuiFontFamily.SANS_SERIF}
                           className="wui-mb-10"
                           weight={WuiTextWeight.BOLD}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           var(--wui-color-
                           {`${colorItem.name.toLowerCase()}-${colorItem.shade}`}
@@ -121,11 +125,7 @@ export const AtomicColors: Story = {
                           size={WuiTextSize.XXS}
                           as={WuiTextAs.DIV}
                           fontFamily={WuiFontFamily.SANS_SERIF}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           Hex value
                         </WuiText>
@@ -136,11 +136,7 @@ export const AtomicColors: Story = {
                           fontFamily={WuiFontFamily.SANS_SERIF}
                           className="wui-mb-10"
                           weight={WuiTextWeight.BOLD}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           {colorItem.value}
                         </WuiText>
@@ -151,11 +147,7 @@ export const AtomicColors: Story = {
                           size={WuiTextSize.XXS}
                           as={WuiTextAs.DIV}
                           fontFamily={WuiFontFamily.SANS_SERIF}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           CSS classes
                         </WuiText>
@@ -166,11 +158,7 @@ export const AtomicColors: Story = {
                           fontFamily={WuiFontFamily.SANS_SERIF}
                           className="wui-mb-10"
                           weight={WuiTextWeight.BOLD}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           .wui-bg-
                           {`${colorItem.name.toLowerCase()}-${colorItem.shade}`}
@@ -185,11 +173,7 @@ export const AtomicColors: Story = {
                           size={WuiTextSize.XXS}
                           as={WuiTextAs.DIV}
                           fontFamily={WuiFontFamily.SANS_SERIF}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           Typescript Enum
                         </WuiText>
@@ -200,11 +184,7 @@ export const AtomicColors: Story = {
                           fontFamily={WuiFontFamily.SANS_SERIF}
                           className="wui-mb-10"
                           weight={WuiTextWeight.BOLD}
-                          color={
-                            parseInt(colorItem.shade, 10) >= 500
-                              ? WuiColorAlias.NEUTRAL_0
-                              : WuiColorAlias.NEUTRAL_900
-                          }
+                          color={getColorAlias(colorItem.shade)}
                         >
                           WuiColorName.{colorItem.token.toUpperCase()}
                           <br />

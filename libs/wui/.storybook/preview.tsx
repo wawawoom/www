@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import type { Preview } from "@storybook/react";
 
 import "../src/styles/wui.css";
+import "./docs-theme.css";
 
 function BodyTheme({
   theme,
@@ -12,17 +13,11 @@ function BodyTheme({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    document.body.setAttribute("data-wui-theme", theme);
-
-    if (theme === "light") {
-      document.body.style.backgroundColor = "var(--wui-color-alias-neutral-0)";
-    } else {
-      document.body.style.backgroundColor =
-        "var(--wui-color-alias-neutral-900)";
-    }
+    document.body.setAttribute("data-theme", theme);
+    document.body.style.backgroundColor = "var(--wui-color-alias-neutral-0)";
 
     return () => {
-      document.body.removeAttribute("data-wui-theme");
+      document.body.removeAttribute("data-theme");
       document.body.style.minHeight = "";
       document.body.style.backgroundColor = "";
     };

@@ -41,7 +41,7 @@ export const ModalProvider = (props: { children: ReactNode }) => {
         footer={
           <WuiLink
             href="tel:+33631796781"
-            color={WuiLinkColor.DARK}
+            color={WuiLinkColor.PRIMARY}
             style={{ flex: 1 }}
           >
             {t("dreamJobModal.letsTalk")}
@@ -52,25 +52,15 @@ export const ModalProvider = (props: { children: ReactNode }) => {
           {t("dreamJobModal.paragraph1")}
         </WuiText>
 
-        <WuiText as={WuiTextAs.P}>
-          {t("dreamJobModal.paragraph2")}
-        </WuiText>
+        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph2")}</WuiText>
 
-        <WuiText as={WuiTextAs.P}>
-          {t("dreamJobModal.paragraph3")}
-        </WuiText>
+        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph3")}</WuiText>
 
-        <WuiText as={WuiTextAs.P}>
-          {t("dreamJobModal.paragraph4")}
-        </WuiText>
+        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph4")}</WuiText>
 
-        <WuiText as={WuiTextAs.P}>
-          {t("dreamJobModal.paragraph5")}
-        </WuiText>
+        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph5")}</WuiText>
 
-        <WuiText as={WuiTextAs.P}>
-          {t("dreamJobModal.paragraph6")}
-        </WuiText>
+        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph6")}</WuiText>
       </WuiModal>
     </ModalContext.Provider>
   );

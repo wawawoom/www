@@ -7,7 +7,7 @@ import type { WuiButtonProps } from "./WuiButton.props";
 export const WuiButton = forwardRef<HTMLButtonElement, WuiButtonProps>(
   (
     {
-      color = WuiButtonColor.LIGHT,
+      color = WuiButtonColor.PRIMARY,
       size = WuiButtonSize.M,
       block = false,
       leftIcon,

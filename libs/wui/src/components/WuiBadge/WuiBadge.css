@@ -10,18 +10,35 @@
 }
 
 .wui-badge--transparent {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.6);
+  background-color: color-mix(
+    in srgb,
+    var(--wui-color-alias-neutral-900) 10%,
+    transparent
+  );
+  color: color-mix(
+    in srgb,
+    var(--wui-color-alias-neutral-900) 60%,
+    transparent
+  );
 }
 
-.wui-badge--dark {
-  background-color: var(--wui-color-alias-neutral-900);
-  color: var(--wui-color-alias-neutral-0);
+[data-theme="dark"] .wui-badge--transparent {
+  background-color: color-mix(
+    in srgb,
+    var(--wui-color-alias-neutral-0) 10%,
+    transparent
+  );
+  color: color-mix(in srgb, var(--wui-color-alias-neutral-0) 40%, transparent);
 }
 
-.wui-badge--light {
+.wui-badge--primary {
   background-color: var(--wui-color-alias-neutral-0);
   color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-badge--secondary {
+  background-color: var(--wui-color-alias-neutral-900);
+  color: var(--wui-color-alias-neutral-0);
 }
 
 .wui-badge--success {
@@ -29,8 +46,25 @@
   color: var(--wui-color-alias-neutral-900);
 }
 
+[data-theme="dark"] .wui-badge--success {
+  color: var(--wui-color-alias-neutral-0);
+}
+
 .wui-badge--danger {
   background-color: var(--wui-color-alias-danger-500);
+  color: var(--wui-color-alias-neutral-0);
+}
+
+[data-theme="dark"] .wui-badge--danger {
+  color: var(--wui-color-alias-neutral-900);
+}
+
+.wui-badge--warning {
+  background-color: var(--wui-color-alias-warning-500);
+  color: var(--wui-color-alias-neutral-900);
+}
+
+[data-theme="dark"] .wui-badge--warning {
   color: var(--wui-color-alias-neutral-0);
 }
 
@@ -39,8 +73,7 @@
   color: var(--wui-color-alias-neutral-0);
 }
 
-.wui-badge--warning {
-  background-color: var(--wui-color-alias-warning-500);
+[data-theme="dark"] .wui-badge--info {
   color: var(--wui-color-alias-neutral-900);
 }
 

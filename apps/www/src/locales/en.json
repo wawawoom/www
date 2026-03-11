@@ -6,7 +6,7 @@
     },
     "frontEnd": {
       "title": "Front-end",
-      "titleBack": "UI/UX Implementation"
+      "titleBack": "UI/UX"
     },
     "portfolio": {
       "title": "Selected work",
@@ -21,7 +21,9 @@
     "linkedinTitle": "Linkedin profile",
     "emailTitle": "Contact me by email",
     "githubTitle": "GitHub profile",
-    "phoneTitle": "Contact me by phone"
+    "phoneTitle": "Contact me by phone",
+    "themeDark": "Switch to dark theme",
+    "themeLight": "Switch to light theme"
   },
   "modal": {
     "closeAriaLabel": "Close modal"
@@ -39,7 +41,16 @@
     "birth": "Born 5 December 1978",
     "languages": "French and English: spoken and written.",
     "drivingLicence": "Full driving licence (Category B)",
-    "viewExperience": "View professional experience"
+    "viewExperience": "View professional experience",
+    "ui": "UI",
+    "ux": "UX",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "html": "HTML",
+    "css": "CSS",
+    "nextjs": "Next.js",
+    "react": "React",
+    "reactNative": "React Native"
   },
   "profileModal": {
     "openToWork": "Open to work!",
@@ -232,8 +243,7 @@
     "paragraph4": "Beyond structure, I establish contribution workflows, versioning strategies, and collaboration models that allow the system to evolve without fragmentation. The result is a governed, resilient system that supports product growth rather than slowing it down.",
     "letsDiveIn": "Let's dive in",
     "modalTitle": "Modal title",
-    "modalClose": "Close",
-    "modalContent": "Your content here."
+    "modalClose": "Close"
   },
   "frontEndZone": {
     "title": "Front end implementation",

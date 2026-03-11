@@ -39,7 +39,10 @@ function MyComponent() {
         onClose={() => setOpen(false)}
         title="Modal title"
         footer={
-          <WuiButton color={WuiButtonColor.DARK} onClick={() => setOpen(false)}>
+          <WuiButton
+            color={WuiButtonColor.SECONDARY}
+            onClick={() => setOpen(false)}
+          >
             Close
           </WuiButton>
         }

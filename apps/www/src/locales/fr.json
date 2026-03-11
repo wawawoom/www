@@ -6,7 +6,7 @@
     },
     "frontEnd": {
       "title": "Front-end",
-      "titleBack": "Implémentation d'interfaces"
+      "titleBack": "UI/UX"
     },
     "portfolio": {
       "title": "Réalisations",
@@ -21,7 +21,9 @@
     "linkedinTitle": "Profil LinkedIn",
     "emailTitle": "Me contacter par email",
     "githubTitle": "Profil GitHub",
-    "phoneTitle": "Me contacter par téléphone"
+    "phoneTitle": "Me contacter par téléphone",
+    "themeDark": "Passer en thème sombre",
+    "themeLight": "Passer en thème clair"
   },
   "modal": {
     "closeAriaLabel": "Fermer la fenêtre"
@@ -39,7 +41,16 @@
     "birth": "Né le 5 décembre 1978",
     "languages": "Français et anglais : à l'oral et à l'écrit.",
     "drivingLicence": "Permis B",
-    "viewExperience": "Voir l'expérience professionnelle"
+    "viewExperience": "Voir l'expérience professionnelle",
+    "ui": "UI",
+    "ux": "UX",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "html": "HTML",
+    "css": "CSS",
+    "nextjs": "Next.js",
+    "react": "React",
+    "reactNative": "React Native"
   },
   "profileModal": {
     "openToWork": "Ouvert aux opportunités !",
@@ -257,8 +268,7 @@
     "paragraph4": "Au-delà de la structure, je mets en place les flux de contribution, les stratégies de versioning et les modes de collaboration qui permettent au système d’évoluer sans se fragmenter. Résultat : un système gouverné et résilient qui accompagne la croissance produit.",
     "letsDiveIn": "Allons-y",
     "modalTitle": "Titre de la fenêtre",
-    "modalClose": "Fermer",
-    "modalContent": "Votre contenu ici."
+    "modalClose": "Fermer"
   },
   "frontEndZone": {
     "title": "Implémentation front-end",

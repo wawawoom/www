@@ -77,7 +77,7 @@ export const Documentation: Story = {
         Your account has been saved.
       </WuiAlert>
 
-      <WuiAlert color={WuiAlertColor.ERROR}>
+      <WuiAlert color={WuiAlertColor.DANGER}>
         Your email address is invalid.
       </WuiAlert>
 

@@ -57,7 +57,7 @@
 }
 
 .modal__content {
-  width: 100dvw;
+  width: calc(100dvw - var(--footer-width));
   height: 100dvh;
   overflow-y: auto;
   box-sizing: border-box;
@@ -65,6 +65,7 @@
   padding: 1.5rem;
 
   @media (min-width: 992px) {
+    width: calc(100dvw - var(--footer-width-desktop));
     padding: 3rem 7rem;
   }
 }
@@ -72,10 +73,14 @@
 .modal--expanded {
   top: 0;
   left: 0;
-  width: 100dvw;
+  width: calc(100dvw - var(--footer-width));
   height: 100dvh;
   transform: translate(0, 0);
   opacity: 1;
+
+  @media (min-width: 992px) {
+    width: calc(100dvw - var(--footer-width-desktop));
+  }
 }
 
 .modal--design-system {

@@ -1,16 +1,11 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
   WuiBadgeColor,
   WuiBadgeSize,
-  WuiButton,
-  WuiButtonColor,
-  WuiColorAlias,
   WuiColorValue,
   WuiLink,
   WuiLinkColor,
-  WuiModal,
   WuiText,
   WuiTextAs,
   WuiTextSize,
@@ -19,6 +14,7 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
+import { useTheme } from "../../context/ThemeContext";
 import { Section } from "../../ts/enum/section.enum";
 import { Badges } from "../Badges/Badges";
 
@@ -28,7 +24,7 @@ export const DesignSystemZone = (props: {
   const { onOpenModal } = props;
   const { t } = useTranslation();
 
-  const [openTestModal, setOpenTestModal] = useState(false);
+  const { theme, getBlackColor } = useTheme();
 
   const badgeConfiguration = {
     color: WuiBadgeColor.TRANSPARENT,
@@ -38,11 +34,15 @@ export const DesignSystemZone = (props: {
 
   return (
     <>
-      <WuiTitle as={WuiTitleAs.H1} look={WuiTitleLook.H2}>
+      <WuiTitle
+        as={WuiTitleAs.H1}
+        look={WuiTitleLook.H2}
+        color={getBlackColor()}
+      >
         {t("designSystemZone.title")}
       </WuiTitle>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_900}>
+      <WuiText as={WuiTextAs.P} color={getBlackColor()}>
         {t("designSystemZone.intro")}
       </WuiText>
 
@@ -83,25 +83,25 @@ export const DesignSystemZone = (props: {
         ]}
       />
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("designSystemZone.paragraph1")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("designSystemZone.paragraph2")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("designSystemZone.paragraph3")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S}>
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("designSystemZone.paragraph4")}
       </WuiText>
 
       <WuiLink
         href="/design-system"
-        color={WuiLinkColor.LIGHT}
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
         onClick={(event) => {
           event.preventDefault();
 
@@ -110,22 +110,6 @@ export const DesignSystemZone = (props: {
       >
         {t("designSystemZone.letsDiveIn")}
       </WuiLink>
-
-      <WuiModal
-        open={openTestModal}
-        onClose={() => setOpenTestModal(false)}
-        title={t("designSystemZone.modalTitle")}
-        footer={
-          <WuiButton
-            color={WuiButtonColor.DARK}
-            onClick={() => setOpenTestModal(false)}
-          >
-            {t("designSystemZone.modalClose")}
-          </WuiButton>
-        }
-      >
-        <WuiText as={WuiTextAs.P}>{t("designSystemZone.modalContent")}</WuiText>
-      </WuiModal>
     </>
   );
 };

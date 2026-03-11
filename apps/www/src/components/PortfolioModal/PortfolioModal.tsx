@@ -15,8 +15,8 @@ import {
   WuiTitleAs,
 } from "@wawawoom/wui";
 
-import { getEnv } from "../../config/env.ts";
 import { useModal } from "../../context/ModalContext";
+import { getEnv } from "../../utils/get-env.ts";
 import Gallery from "../Gallery/Gallery";
 
 export const PortfolioModal = () => {
@@ -186,7 +186,7 @@ export const PortfolioModal = () => {
         title={t("frontEndModal.confirmTitle")}
         footer={
           <WuiButton
-            color={WuiButtonColor.DARK}
+            color={WuiButtonColor.SECONDARY}
             onClick={() => {
               window.open(
                 "https://github.com/wawawoom/www/tree/master/apps/www",
@@ -227,7 +227,7 @@ export const PortfolioModal = () => {
 
             {/* TODO: link to my storybook */}
             <WuiButton
-              color={WuiButtonColor.DARK}
+              color={WuiButtonColor.SECONDARY}
               onClick={() => {
                 window.open(
                   "https://github.com/wawawoom/www/tree/master/apps/www",
@@ -253,7 +253,7 @@ export const PortfolioModal = () => {
         title="Make a choice"
         footer={
           <WuiButton
-            color={WuiButtonColor.DARK}
+            color={WuiButtonColor.SECONDARY}
             onClick={() => {
               {
                 /* TODO: link to my test coverage  */

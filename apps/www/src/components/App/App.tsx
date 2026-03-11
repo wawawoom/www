@@ -9,14 +9,12 @@ import {
   WuiLinkSize,
 } from "@wawawoom/wui";
 
-import {
-  DEFAULT_LOCALE,
-  getLocaleFromPathname,
-} from "../../constants/locale.ts";
 import { ModalProvider } from "../../context/ModalProvider.tsx";
+import { useTheme } from "../../context/ThemeContext.ts";
 import { navigateTo, useLocation } from "../../hooks/useLocation.ts";
 import i18n from "../../i18n.ts";
 import { Section } from "../../ts/enum/section.enum.ts";
+import { DEFAULT_LOCALE, getLocaleFromPathname } from "../../utils/locale.ts";
 import { pathToSection } from "../../utils/path-to-section.ts";
 import { Modal } from "../Modal/Modal.tsx";
 import { Zone } from "../Zone/Zone.tsx";
@@ -26,11 +24,13 @@ const App = () => {
   const pathname = useLocation();
   const locale = getLocaleFromPathname(pathname) ?? DEFAULT_LOCALE;
   const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [section, setSection] = useState<Section | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [expandedZone, setExpandedZone] = useState<Section | null>(null);
+
   const hasInitializedRef = useRef(false);
   const pendingReopenRef = useRef<{
     section: Section;
@@ -152,7 +152,11 @@ const App = () => {
             section={Section.DESIGN_SYSTEM}
             title={t("zones.designSystem.title")}
             titleBack={t("zones.designSystem.titleBack")}
-            titleColor={WuiColorAlias.NEUTRAL_900}
+            titleColor={
+              theme === "dark"
+                ? WuiColorAlias.NEUTRAL_0
+                : WuiColorAlias.NEUTRAL_900
+            }
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
             onZoneClick={setExpandedZone}
@@ -162,7 +166,11 @@ const App = () => {
             section={Section.FRONT_END}
             title={t("zones.frontEnd.title")}
             titleBack={t("zones.frontEnd.titleBack")}
-            titleColor={WuiColorAlias.NEUTRAL_900}
+            titleColor={
+              theme === "dark"
+                ? WuiColorAlias.NEUTRAL_0
+                : WuiColorAlias.NEUTRAL_900
+            }
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
             onZoneClick={setExpandedZone}
@@ -172,7 +180,11 @@ const App = () => {
             section={Section.PORTFOLIO}
             title={t("zones.portfolio.title")}
             titleBack={t("zones.portfolio.titleBack")}
-            titleColor={WuiColorAlias.NEUTRAL_0}
+            titleColor={
+              theme === "dark"
+                ? WuiColorAlias.NEUTRAL_900
+                : WuiColorAlias.NEUTRAL_0
+            }
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
             onZoneClick={setExpandedZone}
@@ -182,7 +194,11 @@ const App = () => {
             section={Section.PROFILE}
             title={t("zones.profile.title")}
             titleBack={t("zones.profile.titleBack")}
-            titleColor={WuiColorAlias.NEUTRAL_0}
+            titleColor={
+              theme === "dark"
+                ? WuiColorAlias.NEUTRAL_900
+                : WuiColorAlias.NEUTRAL_0
+            }
             onOpenModal={onOpenModal}
             expandedZone={expandedZone}
             onZoneClick={setExpandedZone}
@@ -283,6 +299,31 @@ const App = () => {
               >
                 <i className="fa-solid fa-mobile-screen-button"></i>
               </WuiLink>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="app__theme-toggle"
+                title={
+                  theme === "light"
+                    ? t("footer.themeDark")
+                    : t("footer.themeLight")
+                }
+                aria-label={
+                  theme === "light"
+                    ? t("footer.themeDark")
+                    : t("footer.themeLight")
+                }
+              >
+                <i
+                  className={
+                    theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
+                  }
+                  aria-hidden
+                />
+              </button>
             </li>
           </ul>
         </footer>

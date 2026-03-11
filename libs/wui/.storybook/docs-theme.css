@@ -1,0 +1,14 @@
+/* Storybook: dark mode uniquement sur les zones de préview des stories (pas la page doc entière) */
+
+/* En Docs : garder la page claire, seul le bloc de préview sera dark */
+body[data-theme="dark"]:has(.sbdocs) {
+  background-color: revert;
+  color: revert;
+}
+
+/* Conteneur de la story dans l’onglet Docs : seul ce bloc passe en dark */
+body[data-theme="dark"] .docblock-preview,
+body[data-theme="dark"] .docs-story {
+  background-color: var(--wui-color-alias-neutral-0);
+  color: var(--wui-color-alias-neutral-900);
+}

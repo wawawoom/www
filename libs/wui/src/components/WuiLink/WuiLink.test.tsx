@@ -21,12 +21,12 @@ describe("WuiLink", () => {
 
   it("uses the provided size when size is set", () => {
     render(
-      <WuiLink href="/x" color={WuiLinkColor.DARK} size={WuiLinkSize.L}>
+      <WuiLink href="/x" color={WuiLinkColor.SECONDARY} size={WuiLinkSize.L}>
         Docs
       </WuiLink>
     );
     const link = screen.getByRole("link", { name: "Docs" });
-    expect(link).toHaveClass("wui-link--dark", "wui-link--l");
+    expect(link).toHaveClass("wui-link--secondary", "wui-link--l");
     expect(link).not.toHaveClass("wui-link--m");
   });
 

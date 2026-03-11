@@ -1,10 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import {
-  WuiBadge,
   WuiBadgeColor,
   WuiBadgeSize,
-  WuiColorAlias,
   WuiColorValue,
   WuiLink,
   WuiLinkColor,
@@ -16,66 +14,82 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
+import { useTheme } from "../../context/ThemeContext";
 import { Section } from "../../ts/enum/section.enum";
+import { Badges } from "../Badges/Badges";
 
 export const PortfolioZone = (props: {
   onOpenModal: (section: Section) => void;
 }) => {
   const { onOpenModal } = props;
   const { t } = useTranslation();
-  const badgeColor = WuiColorValue.BLUE_0;
+
+  const { theme, getWhiteColor } = useTheme();
+
+  const badgeConfiguration = {
+    color: WuiBadgeColor.TRANSPARENT,
+    textColor: WuiColorValue.BLUE_0,
+    size: WuiBadgeSize.M,
+  };
 
   return (
     <>
       <WuiTitle
         as={WuiTitleAs.H1}
         look={WuiTitleLook.H2}
-        color={WuiColorAlias.NEUTRAL_0}
+        color={getWhiteColor()}
       >
         {t("portfolioZone.title")}
       </WuiTitle>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()}>
         {t("portfolioZone.intro")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} className="badges">
-        <WuiBadge
-          color={WuiBadgeColor.TRANSPARENT}
-          size={WuiBadgeSize.M}
-          style={{ color: badgeColor }}
-        >
-          {t("portfolioZone.reactNative")}
-        </WuiBadge>
+      <Badges
+        badges={[
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.designTokens"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.componentArchitecture"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.systemGovernance"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.documentation"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.versioning"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.crossFunctionalAlignment"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.figmaFoundations"),
+          },
+          {
+            ...badgeConfiguration,
+            label: t("designSystemZone.storybook"),
+          },
+        ]}
+      />
 
-        <WuiBadge
-          color={WuiBadgeColor.TRANSPARENT}
-          size={WuiBadgeSize.M}
-          style={{ color: badgeColor }}
-        >
-          {t("portfolioZone.googlePlayStore")}
-        </WuiBadge>
-
-        <WuiBadge
-          color={WuiBadgeColor.TRANSPARENT}
-          size={WuiBadgeSize.M}
-          style={{ color: badgeColor }}
-        >
-          {t("portfolioZone.appStore")}
-        </WuiBadge>
-      </WuiText>
-
-      <WuiText
-        as={WuiTextAs.P}
-        color={WuiColorAlias.NEUTRAL_0}
-        size={WuiTextSize.S}
-      >
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()} size={WuiTextSize.S}>
         {t("portfolioZone.paragraph")}
       </WuiText>
 
       <WuiLink
         href="/portfolio"
-        color={WuiLinkColor.LIGHT}
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
         onClick={(event) => {
           event.preventDefault();
 
