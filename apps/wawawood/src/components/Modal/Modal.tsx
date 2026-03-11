@@ -30,7 +30,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
     if (lamp.video) {
       medias.push({
         type: "video",
-        src: `../lamp/video/${lamp.video}`,
+        src: lamp.video,
       });
     }
 
@@ -39,7 +39,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
       lamp.images.forEach((image) => {
         medias.push({
           type: "image",
-          src: `../lamp/img/${image}`,
+          src: image,
           alt: `${lamp.name} - Image`,
         });
       });

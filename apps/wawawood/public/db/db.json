@@ -3,17 +3,25 @@
     "id": 0,
     "name": "Issa Nissa",
     "slug": "issa-nissa",
+    "isFeatured": true,
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    "logo": "issa-nissa.svg",
-    "video": "P1110549.MP4",
-    "images": ["P1110538.JPG", "P1110547.JPG"],
+    "logo": "https://next.wawawoom.fr/projects/cdn/wawawood/logo/issa-nissa.svg",
+    "video": "https://next.wawawoom.fr/projects/cdn/wawawood/video/CUB_ISSA_NISSA_H.mp4",
+    "images": [
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_1.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_3.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_4.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_5.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_6.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/CUB_ISSA_NISSA_7.jpg"
+    ],
     "tag": "Nouveau"
   },
 
   {
     "id": 1,
-    "isFeatured": true,
     "name": "CUB OMBRA FRESCA",
     "slug": "cub-ombra-fresca-2",
     "description": "Le CUB en platane de Saint Laurent du Var.",
@@ -25,20 +33,20 @@
       "Dimensions: L.15 x P.15 x H.25 cm",
       "Poids: 500 gr."
     ],
-    "video": "cub-ombra-fresca-2.mp4",
+    "video": "https://next.wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-2.mp4",
     "images": [
-      "cub_ombra_fresca_2_1-1.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg",
-      "cub_ombra_fresca_2_1-2.jpg"
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-1.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-1.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-1.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg",
+      "https://next.wawawoom.fr/projects/cdn/wawawood/img/cub_ombra_fresca_2_1-2.jpg"
     ],
     "tag": "En stock",
     "price": 499

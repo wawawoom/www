@@ -9,27 +9,19 @@ const Hero = (props: { lamp: Lamp; onOpenModal: (lamp: Lamp) => void }) => {
     <>
       {video ? (
         <video
-          src={`${import.meta.env.BASE_URL}lamp/video/${video}`}
+          src={`${video}`}
           autoPlay={true}
           muted={true}
           loop={true}
           className="hero-video"
         ></video>
       ) : (
-        <img
-          src={`${import.meta.env.BASE_URL}lamp/img/${images[0]}`}
-          alt={name}
-          className="hero-image"
-        />
+        <img src={`${images[0]}`} alt={name} className="hero-image" />
       )}
 
       <div className="hero-content">
         {logo ? (
-          <img
-            src={`${import.meta.env.BASE_URL}lamp/logo/${logo}`}
-            alt={name}
-            className="hero-logo"
-          />
+          <img src={logo} alt={name} className="hero-logo" />
         ) : (
           <h1 className="hero-name">{name}</h1>
         )}

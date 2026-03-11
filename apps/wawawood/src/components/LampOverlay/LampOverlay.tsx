@@ -168,7 +168,7 @@ const LampOverlay = ({
     >
       <div className="lamp-overlay-media" onClick={handleClick}>
         <img
-          src={`${import.meta.env.BASE_URL}lamp/img/${lamp.images[0]}`}
+          src={lamp.images[0]}
           alt={lamp.name}
           className="lamp-overlay-image"
         />

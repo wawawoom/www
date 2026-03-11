@@ -85,11 +85,7 @@ const LampCard = (props: LampCardProps) => {
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}
       >
-        <img
-          src={`${import.meta.env.BASE_URL}lamp/img/${images[0]}`}
-          alt=""
-          className="lamp-media"
-        />
+        <img src={images[0]} alt="" className="lamp-media" />
       </div>
 
       {isHovered && (
