@@ -1,0 +1,10 @@
+{
+  "name": "cdn",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "deploy": "SOURCE_DIR=\"apps/cdn/cdn\" bash ../../scripts/deploy-cdn.sh upload",
+    "deploy:download": "SOURCE_DIR=\"apps/cdn/cdn\" bash ../../scripts/deploy-cdn.sh download",
+    "deploy:sync": "SOURCE_DIR=\"apps/cdn/cdn\" bash ../../scripts/deploy-cdn.sh sync"
+  }
+}
