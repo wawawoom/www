@@ -2,6 +2,7 @@ import { type HTMLAttributes } from "react";
 
 export enum WuiBadgeColor {
   TRANSPARENT = "transparent",
+  BORDERED = "bordered",
   PRIMARY = "primary",
   SECONDARY = "secondary",
   SUCCESS = "success",

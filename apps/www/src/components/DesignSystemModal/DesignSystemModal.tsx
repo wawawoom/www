@@ -22,6 +22,10 @@ export const DesignSystemModal = () => {
     return theme === "dark" ? WuiBadgeColor.PRIMARY : WuiBadgeColor.SECONDARY;
   };
 
+  const getBadgeSize = (): WuiBadgeSize => {
+    return WuiBadgeSize.M;
+  };
+
   return (
     <>
       <WuiTitle
@@ -51,19 +55,19 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase1Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase1Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase1Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase1Item2Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase1Item3Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase1Item3Text")}
@@ -86,13 +90,13 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase2Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase2Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase2Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase2Item2Text")}
@@ -115,13 +119,13 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase3Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase3Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase3Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase3Item2Text")}
@@ -144,13 +148,13 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase4Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase4Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase4Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase4Item2Text")}
@@ -173,13 +177,13 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase5Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase5Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase5Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase5Item2Text")}
@@ -202,25 +206,25 @@ export const DesignSystemModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase6Item1Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase6Item1Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase6Item2Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase6Item2Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase6Item3Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase6Item3Text")}
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               {t("designSystemModal.phase6Item4Badge")}
             </WuiBadge>{" "}
             {t("designSystemModal.phase6Item4Text")}

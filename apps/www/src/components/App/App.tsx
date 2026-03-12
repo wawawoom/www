@@ -7,6 +7,8 @@ import {
   WuiLink,
   WuiLinkColor,
   WuiLinkSize,
+  WuiTooltip,
+  WuiTooltipPlacement,
 } from "@wawawoom/wui";
 
 import { ModalProvider } from "../../context/ModalProvider.tsx";
@@ -223,107 +225,153 @@ const App = () => {
         <footer className="app__footer">
           <ul>
             <li>
-              <WuiLink
-                href={section ? `/fr/${section}` : `/fr`}
-                onClick={(event) => {
-                  event.preventDefault();
-
-                  navigateTo(section ? `/fr/${section}` : "/fr");
-                }}
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                aria-current={locale === "fr" ? "true" : undefined}
+              <WuiTooltip
+                content={t("footer.fr")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
               >
-                fr
-              </WuiLink>
+                <WuiLink
+                  href={section ? `/fr/${section}` : `/fr`}
+                  onClick={(event) => {
+                    event.preventDefault();
+
+                    navigateTo(section ? `/fr/${section}` : "/fr");
+                  }}
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  aria-current={locale === "fr" ? "true" : undefined}
+                >
+                  fr
+                </WuiLink>
+              </WuiTooltip>
             </li>
             <li>
-              <WuiLink
-                href={section ? `/en/${section}` : `/en`}
-                onClick={(event) => {
-                  event.preventDefault();
-
-                  navigateTo(section ? `/en/${section}` : "/en");
-                }}
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                aria-current={locale === "en" ? "true" : undefined}
+              <WuiTooltip
+                content={t("footer.en")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
               >
-                en
-              </WuiLink>
-            </li>
+                <WuiLink
+                  href={section ? `/en/${section}` : `/en`}
+                  onClick={(event) => {
+                    event.preventDefault();
 
-            <li>
-              <WuiLink
-                href="https://www.linkedin.com/in/nicolas-payrouse-3016094/"
-                target="_blank"
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                title={t("footer.linkedinTitle")}
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </WuiLink>
-            </li>
-
-            <li>
-              <WuiLink
-                href="mailto:wawawoom@gmail.com"
-                target="_blank"
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                title={t("footer.emailTitle")}
-              >
-                <i className="fa-solid fa-envelope"></i>
-              </WuiLink>
+                    navigateTo(section ? `/en/${section}` : "/en");
+                  }}
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  aria-current={locale === "en" ? "true" : undefined}
+                >
+                  en
+                </WuiLink>
+              </WuiTooltip>
             </li>
 
             <li>
-              <WuiLink
-                href="https://github.com/wawawoom"
-                target="_blank"
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                title={t("footer.githubTitle")}
+              <WuiTooltip
+                content={t("footer.linkedinTitle")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
               >
-                <i className="fa-brands fa-github"></i>
-              </WuiLink>
+                <WuiLink
+                  href="https://www.linkedin.com/in/nicolas-payrouse-3016094/"
+                  target="_blank"
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  title={t("footer.linkedinTitle")}
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </WuiLink>
+              </WuiTooltip>
             </li>
 
             <li>
-              <WuiLink
-                href="tel:+33631796781"
-                target="_blank"
-                size={WuiLinkSize.L}
-                color={WuiLinkColor.NONE}
-                title={t("footer.phoneTitle")}
+              <WuiTooltip
+                content={t("footer.emailTitle")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
               >
-                <i className="fa-solid fa-mobile-screen-button"></i>
-              </WuiLink>
+                <WuiLink
+                  href="mailto:wawawoom@gmail.com"
+                  target="_blank"
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  title={t("footer.emailTitle")}
+                >
+                  <i className="fa-solid fa-envelope"></i>
+                </WuiLink>
+              </WuiTooltip>
             </li>
 
             <li>
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="app__theme-toggle"
-                title={
+              <WuiTooltip
+                content={t("footer.githubTitle")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
+              >
+                <WuiLink
+                  href="https://github.com/wawawoom"
+                  target="_blank"
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  title={t("footer.githubTitle")}
+                >
+                  <i className="fa-brands fa-github"></i>
+                </WuiLink>
+              </WuiTooltip>
+            </li>
+
+            <li>
+              <WuiTooltip
+                content={t("footer.phoneTitle")}
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
+              >
+                <WuiLink
+                  href="tel:+33631796781"
+                  target="_blank"
+                  size={WuiLinkSize.L}
+                  color={WuiLinkColor.NONE}
+                  title={t("footer.phoneTitle")}
+                >
+                  <i className="fa-solid fa-mobile-screen-button"></i>
+                </WuiLink>
+              </WuiTooltip>
+            </li>
+
+            <li>
+              <WuiTooltip
+                content={
                   theme === "light"
                     ? t("footer.themeDark")
                     : t("footer.themeLight")
                 }
-                aria-label={
-                  theme === "light"
-                    ? t("footer.themeDark")
-                    : t("footer.themeLight")
-                }
+                placement={WuiTooltipPlacement.LEFT}
+                className="app__footer-tooltip"
               >
-                <i
-                  className={
-                    theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="app__theme-toggle"
+                  title={
+                    theme === "light"
+                      ? t("footer.themeDark")
+                      : t("footer.themeLight")
                   }
-                  aria-hidden
-                />
-              </button>
+                  aria-label={
+                    theme === "light"
+                      ? t("footer.themeDark")
+                      : t("footer.themeLight")
+                  }
+                >
+                  <i
+                    className={
+                      theme === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
+                    }
+                    aria-hidden
+                  />
+                </button>
+              </WuiTooltip>
             </li>
           </ul>
         </footer>

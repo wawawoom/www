@@ -18,6 +18,8 @@
     }
   },
   "footer": {
+    "fr": "Switch to French",
+    "en": "Switch to English",
     "linkedinTitle": "Linkedin profile",
     "emailTitle": "Contact me by email",
     "githubTitle": "GitHub profile",
@@ -172,9 +174,8 @@
     "paragraph1": "My ideal role sits at the intersection of product, design, and engineering, leading the strategy and adoption of scalable design systems.",
     "paragraph2": "I translate design foundations into production-ready React architectures—from tokens and component APIs to documentation and adoption strategy—ensuring reliability and extensibility.",
     "paragraph3": "I bridge design and development, making pragmatic architectural decisions, anticipating integration challenges, and eliminating friction between teams. The result: faster iteration, higher quality, and measurable efficiency gains.",
-    "paragraph4": "I seek a role where design system thinking is strategic, in a product-driven organization valuing technical excellence, cross-functional ownership, and long-term scalability, in hybrid or remote-first settings.",
-    "paragraph5": "I am seeking a role where design system thinking is considered a strategic asset rather than a side initiative. Ideally, this would be within a product-driven organization that values technical excellence, cross-functional ownership, and long-term scalability.",
-    "paragraph6": "I am open to hybrid or remote-first environments and looking for a position that reflects the strategic and architectural impact of the role, with compensation aligned to senior-level UI Engineering or Design System leadership responsibilities."
+    "paragraph4": "I seek a role where design system thinking is strategic and considered a strategic asset rather than a side initiative, in a product-driven organization valuing technical excellence, cross-functional ownership, and long-term scalability.",
+    "paragraph5": "I am open to hybrid or remote-first environments and can work on-site in France in the Alpes-Maritimes area (Sophia Antipolis, Nice, Monaco…). I am looking for a position that reflects the strategic and architectural impact of the role, with compensation aligned to senior-level UI Engineering or Design System leadership responsibilities."
   },
   "frontEndModal": {
     "title": "Front End implementation",
@@ -183,14 +184,14 @@
   "designSystemModal": {
     "title": "Build a design System",
     "intro": "I bridge the gap between Figma and React by building automated, scalable design systems that eliminate repetitive tasks and UI inconsistencies.",
-    "phase1Title": "Phase 1: UI Audit & Alignment",
+    "phase1Title": "Phase 1: UI Audit",
     "phase1Intro": "Before building, I identify what is broken. A design system must solve existing friction, not create new overhead.",
     "phase1Item1Badge": "Pattern Inventory",
     "phase1Item1Text": "Cataloging every button, color, and pattern to identify redundancy and design debt.",
     "phase1Item2Badge": "Gap Analysis",
     "phase1Item2Text": "Defining exactly where the current workflow fails (e.g., manual handoffs, hardcoded values).",
     "phase1Item3Badge": "Technical Constraints",
-    "phase1Item3Text": "Aligning with engineering on the stack (React, Tailwind, CSS-in-JS) to ensure the system is actually usable in production.",
+    "phase1Item3Text": "Aligning with engineering on the stack (React, Tailwind, SASS, CSS-in-JS, etc.) to ensure the system is actually usable in production.",
     "phase2Title": "Phase 2: Visual Exploration",
     "phase2Intro": "I leverage my graphic arts background to define a high-fidelity visual direction that aligns with the brand's identity.",
     "phase2Item1Badge": "Style Concepting",
@@ -200,7 +201,7 @@
     "phase3Title": "Phase 3: Design in Figma",
     "phase3Intro": "I build robust, scalable foundations within Figma, treating the file as an engineering tool.",
     "phase3Item1Badge": "Core Foundations",
-    "phase3Item1Text": "Setting up global styles for typography, effects, and layout grids.",
+    "phase3Item1Text": "Setting up global styles for colors, typography, spacing,layout grids...",
     "phase3Item2Badge": "Structure",
     "phase3Item2Text": "Organizing the workspace to support multi-product or multi-brand environments from the start.",
     "phase4Title": "Phase 4: Token Architecture",

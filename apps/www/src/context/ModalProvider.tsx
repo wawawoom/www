@@ -59,8 +59,6 @@ export const ModalProvider = (props: { children: ReactNode }) => {
         <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph4")}</WuiText>
 
         <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph5")}</WuiText>
-
-        <WuiText as={WuiTextAs.P}>{t("dreamJobModal.paragraph6")}</WuiText>
       </WuiModal>
     </ModalContext.Provider>
   );

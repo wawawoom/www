@@ -1,5 +1,4 @@
 import "./formats/css-utils.js";
-import "./formats/css-utils.js";
 import "./formats/enum-color-alias.js";
 import "./formats/enum-color-name.js";
 import "./formats/enum-color-value.js";

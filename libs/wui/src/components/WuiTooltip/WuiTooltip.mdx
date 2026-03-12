@@ -1,0 +1,53 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiTooltipStories from "./WuiTooltip.stories";
+
+<Meta of={WuiTooltipStories} />
+
+# WuiTooltip
+
+Tooltip component that positions content relative to a trigger using the **CSS Anchor Positioning API** (`anchor-name`, `position-anchor`, `position-area`). The tooltip appears on hover and is associated with the trigger via `aria-describedby` for accessibility.
+
+**Browser support:** Requires a browser that supports [CSS Anchor Positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning) (e.g. Chrome 125+).
+
+<Canvas of={WuiTooltipStories.AllPlacements} sourceState="none" />
+
+## Props
+
+`WuiTooltip` extends the HTML attributes of `span` (root wrapper).
+
+<ArgTypes />
+
+- **`content`** (`ReactNode`, required) — Content shown in the tooltip when hovering the trigger.
+- **`placement`** (`WuiTooltipPlacement`, default: `TOP`) — Preferred placement: `top`, `bottom`, `left`, `right`.
+- **`children`** (`ReactNode`) — Trigger element(s). Wrapped in an anchor element for positioning.
+
+## Usage
+
+Basic tooltip on a button:
+
+```tsx
+import { WuiTooltip, WuiTooltipPlacement } from "@wawawoom/wui";
+
+<WuiTooltip content="Save your changes" placement={WuiTooltipPlacement.TOP}>
+  <button type="button">Save</button>
+</WuiTooltip>
+```
+
+With a WuiButton:
+
+```tsx
+import { WuiTooltip, WuiButton, WuiButtonColor } from "@wawawoom/wui";
+
+<WuiTooltip content="Submit the form">
+  <WuiButton color={WuiButtonColor.PRIMARY}>Submit</WuiButton>
+</WuiTooltip>
+```
+
+## Implementation notes
+
+- The root uses **`anchor-scope: --wui-tooltip-anchor`** so multiple tooltips on the page each bind to their own trigger.
+- The trigger is wrapped in an element with **`anchor-name: --wui-tooltip-anchor`**.
+- The tooltip has **`position: fixed`**, **`position-anchor: --wui-tooltip-anchor`**, and **`position-area`** (e.g. `block-start` for top).
+- Visibility is toggled with **`:hover`** on the root; the tooltip has `pointer-events: none` so it does not capture hover.
+- A short **transition-delay** (0.2s) avoids flicker when moving the cursor.

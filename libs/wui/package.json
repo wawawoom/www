@@ -20,7 +20,7 @@
     "build:variables": "style-dictionary build --config ./style-dictionary/config.mjs && style-dictionary build --config ./style-dictionary/config-dark.mjs && node scripts/generate-dark-prefers.js",
     "build:lib": "tsc && vite build",
     "build:storybook": "storybook build --output-dir dist_storybook",
-    "build": "pnpm run build:tokens && pnpm run test && pnpm run build:lib && pnpm run build:storybook",
+    "build": "pnpm run build:variables && pnpm run test && pnpm run build:lib && pnpm run build:storybook",
     "deploy": "pnpm run build:storybook && SOURCE_DIR=\"libs/wui/dist_storybook\" FTP_DIR=\"/www/next/projects/wui/storybook/\" bash ../../scripts/deploy-wui.sh",
     "deploy:tests": "bash ../../scripts/deploy-wui-tests.sh",
     "test": "jest",

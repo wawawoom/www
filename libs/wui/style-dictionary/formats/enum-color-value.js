@@ -15,7 +15,7 @@ StyleDictionary.registerFormat({
     );
 
     return `// Do not edit directly, this file was auto-generated.
-// Generated from tokens/core/color.json
+// Generated from tokens/atomic/color.json
 
 export enum WuiColorValue {
 ${enumEntries.join(",\n")}

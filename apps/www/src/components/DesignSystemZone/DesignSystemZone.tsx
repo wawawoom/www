@@ -58,19 +58,11 @@ export const DesignSystemZone = (props: {
           },
           {
             ...badgeConfiguration,
-            label: t("designSystemZone.systemGovernance"),
-          },
-          {
-            ...badgeConfiguration,
             label: t("designSystemZone.documentation"),
           },
           {
             ...badgeConfiguration,
             label: t("designSystemZone.versioning"),
-          },
-          {
-            ...badgeConfiguration,
-            label: t("designSystemZone.crossFunctionalAlignment"),
           },
           {
             ...badgeConfiguration,

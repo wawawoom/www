@@ -1,0 +1,163 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta
+  title="Documentation/Introduction"
+  parameters={{
+    docs: { order: 0 },
+  }}
+/>
+
+<div
+  style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}
+>
+  <img
+    src="https://next.wawawoom.fr/projects/cdn/wui/logo-wui.svg"
+    alt="WUI logo"
+    style={{ maxWidth: "200px", width: "100%" }}
+  />
+</div>
+
+# WUI – Design System
+
+Reusable React component library for applications in the monorepo. This guide covers installation, usage, tokens, theming, and project structure.
+
+---
+
+## Installation
+
+Dependencies are managed at the workspace level. From the monorepo root:
+
+```bash
+pnpm install
+```
+
+The app that consumes WUI must declare the dependency in its `package.json`:
+
+```json
+{
+  "dependencies": {
+    "@wawawoom/wui": "workspace:*"
+  }
+}
+```
+
+Then import the **CSS** once (e.g. in `main.tsx` or `App.tsx`):
+
+```tsx
+import "@wawawoom/wui-css";
+```
+
+In development, the `@wawawoom/wui-css` alias points to `libs/wui/src/styles/wui.css` so Vite can resolve the `@import`s. The lib build does not emit a CSS file in `dist/`; apps use the CSS sources directly.
+
+---
+
+## Usage
+
+Import components and enums from the package:
+
+```tsx
+import { WuiButton, WuiButtonColor, WuiButtonSize } from "@wawawoom/wui";
+
+function MyComponent() {
+  return (
+    <WuiButton color={WuiButtonColor.SECONDARY} size={WuiButtonSize.L}>
+      Click me
+    </WuiButton>
+  );
+}
+```
+
+---
+
+## Theme (dark mode)
+
+The design system supports light and dark mode via the **<code>data-theme</code>** attribute on the <code>&lt;html&gt;</code> element.
+
+- **No attribute**: theme follows system preference (<code>prefers-color-scheme: dark</code>). Dark variables are applied via <code>variables-dark-prefers.css</code>.
+- **<code>data-theme="dark"</code>**: force dark theme.
+- **<code>data-theme="light"</code>**: force light theme.
+
+Components use semantic variables (<code>--wui-color-alias-neutral-\*</code>, etc.) and adapt to the active theme. Apps that want a manual toggle (e.g. a footer button) can set or remove <code>data-theme</code> on <code>document.documentElement</code> and persist the choice (e.g. <code>localStorage</code>).
+
+---
+
+## Tokens and build
+
+Styles are driven by **tokens** (Style Dictionary):
+
+1. **Atomic tokens** (<code>src/tokens/atomic/</code>): raw colors, typography, spacing.
+2. **Semantic tokens** (<code>src/tokens/semantic/</code>): aliases (neutral, success, danger, warning, info) that reference atomic tokens.
+3. **Dark theme** (<code>src/tokens/semantic/color.dark.json</code>): same aliases with inverted neutral for dark mode.
+
+The **<code>pnpm run build:variables</code>** script generates:
+
+- <code>variables.css</code> (light theme, <code>:root</code>),
+- <code>variables-dark.css</code> (selector <code>[data-theme="dark"]</code>),
+- <code>variables-dark-prefers.css</code> (dark theme when the browser prefers
+  dark and no <code>data-theme</code> is set).
+
+In development, <code>nodemon</code> watches <code>src/tokens</code> and re-runs this build when JSON files change.
+
+---
+
+## Available scripts
+
+| Command                               | Description                                           |
+| ------------------------------------- | ----------------------------------------------------- |
+| <code>pnpm run dev</code>             | Runs token watch and Storybook (port 6006).           |
+| <code>pnpm run build:variables</code> | Generates CSS and enum files from tokens.             |
+| <code>pnpm run build:lib</code>       | Builds the lib (TypeScript + Vite).                   |
+| <code>pnpm run build:storybook</code> | Builds Storybook into <code>dist_storybook</code>.    |
+| <code>pnpm run build</code>           | build:variables → test → build:lib → build:storybook. |
+| <code>pnpm run test</code>            | Runs Jest.                                            |
+| <code>pnpm run test:coverage</code>   | Jest with coverage report.                            |
+
+---
+
+## Component structure
+
+Each WUI component follows the same structure:
+
+- <code>WuiXxx.tsx</code> – React component,
+- <code>WuiXxx.css</code> – styles (variables <code>--wui-*</code>, overrides
+  for <code>[data-theme="dark"]</code> if needed),
+- <code>WuiXxx.props.ts</code> – prop types and enums,
+- <code>index.ts</code> – re-export,
+- <code>WuiXxx.stories.tsx</code> and <code>WuiXxx.mdx</code> – Storybook docs.
+
+Dark variants are handled in CSS via the <code>[data-theme="dark"]</code> selector in the component file, without changing tokens.
+
+**Adding a new component**: create the <code>WuiXxx/</code> folder, add <code>WuiXxx.tsx</code>, <code>WuiXxx.css</code>, <code>WuiXxx.props.ts</code>, <code>index.ts</code>, then <code>WuiXxx.stories.tsx</code> and <code>WuiXxx.mdx</code>. Re-export from <code>src/components/index.ts</code>. For docs-only Storybook pages (e.g. palette, typography), use <code>tags: ["!dev"]</code> and <code>parameters: &#123; docsOnly: true &#125;</code>.
+
+---
+
+## Tests
+
+All exported components have unit tests (Jest + React Testing Library). Utils (<code>clsx</code>, <code>loremIpsum</code>) are also tested. To run tests:
+
+```bash
+pnpm run test
+pnpm run test:coverage
+```
+
+---
+
+## .env file
+
+Package scripts (e.g. <code>deploy</code>) may rely on environment variables. You can define them in a <code>.env</code> file at the monorepo root or in <code>libs/wui/</code>, or export them in the shell before running the command.
+
+- **<code>CDN_PATH</code>** — Server destination path for CDN assets.
+- **<code>FTP_HOST</code>** — FTP server host.
+- **<code>FTP_USER</code>** — FTP username.
+- **<code>FTP_PASS</code>** — FTP password. Do not commit; use <code>.env</code> and add it to <code>.gitignore</code>.
+- **<code>FTP_PORT</code>** — FTP port (default <code>21</code>).
+
+Example <code>.env</code> (create if needed):
+
+```
+CDN_PATH=/www/next/projects/cdn/
+FTP_HOST=ftp.example.com
+FTP_USER=your_username
+FTP_PASS=your_ftp_password
+FTP_PORT=21
+```

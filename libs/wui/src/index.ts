@@ -11,3 +11,4 @@ export * from "./components/WuiAlert";
 export * from "./components/WuiInput";
 export * from "./components/WuiInputHelper";
 export * from "./components/WuiSelect";
+export * from "./components/WuiTooltip";

@@ -22,6 +22,10 @@ export const FrontEndModal = () => {
     return theme === "dark" ? WuiBadgeColor.PRIMARY : WuiBadgeColor.SECONDARY;
   };
 
+  const getBadgeSize = (): WuiBadgeSize => {
+    return WuiBadgeSize.M;
+  };
+
   return (
     <>
       <WuiTitle
@@ -52,14 +56,14 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Token Transformation
             </WuiBadge>{" "}
             Using Style Dictionary or custom hooks to transform raw JSON tokens
             into CSS Variables, Tailwind configurations, or Theme Objects.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Typescript Safety
             </WuiBadge>{" "}
             Generating strict TypeScript interfaces for tokens to provide
@@ -85,21 +89,21 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Atomic Components
             </WuiBadge>{" "}
             Developing highly reusable, stateless primitives (Buttons, Inputs,
             Typography) with a focus on clean API design.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Living Documentation (Storybook)
             </WuiBadge>{" "}
             Creating a dedicated environment for each component, including
             Interactive Controls and clear Do’s & Don'ts for developers.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Atomic Testing
             </WuiBadge>{" "}
             Implementing unit tests for every primitive to ensure core behaviors
@@ -124,14 +128,14 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Adaptive Grids
             </WuiBadge>{" "}
             Implementing flexible container systems that respond to Mobile,
             Tablet, and Desktop breakpoints.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Constraint-Based Spacing
             </WuiBadge>{" "}
             Using the design system’s spacing scale to manage margins and
@@ -156,14 +160,14 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Integration Testing
             </WuiBadge>{" "}
             Running components in real-world scenarios to identify integration
             friction.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Iterative Refinement
             </WuiBadge>{" "}
             Adjusting component APIs and styles based on feedback from the field
@@ -187,14 +191,14 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               A11y Compliance
             </WuiBadge>{" "}
             Ensuring keyboard navigation, ARIA labels, and focus management are
             baked into every component.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Visual Regression
             </WuiBadge>{" "}
             Running automated visual tests to detect any unintended UI changes
@@ -218,14 +222,14 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               NPM Versioning
             </WuiBadge>{" "}
             Managing semantic versioning (SemVer) to ensure feature teams can
             update safely.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Automated Pipeline
             </WuiBadge>{" "}
             Setting up a CI/CD pipeline that runs tests, builds the Storybook,
@@ -250,21 +254,21 @@ export const FrontEndModal = () => {
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Direct Support
             </WuiBadge>{" "}
             Providing quick troubleshooting and guidance for complex
             integrations via dedicated channels.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Issue Tracking
             </WuiBadge>{" "}
             Managing bug reports and UI regressions with a clear path from
             discovery to hotfix.
           </li>
           <li>
-            <WuiBadge size={WuiBadgeSize.L} color={getBadgeColor()}>
+            <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
               Continuous Improvement
             </WuiBadge>{" "}
             Evaluating and implementing new component requests to ensure the

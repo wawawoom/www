@@ -31,15 +31,15 @@
       },
       "700": {
         "value": "#424242",
-        "type:": "color"
+        "type": "color"
       },
       "800": {
         "value": "#212121",
-        "type:": "color"
+        "type": "color"
       },
       "900": {
         "value": "#000000",
-        "type:": "color"
+        "type": "color"
       }
     },
     "green": {

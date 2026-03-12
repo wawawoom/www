@@ -18,6 +18,8 @@
     }
   },
   "footer": {
+    "fr": "Passer en français",
+    "en": "Passer en anglais",
     "linkedinTitle": "Profil LinkedIn",
     "emailTitle": "Me contacter par email",
     "githubTitle": "Profil GitHub",
@@ -172,9 +174,8 @@
     "paragraph1": "Mon rôle idéal se situe à l'intersection du produit, du design et de l'ingénierie, en pilotant la stratégie et l'adoption de design systems évolutifs.",
     "paragraph2": "Je traduis les fondations design en architectures React prêtes pour la production — des tokens et APIs composants à la documentation et la stratégie d'adoption — en assurant fiabilité et extensibilité.",
     "paragraph3": "Je fais le lien entre design et développement, en prenant des décisions d'architecture pragmatiques, en anticipant les défis d'intégration et en réduisant les frictions entre équipes. Résultat : itérations plus rapides, meilleure qualité et gains mesurables.",
-    "paragraph4": "Je recherche un rôle où la pensée design system est stratégique, dans une organisation orientée produit qui valorise l'excellence technique, la responsabilité cross-fonctionnelle et la scalabilité long terme, en mode hybride ou remote-first.",
-    "paragraph5": "Je recherche un rôle où le design system est considéré comme un actif stratégique plutôt qu'une initiative secondaire. Idéalement au sein d'une organisation orientée produit qui valorise l'excellence technique, la responsabilité cross-fonctionnelle et la scalabilité long terme.",
-    "paragraph6": "Je suis ouvert aux environnements hybrides ou remote-first et recherche une position qui reflète l'impact stratégique et architectural du rôle, avec une rémunération alignée sur un niveau senior en UI Engineering ou leadership Design System."
+    "paragraph4": "Je recherche un rôle où la pensée design system est stratégique et considérée comme un actif stratégique plutôt qu'une initiative secondaire, dans une organisation orientée produit qui valorise l'excellence technique, la responsabilité cross-fonctionnelle et la scalabilité long terme.",
+    "paragraph5": "Je suis ouvert aux environnements hybrides ou remote-first et peux me déplacer sur site en France dans les Alpes-Maritimes (Sophia Antipolis, Nice, Monaco…). Je recherche une position qui reflète l'impact stratégique et architectural du rôle, avec une rémunération alignée sur un niveau senior en UI Engineering ou leadership Design System."
   },
   "frontEndModal": {
     "title": "Front End",

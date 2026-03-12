@@ -7,12 +7,13 @@
   border-radius: 3rem;
   flex-wrap: nowrap;
   flex-shrink: 0;
+  border: 1px solid transparent;
 }
 
 .wui-badge--transparent {
   background-color: color-mix(
     in srgb,
-    var(--wui-color-alias-neutral-900) 10%,
+    var(--wui-color-alias-neutral-500) 30%,
     transparent
   );
   color: color-mix(
@@ -22,13 +23,9 @@
   );
 }
 
-[data-theme="dark"] .wui-badge--transparent {
-  background-color: color-mix(
-    in srgb,
-    var(--wui-color-alias-neutral-0) 10%,
-    transparent
-  );
-  color: color-mix(in srgb, var(--wui-color-alias-neutral-0) 40%, transparent);
+.wui-badge--bordered {
+  color: var(--wui-color-alias-neutral-900);
+  border: 1px solid var(--wui-color-alias-neutral-900);
 }
 
 .wui-badge--primary {
