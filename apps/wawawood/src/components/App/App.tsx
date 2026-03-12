@@ -51,14 +51,14 @@ const App = () => {
       <Header />
 
       <div id="main">
-        {lamps.length > 0 && (
-          <Collection lamps={lamps} onOpenModal={handleOpenModal} />
-        )}
-
         {featuredLamp && (
           <Hero lamp={featuredLamp} onOpenModal={handleOpenModal} />
         )}
       </div>
+
+      {lamps.length > 0 && (
+        <Collection lamps={lamps} onOpenModal={handleOpenModal} />
+      )}
 
       <Modal
         lamp={selectedLamp}

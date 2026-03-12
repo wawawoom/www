@@ -16,7 +16,6 @@
   width: 100%;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: calc(var(--main-x-padding) * 2);
 
   padding: 0 var(--hero-content-padding-x);
   flex: 1;
@@ -25,7 +24,6 @@
   @media (min-width: 768px) {
     padding: 0 0 0 var(--hero-content-padding-x-desktop);
     width: 60%;
-    margin-bottom: 140px;
     justify-content: center;
   }
 
@@ -60,7 +58,7 @@
 
   &:after {
     pointer-events: none;
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;

@@ -15,6 +15,9 @@
   --hero-logo-width: 50vw;
   --hero-logo-width-desktop: 250px;
 
+  --cards-x-padding: var(--main-x-padding);
+  --cards-x-padding-desktop: var(--main-x-padding-desktop);
+
   --card-count: 6;
-  --cards-gap: 20px;
+  --cards-gap: 40px;
 }
