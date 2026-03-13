@@ -57,7 +57,7 @@
     right: auto;
     top: 50%;
     width: 90%;
-    max-width: 32rem;
+    width: 32rem;
     max-height: 85dvh;
     min-height: 0;
     transform: translate(-50%, -50%) scale(0.92);
@@ -75,6 +75,14 @@
     transform: translate(-50%, -50%) scale(1);
     -webkit-transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+  }
+
+  .wui-modal--width-m {
+    width: 50%;
+  }
+
+  .wui-modal--width-l {
+    width: 70%;
   }
 }
 

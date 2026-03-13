@@ -186,4 +186,8 @@
   height: 100%;
   display: inline-flex;
   justify-content: center;
+
+  .wui-tooltip__anchor {
+    width: 100%;
+  }
 }

@@ -19,13 +19,13 @@
   },
   "footer": {
     "fr": "Passer en français",
-    "en": "Passer en anglais",
+    "en": "Switch to English",
     "linkedinTitle": "Profil LinkedIn",
     "emailTitle": "Me contacter par email",
     "githubTitle": "Profil GitHub",
-    "phoneTitle": "Me contacter par téléphone",
-    "themeDark": "Passer en thème sombre",
-    "themeLight": "Passer en thème clair"
+    "phoneTitle": "Contactez-moi par téléphone",
+    "themeDark": "Thème sombre",
+    "themeLight": "Thème clair"
   },
   "modal": {
     "closeAriaLabel": "Fermer la fenêtre"

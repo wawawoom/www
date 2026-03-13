@@ -21,6 +21,8 @@ importers:
         specifier: ^8.46.4
         version: 8.53.1(eslint@9.39.2(jiti@1.21.7))(typescript@5.9.3)
 
+  apps/cdn: {}
+
   apps/wawawood:
     dependencies:
       react:
@@ -152,6 +154,9 @@ importers:
       '@storybook/blocks':
         specifier: ^8.6.15
         version: 8.6.15(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@8.6.15(prettier@3.8.1))
+      '@storybook/manager-api':
+        specifier: ^8.6.15
+        version: 8.6.15(storybook@8.6.15(prettier@3.8.1))
       '@storybook/react':
         specifier: ^8.6.15
         version: 8.6.15(@storybook/test@8.6.15(storybook@8.6.15(prettier@3.8.1)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@8.6.15(prettier@3.8.1))(typescript@5.9.3)
@@ -159,6 +164,9 @@ importers:
         specifier: ^8.6.15
         version: 8.6.15(@storybook/test@8.6.15(storybook@8.6.15(prettier@3.8.1)))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@4.56.0)(storybook@8.6.15(prettier@3.8.1))(typescript@5.9.3)(vite@6.4.1(@types/node@24.10.9)(jiti@1.21.7)(terser@5.46.0))
       '@storybook/test':
+        specifier: ^8.6.15
+        version: 8.6.15(storybook@8.6.15(prettier@3.8.1))
+      '@storybook/theming':
         specifier: ^8.6.15
         version: 8.6.15(storybook@8.6.15(prettier@3.8.1))
       '@testing-library/jest-dom':

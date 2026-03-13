@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { WuiButton, WuiButtonColor } from "../WuiButton";
 import { WuiText, WuiTextAs } from "../WuiText";
 import { WuiModal } from "./WuiModal";
+import { WuiModalWidth } from "./WuiModal.props";
 
 const meta = {
   title: "Components/WuiModal",
@@ -33,6 +34,14 @@ const meta = {
     footer: {
       description: "Footer content (e.g. actions)",
     },
+    width: {
+      control: "select",
+      options: Object.values(WuiModalWidth),
+      table: {
+        type: { summary: "WuiModalWidth" },
+        defaultValue: { summary: "WuiModalWidth.S" },
+      },
+    },
   },
 } satisfies Meta<typeof WuiModal>;
 
@@ -47,6 +56,7 @@ export const Component: Story = {
     children: "",
     title: "This a very long title example to show ellipsis",
     footer: undefined,
+    width: WuiModalWidth.S,
   },
   render: (args) => {
     const [open, setOpen] = useState(args.open ?? false);
@@ -65,6 +75,7 @@ export const Component: Story = {
           title={
             args.title ?? "This a very long title example to show ellipsis"
           }
+          width={args.width ?? WuiModalWidth.S}
           footer={
             <>
               <WuiButton

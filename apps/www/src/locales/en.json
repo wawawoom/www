@@ -18,7 +18,7 @@
     }
   },
   "footer": {
-    "fr": "Switch to French",
+    "fr": "Passer en français",
     "en": "Switch to English",
     "linkedinTitle": "Linkedin profile",
     "emailTitle": "Contact me by email",
@@ -267,11 +267,10 @@
   },
   "portfolioZone": {
     "title": "Selected work",
-    "intro": "I design and build scalable, user-centered mobile applications using the React native framework.",
+    "intro": "Selected projects covering design systems, scalable React front-end architecture, and cross-platform interfaces for web and mobile.",
     "reactNative": "React Native",
     "googlePlayStore": "Google Play store",
     "appStore": "App Store",
-    "paragraph": "In 2012, on the Hoozin project, I experimented with responsive web design and saw its inherent limits. Later, on other projects, I adopted React Native: it let me use React—a stack I already knew—to build near-native apps for both iOS and Android from one codebase. I went on to ship two production mobile apps with two backend developers (REST and GraphQL APIs) and was responsible for UI/UX and frontend for both the apps and their companion web app.",
     "underTheHood": "Under the hood"
   },
   "portfolioModal": {

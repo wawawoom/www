@@ -3,11 +3,20 @@ import { forwardRef, useEffect, useRef, useState } from "react";
 import { clsx } from "../../utils/clsx";
 import { WuiButton, WuiButtonColor, WuiButtonSize } from "../WuiButton";
 import { WuiText, WuiTextAs, WuiTextSize } from "../WuiText";
-import type { WuiModalProps } from "./WuiModal.props";
+import { type WuiModalProps, WuiModalWidth } from "./WuiModal.props";
 
 export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
   (
-    { open, onClose, title, children, footer, className = "", ...props },
+    {
+      open,
+      onClose,
+      title,
+      children,
+      footer,
+      width = WuiModalWidth.S,
+      className = "",
+      ...props
+    },
     ref
   ) => {
     const innerRef = useRef<HTMLDialogElement>(null);
@@ -17,24 +26,28 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
     const classNames = clsx(
       "wui-modal",
       isAnimatedOpen && "wui-modal--open",
+      width !== WuiModalWidth.S && `wui-modal--width-${width}`,
       className
     );
 
     useEffect(() => {
       const dialog = innerRef.current;
-      /* istanbul ignore next -- React sets refs before running effects */
+
       if (!dialog) return;
 
       if (open) {
         isClosingRef.current = false;
+
         if (typeof dialog.showModal === "function") {
           dialog.showModal();
         } else {
           (dialog as HTMLDialogElement & { open: boolean }).open = true;
         }
+
         const raf = requestAnimationFrame(() => {
           requestAnimationFrame(() => setIsAnimatedOpen(true));
         });
+
         return () => cancelAnimationFrame(raf);
       } else {
         setIsAnimatedOpen(false);
@@ -46,13 +59,11 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
     useEffect(() => {
       const dialog = innerRef.current;
 
-      /* istanbul ignore next -- React sets refs before running effects */
       if (!dialog) {
         return;
       }
 
       const finishClose = () => {
-        /* istanbul ignore next -- already guarded by handleTransitionEnd */
         if (!isClosingRef.current) {
           return;
         }
@@ -83,7 +94,6 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
     /* Cancel (Escape / backdrop): prevent close, run closing animation then close */
     useEffect(() => {
       const dialog = innerRef.current;
-      /* istanbul ignore next -- React sets refs before running effects */
       if (!dialog) return;
 
       const handleCancel = (e: Event) => {

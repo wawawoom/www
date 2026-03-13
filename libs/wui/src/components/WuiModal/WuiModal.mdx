@@ -23,6 +23,7 @@ import {
   WuiButton,
   WuiButtonColor,
   WuiModal,
+  WuiModalWidth,
   WuiText,
   WuiTextAs,
 } from "@wawawoom/wui";
@@ -38,6 +39,7 @@ function MyComponent() {
         open={open}
         onClose={() => setOpen(false)}
         title="Modal title"
+        width={WuiModalWidth.M}
         footer={
           <WuiButton
             color={WuiButtonColor.SECONDARY}

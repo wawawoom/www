@@ -76,6 +76,7 @@ export const AllPlacements: Story = {
         alignItems: "center",
         gap: "4rem",
         padding: "4rem",
+        width: 500,
       }}
     >
       <WuiTooltip content="Tooltip on top" placement={WuiTooltipPlacement.TOP}>
