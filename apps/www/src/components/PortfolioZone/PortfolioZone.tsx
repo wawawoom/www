@@ -55,7 +55,11 @@ export const PortfolioZone = (props: {
         ]}
       />
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H4}>
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
+      >
         Smood
       </WuiTitle>
 
@@ -82,7 +86,11 @@ export const PortfolioZone = (props: {
         </ul>
       </WuiText>
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H4}>
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
+      >
         GTL Studio
       </WuiTitle>
 
@@ -104,7 +112,11 @@ export const PortfolioZone = (props: {
         </ul>
       </WuiText>
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H4}>
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
+      >
         Stent AI
       </WuiTitle>
 
@@ -131,7 +143,11 @@ export const PortfolioZone = (props: {
         </ul>
       </WuiText>
 
-      <WuiTitle as={WuiTitleAs.H2} look={WuiTitleLook.H4}>
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
+      >
         Hoozin
       </WuiTitle>
 
