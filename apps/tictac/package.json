@@ -1,0 +1,8 @@
+{
+  "name": "tictac",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "deploy": "SOURCE_DIR=\"apps/tictac/src\" FTP_DIR=\"/www/next/projects/tictac/\" bash ./scripts/deploy-tictac.sh"
+  }
+}

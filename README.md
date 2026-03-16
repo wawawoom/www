@@ -31,7 +31,7 @@ Main site (portfolio / personal site). React 19, Vite 7, i18next, uses the <code
 | <code>pnpm --filter www run build</code> | <code>pnpm run build</code>    | Build wui lib, compile TypeScript, then Vite build → <code>apps/www/dist</code>. |
 | <code>pnpm --filter www run lint</code>  | <code>pnpm run lint</code>     | Run ESLint on the project.                                           |
 | <code>pnpm --filter www run preview</code> | <code>pnpm run preview</code> | Preview the production build locally.                               |
-| <code>pnpm --filter www run deploy</code> | <code>pnpm run deploy</code>   | Build then deploy <code>apps/www/dist</code> via FTP (script <code>deploy-www.sh</code>).  |
+| <code>pnpm --filter www run deploy</code> | <code>pnpm run deploy</code>   | Build then deploy <code>apps/www/dist</code> via FTP (script <code>apps/www/scripts/deploy-www.sh</code>).  |
 
 **From project folder:** <code>cd apps/www</code> then run <code>pnpm run &lt;script&gt;</code> (e.g. <code>pnpm run dev</code>).
 
@@ -67,8 +67,8 @@ Shared UI library (<code>@wawawoom/wui</code>): React components, design tokens,
 | <code>pnpm --filter @wawawoom/wui run test</code>        | <code>pnpm run test</code>           | Run Jest tests.                                                      |
 | <code>pnpm --filter @wawawoom/wui run test:coverage</code> | <code>pnpm run test:coverage</code>  | Run tests with coverage report.                                      |
 | <code>pnpm --filter @wawawoom/wui run test:watch</code> | <code>pnpm run test:watch</code>     | Run tests in watch mode.                                             |
-| <code>pnpm --filter @wawawoom/wui run deploy</code>     | <code>pnpm run deploy</code>         | Build Storybook then deploy via FTP (script <code>deploy-wui.sh</code>).        |
-| <code>pnpm --filter @wawawoom/wui run deploy:tests</code> | <code>pnpm run deploy:tests</code>   | Deploy tests (script <code>deploy-wui-tests.sh</code>).                         |
+| <code>pnpm --filter @wawawoom/wui run deploy</code>     | <code>pnpm run deploy</code>         | Build Storybook then deploy via FTP (script <code>libs/wui/scripts/deploy-wui.sh</code>).        |
+| <code>pnpm --filter @wawawoom/wui run deploy:tests</code> | <code>pnpm run deploy:tests</code>   | Deploy tests (script <code>libs/wui/scripts/deploy-wui-tests.sh</code>).                         |
 
 **From project folder:** <code>cd libs/wui</code> then run <code>pnpm run &lt;script&gt;</code> (e.g. <code>pnpm run dev</code>).
 
@@ -80,8 +80,8 @@ Deploy static CDN content (images, videos, etc.) to the server. Uses <code>lftp<
 
 | Command (from root)                    | From project folder        | Description                                                                      |
 | ------------------------------------- | -------------------------- | -------------------------------------------------------------------------------- |
-| <code>pnpm --filter cdn run deploy</code>        | <code>pnpm run deploy</code>          | Upload <code>apps/cdn/cdn</code> contents to the path set by <code>CDN_PATH</code>.                    |
-| <code>pnpm --filter cdn run deploy:download</code> | <code>pnpm run deploy:download</code> | Download remote content into <code>apps/cdn/cdn</code>.                                      |
+| <code>pnpm --filter cdn run deploy</code>        | <code>pnpm run deploy</code>          | Upload <code>apps/cdn/src</code> contents to the path set by <code>CDN_PATH</code>.                     |
+| <code>pnpm --filter cdn run deploy:download</code> | <code>pnpm run deploy:download</code> | Download remote content into <code>apps/cdn/src</code>.                                       |
 | <code>pnpm --filter cdn run deploy:sync</code>   | <code>pnpm run deploy:sync</code>     | Sync local → server (mirror; removes on server what is no longer local).         |
 
 **From project folder:** <code>cd apps/cdn</code> then run <code>pnpm run deploy</code>, <code>pnpm run deploy:download</code>, etc.

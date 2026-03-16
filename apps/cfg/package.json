@@ -1,0 +1,8 @@
+{
+  "name": "cfg-php",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "deploy": "SOURCE_DIR=\"apps/cfg/src\" FTP_DIR=\"/www/next/projects/cfg/\" bash ./scripts/deploy-cfg.sh"
+  }
+}

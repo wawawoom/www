@@ -68,7 +68,5 @@ Thumbs.db
 *.tsbuildinfo
 
 #cdn
-apps/cdn/cdn/**
+apps/cdn/src/**
 apps/geocaching/**
-apps/kalei/**
-apps/cfg/**
