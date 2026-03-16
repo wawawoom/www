@@ -1,18 +1,16 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+# Monorepo root (two levels up from apps/www/scripts)
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")/../.."
 cd "$PROJECT_ROOT" || exit 1
 
-# Charger les variables d'environnement depuis .env si le fichier existe
+# Charger les variables d'environnement depuis .env à la racine du monorepo si le fichier existe
 if [ -f "$PROJECT_ROOT/.env" ]; then
-    echo "📄 Chargement des variables depuis .env..."
-    # Charger le fichier .env ligne par ligne en ignorant les commentaires et lignes vides
+    echo "📄 Chargement des variables depuis .env (racine du monorepo)..."
     set -a
     while IFS= read -r line || [ -n "$line" ]; do
-        # Ignorer les commentaires et lignes vides
         if [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ -n "$line" ]]; then
-            # Exporter la variable
             export "$line"
         fi
     done < "$PROJECT_ROOT/.env"

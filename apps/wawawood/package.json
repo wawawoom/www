@@ -10,7 +10,8 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build && SOURCE_DIR=\"apps/wawawood/dist\" FTP_DIR=\"/www/next/projects/wawawood/\" bash ./scripts/deploy-wawawood.sh"
   },
   "dependencies": {
     "react": "^19.2.0",

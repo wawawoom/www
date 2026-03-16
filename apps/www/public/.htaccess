@@ -1,6 +1,10 @@
 RewriteEngine On
 RewriteBase /
 
+# Ne pas réécrire les URLs /projects/...
+RewriteCond %{REQUEST_URI} ^/projects/ [NC]
+RewriteRule ^ - [L]
+
 # Si ce n'est pas un fichier ni un dossier existant…
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

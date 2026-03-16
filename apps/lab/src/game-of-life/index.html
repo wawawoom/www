@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -32,7 +32,7 @@
   </head>
 
   <body>
-    <a class="backToHome" href="/lab">&lt;</a>
+    <a class="backToHome" href="../">&lt;</a>
 
     <div class="container">
       <h1 id="h1">Game of Life</h1>
@@ -44,17 +44,17 @@
   </body>
 
   <script>
-    const h = (el =>
+    const h = ((el) =>
       el.offsetHeight +
       parseFloat(getComputedStyle(el).marginTop) +
       parseFloat(getComputedStyle(el).marginBottom))(
-      document.querySelector('h1')
+      document.querySelector("h1")
     );
 
     const CELL_SIZE = 4;
-    const COLOR_CELL = '#b0b0b0';
-    const COLOR_BACKGROUND = '#000000';
-    const FORM = 'SQUARE';
+    const COLOR_CELL = "#b0b0b0";
+    const COLOR_BACKGROUND = "#000000";
+    const FORM = "SQUARE";
     const ROW_COUNT = Math.floor((window.innerHeight - h - 10) / CELL_SIZE);
     const COL_COUNT = Math.floor((window.innerWidth - 20) / CELL_SIZE);
 
@@ -75,20 +75,20 @@
       const greenRange = 0;
       const blueRange = 0;
       return (
-        'rgb(' +
+        "rgb(" +
         o(r() * redRange) +
-        ',' +
+        "," +
         o(r() * greenRange) +
-        ',' +
+        "," +
         o(r() * blueRange) +
-        ')'
+        ")"
       );
     };
 
     const initCanvas = () => {
-      CANVAS = document.getElementById('c');
+      CANVAS = document.getElementById("c");
       // Optimisation : willReadFrequently: false pour de meilleures performances
-      CTX = CANVAS.getContext('2d', { willReadFrequently: false });
+      CTX = CANVAS.getContext("2d", { willReadFrequently: false });
       CANVAS.width = CELL_SIZE * COL_COUNT;
       CANVAS.height = CELL_SIZE * ROW_COUNT;
       // Optimisation : désactiver l'image smoothing pour de meilleures performances
@@ -109,15 +109,15 @@
 
     // Optimisation : utiliser fillRect directement (plus rapide que beginPath/rect/fill)
     // Cache la couleur actuelle pour éviter les changements inutiles
-    let currentColor = '';
+    let currentColor = "";
     const drawCell = (x, y, color) => {
       if (currentColor !== color) {
         CTX.fillStyle = color;
         currentColor = color;
       }
-      if (FORM === 'SQUARE') {
+      if (FORM === "SQUARE") {
         CTX.fillRect(x, y, CELL_SIZE, CELL_SIZE);
-      } else if (FORM === 'CIRCLE') {
+      } else if (FORM === "CIRCLE") {
         CTX.beginPath();
         CTX.arc(
           x + CELL_SIZE / 2,
@@ -183,8 +183,8 @@
       let canvasTop = CANVAS.offsetTop + CANVAS.clientTop;
 
       CANVAS.addEventListener(
-        'mousemove',
-        event => {
+        "mousemove",
+        (event) => {
           const colIndex = Math.floor((event.pageX - canvasLeft) / CELL_SIZE);
           const rowIndex = Math.floor((event.pageY - canvasTop) / CELL_SIZE);
 
@@ -289,7 +289,7 @@
     drawLife();
 
     // Optimisation : utiliser requestAnimationFrame au lieu de setInterval
-    const animate = currentTime => {
+    const animate = (currentTime) => {
       if (currentTime - lastUpdateTime >= INTERVAL) {
         updateLife();
         drawLife();

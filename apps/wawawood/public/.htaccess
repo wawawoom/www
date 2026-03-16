@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /projects/wawawood/
+
+# If not a file or directory, serve index.html (SPA client-side routing)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /projects/wawawood/index.html [L]
