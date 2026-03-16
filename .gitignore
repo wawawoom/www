@@ -69,4 +69,4 @@ Thumbs.db
 
 #cdn
 apps/cdn/src/**
-apps/geocaching/**
+apps/geocaching/src/**
