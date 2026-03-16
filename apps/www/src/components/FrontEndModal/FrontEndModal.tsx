@@ -60,7 +60,7 @@ export const FrontEndModal = () => {
               Token Transformation
             </WuiBadge>{" "}
             Using Style Dictionary or custom hooks to transform raw JSON tokens
-            into CSS Variables, Tailwind configurations, or Theme Objects.
+            into CSS Variables.
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>

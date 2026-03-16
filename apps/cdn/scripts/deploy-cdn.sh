@@ -7,12 +7,13 @@
 COMMAND="${1:-upload}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+# Monorepo root (two levels up from apps/cdn/scripts)
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")/../.."
 cd "$PROJECT_ROOT" || exit 1
 
-# Charger les variables d'environnement depuis .env si le fichier existe
+# Load .env from monorepo root
 if [ -f "$PROJECT_ROOT/.env" ]; then
-    echo "📄 Chargement des variables depuis .env..."
+    echo "📄 Loading environment variables from .env (monorepo root)..."
     set -a
     while IFS= read -r line || [ -n "$line" ]; do
         if [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ -n "$line" ]]; then
@@ -31,8 +32,8 @@ FTP_USER="${FTP_USER:-wawawoom}"
 FTP_PORT="${FTP_PORT:-21}"
 
 if [ -z "$FTP_PASS" ]; then
-    echo "❌ Erreur: La variable d'environnement FTP_PASS n'est pas définie."
-    echo "   Ajoutez FTP_PASS=\"votre_mot_de_passe\" dans .env (à la racine du projet)."
+    echo "❌ Error: FTP_PASS environment variable is not defined."
+    echo "   Add FTP_PASS=\"your_password\" in .env at the monorepo root."
     exit 1
 fi
 

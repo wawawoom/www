@@ -2,37 +2,29 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
-  WuiButton,
-  WuiButtonColor,
   WuiColorAlias,
-  WuiLink,
-  WuiLinkColor,
   WuiModal,
+  WuiModalWidth,
   WuiText,
   WuiTextAs,
   WuiTextSize,
   WuiTitle,
   WuiTitleAs,
+  WuiTitleLook,
 } from "@wawawoom/wui";
 
-import { useModal } from "../../context/ModalContext";
-import { getEnv } from "../../utils/get-env.ts";
+import { useTheme } from "../../context/ThemeContext.ts";
 import Gallery from "../Gallery/Gallery";
+import "./PortfolioModal.css";
 
 export const PortfolioModal = () => {
-  const { openDreamJobModal } = useModal();
   const { t } = useTranslation();
 
-  const [modalSourceCodeWebsiteIsOpen, setModalSourceCodeWebsiteIsOpen] =
-    useState(false);
-  const [modalStorybookIsOpen, setModalStorybookIsOpen] = useState(false);
-  const [modalComponentsTestsIsOpen, setModalComponentsTestsIsOpen] =
-    useState(false);
+  const { getWhiteColor } = useTheme();
 
-  const onClickDreamJob = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    openDreamJobModal();
-  };
+  const [isModalScreenshotsOpen, setIsModalScreenshotsOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
 
   return (
     <>
@@ -52,225 +44,341 @@ export const PortfolioModal = () => {
         {t("portfolioModal.intro")}
       </WuiText>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        {t("portfolioModal.paragraph1")}
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        {t("portfolioModal.paragraph2")}
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        {t("portfolioModal.paragraph3")}
-      </WuiText>
-
       <WuiTitle
         as={WuiTitleAs.H2}
-        color={WuiColorAlias.NEUTRAL_0}
-        className="mt-44"
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
       >
-        {t("portfolioModal.andNow")}
+        {t("portfolioZone.smoodTitle")}
       </WuiTitle>
 
-      <WuiText as={WuiTextAs.P} color={WuiColorAlias.NEUTRAL_0}>
-        {t("portfolioModal.andNowParagraphBefore")}
-        <WuiLink
-          href="#"
-          onClick={(e) => {
-            e.stopPropagation();
-            onClickDreamJob(e);
-          }}
-          color={WuiLinkColor.NONE}
-        >
-          {t("profileModal.checkIdealRole")}
-        </WuiLink>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()} size={WuiTextSize.S}>
+        {t("portfolioZone.smoodIntro")}
       </WuiText>
 
-      <WuiTitle
-        as={WuiTitleAs.H2}
-        color={WuiColorAlias.NEUTRAL_0}
-        className="mt-44"
-      >
-        {t("portfolioModal.letMeShowYou")}
-      </WuiTitle>
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()} size={WuiTextSize.S}>
+        <ul className="wui-ma-0">
+          <li>{t("portfolioZone.smoodBullet1")}</li>
+          <li>{t("portfolioZone.smoodBullet2")}</li>
+          <li>{t("portfolioZone.smoodBullet3")}</li>
+          <li>{t("portfolioZone.smoodBullet4")}</li>
+          <li>{t("portfolioZone.smoodBullet5")}</li>
+        </ul>
+      </WuiText>
 
       <Gallery
         items={[
           {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Eyescyou",
-            name: "Eyescyou",
+            imgUrl: "https://next.wawawoom.fr/projects/cdn/www/snack-logo.jpg",
+            imgAlt: "Smood Snack",
+            name: "Snack design system",
             textColor: WuiColorAlias.NEUTRAL_0,
+            onClick: () => {
+              setModalTitle("Snack Design System");
+              setModalContent(
+                <div className="wui-modal__images">
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-001.png"
+                    alt="Snack design system - Screenshot 001"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-002.png"
+                    alt="Snack design system - Screenshot 002"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-003.png"
+                    alt="Snack design system - Screenshot 003"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-004.png"
+                    alt="Snack design system - Screenshot 004"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-005.png"
+                    alt="Snack design system - Screenshot 005"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-006.png"
+                    alt="Snack design system - Screenshot 006"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-007.png"
+                    alt="Snack design system - Screenshot 007"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-008.png"
+                    alt="Snack design system - Screenshot 008"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-009.png"
+                    alt="Snack design system - Screenshot 009"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-010.png"
+                    alt="Snack design system - Screenshot 010"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-011.png"
+                    alt="Snack design system - Screenshot 011"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-012.png"
+                    alt="Snack design system - Screenshot 012"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-013.png"
+                    alt="Snack design system - Screenshot 013"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/snack-screenshot-014.png"
+                    alt="Snack design system - Screenshot 014"
+                    loading="lazy"
+                  />
+                </div>
+              );
+
+              setIsModalScreenshotsOpen(true);
+            },
           },
+
           {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Stent AI",
-            name: "Stent AI",
+            imgUrl:
+              "https://next.wawawoom.fr/projects/cdn/www/checkout-logo.png",
+            imgAlt: "Smood Checkout",
+            name: "Smood Checkout",
             textColor: WuiColorAlias.NEUTRAL_0,
+            onClick: () => {
+              setModalTitle("Smood Checkout");
+              setModalContent(
+                <div className="wui-modal__images">
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/checkout-screenshot-001.png"
+                    alt="Smood Checkout - Screenshot 001"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/checkout-screenshot-002.png"
+                    alt="Smood Checkout - Screenshot 002"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/checkout-screenshot-003.png"
+                    alt="Smood Checkout - Screenshot 003"
+                    loading="lazy"
+                  />
+                </div>
+              );
+
+              setIsModalScreenshotsOpen(true);
+            },
+          },
+
+          {
+            imgUrl:
+              "https://next.wawawoom.fr/projects/cdn/www/smood-2-logo.png",
+            imgAlt: "Smood 2.0",
+            name: "Smood 2.0",
+            textColor: WuiColorAlias.NEUTRAL_0,
+            onClick: () => {
+              setModalTitle("Smood 2.0");
+              setModalContent(
+                <div className="wui-modal__images">
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-001.png"
+                    alt="Smood 2.0 - Screenshot 001"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-002.png"
+                    alt="Smood 2.0 - Screenshot 002"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-003.png"
+                    alt="Smood 2.0 - Screenshot 003"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-004.png"
+                    alt="Smood 2.0 - Screenshot 004"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-005.png"
+                    alt="Smood 2.0 - Screenshot 005"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-006.png"
+                    alt="Smood 2.0 - Screenshot 006"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-007.png"
+                    alt="Smood 2.0 - Screenshot 007"
+                    loading="lazy"
+                  />
+                </div>
+              );
+
+              setIsModalScreenshotsOpen(true);
+            },
+          },
+
+          {
+            imgUrl:
+              "https://next.wawawoom.fr/projects/cdn/www/tracking-logo.png",
+            imgAlt: "Smood Order Tracking",
+            name: "Smood Order Tracking",
+            textColor: WuiColorAlias.NEUTRAL_0,
+            onClick: () => {
+              setModalTitle("Smood Order Tracking");
+              setModalContent(
+                <div className="wui-modal__images">
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/tracking-screenshot-001.png"
+                    alt="Smood Order tracking - Screenshot 001"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/tracking-screenshot-002.png"
+                    alt="Smood Order tracking - Screenshot 002"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/tracking-screenshot-003.png"
+                    alt="Smood Order tracking - Screenshot 003"
+                    loading="lazy"
+                  />
+                </div>
+              );
+
+              setIsModalScreenshotsOpen(true);
+            },
+          },
+
+          {
+            imgUrl:
+              "https://next.wawawoom.fr/projects/cdn/www/migros-2-logo.png",
+            imgAlt: "Migros / Retail 2.0",
+            name: "Migros / Retail 2.0",
+            textColor: WuiColorAlias.NEUTRAL_0,
+            onClick: () => {
+              setModalTitle("Migros / Retail 2.0");
+              setModalContent(
+                <div className="wui-modal__images">
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-001.png"
+                    alt="Migros / Retail 2.0 - Screenshot 001"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/smood-2-screenshot-002.png"
+                    alt="Migros / Retail 2.0 - Screenshot 002"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-003.png"
+                    alt="Migros / Retail 2.0 - Screenshot 003"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-004.png"
+                    alt="Migros / Retail 2.0 - Screenshot 004"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-005.png"
+                    alt="Migros / Retail 2.0 - Screenshot 005"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-006.png"
+                    alt="Migros / Retail 2.0 - Screenshot 006"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-007.png"
+                    alt="Migros / Retail 2.0 - Screenshot 007"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="https://next.wawawoom.fr/projects/cdn/www/migros-2-screenshot-008.png"
+                    alt="Migros / Retail 2.0 - Screenshot 008"
+                    loading="lazy"
+                  />
+                </div>
+              );
+
+              setIsModalScreenshotsOpen(true);
+            },
           },
         ]}
       />
 
-      <Gallery
-        items={[
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: t("frontEndModal.sourceCode"),
-            name: t("frontEndModal.sourceCode"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              setModalSourceCodeWebsiteIsOpen(true);
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Smood Logo",
-            name: t("frontEndModal.smoodWebsite"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              // TODO: link to my storybook
-              window.open("https://smood.ch/", "_blank");
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Storybook logo",
-            name: t("frontEndModal.wuiLibrary"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              setModalStorybookIsOpen(true);
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Testing",
-            name: t("frontEndModal.componentsTests"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              // TODO: link to my components tests coverage
-              window.open("https://storybook.js.org/", "_blank");
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "Kalei logo",
-            name: t("frontEndModal.kalei"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              // TODO: link to my kalei website
-              window.open(
-                `${getEnv("VITE_DOMAIN_URL")}${getEnv("VITE_PROJECTS_PATH")}/kalei/`,
-                "_blank"
-              );
-            },
-          },
-          {
-            imgUrl: "/img/job/logo-graphisme.jpg",
-            imgAlt: "TicTac timetracker logo",
-            name: t("frontEndModal.tictacTracker"),
-            textColor: WuiColorAlias.NEUTRAL_0,
-            onClick: () => {
-              // TODO: link to my tictac website
-              window.open(
-                `${getEnv("VITE_DOMAIN_URL")}${getEnv("VITE_PROJECTS_PATH")}/tictac/`,
-                "_blank"
-              );
-            },
-          },
-        ]}
-      />
+      <WuiTitle
+        as={WuiTitleAs.H2}
+        look={WuiTitleLook.H4}
+        color={getWhiteColor()}
+        className="wui-mt-60"
+      >
+        {t("portfolioZone.gtlTitle")}
+      </WuiTitle>
+
+      <WuiText as={WuiTextAs.P} color={getWhiteColor()} size={WuiTextSize.S}>
+        {t("portfolioZone.gtlIntro")}
+      </WuiText>
 
       <WuiModal
-        open={modalSourceCodeWebsiteIsOpen}
-        onClose={() => setModalSourceCodeWebsiteIsOpen(false)}
-        title={t("frontEndModal.confirmTitle")}
-        footer={
-          <WuiButton
-            color={WuiButtonColor.SECONDARY}
-            onClick={() => {
-              window.open(
-                "https://github.com/wawawoom/www/tree/master/apps/www",
-                "_blank"
-              );
-
-              setModalSourceCodeWebsiteIsOpen(false);
-            }}
-          >
-            {t("frontEndModal.yesViewGitHub")}
-          </WuiButton>
-        }
+        open={isModalScreenshotsOpen}
+        onClose={() => setIsModalScreenshotsOpen(false)}
+        title={modalTitle}
+        width={WuiModalWidth.L}
       >
-        <WuiText as={WuiTextAs.DIV}>
-          {t("frontEndModal.confirmMessage")}
-        </WuiText>
-      </WuiModal>
-
-      <WuiModal
-        open={modalStorybookIsOpen}
-        onClose={() => setModalStorybookIsOpen(false)}
-        title={t("frontEndModal.choiceTitle")}
-        footer={
-          <>
-            <WuiButton
-              color={WuiButtonColor.GHOST}
-              onClick={() => {
-                window.open(
-                  "https://github.com/wawawoom/www/tree/master/libs/wui",
-                  "_blank"
-                );
-
-                setModalStorybookIsOpen(false);
-              }}
-            >
-              {t("frontEndModal.sourceCodeButton")}
-            </WuiButton>
-
-            {/* TODO: link to my storybook */}
-            <WuiButton
-              color={WuiButtonColor.SECONDARY}
-              onClick={() => {
-                window.open(
-                  "https://github.com/wawawoom/www/tree/master/apps/www",
-                  "_blank"
-                );
-
-                setModalStorybookIsOpen(false);
-              }}
-            >
-              {t("frontEndModal.storybookButton")}
-            </WuiButton>
-          </>
-        }
-      >
-        <WuiText as={WuiTextAs.DIV}>
-          {t("frontEndModal.storybookMessage")}
-        </WuiText>
-      </WuiModal>
-
-      <WuiModal
-        open={modalComponentsTestsIsOpen}
-        onClose={() => setModalComponentsTestsIsOpen(false)}
-        title="Make a choice"
-        footer={
-          <WuiButton
-            color={WuiButtonColor.SECONDARY}
-            onClick={() => {
-              {
-                /* TODO: link to my test coverage  */
-              }
-              window.open(
-                "https://github.com/wawawoom/www/tree/master/apps/www",
-                "_blank"
-              );
-
-              setModalComponentsTestsIsOpen(false);
-            }}
-          >
-            {t("frontEndModal.yesPlease")}
-          </WuiButton>
-        }
-      >
-        <WuiText as={WuiTextAs.DIV}>{t("frontEndModal.testsMessage")}</WuiText>
+        {modalContent}
       </WuiModal>
     </>
   );

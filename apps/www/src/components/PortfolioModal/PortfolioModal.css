@@ -1,0 +1,12 @@
+.wui-modal__images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wui-modal__images img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}

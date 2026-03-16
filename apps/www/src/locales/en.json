@@ -2,7 +2,7 @@
   "zones": {
     "designSystem": {
       "title": "Design system",
-      "titleBack": "Token-Driven systems"
+      "titleBack": "Token-Driven"
     },
     "frontEnd": {
       "title": "Front-end Dev.",
@@ -221,7 +221,7 @@
     "phase6Item1Badge": "Automated Sync",
     "phase6Item1Text": "I set up a \"Design-to-Code\" pipeline using Style Dictionary or custom plugins to export Figma Variables into JSON.",
     "phase6Item2Badge": "Code Integration",
-    "phase6Item2Text": "Automating the transformation of tokens into CSS variables or Tailwind configurations, ensuring any design update propagates to the codebase via CI/CD.",
+    "phase6Item2Text": "Automating the transformation of tokens into CSS variables, ensuring any design update propagates to the codebase via CI/CD.",
     "phase6Item3Badge": "Live Documentation",
     "phase6Item3Text": "I build interactive documentation via Storybook that serves as a functional handbook.",
     "phase6Item4Badge": "Usage Guidelines",
@@ -241,7 +241,7 @@
     "paragraph1": "A well-structured design system transforms UI from isolated components into a scalable product foundation. I help organizations design, implement, and evolve systems that ensure consistency, efficiency, and long-term maintainability.",
     "paragraph2": "My approach starts with strong foundations: design tokens, semantic structures, and clearly defined component layers. The objective is not only visual alignment, but operational clarity across teams and products.",
     "paragraph3": "I connect Figma foundations to production-ready React libraries, ensuring that design intent translates accurately into technical reality. From token hierarchies to component APIs and documentation environments, every layer is designed to scale.",
-    "paragraph4": "Beyond structure, I establish contribution workflows, versioning strategies, and collaboration models that allow the system to evolve without fragmentation. The result is a governed, resilient system that supports product growth rather than slowing it down.",
+    "paragraph4": "Beyond structure, I establish contribution workflows, versioning strategies, and collaboration models that allow the system to evolve without fragmentation. The result is a system that supports product growth rather than slowing it down.",
     "letsDiveIn": "Let's dive in",
     "modalTitle": "Modal title",
     "modalClose": "Close"
@@ -271,17 +271,38 @@
     "reactNative": "React Native",
     "googlePlayStore": "Google Play store",
     "appStore": "App Store",
-    "underTheHood": "Under the hood"
+    "underTheHood": "Under the hood",
+    "smoodTitle": "Smood",
+    "smoodIntro": "Development of a large-scale front-end e-commerce platform (Next.js / TypeScript).",
+    "smoodBullet1": "Design, maintenance and evolution of a Smood design system called \"Snack\" in React; cross-project use (checkout, smoothie).",
+    "smoodBullet2": "Checkout overhaul in React with Snack integration.",
+    "smoodBullet3": "New website: website overhaul with design guidelines and technical stack migration to Next.js (from php & Stencil).",
+    "smoodBullet4": "Complete overhaul of the order tracking page.",
+    "smoodBullet5": "Retail 2.0: overhaul of pages dedicated to stores and Migros.",
+    "gtlTitle": "GTL Studio",
+    "gtlIntro": "Development of mobile apps in React Native.",
+    "gtlBullet1": "Creation of the React Native mobile app \"Eyescyou\". Integration of native features (camera, GPS, localStorage, etc.) and GraphQL communication with the server.",
+    "gtlBullet2": "Takeover and evolution of the React Native mobile app \"Totem\" (Contacts list synchronization management).",
+    "stentTitle": "Stent AI",
+    "stentIntro": "Development of mobile apps in React Native and front-end administration website.",
+    "stentBullet1": "Creation of the React Native mobile app Stent AI. Mockups, UI and UX.",
+    "stentBullet2": "Creation of a web app for recruitment campaign management and LinkedIn lead generation. Business requirements gathering; screen mockups for validation with teams in France and Canada.",
+    "stentBullet3": "Brand guidelines, mockups, UI and UX of the mobile application developed in React Native (React 16.8 Hooks).",
+    "hoozinTitle": "Hoozin",
+    "hoozinIntro": "Designed and implemented responsive interfaces for the Hoozin enterprise social network, with modular JavaScript architecture.",
+    "hoozinBullet1": "Creation of a modular JavaScript framework for the Hoozin enterprise social network. Use of jQuery, HTML, CSS, JavaScript.",
+    "hoozinBullet2": "Participation in the design and implementation of a content management system.",
+    "hoozinBullet3": "Creation of a \"Whiteboard\" web app for real-time collaboration using WebSockets.",
+    "hoozinBullet4": "Creation of an IDE for plugin development using jQuery, HTML, CSS, JavaScript.",
+    "hoozinBullet5": "Mockups, UI and UX for all screens and internal Hoozin apps.",
+    "viewDetails": "View details"
   },
   "portfolioModal": {
-    "title": "Portfolio modal",
-    "intro": "I design and build scalable, user-centered mobile applications using the React Native framework.",
+    "title": "Portfolio",
+    "intro": "In recent years, my work has focused primarily on React, React Native, and the implementation of a scalable design system.",
     "paragraph1": "Back in 2012, I was working on the Hoozin website and got to experiment with responsive web design for mobile browsers, using JavaScript, jQuery, media queries and Bootstrap. I quickly saw the limits of that approach: it was not a perfect solution, and native development still offered a better user experience.",
     "paragraph2": "Later, on other projects, I was able to work with React Native and see how well the framework fit my needs. I could keep using a technology I already knew—React—and deliver both an iOS and an Android app from a single codebase, with performance close to native. I committed fully to it and made it my main focus for building mobile products.",
     "paragraph3": "I shipped two production mobile apps in close collaboration with two backend developers, who exposed data through REST and GraphQL APIs, while I was responsible for the UI/UX and frontend development of the web app associated with the mobile apps.",
-    "andNow": "And now?",
-    "andNowParagraph": "As I am looking for new opportunities, I aim to specialize in the creation and implementation of design systems—from defining scalable, consistent systems in design tools to translating them into production-ready React component libraries documented with Storybook. My combined experience in design and development allows me to approach this from both perspectives and deliver interfaces that are both functional and visually coherent. {{link}}",
-    "andNowParagraphBefore": "As I am looking for new opportunities, I aim to specialize in the creation and implementation of design systems—from defining scalable, consistent systems in design tools to translating them into production-ready React component libraries documented with Storybook. My combined experience in design and development allows me to approach this from both perspectives and deliver interfaces that are both functional and visually coherent. ",
     "letMeShowYou": "Let me show you"
   },
   "job": {
