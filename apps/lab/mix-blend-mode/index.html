@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background - Text</title>
+    <link rel="stylesheet" href="../_css/main.css" />
+    <style>
+      h2 {
+        font-size: 80px;
+        font-weight: 900;
+        letter-spacing: -4px;
+        text-align: center;
+        margin: 0;
+        mix-blend-mode: difference;
+      }
+      section {
+        position: relative;
+      }
+      .water {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="backToHome" href="/lab">&lt;</a>
+
+    <div class="container">
+      <h1>Background Clip - Text</h1>
+
+      <hr />
+
+      <pre>
+<code>mix-blend-mode: difference;
+</code></pre>
+
+      <hr />
+
+      <section>
+        <img src="./water.gif" alt="Water" class="water" />
+        <h2 class="gifClip">Mix Blend Mode</h2>
+      </section>
+    </div>
+  </body>
+</html>
