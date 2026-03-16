@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Laboratoire d'expériences CSS / Javascript de Nicolas Payrouse"
+    />
+    <title>Lab WaWaWooM - Nicolas Payrouse</title>
+    <link rel="stylesheet" href="./_css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Lab WaWaWooM</h1>
+
+      <form id="search-form">
+        <input type="search" placeholder="Rechercher" id="search" />
+      </form>
+
+      <hr />
+
+      <section>
+        <a href="./text-balance" class="link">CSS | Text Balance</a>
+        <a href="./multi-display" class="link">CSS | Multi Display</a>
+        <a href="./parent-selector" class="link">CSS | Parent Selector</a>
+        <a href="./field-sizing" class="link">CSS | Field Sizing</a>
+        <a href="./interpolate-size" class="link">CSS | Interpolate Size</a>
+        <a href="./background-clip" class="link"
+          >CSS | Background Clip - Text</a
+        >
+        <a href="./game-of-life" class="link">CANVAS | Game of Life</a>
+        <a href="./mix-blend-mode/index.html" class="link"
+          >CSS | Mix Blend Mode</a
+        >
+      </section>
+    </div>
+
+    <script>
+      const search = document.getElementById('search');
+      const links = document.querySelectorAll('.link');
+
+      search.addEventListener('input', e => {
+        const searchValue = e.target.value.toLowerCase().trim();
+
+        links.forEach(link => {
+          const linkText = link.textContent.toLowerCase();
+
+          if (linkText.includes(searchValue)) {
+            link.style.display = '';
+          } else {
+            link.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
