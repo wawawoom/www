@@ -1,0 +1,6 @@
+SELECT * FROM `tasks` WHERE `TAS_Name` LIKE 'b' ORDER BY `TAS_Order`, `TAS_Id` DESC;
+SELECT count(*) FROM `users` WHERE `USE_Email`= 'zefzefzef' AND `USE_Password` = MD5('fzefzefzef') 
+SELECT count(*) FROM `users` WHERE `USE_Email`= 'zefzefzef' AND `USE_Password` = MD5('fzefzefzef') 
+0
+SELECT count(*) FROM `users` WHERE `USE_Email`= 'zefzefzef' AND `USE_Password` = MD5('fzefzefzef') 
+0

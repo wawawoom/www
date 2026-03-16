@@ -1,0 +1,40 @@
+/* ################################################################################## */
+/* FOR 1024 PX WIDE > L > 985px && < 1240px >  STANDARD RESOLUTION */
+/* ################################################################################## */
+
+/* TOOLTIP */
+#tictacTooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display:none;
+  font-size:11px;
+  max-width: 250px;
+  .box-shadow(0px 0px 3px 0px rgba(0, 0, 0, 0.2));
+
+
+	#tooltipArrow {
+		position: absolute; 
+		background-color:darken(@kingBlue, 10%);
+		height:7px;
+		width:7px;
+		display:none;
+		.rotate(45deg);
+		.box-shadow(0px 0px 3px 0px rgba(0, 0, 0, 0.3));
+		z-index:1;
+	}
+
+	p {
+		padding:6px 11px;
+		color:@white;
+		line-height:1.2;
+		text-align:center;
+		margin:0;
+		position:relative;
+		z-index:2;
+		background-color:darken(@kingBlue, 10%);
+		font-weight: normal;
+	}
+	
+
+}

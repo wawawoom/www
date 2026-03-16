@@ -1,0 +1,591 @@
+body {
+	padding:0;
+	width:100%;
+	height:100%;
+	color:#3E3E3E;
+	font-family: 'Lato', sans-serif !important;
+	font-weight: lighter !important;
+	letter-spacing: 0 !important;
+}
+
+#header {
+	height:55px;
+	color:@orange;
+	position:relative;
+	border-bottom: 1px solid @borderColor;
+	
+	#logo {
+		position: absolute;
+	    top: 4px;
+	    left: 20px;
+	    font-weight: normal;
+	    font-size: 20px;
+	    letter-spacing: 0;
+	    
+		span {
+			font-size: 31px;		    
+		    font-weight: bold;
+		    letter-spacing: -1px;
+		}
+		
+		&:hover {
+			text-decoration:none;
+		}
+		
+	}
+	
+	#disconnectButton {
+		color: @lightBlue;
+	    position: absolute;
+	    right: 24px;
+	    top: 16px;
+	    font-weight: normal;
+	}
+	
+	#loginButton {
+		color: @kingBlue;
+	    position: absolute;
+	    right: 24px;
+	    top: 16px;
+	    font-weight: normal;
+	}
+	
+	#registerButton {
+		color: @lightBlue;
+	    position: absolute;
+	    right: 84px;
+	    top: 16px;
+	    font-weight: normal;
+	}
+}
+
+
+
+#taskListWrapper {
+	width:50%;
+	position:absolute;
+	height:100%;
+	overflow-y: auto;
+	.box-sizing();
+	
+	#newTaskWrapper {
+		display:none;
+	    display: none;
+	    margin: 0 0 0 50px;
+	    padding: 6px;
+	    position: relative;
+	    background-color:lighten(@kingBlue, 18%);
+	    position:relative;
+	    .box-sizing();
+	    
+		#newTaskInput {
+			background-color:lighten(@kingBlue, 18%);
+		    /*border: 1px dotted rgba(255, 255, 255, 0.5);*/
+		    color: @white;
+		    font-size: 16px;
+		    padding: 8px 15px;
+		    width: 100%;
+		    .box-sizing();
+		    
+		    &:focus {
+			    border: 1px dotted @white;
+		    }
+		}
+		
+		.loader16 {
+			width:16px;
+			height:16px;
+			border:2px solid @white;
+			position:absolute;
+			top:17px;
+			right:18px;
+			display:none;
+			.rounded(7px);
+			.opacity(0.5);
+			
+			-webkit-animation:radium 1s linear infinite;
+			-moz-animation:radium 1s linear infinite;
+			animation:radium 1s linear infinite;
+		}
+	}
+	
+	#searchTaskWrapper {
+		display:none;
+	    display: none;
+	    margin: 0 0 0 50px;
+	    padding: 6px;
+	    position: relative;
+	    background-color:@lightBlue;
+	    .box-sizing();
+	    
+		#searchTaskInput {
+			background-color:@lightBlue;
+		    border: 1px dotted rgba(255, 255, 255, 0.5);
+		    color: @white;
+		    font-size: 16px;
+		    padding: 8px 15px;
+		    width: 100%;
+		    .box-sizing();
+		    
+		    &:focus {
+			    border: 1px dotted @white;
+		    }
+		}
+		
+		.loader16 {
+			width:16px;
+			height:16px;
+			border:2px solid @white;
+			position:absolute;
+			top:17px;
+			right:18px;
+			display:none;
+			.rounded(7px);
+			.opacity(0.5);
+			
+			-webkit-animation:radium 1s linear infinite;
+			-moz-animation:radium 1s linear infinite;
+			animation:radium 1s linear infinite;
+		}
+	}
+	
+	#createFirstTask {
+		cursor: pointer;
+	    height: 51px;
+	    line-height: 36px;
+	    text-align: center;
+	    background-color:@kingBlue;
+	    color:@white;
+	    
+	    span {
+		    font-size:25px;
+		    vertical-align:-3px;
+		    margin-right:10px;
+	    }
+	}
+	
+	#actions {
+		height:100%;
+		width:50px;
+		position:absolute;
+		border-right: 1px solid @borderColor;
+		position:fixed;
+		background-color:lighten(@lightBlue, 42%);
+		
+		a {
+			border-bottom: 1px solid @borderColor;
+		    height: 50px;
+		    line-height: 50px;
+		    text-align: center;
+		    width: 100%;
+		    font-size:25px;
+		    color:@lightBlue;
+		    text-decoration: none;
+		    
+		    &:hover {
+			    text-decoration: none;
+			    color:darken(@lightBlue, 20%);
+		    }
+		    &:active {text-decoration: none;}
+		    &:focus {text-decoration: none;}
+		}
+	}
+	
+	ul {
+		list-style: none;
+		list-style-type: none;
+		margin:0 0 0 50px;
+		padding: 0;
+		color:@lightBlue;
+		font-size:18px;
+		font-weight: normal;
+		
+		li {
+			border-bottom: 1px solid @borderColor;
+			margin: 0;
+			padding: 8px 0 8px 20px;
+			position:relative;
+			min-height:44px;
+			
+			.taskName {
+				display: block;
+			    overflow: hidden;
+			    width: 403px;
+			}
+
+			.actions {
+				position: absolute;
+			    right: 0;
+			    top: 0;
+			    display:none;
+			    height:44px;
+			    font-size:0;
+			    
+			    i {
+					padding-left:5px;
+					cursor: pointer;
+					height:100%;
+					font-size:26px;
+					padding-top: 9px;
+					padding-bottom: 9px;
+					
+					.opacity(0.7);
+					
+					&:hover {
+						.opacity(1);
+					}
+					/*
+					&.moveTask {
+						font-size:18px;
+					}
+					*/
+					
+					&.startTask {
+						border-left: 1px solid @borderColor;
+						padding-left: 17px;
+						padding-right: 17px;
+						margin-left:15px !important;
+						background-color:@kingBlue;
+						color:@white;
+					}
+					&.stopTask {
+						border-left: 1px solid @borderColor;
+						padding-left: 13px;
+						padding-right: 13px;
+						margin-left:15px !important;
+						background-color:@kingBlue;
+						color:@white;
+					}
+					&.moveTask {
+						/*font-size:18px;*/
+					}
+			    }
+			    
+			}
+			
+			&.detailed {
+				background-color:#FCFCFC;
+				.inner-shadow(0, 0, 6px, 0.05);
+			}
+			
+			&:hover {
+				background-color:lighten(@lightBlue, 42%);
+				
+				.actions {
+					display:block;
+					
+					i {
+						margin-left:5px;
+						.opacity(0.8);
+						
+						&:hover {
+							.opacity(1);
+						} 
+						
+						&.stopTask {
+							display:none;
+						}
+				    }
+				}
+			}
+			
+			.timesList {
+				font-size: 13px;
+				margin: 8px 20px 0 0;
+				
+				li {
+					border-bottom: 1px dotted #CCC;
+					padding : 4px 0 4px 14px;
+					font-size:11px;	
+					min-height:25px;
+					
+					table {
+						width:100%;
+					}
+					
+					.deleteTime {
+						margin:0 12px 0 4px;
+						cursor: pointer;							
+						.opacity(0.7);
+						
+						&:hover {
+							.opacity(1);
+						}
+					}
+					.comment {
+						display:inline-block;
+						margin-left:10px;
+					}
+					.date {
+						float:right;
+					}
+					
+					&:hover {
+						background-color:transparent;
+					}
+					
+					&:last-child {
+						border-bottom:none;
+					}
+					
+					&.total {
+						text-align:left;
+						font-size:20px;
+						
+						.totalIcon {
+							margin-right:5px; 
+						}
+					}
+				}
+			}
+			
+			&.selected {
+				background-color:@kingBlue;
+				color:#FFFFFF;
+				
+				.actions {
+					i {
+						height:98% !important;
+						
+						&.startTask {
+							padding-bottom:9px;
+						}
+						&.stopTask {
+							padding-bottom:8px;
+						}
+						
+					}
+				}
+
+				
+				.timesList {
+					color:#FFFFFF;
+					li {
+						border-bottom: 1px dotted #b5fdda;
+						
+						&:hover {
+							background-color:@kingBlue;
+						}
+						
+						&:last-child {
+							border-bottom:none;
+						}
+						
+						
+												
+					}
+				}
+				
+			}
+			
+			
+		}
+	}
+}
+
+.emptyLi {
+	background-color: lighten(@orange, 40%) !important;	
+}
+			
+#TIM_Comment {
+	width:100%;
+	height: 100px;		
+}
+
+
+#chronoWrapper {
+	width:50%;
+	position:absolute;
+	height:100%;
+	left:50%;
+	border-left: 1px solid @borderColor;
+	background-color:@white;
+	color:#FFF;
+	.box-sizing();
+	//.inner-shadow(5px, 0, 14px, 0.04);
+	
+	/*
+	#actions {
+		height:100%;
+		width:50px;
+		position:absolute;
+		border-right: 1px solid @borderColor;
+		position:fixed;
+		
+		a {
+			border-bottom: 1px solid @borderColor;
+		    height: 50px;
+		    line-height: 50px;
+		    text-align: center;
+		    width: 100%;
+		    font-size:25px;
+		    color:@lightBlue;
+		    background-color:lighten(@lightBlue, 42%);
+		    text-decoration: none;
+		    
+		    &:hover {
+			    text-decoration: none;
+			    color:darken(@lightBlue, 20%);
+		    }
+		    &:active {text-decoration: none;}
+		    &:focus {text-decoration: none;}
+		}
+	}
+	*/
+		
+	#chronoControllers {
+		
+		height:100%;
+		width:50px;
+		position:absolute;
+		border-left: 1px solid @borderColor;
+		position:fixed;
+		right:0;
+		background-color:lighten(@lightBlue, 42%);
+		
+		a {
+			border-bottom: 1px solid @borderColor;
+			height: 50px;
+		    line-height: 50px;
+		    text-align: center;
+		    width: 100%;
+		    font-size:25px;
+		    color:@lightBlue;
+		    text-decoration: none;
+		    
+		    &:hover {
+			    text-decoration: none;
+			    color:darken(@lightBlue, 20%);
+		    }
+		    &:active {text-decoration: none;}
+		    &:focus {text-decoration: none;}
+		    
+		}
+		
+		#stop {display:none;}
+		#start {display:none;}
+		#pause {display:none;}
+	}
+	
+	#chrono {
+	    color:@kingBlue;
+	    font-size: 130px;
+	    height: 96px;
+	    line-height: 87px;
+	    position: absolute;
+	    text-align: center;
+	    top: 50%;
+	    padding-right:50px;
+	    .opacity(0.5);
+
+	}
+}
+
+/*
+<div id="ballsClock">
+	<div class="aBallWrapper">
+		<div class="aLine"></div>
+		<div class="aBall"></div>
+	</div>
+</div>
+*/
+@-moz-keyframes ballClockLeft { 
+	from {
+		-moz-transform:rotate(0deg); //firefox
+	}
+	25% {
+		-moz-transform:rotate(45deg); //firefox
+	}
+	50% {
+		-moz-transform:rotate(0deg); //firefox
+	}
+	to {
+		-moz-transform:rotate(0deg); //firefox
+	}
+}
+
+@-moz-keyframes ballClockRight { 
+	from {
+		-moz-transform:rotate(0deg); //firefox
+	}
+	25% {
+		-moz-transform:rotate(-45deg); //firefox
+	}
+	50% {
+		-moz-transform:rotate(0deg); //firefox
+	}
+	to {
+		-moz-transform:rotate(0deg); //firefox
+	}
+}
+
+/*
+@darkBlue : #121a29;
+@blue : #263248;
+@lightBlue : #7e8aa2;
+@kingBlue : #4f7fdf;
+@white : #FFFFFF;
+@orange : #ff9800;
+*/
+
+#ballsClockWrapper {
+	width:800px;
+	margin:0 auto;
+	height:300px;
+	
+	#ballsClock {
+		float:left;
+		width:180px;
+		margin:100px auto;
+		height:130px;
+		
+		.aBallWrapper {
+			width:30px;
+			height:320px;
+			padding-top: 160px;
+			position: relative;
+			top: -160px;
+			float:left;
+			
+			.aLine {
+				width:1px;
+				background:@kingBlue;
+				height:130px;
+				margin:0 auto;
+			}
+			.aBall {
+				width: 30px;
+				height: 30px;
+				.rounded(30px);
+				background: @kingBlue;
+				margin:0 auto;
+			    text-align: center;
+			    font-weight: bold;
+			    color: @white;
+			    line-height: 25px;
+			}
+	
+		}
+	}
+	
+	#chapo {
+		float: left;
+	    margin-top: 60px;
+	    width: 520px;
+	    margin-left: 100px;
+	    
+	    h1 {
+		    font-size: 80px;
+		    margin: 0;
+		    color:@kingBlue;
+	    }
+	    
+	    h2 {
+		    font-size: 35px;
+		    margin: 5px 0 10px 0;
+	    }
+	    p {
+		    font-size:15px;
+	    }
+	}
+}  
