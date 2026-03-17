@@ -1,0 +1,217 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	color: #230000;
+	background-image: url('../img/old-paper-texture.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 0 15%;
+	font-size: 20px;
+}
+
+a {color: #530a0a; text-decoration: underline;}
+a:hover {color: #530a0a;}
+a:visited {color: #530a0a;}
+a:link {color: #530a0a;}
+
+header {
+	padding: 20px 0;
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+header img {
+	vertical-align: 0;
+	margin-right: 5px;
+}
+
+#logo {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Tillana', cursive;
+	text-align: center;
+	line-height: 120%;
+}
+
+h1 {
+	margin: 0 0 50px 0;
+	font-size: 50px;
+}
+
+h1.big {
+	font-size: 80px;
+}
+
+h2 {
+	margin: 0 0 30px 0;
+	font-size: 30px;
+}
+
+h3 {
+	margin: 0 0 22px 0;
+	font-size: 22px;
+}
+
+h4 {
+	margin: 0 0 18px 0;
+	font-size: 18px;
+}
+
+h5 {
+	margin: 0 0 15px 0;
+	font-size: 15px;
+}
+
+h6 {
+	margin: 0 0 12px 0;
+	font-size: 12px;
+}
+
+p {
+	margin-bottom: 30px;
+}
+
+p.warning {
+	border-radius: 15px;
+	color: white;
+	background-color: red;
+	padding: 15px 20px;
+}
+
+.separator {
+	margin: 50px 0;
+	text-align: center;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+}
+
+.waypointWrapper .sceneImage {
+	margin-bottom: 30px;
+	padding-top: 30px;
+}
+
+.result {
+	text-align: center;
+	font-size: 30px;
+	margin: 5px 0 30px 0;
+	font-family: 'Tillana', cursive;
+}
+
+#resultOK {
+	color: #066604;
+}
+
+#resultBAD {
+	color: #7f0707;
+}
+
+textarea[name="cypher"] {
+	width: 100%;
+	height: 62px;
+}
+
+.newsRiddle {
+	text-align:center;
+	background-color: white;
+	position: relative;
+	width: 287px;
+	height: 287px;
+	margin: 0 10px 20px 10px;
+	display: inline-block;
+}
+
+.newsImage {
+	width:100%;
+	height:auto;
+	position: relative;
+	top: 0;
+	left: 0;	
+}
+
+.newsRiddle > div {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+	padding: 15px;
+}
+.newsRiddle > div a {
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+.newsName {
+	font-size: 19px;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 4px;
+	text-decoration: underline;
+	font-family: 'Tillana', cursive;
+}
+.newsDifficulty {
+	font-size: 15px;
+	display: block;
+	margin-bottom: 11px;
+	color: orange;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+
+	body {
+		padding: 0 20px;
+		font-size: 20px;
+	}
+
+	h1 {
+		margin: 0 0 40px 0;
+		font-size: 40px;
+	}
+
+	h2 {
+		margin: 0 0 30px 0;
+		font-size: 30px;
+	}
+
+	h3 {
+		margin: 0 0 20px 0;
+		font-size: 20px;
+	}
+
+	h4 {
+		margin: 0 0 16px 0;
+		font-size: 16px;
+	}
+
+	h5 {
+		margin: 0 0 13px 0;
+		font-size: 13px;
+	}
+
+	h6 {
+		margin: 0 0 12px 0;
+		font-size: 12px;
+	}
+
+}
+

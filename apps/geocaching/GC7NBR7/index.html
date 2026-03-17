@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Nautilus</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Oswald|Ruthie" rel="stylesheet" />
+
+
+<style>
+	html {
+		width: 100%;
+		height: 100%;
+
+	}
+	body {
+		width: 100%;
+		height: 100%;
+		color: #FFFFFF;
+		background-image: url('img/f9c48393-6abe-489a-8992-d49132c1e21e.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	h1 {
+		text-align: center;
+		margin: 100px 0 60px 0;
+		font-family: 'Ruthie', cursive;
+		font-size: 120px;
+		text-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+	}
+	.alignCenter {
+		text-align: center;
+	}
+
+	p {
+		padding: 0 0 100px;
+		font-size: 25px;
+		font-family: 'Oswald', sans-serif;
+		line-height: 130%;
+		color: rgba(255,255,255, 0.6);
+	}
+
+	input {
+		background: none;
+		border: 1px dotted rgba(255,255,255, 0.4);
+		margin: 4px;
+		color: #FFFFFF;
+	}
+
+	#coord { width: 269px; }
+	#spirale { width: 210px; }
+	#unite { width: 30px; }
+	#racine { width: 30px; }
+	#validate {
+		background: blue;
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="container">
+	 	<h1 class="alignCenter">Nautilus</h1>
+		<p class="alignCenter">
+			En partant du point 0, aux coordonnées <input type="text" id="coord" />
+			, et selon la spirale de <input type="text" id="spirale" name="spirale" />
+			, avec une unité (A0) égale à <input type="text" id="unite" name="unite" /> mètres, à la racine de <input type="text" id="racine" name="racine" />
+			, vous trouverez la boite.<br/><br />
+			Bonne chance.<br/><br />
+			<span style="font-size:15px;">(Approximation de 15 mètres autorisée dans le checker).</span>
+		</p>
+	</div>
+	
+	<img src="http://www.wawawoom.fr/geocaching/analytics/analytics.php" />
+	
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-7999871-1");
+		pageTracker._trackPageview();
+		} catch(err) {};
+	</script>
+
+</body>
+</html>

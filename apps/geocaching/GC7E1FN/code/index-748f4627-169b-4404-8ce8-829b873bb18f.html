@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<title>GC7E1FN_112-358-132-134</title>
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+			* element that contains the map. */
+			#map {
+			height: 100%;
+			}
+			/* Optional: Makes the sample page fill the window. */
+			html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+
+			var initMap = function () {
+
+				var map;
+				var markers = [
+					new google.maps.LatLng(43.744444914540196, 7.20378408440763),
+					new google.maps.LatLng(43.744307894284645, 7.204126248385592),
+					new google.maps.LatLng(43.744678679258065, 7.204410745171231),
+					new google.maps.LatLng(43.74456850987759, 7.203878917213615),
+					new google.maps.LatLng(43.74450000000012, 7.204050000000052),
+					new google.maps.LatLng(43.74502122697804, 7.203555324419085),
+					new google.maps.LatLng(43.74403245971006, 7.202796655740258),
+					new google.maps.LatLng(43.743141816124165, 7.205020675768651),
+					new google.maps.LatLng(43.74573727941563, 7.20701210784523)
+				];
+
+				var code = [ 'B', 'O', 'N', 'I', 'F', 'A', 'C', 'C', 'I'];
+
+				var startMap = function () {
+					map = new google.maps.Map(
+						document.getElementById("map"),
+						{
+							center: new google.maps.LatLng(43.74450000000012, 7.204050000000052),
+							zoom: 17,
+							mapTypeId: google.maps.MapTypeId.SATELLITE
+						}
+					);
+					map.setTilt(0); // Removes 45°
+				}
+				
+				var placeLettersMarker = function () {
+					// Place Markers
+					for (var k = 0; k < markers.length ; k++) {
+						new google.maps.Marker(
+							{
+								map: map,
+								position: markers[k],
+								title: 'Point ' + code[k] + ' : ' + markers[k].lat() + ' ' + markers[k].lng(),
+								animation: google.maps.Animation.DROP,
+								icon: 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&text='+code[k]+'&psize=18&font=fonts/Roboto-Regular.ttf&color=ff000000&ax=44&ay=48&scale=1'
+							}
+						);
+					}
+				}
+				
+				startMap();
+				placeLettersMarker();
+
+			}
+			   
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?&libraries=geometry&key=AIzaSyB09Pbnmzz4zfTEiM0p1W4siCf8xYM2o1U&callback=initMap"></script>
+		<img src="http://www.wawawoom.fr/geocaching/analytics/analytics.php" />
+	</body>
+</html>

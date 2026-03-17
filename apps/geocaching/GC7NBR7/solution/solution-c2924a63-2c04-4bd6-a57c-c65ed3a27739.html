@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<title>Théodore de Cyrène</title>
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+			* element that contains the map. */
+			#map {
+				height: 100%;
+			}
+			/* Optional: Makes the sample page fill the window. */
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#inputs {
+				position: absolute;
+				top: 50px;
+				left: 20px;
+				padding: 15px;
+				background: white;
+				color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+
+			var initMap = function () {
+
+				// https://fr.wikipedia.org/wiki/Th%C3%A9odore_de_Cyr%C3%A8ne
+				
+				var map;
+				var radius = 6371.01; //earth's radius in km
+				var eps = 0.000001;
+				var pointStart = {lat: 43.70847,lng: 7.339425};
+				var pointEnd = {lat: 43.710617,lng: 7.334300}; // N43° 42.637 E007° 20.058
+				var unitMetersReal = 55;
+				var unitMeters = unitMetersReal / 100;
+				var iterations = 75;
+
+				var markers = [];
+
+        		var d2r = function (angle) {
+					return angle*Math.PI / 180;
+				}
+				
+				var r2d = function (angle) {
+					return angle*180/Math.PI;
+				}
+				
+				var terminalPt = function (lat1, lon1, bearing, dist) {
+					rlat1 = d2r(lat1);
+					rlon1 = d2r(lon1);
+					rbearing = d2r(-(bearing));
+					rdist = dist / radius;
+
+					rlat = Math.asin(Math.sin(rlat1) * Math.cos(rdist) + Math.cos(rlat1) * Math.sin(rdist) * Math.cos(rbearing));
+					if (Math.abs(Math.cos(rlat)) < eps) {
+						rlon = rlon1;
+					} else {
+						rlon = ((rlon1 - Math.asin( Math.sin(rbearing) * Math.sin(rdist) / Math.cos(rlat)) + Math.PI) % (2*Math.PI)) - Math.PI;
+					}
+
+					lat = r2d(rlat);
+					lon = r2d(rlon);
+
+					return new google.maps.LatLng(lat, lon);
+				}
+
+				var initMap = function () {
+					map = new google.maps.Map(
+						document.getElementById("map"),
+						{
+							center: new google.maps.LatLng(pointStart.lat, pointStart.lng),
+							zoom: 16,
+							mapTypeId: google.maps.MapTypeId.SATELLITE
+						}
+					);
+					map.setTilt(0); // Removes 45°
+				};
+				
+				var drawAxes = function () {
+
+					// Draw Abs
+					new google.maps.Polyline(
+							{
+								map: map,
+								path: [
+									new google.maps.LatLng(pointStart.lat - 10, pointStart.lng),
+									new google.maps.LatLng(pointStart.lat + 10, pointStart.lng)
+								], 
+								strokeColor: 'red',
+								strokeOpacity: 1.0,
+								strokeWeight: 2
+							}
+						);
+
+					// Draw Abs
+					new google.maps.Polyline(
+							{
+								map: map,
+								path: [
+									new google.maps.LatLng(pointStart.lat, pointStart.lng - 10),
+									new google.maps.LatLng(pointStart.lat, pointStart.lng + 10)
+								], 
+								strokeColor: 'red',
+								strokeOpacity: 1.0,
+								strokeWeight: 1
+							}
+						);
+
+				}
+
+				var drawAxesFinal = function () {
+
+					// Draw Abs
+					new google.maps.Polyline(
+							{
+								map: map,
+								path: [
+									new google.maps.LatLng(pointEnd.lat - 10, pointEnd.lng),
+									new google.maps.LatLng(pointEnd.lat + 10, pointEnd.lng)
+								], 
+								strokeColor: 'green',
+								strokeOpacity: 1.0,
+								strokeWeight: 2
+							}
+						);
+
+					// Draw Abs
+					new google.maps.Polyline(
+							{
+								map: map,
+								path: [
+									new google.maps.LatLng(pointEnd.lat, pointEnd.lng - 10),
+									new google.maps.LatLng(pointEnd.lat, pointEnd.lng + 10)
+								], 
+								strokeColor: 'green',
+								strokeOpacity: 1.0,
+								strokeWeight: 1
+							}
+						);
+
+				}
+
+				var initFirstPoint = function () {
+					markers.push(new google.maps.LatLng(pointStart.lat, pointStart.lng));
+				}
+
+				var nextPoint = function (i) {
+
+					var lastPoint = markers[markers.length - 1];
+					var angleDroit = 90;
+					var dest;
+
+					if (i === 1) {
+						dest = terminalPt(
+							lastPoint.lat(),
+							lastPoint.lng(),
+							angleDroit,
+							(unitMeters / 10)
+						);
+					}
+					else if (i === 2) {
+						dest = terminalPt(
+							lastPoint.lat(),
+							lastPoint.lng(),
+							0,
+							(unitMeters / 10)
+						);
+					}
+					else {
+
+						var point1 = markers[0];
+						var point2 = markers[markers.length - 1];
+						var heading = google.maps.geometry.spherical.computeHeading(point1,point2);
+
+						dest = terminalPt(
+							lastPoint.lat(),
+							lastPoint.lng(),
+							heading - 90,
+							(unitMeters / 10)
+						);
+					}
+
+					markers.push(dest);
+
+				};
+
+				var createPoints = function () {
+					for (var i = 1; i <= iterations ; i++) {
+						nextPoint(i);
+					}
+				}
+
+				var placeMarkers = function (doLog) {
+					// Place Markers
+					for (var k = 0; k < markers.length ; k++) {
+						new google.maps.Marker(
+							{
+								map: map,
+								position: markers[k],
+								title: 'Point ' + k + ' : ' + markers[k].lat() + ' ' + markers[k].lng(),
+								animation: google.maps.Animation.DROP,
+								icon: 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&text='+k+'&psize=18&font=fonts/Roboto-Regular.ttf&color=ff000000&ax=44&ay=48&scale=1'
+							}
+						);
+						
+						if (doLog) {
+							console.log(alphabet[k] + ': LAT:' + markers[k].lat(), ' - LNG: ', markers[k].lng());
+						}
+						
+					}
+				}
+
+				var drawSpiral = function() {
+					for (var i = 0; i < markers.length ; i++) {
+						if (i + 1 < markers.length) {
+							new google.maps.Polyline(
+								{
+									map: map,
+									path: [
+										new google.maps.LatLng(markers[i].lat(), markers[i].lng()),
+										new google.maps.LatLng(markers[i+1].lat(), markers[i+1].lng())
+									], 
+									strokeColor: 'yellow',
+									strokeOpacity: 1.0,
+									strokeWeight: 2
+								}
+							);
+						}
+						// Draw hypothenuse
+						if (i > 1) {
+							new google.maps.Polyline(
+							{
+								map: map,
+								path: [
+									new google.maps.LatLng(markers[0].lat(), markers[0].lng()),
+									new google.maps.LatLng(markers[i].lat(), markers[i].lng())
+								], 
+								strokeColor: 'orange',
+								strokeOpacity: 1,
+								strokeWeight: 1
+							}
+						);
+						}
+					}
+				}
+
+				var go = function () {
+					initMap();
+					drawAxes();
+					drawAxesFinal();
+					initFirstPoint();
+					createPoints();
+					drawSpiral();
+				}
+
+				go();
+
+			}
+			   
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?&libraries=geometry&key=AIzaSyB09Pbnmzz4zfTEiM0p1W4siCf8xYM2o1U&callback=initMap"></script>
+		<img src="http://www.wawawoom.fr/geocaching/analytics/analytics.php?url=https://coord.info/GC7NBR7&name=nautilus-view-solution">
+	</body>
+</html>
