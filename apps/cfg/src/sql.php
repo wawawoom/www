@@ -15,7 +15,7 @@ if ($host === null || $user === null || $pass === null || $database === null) {
         'DB_NAME' => $database,
     ], fn($v) => $v === null);
     error_log('Config: Missing DB credentials in .env: ' . implode(', ', array_keys($missing)));
-    error_log('Config: In production, create /www/next/projects/.env.production with DB_HOST, DB_USER, DB_PASSWORD, DB_NAME');
+    error_log('Config: In production, create /www/projects/.env.production with DB_HOST, DB_USER, DB_PASSWORD, DB_NAME');
     $connex = null;
 } else {
     // ****************************//

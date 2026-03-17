@@ -3,6 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "deploy": "SOURCE_DIR=\"apps/lab/src\" FTP_DIR=\"/www/next/projects/lab/\" bash ./scripts/deploy-lab.sh"
+    "deploy": "SOURCE_DIR=\"apps/lab/src\" FTP_DIR=\"/www/projects/lab/\" bash ./scripts/deploy-lab.sh"
   }
 }

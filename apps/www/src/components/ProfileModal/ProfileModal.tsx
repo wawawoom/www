@@ -192,7 +192,7 @@ export const ProfileModal = () => {
       </WuiTitle>
 
       <Job
-        logoUrl="/img/job/logo-smood.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-smood.png"
         companyName="Smood"
         duration={t("job.smoodDuration")}
         jobTitle={t("job.smoodTitle")}
@@ -223,7 +223,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-gtl.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-gtl.png"
         companyName="GTL Studio"
         duration={t("job.gtlDuration")}
         jobTitle={t("job.gtlTitle")}
@@ -232,7 +232,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-stent.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-stent.png"
         companyName="Stent AI"
         duration={t("job.stentDuration")}
         jobTitle={t("job.stentTitle")}
@@ -252,7 +252,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-hoozin.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-hoozin.png"
         companyName="Hoozin"
         duration={t("job.hoozinDuration")}
         jobTitle={t("job.hoozinTitle")}
@@ -272,7 +272,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-wawawoom.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-wawawoom.png"
         companyName="WaWaWooM"
         duration={t("job.wawawoomDuration")}
         jobTitle={t("job.wawawoomTitle")}
@@ -292,7 +292,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-genghis-mind.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-genghis-mind.png"
         companyName="Genghis Mind"
         duration={t("job.genghisMindDuration")}
         jobTitle={t("job.genghisMindTitle")}
@@ -308,7 +308,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-jsshark.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-jsshark.png"
         companyName="JS Shark"
         duration={t("job.jsSharkDuration")}
         jobTitle={t("job.jsSharkTitle")}
@@ -317,7 +317,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-exhibit.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-exhibit.png"
         companyName="Exhib'It"
         duration={t("job.exhibitDuration")}
         jobTitle={t("job.exhibitTitle")}
@@ -326,7 +326,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-design70.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-design70.png"
         companyName="Design 70"
         duration={t("job.design70Duration")}
         jobTitle={t("job.design70Title")}
@@ -342,7 +342,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-octo.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-octo.png"
         companyName="Octo Communication"
         duration={t("job.octoDuration")}
         jobTitle={t("job.octoTitle")}
@@ -360,7 +360,7 @@ export const ProfileModal = () => {
       </WuiTitle>
 
       <Job
-        logoUrl="/img/job/logo-graphisme.jpg"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-figma.png"
         companyName="Design Systems & UI Architecture"
         badges={[
           "Figma",
@@ -381,7 +381,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-dev.jpg"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-dev.jpg"
         companyName="Frontend Engineering"
         badges={[
           "HTML",
@@ -412,7 +412,7 @@ export const ProfileModal = () => {
       </WuiTitle>
 
       <Job
-        logoUrl="/img/job/logo-kalei.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-kalei.png"
         companyName="Kaleï"
         duration={t("profileModal.kaleiTitle")}
         badges={["Canvas", "Javascript", "Math"]}
@@ -427,6 +427,7 @@ export const ProfileModal = () => {
             <br />
             <WuiLink
               href="/projects/kalei"
+              target="_blank"
               color={
                 theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY
               }
@@ -439,7 +440,7 @@ export const ProfileModal = () => {
       />
 
       <Job
-        logoUrl="/img/job/logo-tictac.png"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-tictac.png"
         companyName="TicTac tracker"
         duration={t("profileModal.tictacTitle")}
         badges={["Javascript", "HTML", "CSS", "PHP", "MySQL"]}
@@ -454,6 +455,7 @@ export const ProfileModal = () => {
             <br />
             <WuiLink
               href="/projects/tictac"
+              target="_blank"
               color={
                 theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY
               }
@@ -475,14 +477,14 @@ export const ProfileModal = () => {
       </WuiTitle>
 
       <Job
-        logoUrl="/img/job/logo-arenes.jpg"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-arenes.jpg"
         companyName="BTS"
         duration={t("job.btsDuration")}
         jobTitle={t("profileModal.visualCommunicationStudent")}
       />
 
       <Job
-        logoUrl="/img/job/logo-ltgc.jpg"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-ltgc.jpg"
         companyName="Baccalauréat F12"
         duration={t("job.bacDuration")}
         jobTitle={t("profileModal.appliedArtsStudent")}
@@ -498,7 +500,7 @@ export const ProfileModal = () => {
       </WuiTitle>
 
       <Job
-        logoUrl="/img/job/logo-outdoor.jpg"
+        logoUrl="https://wawawoom.fr/projects/cdn/www/logo-outdoor.jpg"
         companyName="Outdoor activities"
         duration={t("profileModal.outdoorDuration")}
         description={
@@ -524,7 +526,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-instagram.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
@@ -546,7 +548,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-youtube.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-youtube.png"
                   width="14"
                   height="14"
                   alt="Youtube"
@@ -568,7 +570,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-youtube.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-youtube.png"
                   width="14"
                   height="14"
                   alt="Youtube"
@@ -606,7 +608,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-instagram.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
@@ -628,7 +630,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-instagram.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-instagram.png"
                   width="14"
                   height="14"
                   alt="Instagram"
@@ -650,7 +652,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-geocaching.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-geocaching.png"
                   width="14"
                   height="14"
                   alt="Geocaching"
@@ -672,7 +674,7 @@ export const ProfileModal = () => {
                 style={{ color: WuiColorValue.PINK_0 }}
               >
                 <img
-                  src="/img/job/logo-wawawood.png"
+                  src="https://wawawoom.fr/projects/cdn/www/logo-wawawood.png"
                   width="14"
                   height="14"
                   alt="Geocaching"

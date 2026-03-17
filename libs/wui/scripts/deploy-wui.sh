@@ -2,36 +2,37 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+# Workspace root = monorepo root (two levels up from libs/wui)
+WORKSPACE_ROOT="$(cd "$PROJECT_ROOT/../.." && pwd)"
 cd "$PROJECT_ROOT" || exit 1
 
-# Charger les variables d'environnement depuis .env si le fichier existe
-if [ -f "$PROJECT_ROOT/.env" ]; then
-    echo "📄 Chargement des variables depuis .env..."
-    # Charger le fichier .env ligne par ligne en ignorant les commentaires et lignes vides
+# Load environment variables from root .env if present
+ENV_FILE="$WORKSPACE_ROOT/.env"
+if [ -f "$ENV_FILE" ]; then
+    echo "📄 Loading variables from $ENV_FILE"
     set -a
-    while IFS= read -r line || [ -n "$line" ]; do
-        # Ignorer les commentaires et lignes vides
-        if [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ -n "$line" ]]; then
-            # Exporter la variable
-            export "$line"
-        fi
-    done < "$PROJECT_ROOT/.env"
+    # shellcheck source=/dev/null
+    source "$ENV_FILE"
     set +a
+else
+    echo "📄 No .env at $ENV_FILE (optional if FTP_PASS is set elsewhere)"
 fi
+[ -n "$FTP_PASS" ] && echo "   FTP_PASS is set" || true
 
 # Configuration FTP
 FTP_HOST="${FTP_HOST:-ftp.cluster015.hosting.ovh.net}"
 FTP_USER="${FTP_USER:-wawawoom}"
 FTP_PORT="${FTP_PORT:-21}"
+# Allow FTP_PASSWORD as alias for FTP_PASS (e.g. from .env)
+[ -n "${FTP_PASSWORD:-}" ] && [ -z "${FTP_PASS:-}" ] && FTP_PASS="$FTP_PASSWORD"
 
-# Le mot de passe FTP doit être fourni via la variable d'environnement FTP_PASS
 if [ -z "$FTP_PASS" ]; then
     echo "❌ Erreur: La variable d'environnement FTP_PASS n'est pas définie !"
     echo ""
     echo "💡 Pour définir le mot de passe FTP, vous avez plusieurs options :"
     echo ""
-    echo "   1. Créer un fichier .env à la racine du projet avec :"
-    echo "      FTP_PASS=\"votre_mot_de_passe\""
+    echo "   1. In .env at workspace root, add a line (no spaces around =):"
+    echo "      FTP_PASS=\"your_ftp_password\""
     echo ""
     echo "   2. Exporter la variable dans votre shell :"
     echo "      export FTP_PASS=\"votre_mot_de_passe\""
@@ -39,12 +40,16 @@ if [ -z "$FTP_PASS" ]; then
     echo "   3. La passer directement lors de l'exécution :"
     echo "      FTP_PASS=\"votre_mot_de_passe\" bash scripts/deploy-wui.sh"
     echo ""
-    echo "   📝 Voir .env.example pour un exemple de configuration"
+    echo "   📝 See .env.example at workspace root or in libs/wui for a template"
     exit 1
 fi
 
 SOURCE_DIR="${SOURCE_DIR:-libs/wui/dist_storybook}"
-FTP_DIR="${FTP_DIR:-/www/next/projects/wui/storybook/}"
+FTP_DIR="${FTP_DIR:-/www/projects/wui/storybook/}"
+# Resolve SOURCE_DIR relative to workspace root when relative
+if [[ "$SOURCE_DIR" != /* ]]; then
+    SOURCE_DIR="$WORKSPACE_ROOT/$SOURCE_DIR"
+fi
 
 echo "🚀 Début de l'upload FTP..."
 echo "📁 Dossier de destination: $FTP_DIR"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1770987659351" clover="3.2.0">
-  <project timestamp="1770987659351" name="All files">
-    <metrics statements="349" coveredstatements="347" conditionals="98" coveredconditionals="95" methods="41" coveredmethods="41" elements="488" coveredelements="483" complexity="0" loc="349" ncloc="349" packages="9" files="18" classes="18"/>
+<coverage generated="1773745791296" clover="3.2.0">
+  <project timestamp="1773745791296" name="All files">
+    <metrics statements="439" coveredstatements="434" conditionals="183" coveredconditionals="159" methods="57" coveredmethods="55" elements="679" coveredelements="648" complexity="0" loc="439" ncloc="439" packages="13" files="27" classes="27"/>
     <package name="components.WuiAlert">
       <metrics statements="17" coveredstatements="17" conditionals="8" coveredconditionals="7" methods="2" coveredmethods="2"/>
       <file name="WuiAlert.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiAlert/WuiAlert.props.ts">
@@ -29,9 +29,9 @@
       </file>
     </package>
     <package name="components.WuiBadge">
-      <metrics statements="19" coveredstatements="19" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+      <metrics statements="20" coveredstatements="20" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <file name="WuiBadge.props.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiBadge/WuiBadge.props.tsx">
-        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -40,10 +40,11 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
       </file>
       <file name="WuiBadge.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiBadge/WuiBadge.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
@@ -84,6 +85,66 @@
         <line num="41" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="components.WuiInput">
+      <metrics statements="28" coveredstatements="27" conditionals="47" coveredconditionals="31" methods="6" coveredmethods="4"/>
+      <file name="WuiInput.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiInput/WuiInput.props.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="WuiInput.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiInput/WuiInput.tsx">
+        <metrics statements="20" coveredstatements="19" conditionals="43" coveredconditionals="27" methods="4" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="22" count="17" type="stmt"/>
+        <line num="23" count="17" type="stmt"/>
+        <line num="24" count="17" type="cond" truecount="4" falsecount="0"/>
+        <line num="26" count="17" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="28" count="17" type="stmt"/>
+        <line num="29" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="17" type="stmt"/>
+        <line num="31" count="17" type="cond" truecount="2" falsecount="2"/>
+        <line num="33" count="17" type="stmt"/>
+        <line num="43" count="17" type="stmt"/>
+        <line num="48" count="17" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="111" count="5" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.WuiInputHelper">
+      <metrics statements="14" coveredstatements="14" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="WuiInputHelper.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiInputHelper/WuiInputHelper.props.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+      </file>
+      <file name="WuiInputHelper.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiInputHelper/WuiInputHelper.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="23" count="16" type="stmt"/>
+        <line num="24" count="16" type="stmt"/>
+        <line num="26" count="16" type="stmt"/>
+        <line num="32" count="16" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+      </file>
+    </package>
     <package name="components.WuiLink">
       <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="3"/>
       <file name="WuiLink.props.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiLink/WuiLink.props.tsx">
@@ -114,82 +175,125 @@
       </file>
     </package>
     <package name="components.WuiModal">
-      <metrics statements="67" coveredstatements="65" conditionals="25" coveredconditionals="23" methods="18" coveredmethods="18"/>
+      <metrics statements="78" coveredstatements="74" conditionals="34" coveredconditionals="27" methods="19" coveredmethods="19"/>
+      <file name="WuiModal.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiModal/WuiModal.props.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
       <file name="WuiModal.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiModal/WuiModal.tsx">
-        <metrics statements="67" coveredstatements="65" conditionals="25" coveredconditionals="23" methods="18" coveredmethods="18"/>
+        <metrics statements="74" coveredstatements="70" conditionals="32" coveredconditionals="25" methods="18" coveredmethods="18"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="22" count="19" type="stmt"/>
+        <line num="23" count="19" type="stmt"/>
+        <line num="24" count="19" type="stmt"/>
+        <line num="26" count="19" type="stmt"/>
+        <line num="33" count="19" type="stmt"/>
+        <line num="34" count="9" type="stmt"/>
+        <line num="36" count="9" type="cond" truecount="0" falsecount="1"/>
+        <line num="38" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="6" type="stmt"/>
+        <line num="41" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="6" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
+        <line num="53" count="3" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="59" count="19" type="stmt"/>
+        <line num="60" count="8" type="stmt"/>
+        <line num="62" count="8" type="cond" truecount="0" falsecount="1"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="66" count="8" type="stmt"/>
+        <line num="67" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="71" count="3" type="stmt"/>
+        <line num="72" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="73" count="3" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="80" count="8" type="stmt"/>
+        <line num="81" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="82" count="4" type="cond" truecount="3" falsecount="0"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
+        <line num="87" count="8" type="stmt"/>
+        <line num="89" count="8" type="stmt"/>
+        <line num="90" count="8" type="stmt"/>
+        <line num="95" count="19" type="stmt"/>
+        <line num="96" count="8" type="stmt"/>
+        <line num="97" count="8" type="cond" truecount="0" falsecount="1"/>
+        <line num="99" count="8" type="stmt"/>
+        <line num="100" count="2" type="stmt"/>
+        <line num="101" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="107" count="8" type="stmt"/>
+        <line num="108" count="8" type="stmt"/>
+        <line num="112" count="19" type="stmt"/>
+        <line num="113" count="8" type="stmt"/>
+        <line num="117" count="8" type="stmt"/>
+        <line num="118" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="122" count="8" type="stmt"/>
+        <line num="123" count="8" type="stmt"/>
+        <line num="126" count="19" type="stmt"/>
+        <line num="127" count="38" type="stmt"/>
+        <line num="128" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="129" count="2" type="stmt"/>
+        <line num="130" count="36" type="cond" truecount="1" falsecount="0"/>
+        <line num="131" count="2" type="stmt"/>
+        <line num="136" count="19" type="stmt"/>
+        <line num="137" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="138" count="2" type="stmt"/>
+        <line num="139" count="2" type="stmt"/>
+        <line num="143" count="19" type="stmt"/>
+        <line num="144" count="3" type="stmt"/>
+        <line num="147" count="19" type="stmt"/>
+        <line num="186" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.WuiSelect">
+      <metrics statements="20" coveredstatements="20" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4"/>
+      <file name="WuiSelect.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiSelect/WuiSelect.props.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="WuiSelect.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiSelect/WuiSelect.tsx">
+        <metrics statements="12" coveredstatements="12" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="13" count="19" type="stmt"/>
-        <line num="14" count="19" type="stmt"/>
-        <line num="15" count="19" type="stmt"/>
-        <line num="17" count="19" type="stmt"/>
-        <line num="23" count="19" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="28" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="29" count="6" type="stmt"/>
-        <line num="30" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="6" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="36" count="6" type="stmt"/>
-        <line num="38" count="6" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="46" count="19" type="stmt"/>
-        <line num="47" count="8" type="stmt"/>
-        <line num="54" count="8" type="stmt"/>
-        <line num="60" count="3" type="stmt"/>
-        <line num="61" count="3" type="cond" truecount="1" falsecount="1"/>
-        <line num="62" count="3" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="66" count="3" type="stmt"/>
-        <line num="69" count="8" type="stmt"/>
-        <line num="70" count="5" type="cond" truecount="3" falsecount="0"/>
-        <line num="71" count="4" type="cond" truecount="3" falsecount="0"/>
-        <line num="72" count="1" type="stmt"/>
-        <line num="73" count="3" type="stmt"/>
-        <line num="76" count="8" type="stmt"/>
-        <line num="78" count="8" type="stmt"/>
-        <line num="79" count="8" type="stmt"/>
-        <line num="84" count="19" type="stmt"/>
-        <line num="85" count="8" type="stmt"/>
-        <line num="89" count="8" type="stmt"/>
-        <line num="90" count="2" type="stmt"/>
-        <line num="91" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
-        <line num="97" count="8" type="stmt"/>
-        <line num="98" count="8" type="stmt"/>
-        <line num="102" count="19" type="stmt"/>
-        <line num="103" count="8" type="stmt"/>
-        <line num="107" count="8" type="stmt"/>
-        <line num="108" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="109" count="1" type="stmt"/>
-        <line num="112" count="8" type="stmt"/>
-        <line num="113" count="8" type="stmt"/>
-        <line num="116" count="19" type="stmt"/>
-        <line num="117" count="38" type="stmt"/>
-        <line num="118" count="38" type="cond" truecount="2" falsecount="0"/>
-        <line num="119" count="2" type="stmt"/>
-        <line num="120" count="36" type="cond" truecount="1" falsecount="0"/>
-        <line num="121" count="2" type="stmt"/>
-        <line num="126" count="19" type="stmt"/>
-        <line num="127" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="128" count="2" type="stmt"/>
-        <line num="129" count="2" type="stmt"/>
-        <line num="133" count="19" type="stmt"/>
-        <line num="134" count="3" type="stmt"/>
-        <line num="137" count="19" type="stmt"/>
-        <line num="176" count="1" type="stmt"/>
+        <line num="22" count="16" type="stmt"/>
+        <line num="23" count="16" type="stmt"/>
+        <line num="24" count="16" type="cond" truecount="4" falsecount="0"/>
+        <line num="26" count="16" type="stmt"/>
+        <line num="33" count="16" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.WuiText">
-      <metrics statements="24" coveredstatements="24" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+      <metrics statements="27" coveredstatements="27" conditionals="15" coveredconditionals="15" methods="5" coveredmethods="5"/>
       <file name="WuiText.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiText/WuiText.props.ts">
-        <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <metrics statements="18" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
         <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
@@ -205,18 +309,21 @@
         <line num="26" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
       <file name="WuiText.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiText/WuiText.tsx">
-        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="20" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="30" count="8" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="26" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="8" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.WuiTitle">
@@ -248,6 +355,28 @@
         <line num="18" count="4" type="stmt"/>
         <line num="25" count="4" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.WuiTooltip">
+      <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="WuiTooltip.props.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiTooltip/WuiTooltip.props.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="WuiTooltip.tsx" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/components/WuiTooltip/WuiTooltip.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
       </file>
     </package>
     <package name="enum">
@@ -419,8 +548,8 @@
       <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <file name="clsx.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/utils/clsx.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="16" count="73" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="16" count="154" type="stmt"/>
       </file>
       <file name="lorem-ipsum.ts" path="/Users/nicolaspayrouse/Desktop/website/libs/wui/src/utils/lorem-ipsum.ts">
         <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>

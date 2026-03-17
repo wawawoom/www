@@ -28,7 +28,7 @@ if [ -z "$FTP_PASS" ]; then
 fi
 
 SOURCE_DIR="${SOURCE_DIR:-apps/kalei/src}"
-FTP_DIR="${FTP_DIR:-/www/next/projects/kalei/}"
+FTP_DIR="${FTP_DIR:-/www/projects/kalei/}"
 
 echo "🚀 Starting FTP upload (kalei)..."
 echo "📁 Source: $SOURCE_DIR/"

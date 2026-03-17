@@ -1,4 +1,19 @@
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+
+# Redirect /geocaching and all sub-paths to /projects/geocaching
+RewriteRule ^geocaching(/.*)?$ /projects/geocaching$1 [R=301,QSA,L]
+
+# Redirect /kalei and all sub-paths to /projects/kalei
+RewriteRule ^kalei(/.*)?$ /projects/kalei$1 [R=301,QSA,L]
+
+# Redirect /tictac and all sub-paths to /projects/tictac
+RewriteRule ^tictac(/.*)?$ /projects/tictac$1 [R=301,QSA,L]
+
+# Redirect /lab and all sub-paths to /projects/lab
+RewriteRule ^lab(/.*)?$ /projects/lab$1 [R=301,QSA,L]
+
 RewriteBase /
 
 # Ne pas réécrire les URLs /projects/...
@@ -11,3 +26,22 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # …alors renvoyer toujours index.html
 RewriteRule . /index.html [L]
+
+# To request the geolocation, site must be HTTPS
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{REQUEST_URI} folder
+RewriteRule ^(.*)$ https://wawawoom.fr/projects/geocaching/GC8NYTT/$1 [R,L]
+
+# Headers pour permettre le back/forward cache (bfcache)
+# Ne pas utiliser no-store qui empêche le bfcache
+# Utiliser public avec must-revalidate pour permettre le bfcache
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<Files ".env*">
+  Order allow,deny
+  Deny from all
+</Files>

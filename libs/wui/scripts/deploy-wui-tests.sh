@@ -7,21 +7,19 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-WUI_DIR="$PROJECT_ROOT/libs/wui"
+WORKSPACE_ROOT="$(cd "$PROJECT_ROOT/../.." && pwd)"
+WUI_DIR="$PROJECT_ROOT"
 COVERAGE_DIR="$WUI_DIR/coverage/lcov-report"
-FTP_DIR_DEFAULT="/www/next/projects/wui/tests/"
+FTP_DIR_DEFAULT="/www/projects/wui/tests/"
 
 cd "$PROJECT_ROOT" || exit 1
 
-# Charger les variables d'environnement depuis .env si le fichier existe
-if [ -f "$PROJECT_ROOT/.env" ]; then
-    echo "📄 Chargement des variables depuis .env..."
+ENV_FILE="$WORKSPACE_ROOT/.env"
+if [ -f "$ENV_FILE" ]; then
+    echo "📄 Loading variables from $ENV_FILE"
     set -a
-    while IFS= read -r line || [ -n "$line" ]; do
-        if [[ ! "$line" =~ ^[[:space:]]*# ]] && [[ -n "$line" ]]; then
-            export "$line"
-        fi
-    done < "$PROJECT_ROOT/.env"
+    # shellcheck source=/dev/null
+    source "$ENV_FILE"
     set +a
 fi
 
@@ -30,11 +28,12 @@ FTP_HOST="${FTP_HOST:-ftp.cluster015.hosting.ovh.net}"
 FTP_USER="${FTP_USER:-wawawoom}"
 FTP_PORT="${FTP_PORT:-21}"
 FTP_DIR="${FTP_DIR:-$FTP_DIR_DEFAULT}"
+[ -n "${FTP_PASSWORD:-}" ] && [ -z "${FTP_PASS:-}" ] && FTP_PASS="$FTP_PASSWORD"
 
 if [ -z "$FTP_PASS" ]; then
     echo "❌ Erreur: La variable d'environnement FTP_PASS n'est pas définie !"
     echo ""
-    echo "💡 Définir FTP_PASS dans .env ou : export FTP_PASS=\"votre_mot_de_passe\""
+    echo "💡 Set FTP_PASS in .env at workspace root or: export FTP_PASS=\"your_password\""
     exit 1
 fi
 

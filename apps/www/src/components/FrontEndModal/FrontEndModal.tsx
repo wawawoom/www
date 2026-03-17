@@ -45,30 +45,26 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 1: Token Integration (The Bridge)
+        {t("frontEndModal.phase1Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        The implementation starts by consuming the data exported from Figma to
-        ensure 1:1 visual fidelity.
+        {t("frontEndModal.phase1Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Token Transformation
+              {t("frontEndModal.phase1Item1Badge")}
             </WuiBadge>{" "}
-            Using Style Dictionary or custom hooks to transform raw JSON tokens
-            into CSS Variables.
+            {t("frontEndModal.phase1Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Typescript Safety
+              {t("frontEndModal.phase1Item2Badge")}
             </WuiBadge>{" "}
-            Generating strict TypeScript interfaces for tokens to provide
-            developers with full autocompletion and prevent the use of "magic
-            numbers" in the codebase.
+            {t("frontEndModal.phase1Item2Text")}
           </li>
         </ul>
       </WuiText>
@@ -78,36 +74,32 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 2: Atomic Engineering & Documentation
+        {t("frontEndModal.phase2Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        I build the library from the ground up, starting with the smallest
-        functional units.
+        {t("frontEndModal.phase2Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Atomic Components
+              {t("frontEndModal.phase2Item1Badge")}
             </WuiBadge>{" "}
-            Developing highly reusable, stateless primitives (Buttons, Inputs,
-            Typography) with a focus on clean API design.
+            {t("frontEndModal.phase2Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Living Documentation (Storybook)
+              {t("frontEndModal.phase2Item2Badge")}
             </WuiBadge>{" "}
-            Creating a dedicated environment for each component, including
-            Interactive Controls and clear Do’s & Don'ts for developers.
+            {t("frontEndModal.phase2Item2Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Atomic Testing
+              {t("frontEndModal.phase2Item3Badge")}
             </WuiBadge>{" "}
-            Implementing unit tests for every primitive to ensure core behaviors
-            (Click, Focus, Disabled states) are bulletproof.
+            {t("frontEndModal.phase2Item3Text")}
           </li>
         </ul>
       </WuiText>
@@ -117,29 +109,26 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 3: Layout & Responsiveness
+        {t("frontEndModal.phase3Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        Interfaces must adapt perfectly to any environment. I build layout
-        systems that handle complexity without breaking.
+        {t("frontEndModal.phase3Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Adaptive Grids
+              {t("frontEndModal.phase3Item1Badge")}
             </WuiBadge>{" "}
-            Implementing flexible container systems that respond to Mobile,
-            Tablet, and Desktop breakpoints.
+            {t("frontEndModal.phase3Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Constraint-Based Spacing
+              {t("frontEndModal.phase3Item2Badge")}
             </WuiBadge>{" "}
-            Using the design system’s spacing scale to manage margins and
-            paddings, ensuring visual rhythm is maintained across all viewports.
+            {t("frontEndModal.phase3Item2Text")}
           </li>
         </ul>
       </WuiText>
@@ -149,29 +138,26 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 4: Organic Components & Real-World Testing
+        {t("frontEndModal.phase4Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        I assemble primitives into complex "Organisms" (Header, Modals, Forms)
-        that handle business logic and data.
+        {t("frontEndModal.phase4Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Integration Testing
+              {t("frontEndModal.phase4Item1Badge")}
             </WuiBadge>{" "}
-            Running components in real-world scenarios to identify integration
-            friction.
+            {t("frontEndModal.phase4Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Iterative Refinement
+              {t("frontEndModal.phase4Item2Badge")}
             </WuiBadge>{" "}
-            Adjusting component APIs and styles based on feedback from the field
-            to ensure they are both flexible and resilient.
+            {t("frontEndModal.phase4Item2Text")}
           </li>
         </ul>
       </WuiText>
@@ -181,28 +167,26 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 5: Accessibility & Quality Assurance
+        {t("frontEndModal.phase5Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        A professional implementation is inclusive by default.
+        {t("frontEndModal.phase5Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              A11y Compliance
+              {t("frontEndModal.phase5Item1Badge")}
             </WuiBadge>{" "}
-            Ensuring keyboard navigation, ARIA labels, and focus management are
-            baked into every component.
+            {t("frontEndModal.phase5Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Visual Regression
+              {t("frontEndModal.phase5Item2Badge")}
             </WuiBadge>{" "}
-            Running automated visual tests to detect any unintended UI changes
-            during updates.
+            {t("frontEndModal.phase5Item2Text")}
           </li>
         </ul>
       </WuiText>
@@ -212,28 +196,26 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 6: Packaging & CI/CD Deployment
+        {t("frontEndModal.phase6Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        The final stage is turning the codebase into a distributable product.
+        {t("frontEndModal.phase6Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              NPM Versioning
+              {t("frontEndModal.phase6Item1Badge")}
             </WuiBadge>{" "}
-            Managing semantic versioning (SemVer) to ensure feature teams can
-            update safely.
+            {t("frontEndModal.phase6Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Automated Pipeline
+              {t("frontEndModal.phase6Item2Badge")}
             </WuiBadge>{" "}
-            Setting up a CI/CD pipeline that runs tests, builds the Storybook,
-            and deploys the private package automatically upon every merge.
+            {t("frontEndModal.phase6Item2Text")}
           </li>
         </ul>
       </WuiText>
@@ -243,36 +225,32 @@ export const FrontEndModal = () => {
         color={getBlackColor()}
         style={{ marginTop: 60 }}
       >
-        Phase 7: Support, Maintenance & Evolution
+        {t("frontEndModal.phase7Title")}
       </WuiTitle>
 
       <WuiText as={WuiTextAs.P} color={getBlackColor()}>
-        The system is a living product. I ensure it remains reliable and adapts
-        to the real-world needs of the feature teams.
+        {t("frontEndModal.phase7Intro")}
       </WuiText>
 
       <WuiText as={WuiTextAs.DIV} color={getBlackColor()}>
         <ul>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Direct Support
+              {t("frontEndModal.phase7Item1Badge")}
             </WuiBadge>{" "}
-            Providing quick troubleshooting and guidance for complex
-            integrations via dedicated channels.
+            {t("frontEndModal.phase7Item1Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Issue Tracking
+              {t("frontEndModal.phase7Item2Badge")}
             </WuiBadge>{" "}
-            Managing bug reports and UI regressions with a clear path from
-            discovery to hotfix.
+            {t("frontEndModal.phase7Item2Text")}
           </li>
           <li>
             <WuiBadge size={getBadgeSize()} color={getBadgeColor()}>
-              Continuous Improvement
+              {t("frontEndModal.phase7Item3Badge")}
             </WuiBadge>{" "}
-            Evaluating and implementing new component requests to ensure the
-            system grows with the product.
+            {t("frontEndModal.phase7Item3Text")}
           </li>
         </ul>
       </WuiText>

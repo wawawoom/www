@@ -5,7 +5,7 @@ addons.setConfig({
   theme: create({
     base: "light",
     brandTitle: "WUI",
-    brandImage: "https://next.wawawoom.fr/projects/cdn/wui/logo-wui.svg",
+    brandImage: "https://wawawoom.fr/projects/cdn/wui/logo-wui.svg",
     brandUrl: "#",
   }),
 });

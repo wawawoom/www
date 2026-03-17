@@ -28,7 +28,7 @@ if [ -z "$FTP_PASS" ]; then
 fi
 
 SOURCE_DIR="${SOURCE_DIR:-apps/cfg/src}"
-FTP_DIR="${FTP_DIR:-/www/next/projects/cfg/}"
+FTP_DIR="${FTP_DIR:-/www/projects/cfg/}"
 
 echo "🚀 Starting FTP upload (cfg)..."
 echo "📁 Source: $SOURCE_DIR/"

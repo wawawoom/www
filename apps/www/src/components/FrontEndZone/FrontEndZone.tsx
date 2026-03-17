@@ -92,10 +92,6 @@ export const FrontEndZone = (props: {
       />
 
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
-        {t("frontEndZone.paragraph1")}
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("frontEndZone.paragraph2")}
       </WuiText>
 

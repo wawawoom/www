@@ -37,11 +37,7 @@ In development, the `@wawawoom/wui-css` alias points to `libs/wui/src/styles/wui
 Import components and enums from the package:
 
 ```tsx
-import {
-  WuiButton,
-  WuiButtonColor,
-  WuiButtonSize,
-} from "@wawawoom/wui";
+import { WuiButton, WuiButtonColor, WuiButtonSize } from "@wawawoom/wui";
 
 function MyComponent() {
   return (
@@ -86,15 +82,15 @@ In development, `nodemon` watches `src/tokens` and re-runs this build when JSON 
 
 ## Available scripts
 
-| Command | Description |
-|---------|-------------|
-| `pnpm run dev` | Runs token watch and Storybook (port 6006). |
-| `pnpm run build:variables` | Generates CSS and enum files from tokens. |
-| `pnpm run build:lib` | Builds the lib (TypeScript + Vite). |
-| `pnpm run build:storybook` | Builds Storybook into `dist_storybook`. |
-| `pnpm run build` | build:variables → test → build:lib → build:storybook. |
-| `pnpm run test` | Runs Jest. |
-| `pnpm run test:coverage` | Jest with coverage report. |
+| Command                    | Description                                           |
+| -------------------------- | ----------------------------------------------------- |
+| `pnpm run dev`             | Runs token watch and Storybook (port 6006).           |
+| `pnpm run build:variables` | Generates CSS and enum files from tokens.             |
+| `pnpm run build:lib`       | Builds the lib (TypeScript + Vite).                   |
+| `pnpm run build:storybook` | Builds Storybook into `dist_storybook`.               |
+| `pnpm run build`           | build:variables → test → build:lib → build:storybook. |
+| `pnpm run test`            | Runs Jest.                                            |
+| `pnpm run test:coverage`   | Jest with coverage report.                            |
 
 ---
 
@@ -138,7 +134,7 @@ Package scripts (e.g. `deploy`) may rely on environment variables. You can defin
 Example `.env` (create if needed):
 
 ```
-CDN_PATH=/www/next/projects/cdn/
+CDN_PATH=/www/projects/cdn/
 FTP_HOST=ftp.example.com
 FTP_USER=your_username
 FTP_PASS=your_ftp_password

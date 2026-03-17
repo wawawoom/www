@@ -28,7 +28,7 @@ if [ -z "$FTP_PASS" ]; then
 fi
 
 SOURCE_DIR="${SOURCE_DIR:-apps/geocaching/src}"
-FTP_DIR="${FTP_DIR:-/www/next/projects/geocaching/}"
+FTP_DIR="${FTP_DIR:-/www/projects/geocaching/}"
 
 echo "🚀 Starting FTP upload (geocaching)..."
 echo "📁 Source: $SOURCE_DIR/"

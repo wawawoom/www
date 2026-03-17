@@ -26,7 +26,7 @@ fi
 # Configuration FTP (même variables que deploy-www.sh)
 # FTP_DIR / chemin distant : pris depuis CDN_PATH dans .env si non fourni
 SOURCE_DIR="${SOURCE_DIR:-apps/cdn}"
-FTP_DIR="${FTP_DIR:-${CDN_PATH:-/www/next/cdn}}"
+FTP_DIR="${FTP_DIR:-${CDN_PATH:-/www/projects/cdn}}"
 FTP_HOST="${FTP_HOST:-ftp.cluster015.hosting.ovh.net}"
 FTP_USER="${FTP_USER:-wawawoom}"
 FTP_PORT="${FTP_PORT:-21}"
