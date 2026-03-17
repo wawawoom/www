@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "deploy": "SOURCE_DIR=\"apps/geocaching/src\" FTP_DIR=\"/www/projects/geocaching/\" bash ./scripts/deploy-geocaching.sh"
+    "ftp:upload": "SOURCE_DIR=\"apps/geocaching/src\" bash ./scripts/deploy-geocaching.sh upload",
+    "ftp:download": "SOURCE_DIR=\"apps/geocaching/src\" bash ./scripts/deploy-geocaching.sh download",
+    "ftp:sync": "SOURCE_DIR=\"apps/geocaching/src\" bash ./scripts/deploy-geocaching.sh sync"
   }
 }
