@@ -135,7 +135,24 @@ export const ProfileZone = (props: {
         ]}
       />
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.XS} color={getWhiteColor()}>
+      <WuiLink
+        href="/profile"
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
+        onClick={(event) => {
+          event.preventDefault();
+
+          onOpenModal(Section.PROFILE);
+        }}
+      >
+        {t("profileZone.viewExperience")}
+      </WuiLink>
+
+      <WuiText
+        as={WuiTextAs.P}
+        size={WuiTextSize.XS}
+        color={getWhiteColor()}
+        className="wui-mt-36"
+      >
         <i className="fa-regular fa-compass"></i> {t("profileZone.location")}
         <br />
         <i className="fa-regular fa-address-card"></i>{" "}
@@ -149,18 +166,6 @@ export const ProfileZone = (props: {
       </WuiText>
 
       <SocialLinks />
-
-      <WuiLink
-        href="/profile"
-        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
-        onClick={(event) => {
-          event.preventDefault();
-
-          onOpenModal(Section.PROFILE);
-        }}
-      >
-        {t("profileZone.viewExperience")}
-      </WuiLink>
     </>
   );
 };

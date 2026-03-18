@@ -91,18 +91,6 @@ export const FrontEndZone = (props: {
         ]}
       />
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
-        {t("frontEndZone.paragraph2")}
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
-        {t("frontEndZone.paragraph3")}
-      </WuiText>
-
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
-        {t("frontEndZone.paragraph4")}
-      </WuiText>
-
       <WuiLink
         href="/front-end"
         color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
@@ -114,6 +102,23 @@ export const FrontEndZone = (props: {
       >
         {t("frontEndZone.underTheHood")}
       </WuiLink>
+
+      <WuiText
+        as={WuiTextAs.P}
+        size={WuiTextSize.S}
+        color={getBlackColor()}
+        className="wui-mt-36"
+      >
+        {t("frontEndZone.paragraph2")}
+      </WuiText>
+
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
+        {t("frontEndZone.paragraph3")}
+      </WuiText>
+
+      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
+        {t("frontEndZone.paragraph4")}
+      </WuiText>
     </>
   );
 };

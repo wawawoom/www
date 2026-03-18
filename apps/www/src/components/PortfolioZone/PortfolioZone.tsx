@@ -36,10 +36,23 @@ export const PortfolioZone = (props: {
         {t("portfolioZone.intro")}
       </WuiText>
 
+      <WuiLink
+        href="/portfolio"
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
+        onClick={(event) => {
+          event.preventDefault();
+
+          onOpenModal(Section.PORTFOLIO);
+        }}
+      >
+        {t("portfolioZone.viewDetails")}
+      </WuiLink>
+
       <WuiTitle
         as={WuiTitleAs.H2}
         look={WuiTitleLook.H4}
         color={getWhiteColor()}
+        className="wui-mt-36"
       >
         {t("portfolioZone.smoodTitle")}
       </WuiTitle>
@@ -118,18 +131,6 @@ export const PortfolioZone = (props: {
           <li>{t("portfolioZone.hoozinBullet5")}</li>
         </ul>
       </WuiText>
-
-      <WuiLink
-        href="/portfolio"
-        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
-        onClick={(event) => {
-          event.preventDefault();
-
-          onOpenModal(Section.PORTFOLIO);
-        }}
-      >
-        {t("portfolioZone.viewDetails")}
-      </WuiLink>
     </>
   );
 };

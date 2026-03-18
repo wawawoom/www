@@ -198,19 +198,27 @@ export const PortfolioModal = () => {
               setModalTitle(t("portfolioModal.migrosTitle"));
               setModalContent(
                 <div className="wui-modal__images">
-                  {["001", "002", "003", "004", "005", "006", "007", "008"].map(
-                    (n, i) => (
-                      <img
-                        key={n}
-                        src={`https://wawawoom.fr/projects/cdn/www/${i === 1 ? "smood-2" : "migros-2"}-screenshot-${n}.png`}
-                        alt={t("portfolioModal.screenshotAlt", {
-                          name: t("portfolioModal.migrosTitle"),
-                          number: n,
-                        })}
-                        loading="lazy"
-                      />
-                    )
-                  )}
+                  {[
+                    "001",
+                    "002",
+                    "003",
+                    "004",
+                    "005",
+                    "006",
+                    "007",
+                    "008",
+                    "009",
+                  ].map((n, i) => (
+                    <img
+                      key={n}
+                      src={`https://wawawoom.fr/projects/cdn/www/${i === 1 ? "smood-2" : "migros-2"}-screenshot-${n}.png`}
+                      alt={t("portfolioModal.screenshotAlt", {
+                        name: t("portfolioModal.migrosTitle"),
+                        number: n,
+                      })}
+                      loading="lazy"
+                    />
+                  ))}
                 </div>
               );
 

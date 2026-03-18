@@ -75,7 +75,24 @@ export const DesignSystemZone = (props: {
         ]}
       />
 
-      <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
+      <WuiLink
+        href="/design-system"
+        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
+        onClick={(event) => {
+          event.preventDefault();
+
+          onOpenModal(Section.DESIGN_SYSTEM);
+        }}
+      >
+        {t("designSystemZone.letsDiveIn")}
+      </WuiLink>
+
+      <WuiText
+        as={WuiTextAs.P}
+        size={WuiTextSize.S}
+        color={getBlackColor()}
+        className="wui-mt-36"
+      >
         {t("designSystemZone.paragraph1")}
       </WuiText>
 
@@ -90,18 +107,6 @@ export const DesignSystemZone = (props: {
       <WuiText as={WuiTextAs.P} size={WuiTextSize.S} color={getBlackColor()}>
         {t("designSystemZone.paragraph4")}
       </WuiText>
-
-      <WuiLink
-        href="/design-system"
-        color={theme === "dark" ? WuiLinkColor.PRIMARY : WuiLinkColor.SECONDARY}
-        onClick={(event) => {
-          event.preventDefault();
-
-          onOpenModal(Section.DESIGN_SYSTEM);
-        }}
-      >
-        {t("designSystemZone.letsDiveIn")}
-      </WuiLink>
     </>
   );
 };
