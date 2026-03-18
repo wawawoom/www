@@ -1,0 +1,103 @@
+.wui-textarea {
+  font-family: var(--wui-font-family);
+  font-weight: var(--wui-font-weight-normal);
+  color: var(--wui-color-alias-neutral-900);
+  background-color: var(--wui-color-alias-neutral-0);
+  border: 1px solid var(--wui-color-alias-neutral-300);
+  border-radius: 0;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+  min-height: 0;
+}
+
+.wui-textarea::placeholder {
+  color: var(--wui-color-alias-neutral-400);
+}
+
+.wui-textarea:hover:not(:disabled):not(:focus) {
+  border-color: var(--wui-color-alias-neutral-400);
+}
+
+.wui-textarea:focus {
+  border-color: var(--wui-color-alias-info-500);
+  box-shadow: 0 0 0 2px rgba(2, 156, 253, 0.2);
+}
+
+.wui-textarea:disabled {
+  background-color: var(--wui-color-alias-neutral-100);
+  color: var(--wui-color-alias-neutral-400);
+  cursor: not-allowed;
+  border-color: var(--wui-color-alias-neutral-200);
+}
+
+/* status */
+.wui-textarea--default {
+  border-color: var(--wui-color-alias-neutral-300);
+}
+
+.wui-textarea--error {
+  border-color: var(--wui-color-alias-danger-500);
+}
+
+.wui-textarea--error:focus {
+  border-color: var(--wui-color-alias-danger-500);
+}
+
+.wui-textarea--valid {
+  border-color: var(--wui-color-alias-success-500);
+}
+
+.wui-textarea--valid:focus {
+  border-color: var(--wui-color-alias-success-500);
+}
+
+/* height */
+.wui-textarea--s {
+  min-height: 5rem;
+  padding: var(--wui-space-8) var(--wui-space-12);
+  font-size: 1rem;
+}
+
+.wui-textarea--m {
+  min-height: 7rem;
+  padding: var(--wui-space-12) var(--wui-space-16);
+  font-size: 1.125rem;
+}
+
+.wui-textarea--l {
+  min-height: 9rem;
+  padding: var(--wui-space-16) var(--wui-space-20);
+  font-size: 1.25rem;
+}
+
+/* label & group */
+.wui-textarea-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--wui-space-8);
+}
+
+.wui-textarea-wrapper {
+  position: relative;
+}
+
+.wui-textarea__label {
+  font-family: var(--wui-font-family);
+  font-size: 1rem;
+  font-weight: var(--wui-font-weight-medium);
+  color: var(--wui-color-alias-neutral-700);
+  cursor: pointer;
+}
+
+.wui-textarea__helpers {
+  display: flex;
+  margin-top: var(--wui-space-4);
+  flex-direction: column;
+  gap: var(--wui-space-2);
+}

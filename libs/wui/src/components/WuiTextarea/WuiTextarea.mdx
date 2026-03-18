@@ -1,0 +1,108 @@
+import { ArgTypes, Canvas, Meta } from "@storybook/blocks";
+
+import * as WuiTextareaStories from "./WuiTextarea.stories";
+
+<Meta of={WuiTextareaStories} />
+
+# WuiTextarea
+
+Multi-line text input with sizes (S, M, L), states (default, error, valid), optional label and helpers. Same design tokens and behaviour as **WuiInput** for consistency.
+
+<Canvas of={WuiTextareaStories.Default} sourceState="none" />
+
+## Props
+
+`WuiTextarea` extends the HTML attributes of `textarea`. Additional props: `label`, `height`, `status`, `helpers`. Other props from `TextareaHTMLAttributes` (e.g. `placeholder`, `disabled`, `id`, `aria-*`, `value`, `onChange`, `rows`) are supported. If `label` is provided without `id`, an `id` is generated to link the label to the field.
+
+**Helpers:** pass an array of `{ message: string, status?: WuiInputHelperStatus }` to display one or more helper lines under the textarea (default, error, or valid style).
+
+<ArgTypes />
+
+## Implementation
+
+Default textarea (size M, default state):
+
+```tsx
+import { WuiTextarea } from "@wawawoom/wui";
+
+<WuiTextarea placeholder="Enter your message..." />;
+```
+
+With size and state:
+
+```tsx
+import {
+  WuiTextarea,
+  WuiTextareaHeight,
+  WuiTextareaStatus,
+} from "@wawawoom/wui";
+
+<WuiTextarea
+  height={WuiTextareaHeight.L}
+  status={WuiTextareaStatus.ERROR}
+  placeholder="Invalid value"
+/>;
+```
+
+With label (recommended for accessibility):
+
+```tsx
+import { WuiTextarea } from "@wawawoom/wui";
+
+<WuiTextarea
+  label="Message"
+  placeholder="Enter your message..."
+  rows={4}
+/>;
+```
+
+Controlled textarea (value + onChange):
+
+```tsx
+import { useState } from "react";
+import { WuiTextarea } from "@wawawoom/wui";
+
+function MyForm() {
+  const [value, setValue] = useState("");
+
+  return (
+    <WuiTextarea
+      label="Comment"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Your comment..."
+      rows={4}
+    />
+  );
+}
+```
+
+With helpers (hint or validation messages):
+
+```tsx
+import {
+  WuiTextarea,
+  WuiTextareaStatus,
+  WuiInputHelperStatus,
+} from "@wawawoom/wui";
+
+<WuiTextarea
+  label="Description"
+  placeholder="Describe your project..."
+  status={WuiTextareaStatus.ERROR}
+  helpers={[
+    {
+      status: WuiInputHelperStatus.ERROR,
+      message: "Description must be at least 20 characters.",
+    },
+  ]}
+/>
+```
+
+Disabled:
+
+```tsx
+import { WuiTextarea } from "@wawawoom/wui";
+
+<WuiTextarea disabled placeholder="Disabled" rows={3} />;
+```

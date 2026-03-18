@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { WuiInput } from "../components/WuiInput/WuiInput";
+import { WuiTextarea } from "../components/WuiTextarea/WuiTextarea";
 import { WuiSelect } from "../components/WuiSelect/WuiSelect";
 import { WuiText } from "../components/WuiText/WuiText";
 import { WuiTextAs, WuiTextSize } from "../components/WuiText/WuiText.props";
@@ -72,6 +73,13 @@ export const FormExample: Story = {
               message: "We only accept Gmail addresses",
             },
           ]}
+        />
+
+        <WuiTextarea
+          label="Message"
+          placeholder="Your message..."
+          name="message"
+          rows={4}
         />
 
         <WuiInput

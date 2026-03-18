@@ -1,0 +1,10 @@
+.box {
+  display: inline flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border: 1px solid #e4e4e4;
+  padding: 5px;
+  border-radius: 5px;
+}

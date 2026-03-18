@@ -1,0 +1,6 @@
+.textarea {
+  field-sizing: content;
+  width: 100%;
+  margin-top: 1rem;
+  min-height: 50px;
+}
