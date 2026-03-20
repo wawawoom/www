@@ -2,7 +2,6 @@ import { Suspense, useRef, useState } from "react";
 
 import {
   WuiButton,
-  WuiButtonColor,
   WuiInput,
   WuiModal,
   WuiModalWidth,
@@ -12,43 +11,15 @@ import {
   WuiTitleAs,
 } from "@wawawoom/wui";
 
+import { getLabItems } from "./utils/getLabItems";
+import { labTypeToColor } from "./utils/labTypeToColor";
+
 // Discover all demo components: convention is components/<category>/<DemoName>/<DemoName>.tsx
 const componentModules = import.meta.glob<{
   default: React.ComponentType;
 }>("./components/**/*.tsx");
 
-type LabItem = {
-  key: string;
-  category: string;
-  label: string;
-};
-
-function getLabItems(): LabItem[] {
-  const items: LabItem[] = [];
-
-  for (const path of Object.keys(componentModules)) {
-    // Match ./components/<category>/<Name>/<Name>.tsx (same folder and file name)
-    const match = path.match(/^\.\/components\/([^/]+)\/([^/]+)\/\2\.tsx$/);
-
-    if (!match) continue;
-    const [, category, name] = match;
-    const label = name.replace(/([A-Z])/g, " $1").trim();
-
-    items.push({
-      key: path,
-      category: category.toUpperCase(),
-      label,
-    });
-  }
-
-  items.sort(
-    (a, b) =>
-      a.category.localeCompare(b.category) || a.label.localeCompare(b.label)
-  );
-  return items;
-}
-
-const LAB_ITEMS = getLabItems();
+const LAB_ITEMS = getLabItems(componentModules);
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -99,7 +70,7 @@ const App = () => {
         {filteredItems.map((item) => (
           <li key={item.key}>
             <WuiButton
-              color={WuiButtonColor.SUCCESS}
+              color={labTypeToColor(item.category)}
               onClick={() => onClickItem(item.key)}
             >
               {item.category} | {item.label}

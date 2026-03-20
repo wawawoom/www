@@ -1,0 +1,9 @@
+.gameOfLifeSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c {
+  margin: 0 auto;
+}

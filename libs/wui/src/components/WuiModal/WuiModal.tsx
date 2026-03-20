@@ -13,6 +13,7 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
       title,
       children,
       footer,
+      noBodyPadding = false,
       width = WuiModalWidth.S,
       className = "",
       ...props
@@ -172,7 +173,14 @@ export const WuiModal = forwardRef<HTMLDialogElement, WuiModalProps>(
             />
           </header>
 
-          <div className="wui-modal__body">{children}</div>
+          <div
+            className={clsx(
+              "wui-modal__body",
+              noBodyPadding && "wui-modal__body--no-padding"
+            )}
+          >
+            {children}
+          </div>
 
           {footer != null && (
             <footer className="wui-modal__footer">{footer}</footer>

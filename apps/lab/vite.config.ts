@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
   );
 
   return {
+    base: mode === "production" ? "/projects/lab/" : "/",
     plugins: [react()],
     server: {
       port: 5175,

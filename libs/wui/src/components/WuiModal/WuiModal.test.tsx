@@ -243,6 +243,28 @@ describe("WuiModal", () => {
     expect(objRef.current).toBeInstanceOf(HTMLDialogElement);
   });
 
+  it("applies wui-modal__body--no-padding when noBodyPadding is true", () => {
+    render(
+      <WuiModal open onClose={jest.fn()} noBodyPadding>
+        Body content
+      </WuiModal>
+    );
+
+    const body = document.querySelector(".wui-modal__body");
+    expect(body).toHaveClass("wui-modal__body--no-padding");
+  });
+
+  it("does not apply wui-modal__body--no-padding when noBodyPadding is false", () => {
+    render(
+      <WuiModal open onClose={jest.fn()} noBodyPadding={false}>
+        Body content
+      </WuiModal>
+    );
+
+    const body = document.querySelector(".wui-modal__body");
+    expect(body).not.toHaveClass("wui-modal__body--no-padding");
+  });
+
   it("cancels the opening animation frame on unmount", () => {
     const onClose = jest.fn();
     const cancelSpy = jest.spyOn(globalThis as any, "cancelAnimationFrame");

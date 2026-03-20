@@ -17,4 +17,6 @@ export interface WuiModalProps extends Omit<
   children: ReactNode;
   title?: string;
   footer?: ReactNode;
+  /** When true, removes padding from the modal body */
+  noBodyPadding?: boolean;
 }

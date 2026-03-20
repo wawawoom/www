@@ -1,4 +1,4 @@
-import "./InterpolateSize.css";
+import styles from "./InterpolateSize.module.css";
 
 const InterpolateSize = () => {
   return (
@@ -24,7 +24,7 @@ const InterpolateSize = () => {
       </pre>
 
       <section>
-        <div className="box">
+        <div className={styles.box}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod,
           urna eu tincidunt consectetur, nisi nisl aliquam enim, eget consequat
           sem erat et libero.

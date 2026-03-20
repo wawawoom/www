@@ -42,6 +42,13 @@ const meta = {
         defaultValue: { summary: "WuiModalWidth.S" },
       },
     },
+    noBodyPadding: {
+      control: "boolean",
+      description: "When true, removes padding from the modal body",
+      table: {
+        defaultValue: { summary: "false" },
+      },
+    },
   },
 } satisfies Meta<typeof WuiModal>;
 
@@ -57,6 +64,7 @@ export const Component: Story = {
     title: "This a very long title example to show ellipsis",
     footer: undefined,
     width: WuiModalWidth.S,
+    noBodyPadding: false,
   },
   render: (args) => {
     const [open, setOpen] = useState(args.open ?? false);
@@ -76,6 +84,7 @@ export const Component: Story = {
             args.title ?? "This a very long title example to show ellipsis"
           }
           width={args.width ?? WuiModalWidth.S}
+          noBodyPadding={args.noBodyPadding}
           footer={
             <>
               <WuiButton

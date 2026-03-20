@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { WuiInput, WuiTitle, WuiTitleAs } from "@wawawoom/wui";
 
-import "./TextBalance.css";
+import styles from "./TextBalance.module.css";
 
 const TextBalance = () => {
   const [isBalanceActive, setIsBalanceActive] = useState(false);
@@ -21,7 +21,7 @@ const TextBalance = () => {
       />
 
       <WuiTitle
-        className="text-balance"
+        className={styles.textBalance}
         as={WuiTitleAs.H2}
         style={{
           textWrap: isBalanceActive ? "balance" : "auto",
