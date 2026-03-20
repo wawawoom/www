@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn",
-    "slug": "rn",
+    "name": "wui-rn",
+    "slug": "wui-rn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
