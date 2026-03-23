@@ -170,6 +170,10 @@
   }
 }
 
+.wui-modal__body--no-padding {
+  padding: 0;
+}
+
 .wui-modal__footer {
   padding: 1rem;
   border-top: 1px solid var(--wui-color-alias-neutral-200);

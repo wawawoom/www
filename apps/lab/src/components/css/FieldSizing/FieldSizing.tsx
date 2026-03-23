@@ -1,23 +1,19 @@
 import { WuiTextarea } from "@wawawoom/wui";
 
-import "./FieldSizing.css";
+import styles from "./FieldSizing.module.css";
 
 const FieldSizing = () => {
   return (
     <>
       <pre>
         <code>{`textarea { field-sizing: content; }`}</code>
-
-        <section>
-          <form>
-            <WuiTextarea
-              id="message"
-              name="message"
-              className="textarea"
-            ></WuiTextarea>
-          </form>
-        </section>
       </pre>
+
+      <section>
+        <form>
+          <WuiTextarea className={styles.textarea}></WuiTextarea>
+        </form>
+      </section>
     </>
   );
 };
