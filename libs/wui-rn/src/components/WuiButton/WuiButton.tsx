@@ -2,12 +2,17 @@ import React from "react";
 import { Pressable, Text } from "react-native";
 
 import { getBackgroundColor, getTextColor, styles } from "./WuiButton.styles";
-import { WuiButtonColor, WuiButtonProps } from "./WuiButtonProps";
+import {
+  WuiButtonColor,
+  WuiButtonProps,
+  WuiButtonSize,
+} from "./WuiButtonProps";
 
 export const WuiButton = (props: WuiButtonProps) => {
   const {
     label,
     color = WuiButtonColor.PRIMARY,
+    size = WuiButtonSize.M,
     block = false,
     disabled = false,
     ...rest
@@ -18,6 +23,7 @@ export const WuiButton = (props: WuiButtonProps) => {
       style={(state) => {
         return [
           styles.base,
+          styles[`${size}Size`],
           disabled ? styles.disabled : getBackgroundColor(color, state.pressed),
           block && styles.block,
         ];
@@ -25,7 +31,13 @@ export const WuiButton = (props: WuiButtonProps) => {
       {...rest}
     >
       <Text
-        style={[styles.label, disabled ? styles.gray : getTextColor(color)]}
+        numberOfLines={1}
+        ellipsizeMode="tail"
+        style={[
+          styles.label,
+          styles[`${size}Label`],
+          disabled ? styles.gray : getTextColor(color),
+        ]}
       >
         {label}
       </Text>

@@ -1,20 +1,23 @@
 import React from "react";
-import { View } from "react-native";
 
 import type { Meta, StoryObj } from "@storybook/react-native";
 import { fn } from "storybook/test";
 
-import { WuiButtonColor } from "../../../src/components/WuiButton/WuiButtonProps";
-import { WuiButton } from "./WuiButton";
+import { WuiButton } from "../../src/components/WuiButton";
+import {
+  WuiButtonColor,
+  WuiButtonSize,
+} from "../../src/components/WuiButton/WuiButtonProps";
+import { StoryContainer } from "./StoryContainer";
 
 const meta = {
   title: "WUI/WuiButton",
   component: WuiButton,
   decorators: [
     (Story) => (
-      <View style={{ flex: 1, alignItems: "flex-start", padding: 20 }}>
+      <StoryContainer>
         <Story />
-      </View>
+      </StoryContainer>
     ),
   ],
   tags: ["autodocs"],
@@ -23,11 +26,16 @@ const meta = {
     label: "Button",
     color: WuiButtonColor.PRIMARY,
     block: false,
+    size: WuiButtonSize.M,
   },
   argTypes: {
     color: {
       control: { type: "select" },
       options: Object.values(WuiButtonColor),
+    },
+    size: {
+      control: { type: "select" },
+      options: Object.values(WuiButtonSize),
     },
     block: {
       control: { type: "boolean" },

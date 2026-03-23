@@ -2,7 +2,8 @@ export const wui: {
   color: Record<string, string>;
   colorAlias: Record<string, string>;
   space: Record<string, number>;
-} = { color: {}, colorAlias: {}, space: {} };
+  font: Record<string, Record<string, string>>;
+} = { color: {}, colorAlias: {}, space: {}, font: {} };
 
 wui.color = {
   black0: "#ffffff",
@@ -137,4 +138,11 @@ wui.space = {
   44: 44,
   60: 60,
   96: 96,
+};
+
+wui.font = {
+  // family: WUI_FONT_NEWSREADER_MEDIUM;
+  // size: {
+  // }fontFamily: WUI_FONT_NEWSREADER_MEDIUM,
+  // fontWeight: "400",
 };

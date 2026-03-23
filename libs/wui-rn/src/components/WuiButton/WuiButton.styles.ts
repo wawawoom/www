@@ -8,8 +8,6 @@ export const styles = StyleSheet.create({
   base: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
   },
 
   block: {
@@ -23,7 +21,6 @@ export const styles = StyleSheet.create({
   label: {
     fontFamily: WUI_FONT_NEWSREADER_MEDIUM,
     fontWeight: "400",
-    fontSize: 16,
   },
 
   ghost: { backgroundColor: "transparent" },
@@ -47,6 +44,14 @@ export const styles = StyleSheet.create({
   black: { color: wui.colorAlias.neutral900 },
   white: { color: wui.colorAlias.neutral0 },
   gray: { color: wui.colorAlias.neutral400 },
+
+  sSize: { paddingHorizontal: wui.space[12], height: 40 },
+  mSize: { paddingHorizontal: wui.space[16], height: 48 },
+  lSize: { paddingHorizontal: wui.space[20], height: 56 },
+
+  sLabel: { fontSize: 16 },
+  mLabel: { fontSize: 18 },
+  lLabel: { fontSize: 20 },
 });
 
 export const getBackgroundColor = (
@@ -55,36 +60,11 @@ export const getBackgroundColor = (
 ): ViewStyle => {
   if (isPressed) {
     return styles[`${color}Pressed`];
-  } else {
+  } else if (Boolean(styles[color])) {
     return styles[color];
+  } else {
+    throw new Error("Invalid WuiButton background color");
   }
-
-  //   switch (color) {
-  //     case WuiButtonColor.GHOST:
-  //       return styles.ghost;
-
-  //     case WuiButtonColor.PRIMARY:
-  //       return styles.primary;
-
-  //     case WuiButtonColor.SECONDARY:
-  //       return styles.secondary;
-
-  //     case WuiButtonColor.SUCCESS:
-  //       return styles.success;
-
-  //     case WuiButtonColor.DANGER:
-  //       return styles.danger;
-
-  //     case WuiButtonColor.WARNING:
-  //       return styles.warning;
-
-  //     case WuiButtonColor.INFO:
-  //       return styles.info;
-
-  //     default: {
-  //       throw new Error("Invalid WuiButton background color");
-  //     }
-  //   }
 };
 
 export const getTextColor = (color: WuiButtonColor): TextStyle => {
