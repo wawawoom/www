@@ -1,5 +1,5 @@
 // Do not edit directly, this file was auto-generated.
-// Generated from tokens/core/color.json
+// Generated from libs/design-token/tokens/atomic/color.json (color names)
 
 export enum WuiColorName {
   BLACK_0 = "black-0",

@@ -1,12 +1,34 @@
 import React from "react";
-import { Pressable, Text } from "react-native";
+import { Pressable } from "react-native";
 
-import { getBackgroundColor, getTextColor, styles } from "./WuiButton.styles";
+import { wui } from "../../styles/atomic";
+import { WuiText } from "../WuiText/WuiText";
+import {
+  WuiFontFamily,
+  WuiTextSize,
+  WuiTextWeight,
+} from "../WuiText/WuiTextProps";
+import {
+  getBackgroundColor,
+  getButtonLabelColorAlias,
+  styles,
+} from "./WuiButton.styles";
 import {
   WuiButtonColor,
   WuiButtonProps,
   WuiButtonSize,
 } from "./WuiButtonProps";
+
+const LABEL_TEXT_SIZE: Record<WuiButtonSize, WuiTextSize> = {
+  [WuiButtonSize.S]: WuiTextSize.S,
+  [WuiButtonSize.M]: WuiTextSize.S,
+  [WuiButtonSize.L]: WuiTextSize.M,
+};
+
+const sButtonLabelCompactStyle = {
+  fontSize: 16,
+  lineHeight: Math.round(16 * wui.font.lineHeightRatio),
+};
 
 export const WuiButton = (props: WuiButtonProps) => {
   const {
@@ -18,29 +40,34 @@ export const WuiButton = (props: WuiButtonProps) => {
     ...rest
   } = props;
 
+  const isDisabled = Boolean(disabled);
+
   return (
     <Pressable
+      {...rest}
+      disabled={isDisabled}
       style={(state) => {
         return [
           styles.base,
           styles[`${size}Size`],
-          disabled ? styles.disabled : getBackgroundColor(color, state.pressed),
+          isDisabled
+            ? styles.disabled
+            : getBackgroundColor(color, state.pressed),
           block && styles.block,
         ];
       }}
-      {...rest}
     >
-      <Text
+      <WuiText
         numberOfLines={1}
         ellipsizeMode="tail"
-        style={[
-          styles.label,
-          styles[`${size}Label`],
-          disabled ? styles.gray : getTextColor(color),
-        ]}
+        size={LABEL_TEXT_SIZE[size]}
+        fontFamily={WuiFontFamily.SERIF}
+        weight={WuiTextWeight.REGULAR}
+        color={getButtonLabelColorAlias(color, isDisabled)}
+        style={size === WuiButtonSize.S ? sButtonLabelCompactStyle : undefined}
       >
         {label}
-      </Text>
+      </WuiText>
     </Pressable>
   );
 };

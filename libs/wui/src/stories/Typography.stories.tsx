@@ -63,7 +63,7 @@ export const DocumentExample: Story = {
       </WuiText>
 
       <WuiText as={WuiTextAs.P}>
-        And this text returns to normal to continue the content.
+        And this text returns to regular weight to continue the content.
       </WuiText>
 
       <WuiText size={WuiTextSize.S} as={WuiTextAs.P}>

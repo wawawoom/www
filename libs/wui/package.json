@@ -15,9 +15,9 @@
     }
   },
   "scripts": {
-    "dev": "concurrently \"pnpm run watch:tokens\" \"storybook dev -p 6006\" --names \"tokens,storybook\" --prefix-colors \"cyan,blue\"",
-    "watch:tokens": "nodemon",
-    "build:variables": "style-dictionary build --config ./style-dictionary/config.mjs && style-dictionary build --config ./style-dictionary/config-dark.mjs && node scripts/generate-dark-prefers.js",
+    "dev": "pnpm exec concurrently \"pnpm run watch:tokens\" \"storybook dev -p 6006\" --names \"tokens,storybook\" --prefix-colors \"cyan,blue\"",
+    "watch:tokens": "pnpm --filter @wawawoom/design-token run watch:tokens",
+    "build:variables": "pnpm --filter @wawawoom/design-token run build:tokens && node scripts/generate-dark-prefers.js",
     "build:lib": "tsc && vite build",
     "build:storybook": "storybook build --output-dir dist_storybook",
     "build": "pnpm run build:variables && pnpm run test && pnpm run build:lib && pnpm run build:storybook",
@@ -28,6 +28,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@wawawoom/design-token": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
@@ -47,8 +48,6 @@
     "storybook": "^8.6.15",
     "typescript": "~5.9.3",
     "vite": "^6.0.0",
-    "style-dictionary": "^5.2.0",
-    "nodemon": "^3.1.0",
     "concurrently": "^9.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",

@@ -10,6 +10,8 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: {
     "\\.css$": "<rootDir>/jest.css-mock.js",
+    "^@wawawoom/design-token/enum$":
+      "<rootDir>/../design-token/src/enum/index.ts",
   },
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",

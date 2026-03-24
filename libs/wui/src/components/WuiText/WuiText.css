@@ -1,14 +1,14 @@
 .wui-text {
-  font-weight: var(--wui-font-weight-normal);
+  font-weight: var(--wui-font-weight-regular);
   line-height: var(--wui-line-height-base);
 }
 
 .wui-text--serif {
-  font-family: var(--wui-font-family);
+  font-family: var(--wui-font-serif);
 }
 
 .wui-text--sans-serif {
-  font-family: var(--wui-font-family-sans-serif);
+  font-family: var(--wui-font-sans-serif);
 }
 
 p.wui-text {
@@ -43,8 +43,12 @@ p.wui-text {
   font-size: var(--wui-text-font-size-xxl);
 }
 
-.wui-text--normal {
-  font-weight: var(--wui-font-weight-normal);
+.wui-text--light {
+  font-weight: var(--wui-font-weight-light);
+}
+
+.wui-text--regular {
+  font-weight: var(--wui-font-weight-regular);
 }
 
 .wui-text--bold {

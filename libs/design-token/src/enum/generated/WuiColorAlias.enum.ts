@@ -1,5 +1,5 @@
 // Do not edit directly, this file was auto-generated.
-// Generated from tokens/semantic/color.json
+// Generated from libs/design-token/tokens/semantic/color.json
 
 export enum WuiColorAlias {
   DANGER_0 = "danger-0",

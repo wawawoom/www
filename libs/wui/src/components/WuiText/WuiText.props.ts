@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from "react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 
 export type WuiTextElement =
   | HTMLDivElement
@@ -24,7 +24,8 @@ export enum WuiTextSize {
 }
 
 export enum WuiTextWeight {
-  NORMAL = "normal",
+  LIGHT = "light",
+  REGULAR = "regular",
   BOLD = "bold",
 }
 

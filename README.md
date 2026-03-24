@@ -19,6 +19,24 @@ pnpm install
 
 ---
 
+## Design tokens and Style Dictionary
+
+Design token **sources** live in **`libs/design-token/tokens/`** (JSON). **Style Dictionary** runs from **`@wawawoom/design-token`** (`libs/design-token`).
+
+**Generated outputs (do not edit by hand):**
+
+| Output | Location |
+| --- | --- |
+| CSS variables (light, dark, utils) | `libs/wui/src/styles/` (`variables.css`, `variables-dark.css`, `utils.css`, …) |
+| `variables-dark-prefers.css` | `libs/wui/src/styles/` (produced by `libs/wui/scripts/generate-dark-prefers.js` after each full token build) |
+| Color enums (`WuiColorName`, `WuiColorValue`, `WuiColorAlias`) | `libs/design-token/src/enum/generated/` — **`@wawawoom/design-token/enum`**; **`@wawawoom/wui`** re-exports them |
+
+**Watch and builds:** `watch:tokens` runs **nodemon** in `design-token`, rebuilds on `tokens/**/*.json` changes, then runs `generate-dark-prefers.js`. You can start it from **`libs/wui`** or **`libs/wui-rn`** (`pnpm run watch:tokens` or `pnpm run dev`). For a one-off web build, prefer **`pnpm --filter @wawawoom/wui run build:variables`** (Style Dictionary + dark-prefers).
+
+**React Native:** `wui-rn` imports palette JSON from `@wawawoom/design-token/tokens/*` and color enums from `@wawawoom/design-token/enum`. Metro must resolve that subpath (see `libs/wui-rn/metro.config.js` and `apps/rn/metro.config.js`).
+
+---
+
 ## Projects
 
 ### apps/www
@@ -59,8 +77,9 @@ Shared UI library (<code>@wawawoom/wui</code>): React components, design tokens,
 | Command (from root)                          | From project folder       | Description                                                          |
 | -------------------------------------------- | ------------------------- | -------------------------------------------------------------------- |
 | <code>pnpm --filter @wawawoom/wui run dev</code>        | <code>pnpm run dev</code>            | Start Storybook (port 6006) and token watch.                         |
-| <code>pnpm --filter @wawawoom/wui run watch:tokens</code> | <code>pnpm run watch:tokens</code>   | Rebuild CSS variables (tokens) on change.                            |
-| <code>pnpm --filter @wawawoom/wui run build:variables</code> | <code>pnpm run build:variables</code> | One-off build of design tokens (CSS variables).                      |
+| <code>pnpm --filter @wawawoom/design-token run watch:tokens</code> | (from <code>libs/design-token</code>) | Rebuild CSS + enums when <code>tokens/**/*.json</code> change.            |
+| <code>pnpm --filter @wawawoom/wui run watch:tokens</code> | <code>pnpm run watch:tokens</code>   | Same as above (delegates to <code>@wawawoom/design-token</code>).      |
+| <code>pnpm --filter @wawawoom/wui run build:variables</code> | <code>pnpm run build:variables</code> | One-off token build: Style Dictionary + <code>variables-dark-prefers.css</code> (enums in <code>@wawawoom/design-token</code>).                      |
 | <code>pnpm --filter @wawawoom/wui run build:lib</code>   | <code>pnpm run build:lib</code>      | Compile TypeScript and Vite build → <code>libs/wui/dist</code>.                 |
 | <code>pnpm --filter @wawawoom/wui run build:storybook</code> | <code>pnpm run build:storybook</code> | Build Storybook → <code>libs/wui/dist_storybook</code>.                         |
 | <code>pnpm --filter @wawawoom/wui run build</code>      | <code>pnpm run build</code>          | <code>build:variables</code> + tests + <code>build:lib</code> + <code>build:storybook</code>.               |
@@ -71,6 +90,32 @@ Shared UI library (<code>@wawawoom/wui</code>): React components, design tokens,
 | <code>pnpm --filter @wawawoom/wui run deploy:tests</code> | <code>pnpm run deploy:tests</code>   | Deploy tests (script <code>libs/wui/scripts/deploy-wui-tests.sh</code>).                         |
 
 **From project folder:** <code>cd libs/wui</code> then run <code>pnpm run &lt;script&gt;</code> (e.g. <code>pnpm run dev</code>).
+
+---
+
+### libs/wui-rn
+
+React Native UI library (Expo, on-device Storybook). Uses <code>@wawawoom/design-token</code> for palette JSON and generated color enums (<code>@wawawoom/design-token/enum</code>).
+
+| Command (from root) | From project folder | Description |
+| --- | --- | --- |
+| <code>pnpm --filter wui-rn run dev</code> | <code>pnpm run dev</code> | Storybook RN and token watch (delegates to <code>@wawawoom/design-token</code>). |
+| <code>pnpm --filter wui-rn run watch:tokens</code> | <code>pnpm run watch:tokens</code> | Same token watch as <code>wui</code> (CSS under <code>libs/wui</code>, enums under <code>libs/design-token</code>, then <code>generate-dark-prefers.js</code>). |
+
+**From project folder:** <code>cd libs/wui-rn</code> then run <code>pnpm run &lt;script&gt;</code>.
+
+---
+
+### libs/design-token
+
+Shared **design tokens** (JSON) and **Style Dictionary** config for <code>@wawawoom/wui</code> and <code>wui-rn</code>. Source files live under <code>libs/design-token/tokens/</code>. **Outputs:** CSS variables and utils under <code>libs/wui/src/styles/</code>; color TypeScript enums under <code>libs/design-token/src/enum/generated/</code> (exported as <code>@wawawoom/design-token/enum</code>). <code>wui-rn</code> reads palette JSON and those enums at build time (Metro resolves the enum entry).
+
+| Command (from root) | Description |
+| --- | --- |
+| <code>pnpm --filter @wawawoom/design-token run build:tokens</code> | Style Dictionary: light + dark CSS in <code>wui</code>, color enums in this package. |
+| <code>pnpm --filter @wawawoom/design-token run watch:tokens</code> | Nodemon: rebuild on <code>tokens/**/*.json</code> change, then <code>generate-dark-prefers.js</code> in <code>wui</code>. |
+
+Usually you run <code>pnpm --filter @wawawoom/wui run build:variables</code> instead of <code>build:tokens</code> alone; it calls this package then <code>generate-dark-prefers.js</code>.
 
 ---
 
@@ -101,9 +146,11 @@ Deploy static CDN content (images, videos, etc.) to the server. Uses <code>lftp<
 
 ## Command summary by package
 
-| Package           | Main commands                                                |
-| ----------------- | ------------------------------------------------------------ |
-| **www**           | <code>dev</code>, <code>build</code>, <code>lint</code>, <code>preview</code>, <code>deploy</code>                  |
-| **wawawood**      | <code>dev</code>, <code>build</code>, <code>lint</code>, <code>preview</code>                            |
-| **@wawawoom/wui** | <code>dev</code>, <code>build</code>, <code>build:lib</code>, <code>build:storybook</code>, <code>test</code>, <code>deploy</code> |
-| **cdn**           | <code>deploy</code>, <code>deploy:download</code>, <code>deploy:sync</code>                    |
+| Package | Main commands |
+| --- | --- |
+| **www** | <code>dev</code>, <code>build</code>, <code>lint</code>, <code>preview</code>, <code>deploy</code> |
+| **wawawood** | <code>dev</code>, <code>build</code>, <code>lint</code>, <code>preview</code> |
+| **@wawawoom/wui** | <code>dev</code>, <code>watch:tokens</code>, <code>build:variables</code>, <code>build</code>, <code>build:lib</code>, <code>build:storybook</code>, <code>test</code>, <code>deploy</code> |
+| **wui-rn** | <code>dev</code>, <code>watch:tokens</code>, <code>start</code>, <code>storybook-generate</code> |
+| **@wawawoom/design-token** | <code>build:tokens</code>, <code>watch:tokens</code> |
+| **cdn** | <code>deploy</code>, <code>deploy:download</code>, <code>deploy:sync</code> |

@@ -83,20 +83,22 @@ Components use semantic variables (<code>--wui-color-alias-neutral-\*</code>, et
 
 ## Tokens and build
 
-Styles are driven by **tokens** (Style Dictionary):
+Styles are driven by **tokens** (Style Dictionary) in <code>@wawawoom/design-token</code> (<code>libs/design-token</code>):
 
-1. **Atomic tokens** (<code>src/tokens/atomic/</code>): raw colors, typography, spacing.
-2. **Semantic tokens** (<code>src/tokens/semantic/</code>): aliases (neutral, success, danger, warning, info) that reference atomic tokens.
-3. **Dark theme** (<code>src/tokens/semantic/color.dark.json</code>): same aliases with inverted neutral for dark mode.
+1. **Atomic tokens** (<code>libs/design-token/tokens/atomic/</code>): colors, global font settings, text/title font sizes (<code>font.json</code>), spacing.
+2. **Semantic tokens** (<code>libs/design-token/tokens/semantic/</code>): aliases (neutral, success, danger, warning, info) that reference atomic tokens.
+3. **Dark theme** (<code>libs/design-token/tokens/semantic/color.dark.json</code>): same aliases with inverted neutral for dark mode.
 
-The **<code>pnpm run build:variables</code>** script generates:
+The **<code>pnpm run build:variables</code>** script (runs Style Dictionary via <code>@wawawoom/design-token</code>, then <code>generate-dark-prefers.js</code>) generates:
 
 - <code>variables.css</code> (light theme, <code>:root</code>),
 - <code>variables-dark.css</code> (selector <code>[data-theme="dark"]</code>),
 - <code>variables-dark-prefers.css</code> (dark theme when the browser prefers
-  dark and no <code>data-theme</code> is set).
+  dark and no <code>data-theme</code> is set),
+- color enums under <code>libs/design-token/src/enum/generated/</code> (package
+  <code>@wawawoom/design-token/enum</code>).
 
-In development, <code>nodemon</code> watches <code>src/tokens</code> and re-runs this build when JSON files change.
+In development, <code>pnpm run dev</code> runs <code>watch:tokens</code> in <code>@wawawoom/design-token</code>, which watches <code>tokens/</code> and rebuilds CSS, enums, and dark-prefers CSS when JSON changes.
 
 ---
 
@@ -105,7 +107,7 @@ In development, <code>nodemon</code> watches <code>src/tokens</code> and re-runs
 | Command                               | Description                                           |
 | ------------------------------------- | ----------------------------------------------------- |
 | <code>pnpm run dev</code>             | Runs token watch and Storybook (port 6006).           |
-| <code>pnpm run build:variables</code> | Generates CSS and enum files from tokens.             |
+| <code>pnpm run build:variables</code> | Style Dictionary (CSS + enums in <code>@wawawoom/design-token</code>) + dark-prefers CSS. |
 | <code>pnpm run build:lib</code>       | Builds the lib (TypeScript + Vite).                   |
 | <code>pnpm run build:storybook</code> | Builds Storybook into <code>dist_storybook</code>.    |
 | <code>pnpm run build</code>           | build:variables → test → build:lib → build:storybook. |

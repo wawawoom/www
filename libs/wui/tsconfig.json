@@ -17,7 +17,11 @@
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@wawawoom/design-token/enum": ["../design-token/src/enum/index.ts"]
+    }
   },
   "include": ["src", ".storybook"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,9 +1,9 @@
 import StyleDictionary from "style-dictionary";
 
 /**
- * Format Style Dictionary : génère utils.css avec
- * 1) classes utilitaires couleur (bg-*, color-*) à partir des tokens color (atomic)
- * 2) classes utilitaires spacing (p, m) à partir des tokens space
+ * Style Dictionary format: emits `utils.css` with
+ * 1) color utility classes (bg-*, color-*) from atomic color tokens
+ * 2) spacing utilities (p, m) from space tokens
  */
 StyleDictionary.registerFormat({
   name: "css/utils",

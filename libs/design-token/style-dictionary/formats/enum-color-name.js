@@ -2,22 +2,26 @@ import StyleDictionary from "style-dictionary";
 
 import { getColorEntries } from "../helpers.js";
 
-// Format personnalisé pour générer l'enum WuiColorValue avec les valeurs hexadécimales
+// Custom format: TypeScript enum WuiColorName
 StyleDictionary.registerFormat({
-  name: "typescript/enum-color-value",
+  name: "typescript/enum-color-name",
   format: function ({ dictionary }) {
-    const entries = getColorEntries(dictionary, "color", (token) => {
-      return token.value;
-    });
+    const entries = getColorEntries(
+      dictionary,
+      "color",
+      (token, colorName, shade) => {
+        return `${colorName}-${shade}`;
+      }
+    );
 
     const enumEntries = entries.map(
       (entry) => `  ${entry.key} = "${entry.value}"`
     );
 
     return `// Do not edit directly, this file was auto-generated.
-// Generated from tokens/atomic/color.json
+// Generated from libs/design-token/tokens/atomic/color.json (color names)
 
-export enum WuiColorValue {
+export enum WuiColorName {
 ${enumEntries.join(",\n")}
 }
 `;

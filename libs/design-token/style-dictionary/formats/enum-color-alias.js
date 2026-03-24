@@ -2,7 +2,7 @@ import StyleDictionary from "style-dictionary";
 
 import { getColorEntries } from "../helpers.js";
 
-// Format personnalisé pour générer l'enum TypeScript WuiColorAlias
+// Custom format: TypeScript enum WuiColorAlias
 StyleDictionary.registerFormat({
   name: "typescript/enum-color-alias",
   format: function ({ dictionary }) {
@@ -19,7 +19,7 @@ StyleDictionary.registerFormat({
     );
 
     return `// Do not edit directly, this file was auto-generated.
-// Generated from tokens/semantic/color.json
+// Generated from libs/design-token/tokens/semantic/color.json
 
 export enum WuiColorAlias {
 ${enumEntries.join(",\n")}

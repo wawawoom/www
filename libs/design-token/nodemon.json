@@ -1,0 +1,6 @@
+{
+  "watch": ["tokens"],
+  "ext": "json",
+  "exec": "pnpm run build:tokens && node ../wui/scripts/generate-dark-prefers.js",
+  "delay": 500
+}

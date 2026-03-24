@@ -1,6 +1,7 @@
 import { type ElementType, type Ref, forwardRef } from "react";
 
-import { WuiColorAlias } from "../../enum/WuiColorAlias.enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
+
 import { clsx } from "../../utils/clsx";
 import {
   WuiFontFamily,
@@ -15,7 +16,7 @@ export const WuiText = forwardRef<WuiTextElement, WuiTextProps>(
     {
       className = "",
       size = WuiTextSize.M,
-      weight = WuiTextWeight.NORMAL,
+      weight = WuiTextWeight.REGULAR,
       color = WuiColorAlias.NEUTRAL_900,
       fontFamily = WuiFontFamily.SERIF,
       as,

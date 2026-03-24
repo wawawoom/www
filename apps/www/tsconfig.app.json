@@ -24,7 +24,10 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "paths": {
-      "@wawawoom/wui": ["../../libs/wui/src/index.ts"]
+      "@wawawoom/wui": ["../../libs/wui/src/index.ts"],
+      "@wawawoom/design-token/enum": [
+        "../../libs/design-token/src/enum/index.ts"
+      ]
     }
   },
   "include": ["src"]

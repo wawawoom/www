@@ -22,7 +22,7 @@
 
   .zone__cylinder > h2 {
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: var(--wui-font-weight-regular);
     transform-style: preserve-3d;
     backface-visibility: hidden;
     z-index: 2;

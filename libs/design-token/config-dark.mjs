@@ -1,10 +1,10 @@
-import "./transforms/px-to-rem.js";
+import "./style-dictionary/transforms/px-to-rem.js";
 
-/** Build des variables CSS pour le thème dark (sélecteur [data-theme="dark"]). */
+/** Dark theme CSS variables (selector [data-theme="dark"]). */
 export default {
   source: [
-    "src/tokens/atomic/**/*.json",
-    "src/tokens/semantic/color.dark.json",
+    "tokens/atomic/**/*.json",
+    "tokens/semantic/color.dark.json",
   ],
   log: { verbosity: "verbose" },
   platforms: {
@@ -17,7 +17,7 @@ export default {
         "size/px-to-rem",
         "color/css",
       ],
-      buildPath: "src/styles/",
+      buildPath: "../wui/src/styles/",
       files: [
         {
           destination: "variables-dark.css",

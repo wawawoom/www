@@ -25,6 +25,14 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   viteFinal: async (config) => {
+    config.resolve = config.resolve ?? {};
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@wawawoom/design-token/enum": resolve(
+        __dirname,
+        "../../design-token/src/enum/index.ts"
+      ),
+    };
     // Configure base path for deployment
     config.base = "/projects/wui/storybook/";
     // Configure output directory to be in libs/wui/dist_storybook

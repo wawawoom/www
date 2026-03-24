@@ -1,4 +1,8 @@
-export * from "./enum";
+export {
+  WuiColorAlias,
+  WuiColorName,
+  WuiColorValue,
+} from "@wawawoom/design-token/enum";
 export * from "./utils";
 
 export * from "./components/WuiTitle";

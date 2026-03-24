@@ -4,6 +4,14 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@wawawoom/design-token/enum": resolve(
+        __dirname,
+        "../design-token/src/enum/index.ts"
+      ),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

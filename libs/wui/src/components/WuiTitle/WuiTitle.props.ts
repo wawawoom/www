@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from "react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 
 export enum WuiTitleAs {
   H1 = "h1",

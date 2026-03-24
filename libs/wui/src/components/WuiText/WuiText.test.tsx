@@ -3,7 +3,7 @@ import { createRef } from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 import { WuiText } from "./WuiText";
 import { WuiTextAs, WuiTextSize, WuiTextWeight } from "./WuiText.props";
 
@@ -19,7 +19,7 @@ describe("WuiText", () => {
     expect(el).toHaveClass(
       "wui-text",
       "wui-text--m",
-      "wui-text--normal",
+      "wui-text--regular",
       `wui-text--${WuiColorAlias.NEUTRAL_900}`
     );
   });
@@ -44,6 +44,15 @@ describe("WuiText", () => {
       `wui-text--${WuiColorAlias.SUCCESS_500}`,
       "custom"
     );
+  });
+
+  it("applies light weight class", () => {
+    render(
+      <WuiText weight={WuiTextWeight.LIGHT} data-testid="text">
+        Light
+      </WuiText>
+    );
+    expect(screen.getByTestId("text")).toHaveClass("wui-text--light");
   });
 
   it("forwards ref to the underlying element", () => {

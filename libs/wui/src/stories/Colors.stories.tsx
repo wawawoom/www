@@ -8,9 +8,11 @@ import {
   WuiTextWeight,
 } from "../components/WuiText";
 import { WuiTitle, WuiTitleAs } from "../components/WuiTitle";
-import { WuiColorAlias } from "../enum/WuiColorAlias.enum";
-import { WuiColorName } from "../enum/WuiColorName.enum";
-import { WuiColorValue } from "../enum/WuiColorValue.enum";
+import {
+  WuiColorAlias,
+  WuiColorName,
+  WuiColorValue,
+} from "@wawawoom/design-token/enum";
 import "./Colors.css";
 
 const meta = {

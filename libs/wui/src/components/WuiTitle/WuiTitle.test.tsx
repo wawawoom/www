@@ -3,7 +3,7 @@ import { createRef } from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 import { WuiTitle } from "./WuiTitle";
 import { WuiTitleAs, WuiTitleLook } from "./WuiTitle.props";
 

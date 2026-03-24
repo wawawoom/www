@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
+
 import { loremIpsum } from "../../utils/lorem-ipsum";
 import { WuiText } from "./WuiText";
 import {
@@ -46,7 +47,7 @@ const meta = {
       options: Object.values(WuiTextWeight),
       table: {
         type: { summary: "WuiTextWeight" },
-        defaultValue: { summary: "WuiTextWeight.NORMAL" },
+        defaultValue: { summary: "WuiTextWeight.REGULAR" },
       },
     },
     color: {

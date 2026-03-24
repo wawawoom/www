@@ -20,7 +20,7 @@
   z-index: 9999;
   max-inline-size: 20rem;
   padding: var(--wui-space-4) var(--wui-space-8);
-  font-family: var(--wui-font-family-sans-serif);
+  font-family: var(--wui-font-sans-serif);
   font-size: 0.75rem;
   line-height: 1.4;
   color: var(--wui-color-alias-neutral-0);

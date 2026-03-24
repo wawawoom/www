@@ -1,6 +1,7 @@
-import { StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { StyleSheet, ViewStyle } from "react-native";
 
-import { WUI_FONT_NEWSREADER_MEDIUM } from "../../fonts/wuiFontAssets";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
+
 import { wui } from "../../styles/atomic";
 import { WuiButtonColor } from "./WuiButtonProps";
 
@@ -16,11 +17,6 @@ export const styles = StyleSheet.create({
 
   pressed: {
     backgroundColor: wui.colorAlias.neutral200,
-  },
-
-  label: {
-    fontFamily: WUI_FONT_NEWSREADER_MEDIUM,
-    fontWeight: "400",
   },
 
   ghost: { backgroundColor: "transparent" },
@@ -41,17 +37,9 @@ export const styles = StyleSheet.create({
 
   disabled: { backgroundColor: wui.colorAlias.neutral200 },
 
-  black: { color: wui.colorAlias.neutral900 },
-  white: { color: wui.colorAlias.neutral0 },
-  gray: { color: wui.colorAlias.neutral400 },
-
   sSize: { paddingHorizontal: wui.space[12], height: 40 },
   mSize: { paddingHorizontal: wui.space[16], height: 48 },
   lSize: { paddingHorizontal: wui.space[20], height: 56 },
-
-  sLabel: { fontSize: 16 },
-  mLabel: { fontSize: 18 },
-  lLabel: { fontSize: 20 },
 });
 
 export const getBackgroundColor = (
@@ -67,18 +55,25 @@ export const getBackgroundColor = (
   }
 };
 
-export const getTextColor = (color: WuiButtonColor): TextStyle => {
+export const getButtonLabelColorAlias = (
+  color: WuiButtonColor,
+  disabled: boolean
+): WuiColorAlias => {
+  if (disabled) {
+    return WuiColorAlias.NEUTRAL_400;
+  }
+
   switch (color) {
     case WuiButtonColor.GHOST:
     case WuiButtonColor.PRIMARY:
     case WuiButtonColor.SUCCESS:
     case WuiButtonColor.WARNING:
-      return styles.black;
+      return WuiColorAlias.NEUTRAL_900;
 
     case WuiButtonColor.SECONDARY:
     case WuiButtonColor.DANGER:
     case WuiButtonColor.INFO:
-      return styles.white;
+      return WuiColorAlias.NEUTRAL_0;
 
     default: {
       throw new Error("Invalid WuiButton text color");

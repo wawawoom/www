@@ -1,0 +1,19 @@
+{
+  "name": "@wawawoom/design-token",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./enum": "./src/enum/index.ts",
+    "./tokens/*": "./tokens/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build:tokens": "style-dictionary build --config ./config.mjs && style-dictionary build --config ./config-dark.mjs",
+    "watch:tokens": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "style-dictionary": "^5.2.0"
+  }
+}

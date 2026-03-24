@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 import { WuiTitle } from "./WuiTitle";
 import { WuiTitleAs, WuiTitleLook } from "./WuiTitle.props";
 

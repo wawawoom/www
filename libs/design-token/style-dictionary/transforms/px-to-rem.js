@@ -7,7 +7,7 @@ StyleDictionary.registerTransform({
   type: "value",
   transitive: false,
   matcher: (token) => {
-    // Ne pas transformer font.size.base - il doit rester en px
+    // Keep font.size.base in px
     if (
       token.path &&
       token.path.length >= 3 &&
@@ -18,22 +18,18 @@ StyleDictionary.registerTransform({
       return false;
     }
 
-    // Vérifier que la valeur est en px
     if (typeof token.value !== "string" || !token.value.endsWith("px")) {
       return false;
     }
 
-    // Vérifier l'attribut extensions.transform dans le token original
     const transformValue =
       token.original?.extensions?.transform ||
       token.$extensions?.transform ||
       token.extensions?.transform;
 
-    // Retourner true uniquement si extensions.transform === "px-to-rem"
     return transformValue === "px-to-rem";
   },
   transform: (token, options) => {
-    // Double vérification : s'assurer que le token a bien extensions.transform
     const transformValue =
       token.original?.extensions?.transform ||
       token.$extensions?.transform ||

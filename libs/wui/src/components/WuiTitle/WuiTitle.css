@@ -1,5 +1,5 @@
 .wui-title {
-  font-family: var(--wui-font-family);
+  font-family: var(--wui-font-serif);
   font-weight: var(--wui-font-weight-bold);
   line-height: var(--wui-title-line-height-base);
   margin: 0.3em 0;

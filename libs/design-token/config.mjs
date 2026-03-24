@@ -1,15 +1,15 @@
-import "./formats/css-utils.js";
-import "./formats/enum-color-alias.js";
-import "./formats/enum-color-name.js";
-import "./formats/enum-color-value.js";
-import "./transforms/px-to-rem.js";
+import "./style-dictionary/formats/css-utils.js";
+import "./style-dictionary/formats/enum-color-alias.js";
+import "./style-dictionary/formats/enum-color-name.js";
+import "./style-dictionary/formats/enum-color-value.js";
+import "./style-dictionary/transforms/px-to-rem.js";
+import "./style-dictionary/transforms/spacing-number-to-px.js";
 
 export default {
   source: [
-    "src/tokens/atomic/**/*.json",
-    "src/tokens/semantic/color.json",
-    "src/tokens/semantic/space.json",
-    "src/tokens/components/**/*.json",
+    "tokens/atomic/**/*.json",
+    "tokens/semantic/color.json",
+    "tokens/semantic/space.json",
   ],
   clean: true,
   log: {
@@ -22,10 +22,11 @@ export default {
         "attribute/cti",
         "attribute/color",
         "name/kebab",
+        "size/spacing-number-to-px",
         "size/px-to-rem",
         "color/css",
       ],
-      buildPath: "src/styles/",
+      buildPath: "../wui/src/styles/",
       files: [
         {
           destination: "variables.css",
@@ -43,7 +44,7 @@ export default {
     },
     typescript: {
       transformGroup: "js",
-      buildPath: "src/enum/",
+      buildPath: "src/enum/generated/",
       files: [
         {
           destination: "WuiColorName.enum.ts",

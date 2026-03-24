@@ -17,6 +17,11 @@ export default defineConfig(({ mode }) => {
     "../../libs/wui/src/styles/wui.css"
   );
 
+  const designTokenEnumPath = path.resolve(
+    __dirname,
+    "../../libs/design-token/src/enum/index.ts"
+  );
+
   return {
     plugins: [react()],
     server: {
@@ -31,6 +36,10 @@ export default defineConfig(({ mode }) => {
         {
           find: "@wawawoom/wui-css",
           replacement: wuiCssPath,
+        },
+        {
+          find: "@wawawoom/design-token/enum",
+          replacement: designTokenEnumPath,
         },
       ],
     },

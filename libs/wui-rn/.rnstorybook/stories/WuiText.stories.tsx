@@ -3,6 +3,8 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-native";
 import { fn } from "storybook/test";
 
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
+
 import {
   WuiFontFamily,
   WuiText,
@@ -27,8 +29,9 @@ const meta = {
     fontFamily: WuiFontFamily.SERIF,
     size: WuiTextSize.M,
     weight: WuiTextWeight.REGULAR,
+    color: WuiColorAlias.NEUTRAL_900,
     children:
-      "Text uh group eqpirfug epsoiurpiurgfp iesurg prouver sprouts piesrg pvegu rifg Text uh group eqpirfug epsoiurpiurgfp iesurg prouver sprouts piesrg pvegu rifg Text uh group eqpirfug epsoiurpiurgfp iesurg prouver sprouts piesrg pvegu rifg oh gopher proud erpo hv epithet poesurh phoebes pics pei répond donc pieux ouest vu epsiorub vpidgu Spirit pesiru gpuerpvig espoir gvpisdgv piugdsprivpdofu gbpd gpviuhs psi truc ^dosh vpiudgs fpivpouidshr pouch eu pseudo gipvugd fpsiuvgpdsiufvpodus fpovudpsouf hpvouhdfissh",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   argTypes: {
     children: {
@@ -55,7 +58,15 @@ const meta = {
       options: Object.values(WuiTextWeight),
       table: {
         type: { summary: "WuiTextWeight" },
-        defaultValue: { summary: "WuiTextWeight.NORMAL" },
+        defaultValue: { summary: "WuiTextWeight.REGULAR" },
+      },
+    },
+    color: {
+      control: { type: "select" },
+      options: Object.values(WuiColorAlias),
+      table: {
+        type: { summary: "WuiColorAlias" },
+        defaultValue: { summary: "WuiColorAlias.NEUTRAL_900" },
       },
     },
   },

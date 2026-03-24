@@ -1,5 +1,7 @@
 import { TextProps } from "react-native";
 
+import type { WuiColorAlias } from "@wawawoom/design-token/enum";
+
 export enum WuiTextSize {
   XXS = "xxs",
   XS = "xs",
@@ -11,8 +13,8 @@ export enum WuiTextSize {
 }
 
 export enum WuiTextWeight {
+  LIGHT = "light",
   REGULAR = "regular",
-  MEDIUM = "medium",
   BOLD = "bold",
 }
 
@@ -24,6 +26,6 @@ export enum WuiFontFamily {
 export interface WuiTextProps extends TextProps {
   size?: WuiTextSize;
   weight?: WuiTextWeight;
-  // color?: WuiColorAlias;
+  color?: WuiColorAlias;
   fontFamily?: WuiFontFamily;
 }

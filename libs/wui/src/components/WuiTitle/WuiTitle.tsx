@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-import { WuiColorAlias } from "../../enum";
+import { WuiColorAlias } from "@wawawoom/design-token/enum";
 import { clsx } from "../../utils/clsx";
 import { WuiTitleAs, type WuiTitleProps } from "./WuiTitle.props";
 

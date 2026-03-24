@@ -8,6 +8,8 @@
     "./src": "./src/index.ts"
   },
   "scripts": {
+    "watch:tokens": "pnpm --filter @wawawoom/design-token run watch:tokens",
+    "dev": "pnpm expo start &&pnpm exec concurrently \"pnpm run watch:tokens\" \"storybook dev -p 6006\" --names \"tokens,storybook\" --prefix-colors \"cyan,blue\"",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -15,6 +17,7 @@
     "storybook-generate": "sb-rn-get-stories"
   },
   "dependencies": {
+    "@wawawoom/design-token": "workspace:*",
     "@babel/core": "^7.29.0",
     "@gorhom/bottom-sheet": "^5.2.8",
     "@react-native-async-storage/async-storage": "^3.0.1",
@@ -38,6 +41,8 @@
     "storybook": "^10.3.1"
   },
   "devDependencies": {
+    "@storybook/blocks": "^10.3.0",
+    "concurrently": "^9.1.0",
     "@expo/metro-config": "~55.0.11",
     "@types/react": "~19.2.2",
     "typescript": "~5.9.2"

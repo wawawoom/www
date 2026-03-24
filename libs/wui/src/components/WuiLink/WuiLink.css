@@ -1,6 +1,6 @@
 .wui-link {
-  font-family: var(--wui-font-family);
-  font-weight: var(--wui-font-weight-normal);
+  font-family: var(--wui-font-serif);
+  font-weight: var(--wui-font-weight-regular);
 }
 
 .wui-link--ghost {

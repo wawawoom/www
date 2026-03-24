@@ -1,6 +1,6 @@
 .wui-badge {
-  font-family: var(--wui-font-family-sans-serif);
-  font-weight: var(--wui-font-weight-normal);
+  font-family: var(--wui-font-sans-serif);
+  font-weight: var(--wui-font-weight-regular);
   display: inline-flex;
   align-items: center;
   justify-content: center;
