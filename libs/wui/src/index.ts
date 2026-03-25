@@ -2,6 +2,9 @@ export {
   WuiColorAlias,
   WuiColorName,
   WuiColorValue,
+  WuiFontFamily,
+  WuiTextSize,
+  WuiTextWeight,
 } from "@wawawoom/design-token/enum";
 export * from "./utils";
 

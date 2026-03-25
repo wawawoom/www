@@ -5,7 +5,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@wawawoom/design-token/tokens/*": ["../design-token/tokens/*"],
+      "@wawawoom/design-token/tokens/*": ["../design-token/src/tokens/*"],
       "@wawawoom/design-token/enum": ["../design-token/src/enum/index.ts"]
     }
   }

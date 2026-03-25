@@ -85,9 +85,9 @@ Components use semantic variables (<code>--wui-color-alias-neutral-\*</code>, et
 
 Styles are driven by **tokens** (Style Dictionary) in <code>@wawawoom/design-token</code> (<code>libs/design-token</code>):
 
-1. **Atomic tokens** (<code>libs/design-token/tokens/atomic/</code>): colors, global font settings, text/title font sizes (<code>font.json</code>), spacing.
-2. **Semantic tokens** (<code>libs/design-token/tokens/semantic/</code>): aliases (neutral, success, danger, warning, info) that reference atomic tokens.
-3. **Dark theme** (<code>libs/design-token/tokens/semantic/color.dark.json</code>): same aliases with inverted neutral for dark mode.
+1. **Atomic tokens** (<code>libs/design-token/src/tokens/atomic/</code>): colors, global font settings, text/title font sizes (<code>font.json</code>), spacing.
+2. **Semantic tokens** (<code>libs/design-token/src/tokens/semantic/</code>): aliases (neutral, success, danger, warning, info) that reference atomic tokens.
+3. **Dark theme** (<code>libs/design-token/src/tokens/semantic/color.dark.json</code>): same aliases with inverted neutral for dark mode.
 
 The **<code>pnpm run build:variables</code>** script (runs Style Dictionary via <code>@wawawoom/design-token</code>, then <code>generate-dark-prefers.js</code>) generates:
 
@@ -95,10 +95,10 @@ The **<code>pnpm run build:variables</code>** script (runs Style Dictionary via 
 - <code>variables-dark.css</code> (selector <code>[data-theme="dark"]</code>),
 - <code>variables-dark-prefers.css</code> (dark theme when the browser prefers
   dark and no <code>data-theme</code> is set),
-- color enums under <code>libs/design-token/src/enum/generated/</code> (package
+- token enums under <code>libs/design-token/src/enum/</code> (package
   <code>@wawawoom/design-token/enum</code>).
 
-In development, <code>pnpm run dev</code> runs <code>watch:tokens</code> in <code>@wawawoom/design-token</code>, which watches <code>tokens/</code> and rebuilds CSS, enums, and dark-prefers CSS when JSON changes.
+In development, <code>pnpm run dev</code> runs <code>watch:tokens</code> in <code>@wawawoom/design-token</code>, which watches <code>src/tokens/</code> and rebuilds CSS, enums, and dark-prefers CSS when JSON changes.
 
 ---
 

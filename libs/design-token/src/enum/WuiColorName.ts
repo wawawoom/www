@@ -1,5 +1,6 @@
 // Do not edit directly, this file was auto-generated.
-// Generated from libs/design-token/tokens/atomic/color.json (color names)
+// Generated from libs/design-token/src/tokens/atomic/color.json (color names).
+// Import from @wawawoom/design-token/enum (see src/enum/index.ts).
 
 export enum WuiColorName {
   BLACK_0 = "black-0",

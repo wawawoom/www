@@ -53,35 +53,35 @@
           }
         },
         "s": {
-          "value": "18px",
+          "value": "16px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
         "m": {
-          "value": "20px",
+          "value": "18px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
         "l": {
-          "value": "22px",
+          "value": "20px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
         "xl": {
-          "value": "26px",
+          "value": "24px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"
           }
         },
         "xxl": {
-          "value": "30px",
+          "value": "28px",
           "type": "fontSize",
           "extensions": {
             "transform": "px-to-rem"

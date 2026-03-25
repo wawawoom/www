@@ -1,6 +1,11 @@
 import { type HTMLAttributes } from "react";
 
-import { WuiColorAlias } from "@wawawoom/design-token/enum";
+import {
+  WuiColorAlias,
+  WuiFontFamily,
+  WuiTextSize,
+  WuiTextWeight,
+} from "@wawawoom/design-token/enum";
 
 export type WuiTextElement =
   | HTMLDivElement
@@ -13,26 +18,7 @@ export enum WuiTextAs {
   SPAN = "span",
 }
 
-export enum WuiTextSize {
-  XXS = "xxs",
-  XS = "xs",
-  S = "s",
-  M = "m",
-  L = "l",
-  XL = "xl",
-  XXL = "xxl",
-}
-
-export enum WuiTextWeight {
-  LIGHT = "light",
-  REGULAR = "regular",
-  BOLD = "bold",
-}
-
-export enum WuiFontFamily {
-  SERIF = "serif",
-  SANS_SERIF = "sans-serif",
-}
+export { WuiFontFamily, WuiTextSize, WuiTextWeight };
 
 export interface WuiTextProps extends Omit<
   HTMLAttributes<WuiTextElement>,

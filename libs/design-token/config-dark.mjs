@@ -3,8 +3,8 @@ import "./style-dictionary/transforms/px-to-rem.js";
 /** Dark theme CSS variables (selector [data-theme="dark"]). */
 export default {
   source: [
-    "tokens/atomic/**/*.json",
-    "tokens/semantic/color.dark.json",
+    "src/tokens/atomic/**/*.json",
+    "src/tokens/semantic/color.dark.json",
   ],
   log: { verbosity: "verbose" },
   platforms: {

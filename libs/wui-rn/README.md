@@ -4,22 +4,24 @@ React Native UI library (Expo, on-device Storybook). It shares **design tokens**
 
 ## Design tokens and Style Dictionary
 
-- **Token sources** are edited in **`libs/design-token/tokens/`** (not in this package).
-- **Palette and spacing JSON** are imported from `@wawawoom/design-token/tokens/*` (see `src/styles/atomic.ts` and `fromDesignTokens.ts`). Spacing uses **numeric** pixel values in `tokens/semantic/space.json`; Style Dictionary appends `px` for web CSS; RN uses the same numbers as dp.
-- **Color enums** (`WuiColorAlias`, `WuiColorName`, `WuiColorValue`) are generated into **`libs/design-token/src/enum/generated/`** when you run `build:tokens` or `watch:tokens` in `@wawawoom/design-token`. Import from **`@wawawoom/design-token/enum`** (also re-exported from this package’s `src/index.ts`).
+- **Token sources** are edited in **`libs/design-token/src/tokens/`** (not in this package).
+- **`src/styles/variables.ts`** is **generated** when you run `build:tokens` in `@wawawoom/design-token`. Do not edit generated files by hand.
+- **Enums** (colors, `WuiTextSize`, `WuiTextWeight`, `WuiFontFamily`, `WuiTitleAs`, `WuiTitleLook`, …) live in **`libs/design-token/src/enum/`** when you run `build:tokens` or `watch:tokens` in `@wawawoom/design-token`. Import from **`@wawawoom/design-token/enum`** (this package re-exports them from `src/index.ts` for convenience). **`variables.ts`** also includes **`wuiTitleFontSize`** / **`wuiTitleLineHeightRatio`** for **`WuiTitle`** (aligned with web title tokens).
+
+There is **no** `src/enum/` folder here; enums are not duplicated from `libs/wui`.
 
 ### Scripts
 
 | Command                       | Description                                                                                                                       |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `pnpm run dev`                | Runs **`watch:tokens`** (delegates to `@wawawoom/design-token`) together with Storybook RN.                                       |
-| `pnpm run watch:tokens`       | Same token watch as `libs/wui`: rebuilds CSS in `wui`, enums in `design-token`, then `libs/wui/scripts/generate-dark-prefers.js`. |
+| `pnpm run watch:tokens`       | Delegates to `@wawawoom/design-token`: rebuilds CSS in `wui`, enums in `src/enum/`, **`variables.ts`**, then `libs/wui/scripts/generate-dark-prefers.js`. |
 | `pnpm run start`              | Expo dev server (`expo start`).                                                                                                   |
 | `pnpm run storybook-generate` | Regenerates the Storybook story index (run after adding or moving `*.stories.tsx` files).                                         |
 
-### Metro and `@wawawoom/design-token/enum`
+### Metro and `@wawawoom/design-token/*`
 
-Expo/Metro does not always resolve package **subpath exports** the same way as Node. This repo configures **`resolveRequest`** so `@wawawoom/design-token/enum` maps to `libs/design-token/src/enum/index.ts`:
+Expo/Metro does not always resolve package **subpath exports** the same way as Node. This repo configures **`resolveRequest`** so `@wawawoom/design-token/enum` maps to source under `libs/design-token/src/`:
 
 - `libs/wui-rn/metro.config.js`
 - `apps/rn/metro.config.js` (when the consumer app bundles `wui-rn`)

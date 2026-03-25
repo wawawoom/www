@@ -17,6 +17,12 @@ All other props from `HTMLAttributes` (e.g. `id`, `style`, `aria-*`) are support
 
 <ArgTypes />
 
+## Design tokens
+
+Visual sizes (`h1`–`h6` looks) come from CSS custom properties in `WuiTitle.css` (e.g. `--wui-title-font-size-h1`), which are generated from `title.font.size` and `title.lineHeight` in `libs/design-token/src/tokens/atomic/font.json` → `variables.css`.
+
+`WuiTitleAs` and `WuiTitleLook` are generated under **`@wawawoom/design-token/enum`** from `title.font.size` in `font.json` (same keys and order as the CSS variables). `WuiTitle.props.ts` re-exports them for convenience.
+
 ## Implementation
 
 h1 heading (default):

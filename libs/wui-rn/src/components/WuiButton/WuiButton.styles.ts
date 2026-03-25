@@ -2,7 +2,7 @@ import { StyleSheet, ViewStyle } from "react-native";
 
 import { WuiColorAlias } from "@wawawoom/design-token/enum";
 
-import { wui } from "../../styles/atomic";
+import { wui } from "../../styles/variables";
 import { WuiButtonColor } from "./WuiButtonProps";
 
 export const styles = StyleSheet.create({

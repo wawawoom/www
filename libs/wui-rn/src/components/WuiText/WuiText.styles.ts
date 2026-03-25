@@ -2,21 +2,23 @@ import type { StyleProp, TextStyle } from "react-native";
 import { StyleSheet } from "react-native";
 
 import type { WuiColorAlias } from "@wawawoom/design-token/enum";
-import { wui } from "../../styles/atomic";
+import { wui } from "../../styles/variables";
 import { WuiFontFamily, WuiTextSize, WuiTextWeight } from "./WuiTextProps";
 
 const getLineHeightForSize = (fontSize: number): number => {
   return Math.round(fontSize * wui.font.lineHeightRatio);
 };
 
+const tf = wui.textFontSize;
+
 export const styles = StyleSheet.create({
-  xxs: { fontSize: 12, lineHeight: getLineHeightForSize(12) },
-  xs: { fontSize: 14, lineHeight: getLineHeightForSize(14) },
-  s: { fontSize: 18, lineHeight: getLineHeightForSize(18) },
-  m: { fontSize: 20, lineHeight: getLineHeightForSize(20) },
-  l: { fontSize: 22, lineHeight: getLineHeightForSize(22) },
-  xl: { fontSize: 26, lineHeight: getLineHeightForSize(26) },
-  xxl: { fontSize: 30, lineHeight: getLineHeightForSize(30) },
+  xxs: { fontSize: tf.xxs, lineHeight: getLineHeightForSize(tf.xxs) },
+  xs: { fontSize: tf.xs, lineHeight: getLineHeightForSize(tf.xs) },
+  s: { fontSize: tf.s, lineHeight: getLineHeightForSize(tf.s) },
+  m: { fontSize: tf.m, lineHeight: getLineHeightForSize(tf.m) },
+  l: { fontSize: tf.l, lineHeight: getLineHeightForSize(tf.l) },
+  xl: { fontSize: tf.xl, lineHeight: getLineHeightForSize(tf.xl) },
+  xxl: { fontSize: tf.xxl, lineHeight: getLineHeightForSize(tf.xxl) },
   ["danger-0"]: { color: wui.colorAlias["danger0"] },
   ["danger-100"]: { color: wui.colorAlias["danger100"] },
   ["danger-200"]: { color: wui.colorAlias["danger200"] },

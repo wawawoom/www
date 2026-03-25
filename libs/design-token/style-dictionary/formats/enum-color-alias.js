@@ -19,7 +19,8 @@ StyleDictionary.registerFormat({
     );
 
     return `// Do not edit directly, this file was auto-generated.
-// Generated from libs/design-token/tokens/semantic/color.json
+// Import from @wawawoom/design-token/enum (see src/enum/index.ts).
+// Generated from libs/design-token/src/tokens/semantic/color.json
 
 export enum WuiColorAlias {
 ${enumEntries.join(",\n")}

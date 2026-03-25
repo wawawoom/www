@@ -6,7 +6,7 @@ StyleDictionary.registerTransform({
   name: "size/px-to-rem",
   type: "value",
   transitive: false,
-  matcher: (token) => {
+  filter: (token) => {
     // Keep font.size.base in px
     if (
       token.path &&

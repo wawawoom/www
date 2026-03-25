@@ -63,11 +63,11 @@
   --wui-line-height-base: 1.4;
   --wui-text-font-size-xxs: 0.75rem;
   --wui-text-font-size-xs: 0.875rem;
-  --wui-text-font-size-s: 1.125rem;
-  --wui-text-font-size-m: 1.25rem;
-  --wui-text-font-size-l: 1.375rem;
-  --wui-text-font-size-xl: 1.625rem;
-  --wui-text-font-size-xxl: 1.875rem;
+  --wui-text-font-size-s: 1rem;
+  --wui-text-font-size-m: 1.125rem;
+  --wui-text-font-size-l: 1.25rem;
+  --wui-text-font-size-xl: 1.5rem;
+  --wui-text-font-size-xxl: 1.75rem;
   --wui-title-font-size-h1: 3.75rem;
   --wui-title-font-size-h2: 2.75rem;
   --wui-title-font-size-h3: 2.375rem;

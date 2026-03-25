@@ -1,7 +1,12 @@
 import React from "react";
-import { Pressable } from "react-native";
+import {
+  Pressable,
+  type PressableProps,
+  type PressableStateCallbackType,
+  type StyleProp,
+  type ViewStyle,
+} from "react-native";
 
-import { wui } from "../../styles/atomic";
 import { WuiText } from "../WuiText/WuiText";
 import {
   WuiFontFamily,
@@ -19,16 +24,19 @@ import {
   WuiButtonSize,
 } from "./WuiButtonProps";
 
-const LABEL_TEXT_SIZE: Record<WuiButtonSize, WuiTextSize> = {
-  [WuiButtonSize.S]: WuiTextSize.S,
-  [WuiButtonSize.M]: WuiTextSize.S,
-  [WuiButtonSize.L]: WuiTextSize.M,
-};
-
-const sButtonLabelCompactStyle = {
-  fontSize: 16,
-  lineHeight: Math.round(16 * wui.font.lineHeightRatio),
-};
+/** Resolves Pressable `style` (object, array, or state callback) into a flat list for spreading. */
+function addCustomStyles(
+  style: PressableProps["style"],
+  state: PressableStateCallbackType
+): StyleProp<ViewStyle>[] {
+  const resolved = typeof style === "function" ? style(state) : style;
+  if (resolved == null) {
+    return [];
+  }
+  return Array.isArray(resolved)
+    ? (resolved as StyleProp<ViewStyle>[])
+    : [resolved];
+}
 
 export const WuiButton = (props: WuiButtonProps) => {
   const {
@@ -37,10 +45,27 @@ export const WuiButton = (props: WuiButtonProps) => {
     size = WuiButtonSize.M,
     block = false,
     disabled = false,
+    style,
     ...rest
   } = props;
 
   const isDisabled = Boolean(disabled);
+
+  const getLabelSize = (size: WuiButtonSize): WuiTextSize => {
+    switch (size) {
+      case WuiButtonSize.S:
+        return WuiTextSize.S;
+
+      case WuiButtonSize.M:
+        return WuiTextSize.M;
+
+      case WuiButtonSize.L:
+        return WuiTextSize.L;
+
+      default:
+        return WuiTextSize.M;
+    }
+  };
 
   return (
     <Pressable
@@ -54,17 +79,17 @@ export const WuiButton = (props: WuiButtonProps) => {
             ? styles.disabled
             : getBackgroundColor(color, state.pressed),
           block && styles.block,
+          ...addCustomStyles(style, state),
         ];
       }}
     >
       <WuiText
         numberOfLines={1}
         ellipsizeMode="tail"
-        size={LABEL_TEXT_SIZE[size]}
+        size={getLabelSize(size)}
         fontFamily={WuiFontFamily.SERIF}
         weight={WuiTextWeight.REGULAR}
         color={getButtonLabelColorAlias(color, isDisabled)}
-        style={size === WuiButtonSize.S ? sButtonLabelCompactStyle : undefined}
       >
         {label}
       </WuiText>
