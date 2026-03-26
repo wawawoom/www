@@ -3,7 +3,16 @@ import { useEffect, useRef } from "react";
 import { WuiButton, WuiButtonColor, WuiButtonSize } from "@wawawoom/wui";
 
 import type Lamp from "../../interface/lamp.interface";
+import { useLampVideoSrc } from "../../hooks/useLampVideoSrc";
 import "./Hero.css";
+
+function tryPlayMutedVideo(el: HTMLVideoElement | null) {
+  if (!el) return;
+  el.muted = true;
+  void el.play().catch(() => {
+    /* autoplay policy, low power mode, or transient errors */
+  });
+}
 
 const Hero = (props: {
   lamp: Lamp;
@@ -15,6 +24,8 @@ const Hero = (props: {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wasModalOpenRef = useRef(isModalOpen);
 
+  const videoSrc = useLampVideoSrc(video);
+
   const handleOpenDetails = () => {
     videoRef.current?.pause();
     onOpenModal(lamp);
@@ -24,25 +35,43 @@ const Hero = (props: {
     const wasOpen = wasModalOpenRef.current;
     wasModalOpenRef.current = isModalOpen;
     if (wasOpen && !isModalOpen && video) {
-      const el = videoRef.current;
-      if (!el) return;
-      void el.play().catch(() => {
-        /* ignore: e.g. browser blocked before user gesture */
-      });
+      tryPlayMutedVideo(videoRef.current);
     }
   }, [isModalOpen, video]);
 
+  /** iOS Safari often ignores `autoplay` without `playsInline` + explicit muted `play()` after load. */
+  useEffect(() => {
+    if (!videoSrc) return;
+    const el = videoRef.current;
+    if (!el) return;
+
+    const tryPlay = () => tryPlayMutedVideo(el);
+
+    if (el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      tryPlay();
+    } else {
+      el.addEventListener("canplay", tryPlay, { once: true });
+    }
+
+    return () => {
+      el.removeEventListener("canplay", tryPlay);
+    };
+  }, [videoSrc]);
+
   return (
     <>
-      {video ? (
+      {videoSrc ? (
         <video
+          key={videoSrc}
           ref={videoRef}
-          src={`${video}`}
-          autoPlay={true}
-          muted={true}
-          loop={true}
+          src={videoSrc}
+          autoPlay
+          muted
+          playsInline
+          loop
+          preload="auto"
           className="hero-video"
-        ></video>
+        />
       ) : (
         <img src={`${images[0]}`} alt={name} className="hero-image" />
       )}
@@ -59,10 +88,10 @@ const Hero = (props: {
         <WuiButton
           className="hero-cta"
           color={WuiButtonColor.SECONDARY}
-          size={WuiButtonSize.L}
+          size={WuiButtonSize.M}
           onClick={handleOpenDetails}
         >
-          👁️ Détails
+          &gt; Détails
         </WuiButton>
       </div>
     </>

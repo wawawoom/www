@@ -18,12 +18,13 @@
   justify-content: flex-end;
   align-items: flex-start;
 
-  padding: 0 var(--hero-content-padding-x);
+  padding: 0 var(--hero-content-padding-x) 70px var(--hero-content-padding-x);
   flex: 1;
   z-index: 1;
 
   @media (min-width: 768px) {
-    padding: 0 0 0 var(--hero-content-padding-x-desktop);
+    padding: var(--header-height-desktop) 0 0
+      var(--hero-content-padding-x-desktop);
     width: 60%;
     justify-content: center;
   }
@@ -31,54 +32,49 @@
   .hero-logo {
     width: var(--hero-logo-width);
     height: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
 
     @media (min-width: 768px) {
       width: var(--hero-logo-width-desktop);
+      background-color: rgba(0, 0, 0, 0.8);
+
+      padding: 30px;
     }
   }
 
   .hero-name {
-    font-size: 60px;
+    font-size: 26px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 20px 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px 16px 10px 16px;
+    line-height: 1;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+      padding: 20px 20px 10px 20px;
+    }
   }
 
   .hero-description {
-    font-size: 20px;
+    font-size: 16px;
+
     font-weight: 400;
     opacity: 0.8;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px 20px;
+    padding: 10px 16px;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      padding: 10px 20px;
+    }
   }
 
   .hero-cta {
-    margin-top: 48px;
-  }
-
-  &:after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(var(--main-x-padding) * -2);
-    width: 100%;
-    height: 70vh;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.8) 50%,
-      rgba(0, 0, 0, 0) 99%
-    );
-    z-index: -1;
-    opacity: 1;
+    margin-top: 16px;
 
     @media (min-width: 768px) {
-      display: none;
+      margin-top: 48px;
     }
   }
 }

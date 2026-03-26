@@ -1,7 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
+import { useLampVideoSrc } from "../../hooks/useLampVideoSrc";
 import type Lamp from "../../interface/lamp.interface";
 import "./LampOverlay.css";
+
+const VIEWPORT_MARGIN_PX = 12;
+
+function overlayVideoSrc(resolved: string): string {
+  if (
+    resolved.startsWith("http://") ||
+    resolved.startsWith("https://") ||
+    resolved.startsWith("//")
+  ) {
+    return resolved;
+  }
+  return `${import.meta.env.BASE_URL || ""}/lamp/video/${resolved}`;
+}
 
 interface LampOverlayProps {
   lamp: Lamp;
@@ -29,6 +43,8 @@ const LampOverlay = ({
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const animationFrameRef = useRef<number | null>(null);
 
+  const lampVideoSrc = useLampVideoSrc(lamp.video);
+
   useEffect(() => {
     const cardElement = document.querySelector(
       `[data-lamp-id="${lamp.id}"]`
@@ -41,9 +57,41 @@ const LampOverlay = ({
 
     const updatePosition = () => {
       const rect = cardElement.getBoundingClientRect();
+      const m = VIEWPORT_MARGIN_PX;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      /** Must match `.lamp-overlay[data-visible='true'] { transform: scale(...) }` in LampOverlay.css */
+      const scale = 1.75;
+      const W = rect.width;
+
+      /**
+       * With `transform-origin: bottom center`, the painted box grows horizontally from the
+       * bottom-center: visualLeft = layoutLeft + W×(1−scale)/2 (extends left when scale > 1).
+       * See: visualLeft = layoutLeft − W×(scale−1)/2.
+       */
+      const minLayoutLeft = m + (W * (scale - 1)) / 2;
+      const maxLayoutLeft = vw - m - (W * (1 + scale)) / 2;
+
+      let left = rect.left;
+      if (maxLayoutLeft >= minLayoutLeft) {
+        left = Math.max(minLayoutLeft, Math.min(left, maxLayoutLeft));
+      } else {
+        left = (minLayoutLeft + maxLayoutLeft) / 2;
+      }
+
+      let bottom = window.innerHeight - rect.bottom;
+
+      /** Approximate layout height (16:9 media + text); visual extends up by ~(scale−1)×H from bottom origin. */
+      const estLayoutH = W * (9 / 16) + 100;
+      const minLayoutBottom = m;
+      const maxLayoutBottom = vh - m - estLayoutH * scale;
+      if (maxLayoutBottom >= minLayoutBottom) {
+        bottom = Math.max(minLayoutBottom, Math.min(bottom, maxLayoutBottom));
+      }
+
       setPosition({
-        left: rect.left,
-        bottom: window.innerHeight - rect.bottom,
+        left,
+        bottom,
         width: rect.width,
         height: rect.height,
       });
@@ -51,12 +99,9 @@ const LampOverlay = ({
 
     updatePosition();
 
-    // Démarrer invisible puis activer l'animation après que le navigateur ait rendu l'élément
     setIsVisible(false);
-    // Réinitialiser showVideo seulement quand on change de lamp
     setShowVideo(false);
 
-    // Utiliser requestAnimationFrame pour s'assurer que l'élément est rendu avant l'animation
     animationFrameRef.current = requestAnimationFrame(() => {
       animationFrameRef.current = requestAnimationFrame(() => {
         setIsVisible(true);
@@ -79,7 +124,6 @@ const LampOverlay = ({
     };
   }, [lamp.id]);
 
-  // Afficher la vidéo après 1 seconde si elle existe
   useEffect(() => {
     if (isVisible && lamp.video && !showVideo) {
       videoTimeoutRef.current = setTimeout(() => {
@@ -93,11 +137,9 @@ const LampOverlay = ({
         }
       };
     }
-    // Réinitialiser seulement si on change de lamp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible, lamp.video, lamp.id]);
 
-  // Lancer la vidéo automatiquement quand elle est affichée
   useEffect(() => {
     if (showVideo && videoRef.current) {
       videoRef.current.play().catch((error) => {
@@ -123,7 +165,6 @@ const LampOverlay = ({
   const handleMouseLeave = () => {
     setIsVisible(false);
 
-    // Ne pas réinitialiser showVideo pour garder la vidéo
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
     }
@@ -135,13 +176,12 @@ const LampOverlay = ({
     hideTimeoutRef.current = setTimeout(() => {
       onMouseLeave();
       hideTimeoutRef.current = null;
-    }, 300); // Durée de l'animation CSS
+    }, 300);
   };
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
 
-    // Annuler le timeout de fermeture pour éviter que l'overlay disparaisse
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -172,10 +212,11 @@ const LampOverlay = ({
           alt={lamp.name}
           className="lamp-overlay-image"
         />
-        {lamp.video && (
+        {lampVideoSrc && (
           <video
+            key={lampVideoSrc}
             ref={videoRef}
-            src={`${import.meta.env.BASE_URL || ""}/lamp/video/${lamp.video}`}
+            src={overlayVideoSrc(lampVideoSrc)}
             className="lamp-overlay-video"
             data-visible={showVideo}
             autoPlay
@@ -196,12 +237,8 @@ const LampOverlay = ({
             className="lamp-overlay-cta button-primary button-sm"
             onClick={handleClick}
           >
-            Détails
+            &gt; Détails
           </button>
-
-          {Boolean(lamp.tag) && (
-            <span className="lamp-overlay-tag">{lamp.tag}</span>
-          )}
         </div>
       </div>
     </div>

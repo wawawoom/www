@@ -134,6 +134,9 @@ importers:
 
   apps/wawawood:
     dependencies:
+      '@wawawoom/wui':
+        specifier: workspace:*
+        version: link:../../libs/wui
       react:
         specifier: ^19.2.0
         version: 19.2.3

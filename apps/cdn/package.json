@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "reduce-image": "node ./scripts/reduce-image-size.js",
     "ftp:upload": "SOURCE_DIR=\"apps/cdn/src\" bash ./scripts/deploy-cdn.sh upload",
     "ftp:download": "SOURCE_DIR=\"apps/cdn/src\" bash ./scripts/deploy-cdn.sh download",
     "ftp:sync": "SOURCE_DIR=\"apps/cdn/src\" bash ./scripts/deploy-cdn.sh sync"

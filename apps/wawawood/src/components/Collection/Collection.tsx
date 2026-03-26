@@ -12,11 +12,9 @@ const Collection = (props: CollectionProps) => {
 
   return (
     <section className="collection">
-      <div className="collection-images">
-        {lamps.map((lamp) => (
-          <LampCard key={lamp.id} {...lamp} onOpenModal={onOpenModal} />
-        ))}
-      </div>
+      {lamps.map((lamp) => (
+        <LampCard key={lamp.id} {...lamp} onOpenModal={onOpenModal} />
+      ))}
     </section>
   );
 };

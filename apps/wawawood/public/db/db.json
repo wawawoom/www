@@ -6,7 +6,10 @@
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     "logo": "https://wawawoom.fr/projects/cdn/wawawood/logo/cub-issa-nissa.svg",
-    "video": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-issa-nissa/cub-issa-nissa-h.mp4",
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-issa-nissa/cub-issa-nissa-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-issa-nissa/cub-issa-nissa-h.mp4"
+    },
     "images": [
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-1.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-2.jpg",
@@ -16,12 +19,11 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-6.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-7.jpg"
     ],
-    "tag": "Nouveau"
+    "tags": ["Nouveau", "En stock"]
   },
 
   {
     "id": 1,
-    "isFeatured": true,
     "name": "CUB Ombra Fresca n°2",
     "slug": "cub-ombra-fresca-2",
     "description": "Le CUB en platane de Saint Laurent du Var.",
@@ -33,7 +35,10 @@
       "Dimensions: L.15 x P.15 x H.25 cm",
       "Poids: 500 gr."
     ],
-    "video": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-2/cub-ombra-fresca-2-h.mp4",
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-2/cub-ombra-fresca-2-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-2/cub-ombra-fresca-2-h.mp4"
+    },
     "images": [
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-1.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-2.jpg",
@@ -47,7 +52,21 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-10.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-11.jpg"
     ],
-    "tag": "En stock",
+    "tags": ["En stock"],
     "price": 499
+  },
+
+  {
+    "id": 2,
+    "isFeatured": true,
+    "name": "CUB Peira",
+    "slug": "cub-peira",
+    "description": "Le CUB Peïra en marbre de Carrare.",
+    "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-h.mp4"
+    },
+    "images": []
   }
 ]

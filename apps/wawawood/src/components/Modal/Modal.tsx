@@ -1,5 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import {
+  WuiBadge,
+  WuiBadgeColor,
+  WuiColorAlias,
+  WuiLink,
+  WuiLinkColor,
+  WuiText,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleAs,
+  WuiTitleLook,
+} from "@wawawoom/wui";
+
 import type Lamp from "../../interface/lamp.interface";
 import "./Modal.css";
 
@@ -21,16 +35,18 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
+  const lampVideoSrc = lamp?.video?.desktop;
+
   const mediaList = useMemo<MediaItem[]>(() => {
     if (!lamp) return [];
 
     const medias: MediaItem[] = [];
 
     // Ajouter la vidéo en premier si elle existe
-    if (lamp.video) {
+    if (lampVideoSrc) {
       medias.push({
         type: "video",
-        src: lamp.video,
+        src: lampVideoSrc,
       });
     }
 
@@ -46,7 +62,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
     }
 
     return medias;
-  }, [lamp]);
+  }, [lamp, lampVideoSrc]);
 
   // Réinitialiser l'index quand la modal s'ouvre ou que le lamp change
   useEffect(() => {
@@ -143,8 +159,6 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
     }
   };
 
-  console.log(import.meta.env.BASE_URL);
-
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -220,20 +234,44 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
           )}
 
           <div className="modal-title-wrapper">
-            <h2 className="modal-title">{lamp.name}</h2>
+            <WuiTitle
+              as={WuiTitleAs.H1}
+              look={WuiTitleLook.H2}
+              color={WuiColorAlias.NEUTRAL_0}
+              className="modal-title"
+            >
+              {lamp.name}
+            </WuiTitle>
 
-            {lamp.tag && <div className="modal-tag">{lamp.tag}</div>}
+            {lamp?.tags && lamp?.tags?.length > 0 && (
+              <div className="tags">
+                {lamp.tags.map((tag) => (
+                  <WuiBadge
+                    className="tag"
+                    color={WuiBadgeColor.SUCCESS}
+                    key={tag}
+                  >
+                    {tag}
+                  </WuiBadge>
+                ))}
+              </div>
+            )}
           </div>
 
           {lamp.description && (
-            <p
+            <WuiText
+              as={WuiTextAs.P}
+              size={WuiTextSize.L}
+              color={WuiColorAlias.NEUTRAL_0}
               className="modal-description"
               dangerouslySetInnerHTML={{ __html: lamp.description }}
             />
           )}
 
           {lamp.details && (
-            <p
+            <WuiText
+              as={WuiTextAs.P}
+              color={WuiColorAlias.NEUTRAL_0}
               className="modal-details"
               dangerouslySetInnerHTML={{ __html: lamp.details }}
             />
@@ -241,9 +279,14 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
 
           {lamp?.technic && lamp.technic.length > 0 && (
             <>
-              <h3 className="modal-technic-title">
+              <WuiTitle
+                as={WuiTitleAs.H3}
+                look={WuiTitleLook.H5}
+                color={WuiColorAlias.NEUTRAL_0}
+                className="modal-technic-title"
+              >
                 Caractéristiques techniques
-              </h3>
+              </WuiTitle>
 
               <ul className="modal-technic">
                 {lamp.technic.map((tech, index) => (
@@ -253,21 +296,20 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
             </>
           )}
 
-          {lamp.price !== undefined && lamp.price > 0 && (
+          {/* {lamp.price !== undefined && lamp.price > 0 && (
             <div className="modal-price">{lamp.price} €</div>
-          )}
+          )} */}
 
-          <a
+          <WuiLink
             href={`mailto:wawawoom@gmail.com?subject=${encodeURIComponent(
               lamp.name
             )}`}
-            className="button-primary"
-            style={{ display: "inline-block" }}
+            color={WuiLinkColor.SECONDARY}
             target="_blank"
             rel="noreferrer"
           >
             Envoyer un message
-          </a>
+          </WuiLink>
         </div>
       </div>
     </div>

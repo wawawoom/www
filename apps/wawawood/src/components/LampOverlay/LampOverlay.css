@@ -57,17 +57,6 @@
   padding: 12px 16px;
 }
 
-.lamp-overlay-tag {
-  font-size: 6px;
-  font-weight: 300;
-  color: #000000;
-  background-color: #0ce922;
-  color: #1a1919;
-  padding: 2px 4px;
-  border-radius: 999px;
-  display: inline-block;
-}
-
 .lamp-overlay-name {
   font-size: 12px;
   font-weight: 400;

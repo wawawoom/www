@@ -1,23 +1,20 @@
 .collection {
+  padding: 30px var(--main-x-padding) var(--main-x-padding)
+    var(--main-x-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-x-padding);
+
   @media (min-width: 768px) {
-    padding: 0 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    padding: 30px var(--main-x-padding-desktop) var(--main-x-padding-desktop)
+      var(--main-x-padding-desktop);
     position: relative;
     margin-top: -30px;
 
-    .collection-images {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: var(--cards-gap);
-      padding: 0 var(--cards-x-padding);
-
-      @media (min-width: 768px) {
-        padding: 0 var(--cards-x-padding-desktop);
-      }
-    }
+    display: grid;
+    position: relative;
+    z-index: 1;
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    gap: var(--cards-gap-desktop);
   }
 }

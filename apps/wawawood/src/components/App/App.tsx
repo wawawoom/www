@@ -28,7 +28,7 @@ const App = () => {
     fetch(`${import.meta.env.BASE_URL}db/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setLamps(data);
+        setLamps(data.sort((a: Lamp, b: Lamp) => b.id - a.id));
         setIsLoading(false);
       })
       .catch((error) => {

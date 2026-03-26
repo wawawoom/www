@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   --desktop-width: 768px;
 
   --main-x-padding: 20px;
@@ -12,12 +14,9 @@
   --hero-content-padding-x: var(--main-x-padding);
   --hero-content-padding-x-desktop: var(--main-x-padding-desktop);
 
-  --hero-logo-width: 50vw;
-  --hero-logo-width-desktop: 300px;
+  --hero-logo-width: 200px;
+  --hero-logo-width-desktop: 280px;
 
-  --cards-x-padding: var(--main-x-padding);
-  --cards-x-padding-desktop: var(--main-x-padding-desktop);
-
-  --card-count: 6;
-  --cards-gap: 40px;
+  --cards-gap: var(--main-x-padding);
+  --cards-gap-desktop: var(--main-x-padding-desktop);
 }
