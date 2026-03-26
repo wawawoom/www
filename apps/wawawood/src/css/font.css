@@ -1,25 +1,22 @@
-.geologica-light {
-  font-family: 'Geologica', sans-serif;
+.newsreader-light {
+  font-family: 'Newsreader', serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
 }
 
-.geologica-medium {
-  font-family: 'Geologica', sans-serif;
+.newsreader-medium {
+  font-family: 'Newsreader', serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
 }
 
-.geologica-bold {
-  font-family: 'Geologica', sans-serif;
+.newsreader-bold {
+  font-family: 'Newsreader', serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
 }
 
 .button-primary {
@@ -30,11 +27,10 @@
   border: 1px solid #f2eaea;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
   font-size: 18px;
   width: auto;
   align-self: flex-start;

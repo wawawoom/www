@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import "@wawawoom/wui-css";
+
 import type Lamp from "../../interface/lamp.interface";
 import Collection from "../Collection/Collection";
 import Header from "../Header/Header";
@@ -52,7 +54,11 @@ const App = () => {
 
       <div id="main">
         {featuredLamp && (
-          <Hero lamp={featuredLamp} onOpenModal={handleOpenModal} />
+          <Hero
+            lamp={featuredLamp}
+            onOpenModal={handleOpenModal}
+            isModalOpen={isModalOpen}
+          />
         )}
       </div>
 

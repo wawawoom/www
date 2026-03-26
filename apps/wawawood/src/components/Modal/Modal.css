@@ -58,7 +58,7 @@
 }
 
 .modal-title {
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-size: 30px;
   letter-spacing: -2px;
   font-weight: 700;
@@ -68,7 +68,7 @@
 }
 
 .modal-description {
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-weight: 400;
   font-size: 18px;
   color: #f2eaea;
@@ -78,8 +78,8 @@
 }
 
 .modal-details {
-  font-family: 'Geologica', sans-serif;
-  font-weight: 100;
+  font-family: 'Newsreader', serif;
+  font-weight: 300;
   font-size: 16px;
   color: #f2eaea;
   opacity: 0.8;
@@ -139,7 +139,7 @@
   border: none;
   color: #f2eaea;
   font-size: 50px;
-  font-weight: 100;
+  font-weight: 300;
   width: 50px;
   height: 60px;
   align-self: flex-start;
@@ -202,7 +202,7 @@
 
 .modal-tag {
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 300;
   color: #000000;
   background-color: #0ce922;
   color: #1a1919;
@@ -213,7 +213,7 @@
 }
 
 .modal-price {
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-weight: 400;
   font-size: 24px;
   color: #f2eaea;
@@ -222,7 +222,7 @@
 }
 
 .modal-technic-title {
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-weight: 400;
   font-size: 16px;
   color: #f2eaea;
@@ -238,8 +238,8 @@
   color: #f2eaea;
   opacity: 0.6;
   line-height: 1.6;
-  font-weight: 100;
-  font-family: 'Geologica', sans-serif;
+  font-weight: 300;
+  font-family: 'Newsreader', serif;
   padding-left: 20px;
 
   li {

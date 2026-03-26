@@ -6,11 +6,10 @@
   border: 1px solid #f2eaea;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-family: 'Geologica', sans-serif;
+  font-family: 'Newsreader', serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 300;
   font-style: normal;
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
   font-size: 18px;
   width: auto;
   align-self: flex-start;

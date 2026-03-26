@@ -3,7 +3,6 @@
     "id": 0,
     "name": "Issa Nissa",
     "slug": "issa-nissa",
-    "isFeatured": true,
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     "logo": "https://wawawoom.fr/projects/cdn/wawawood/logo/cub-issa-nissa.svg",
@@ -22,7 +21,8 @@
 
   {
     "id": 1,
-    "name": "CUB OMBRA FRESCA",
+    "isFeatured": true,
+    "name": "CUB Ombra Fresca n°2",
     "slug": "cub-ombra-fresca-2",
     "description": "Le CUB en platane de Saint Laurent du Var.",
     "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",

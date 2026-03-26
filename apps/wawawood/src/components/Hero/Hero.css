@@ -10,12 +10,13 @@
 }
 
 .hero-content {
-  display: inline-flex;
+  display: flex;
   position: relative;
 
   width: 100%;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
 
   padding: 0 var(--hero-content-padding-x);
   flex: 1;
@@ -30,26 +31,28 @@
   .hero-logo {
     width: var(--hero-logo-width);
     height: auto;
-    margin-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
 
     @media (min-width: 768px) {
       width: var(--hero-logo-width-desktop);
-      margin-bottom: 24px;
     }
   }
 
   .hero-name {
-    font-size: 40px;
-    letter-spacing: -2px;
+    font-size: 60px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 20px 10px 20px;
   }
 
   .hero-description {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     opacity: 0.8;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
   }
 
   .hero-cta {

@@ -59,7 +59,7 @@
 
 .lamp-overlay-tag {
   font-size: 6px;
-  font-weight: 100;
+  font-weight: 300;
   color: #000000;
   background-color: #0ce922;
   color: #1a1919;
@@ -77,7 +77,7 @@
 
 .lamp-overlay-description {
   font-size: 8px;
-  font-weight: 100;
+  font-weight: 300;
   color: #f2eaea;
   margin: 0;
   display: -webkit-box;
