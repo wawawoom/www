@@ -1,6 +1,11 @@
 RewriteEngine On
 RewriteBase /projects/wawawood/
 
+# Static HTML per lamp (correct OG tags for crawlers). Only if file exists; else SPA handles the route.
+RewriteCond %{REQUEST_URI} ^/projects/wawawood/project/([^/]+)/?$
+RewriteCond project/%1/index.html -f
+RewriteRule ^project/([^/]+)/?$ project/$1/index.html [L]
+
 # If not a file or directory, serve index.html (SPA client-side routing)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

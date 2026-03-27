@@ -26,8 +26,8 @@
 
   @media (min-width: 768px) {
     width: 70%;
+    height: calc(100dvh);
     max-width: 1200px;
-    max-height: 90vh;
   }
 }
 
@@ -67,7 +67,11 @@
 }
 
 .modal-body {
-  margin: 20px 20px 60px 20px;
+  padding: 20px 20px 60px 20px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .modal-title-wrapper {
@@ -160,7 +164,6 @@
     font-weight: 300;
     width: 50px;
     height: 60px;
-    align-self: flex-start;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -169,6 +172,7 @@
     transition: all 0.3s ease-in-out;
     line-height: 1;
     padding: 0;
+    align-self: center;
   }
 
   &[data-active="false"] {
@@ -203,8 +207,8 @@
   opacity: 0.6;
 
   @media (min-width: 768px) {
-    width: 120px;
-    height: 68px;
+    width: 200px;
+    height: 104px;
   }
 }
 

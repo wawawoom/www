@@ -19,26 +19,29 @@ const Hero = (props: {
   lamp: Lamp;
   onOpenModal: (lamp: Lamp) => void;
   isModalOpen: boolean;
+  isLampOverlayVideoPlaying: boolean;
 }) => {
-  const { lamp, onOpenModal, isModalOpen } = props;
+  const { lamp, onOpenModal, isModalOpen, isLampOverlayVideoPlaying } = props;
   const { name, description, logo, video, images } = lamp;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const wasModalOpenRef = useRef(isModalOpen);
 
   const videoSrc = useLampVideoSrc(video);
 
+  const shouldPauseHero = isModalOpen || isLampOverlayVideoPlaying;
+
   const handleOpenDetails = () => {
-    videoRef.current?.pause();
     onOpenModal(lamp);
   };
 
   useEffect(() => {
-    const wasOpen = wasModalOpenRef.current;
-    wasModalOpenRef.current = isModalOpen;
-    if (wasOpen && !isModalOpen && video) {
+    if (shouldPauseHero) {
+      videoRef.current?.pause();
+      return;
+    }
+    if (video) {
       tryPlayMutedVideo(videoRef.current);
     }
-  }, [isModalOpen, video]);
+  }, [shouldPauseHero, video]);
 
   /** iOS Safari often ignores `autoplay` without `playsInline` + explicit muted `play()` after load. */
   useEffect(() => {

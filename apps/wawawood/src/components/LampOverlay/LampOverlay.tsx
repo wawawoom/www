@@ -34,6 +34,8 @@ interface LampOverlayProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onOpenModal: (lamp: Lamp) => void;
+  /** When the overlay preview video is playing (Hero background should pause). */
+  onOverlayVideoActiveChange?: (active: boolean) => void;
 }
 
 const LampOverlay = ({
@@ -41,6 +43,7 @@ const LampOverlay = ({
   onMouseEnter,
   onMouseLeave,
   onOpenModal,
+  onOverlayVideoActiveChange,
 }: LampOverlayProps) => {
   const [position, setPosition] = useState<{
     left: number;
@@ -153,12 +156,34 @@ const LampOverlay = ({
   }, [isVisible, lamp.video, lamp.id]);
 
   useEffect(() => {
-    if (showVideo && videoRef.current) {
-      videoRef.current.play().catch((error) => {
+    if (!showVideo || !videoRef.current) {
+      return;
+    }
+    const el = videoRef.current;
+    el.playsInline = true;
+
+    const playWithSound = () => {
+      el.muted = false;
+      el.defaultMuted = false;
+      el.volume = 1;
+      return el.play();
+    };
+
+    playWithSound().catch(() => {
+      /** Most browsers block unmuted autoplay without a recent user gesture; hover may not qualify. */
+      el.muted = true;
+      void el.play().catch((error) => {
         console.error("Erreur lors de la lecture de la vidéo:", error);
       });
-    }
+    });
   }, [showVideo]);
+
+  useEffect(() => {
+    onOverlayVideoActiveChange?.(showVideo);
+    return () => {
+      onOverlayVideoActiveChange?.(false);
+    };
+  }, [showVideo, onOverlayVideoActiveChange]);
 
   useEffect(() => {
     return () => {
@@ -231,9 +256,7 @@ const LampOverlay = ({
             src={overlayVideoSrc(lampVideoSrc)}
             className="lamp-overlay-video"
             data-visible={showVideo}
-            autoPlay
             loop
-            muted
             playsInline
           />
         )}

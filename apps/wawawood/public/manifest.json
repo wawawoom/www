@@ -2,8 +2,23 @@
   "name": "Wawawood",
   "short_name": "Wawawood",
   "description": "Wawawood",
-  "start_url": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f7f7f7",
-  "theme_color": "#000000"
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
