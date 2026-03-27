@@ -272,7 +272,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
           {lamp.details && (
             <WuiText
               as={WuiTextAs.P}
-              color={WuiColorAlias.NEUTRAL_400}
+              color={WuiColorAlias.NEUTRAL_200}
               weight={WuiTextWeight.LIGHT}
               className="modal-details"
               dangerouslySetInnerHTML={{ __html: lamp.details }}
@@ -285,14 +285,22 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
                 as={WuiTitleAs.H3}
                 look={WuiTitleLook.H5}
                 color={WuiColorAlias.NEUTRAL_0}
-                className="modal-technic-title"
+                className="modal-technic-title wui-mb-20"
               >
                 Caractéristiques techniques
               </WuiTitle>
 
               <ul className="modal-technic">
                 {lamp.technic.map((tech, index) => (
-                  <li key={index}>{tech}</li>
+                  <li key={index}>
+                    <WuiText
+                      as={WuiTextAs.SPAN}
+                      color={WuiColorAlias.NEUTRAL_100}
+                      weight={WuiTextWeight.LIGHT}
+                    >
+                      {tech}
+                    </WuiText>
+                  </li>
                 ))}
               </ul>
             </>
@@ -303,7 +311,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
           )} */}
 
           <WuiLink
-            href={`mailto:wawawoom@gmail.com?subject=${encodeURIComponent(
+            href={`mailto:wawawoodstudio@gmail.com?subject=${encodeURIComponent(
               lamp.name
             )}`}
             color={WuiLinkColor.SECONDARY}

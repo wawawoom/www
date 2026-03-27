@@ -20,6 +20,7 @@ interface Lamp {
   tags?: string[];
   price?: number;
   technic?: string[];
+  buildDate?: string;
 }
 
 export type { Lamp as default };

@@ -1,5 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
+import {
+  WuiButton,
+  WuiButtonSize,
+  WuiColorAlias,
+  WuiText,
+  WuiTextAs,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleAs,
+  WuiTitleLook,
+} from "@wawawoom/wui";
+
 import { useLampVideoSrc } from "../../hooks/useLampVideoSrc";
 import type Lamp from "../../interface/lamp.interface";
 import "./LampOverlay.css";
@@ -61,7 +73,7 @@ const LampOverlay = ({
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       /** Must match `.lamp-overlay[data-visible='true'] { transform: scale(...) }` in LampOverlay.css */
-      const scale = 1.75;
+      const scale = 1.3;
       const W = rect.width;
 
       /**
@@ -228,17 +240,28 @@ const LampOverlay = ({
       </div>
 
       <div className="lamp-overlay-content">
-        <h3 className="lamp-overlay-name">{lamp.name}</h3>
+        <WuiTitle
+          as={WuiTitleAs.H3}
+          look={WuiTitleLook.H5}
+          color={WuiColorAlias.NEUTRAL_0}
+          className="lamp-overlay-name"
+        >
+          {lamp.name}
+        </WuiTitle>
 
-        <p className="lamp-overlay-description">{lamp.description}</p>
+        <WuiText
+          as={WuiTextAs.P}
+          size={WuiTextSize.XS}
+          color={WuiColorAlias.NEUTRAL_200}
+          className="lamp-overlay-description"
+        >
+          {lamp.description}
+        </WuiText>
 
         <div className="lamp-overlay-footer">
-          <button
-            className="lamp-overlay-cta button-primary button-sm"
-            onClick={handleClick}
-          >
+          <WuiButton onClick={handleClick} size={WuiButtonSize.S}>
             &gt; Détails
-          </button>
+          </WuiButton>
         </div>
       </div>
     </div>

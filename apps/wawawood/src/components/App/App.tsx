@@ -5,10 +5,12 @@ import "@wawawoom/wui-css";
 
 import type Lamp from "../../interface/lamp.interface";
 import Collection from "../Collection/Collection";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Modal from "../Modal/Modal";
+import SocialMeta from "../SocialMeta/SocialMeta";
 
 const App = () => {
   const navigate = useNavigate();
@@ -50,6 +52,8 @@ const App = () => {
 
   return (
     <>
+      <SocialMeta lamp={selectedLamp} />
+
       <Header />
 
       <div id="main">
@@ -65,6 +69,8 @@ const App = () => {
       {lamps.length > 0 && (
         <Collection lamps={lamps} onOpenModal={handleOpenModal} />
       )}
+
+      <Footer />
 
       <Modal
         lamp={selectedLamp}
