@@ -9,6 +9,7 @@ import {
   WuiText,
   WuiTextAs,
   WuiTextSize,
+  WuiTextWeight,
   WuiTitle,
   WuiTitleAs,
   WuiTitleLook,
@@ -271,7 +272,8 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
           {lamp.details && (
             <WuiText
               as={WuiTextAs.P}
-              color={WuiColorAlias.NEUTRAL_0}
+              color={WuiColorAlias.NEUTRAL_400}
+              weight={WuiTextWeight.LIGHT}
               className="modal-details"
               dangerouslySetInnerHTML={{ __html: lamp.details }}
             />

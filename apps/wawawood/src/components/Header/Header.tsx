@@ -6,6 +6,14 @@ const Header = () => {
       <a href=".">
         <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Logo" id="logo" />
       </a>
+
+      <a href="https://www.instagram.com/wawawoodstudio/" target="_blank">
+        <img
+          src={`${import.meta.env.BASE_URL}instagram.png`}
+          alt="Instagram"
+          id="instagram"
+        />
+      </a>
     </header>
   );
 };

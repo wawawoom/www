@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "Issa Nissa",
+    "name": "♥️ Issa Nissa",
     "slug": "issa-nissa",
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
@@ -24,14 +24,14 @@
 
   {
     "id": 1,
-    "name": "CUB Ombra Fresca n°2",
+    "name": "🍁 CUB Ombra Fresca n°2",
     "slug": "cub-ombra-fresca-2",
     "description": "Le CUB en platane de Saint Laurent du Var.",
-    "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",
+    "details": "Cette version de la lampe CUB est réalisée en platane, un bois clair et dense. Ses nuances vont du brun au doré avec un veinage zébré et subtil. C’est une essence qu’on connaît bien ici dans le Sud de la France. Il fait parti du paysage, de nos villes, de la mémoire collective. Le platane, c’est aussi l’arbre qui donne de l'ombre, de la fraîcheur. Celui qui accompagne les chauds étés du Sud, les trottoirs brûlants, les rues qu’il rafraichit simplement par sa présence. Il y a quelque chose de Nissarte dans ce bois. Il me rappelle ces grands platanes qui faisaient autrefois l’ombre de l’avenue Jean Médecin, avant qu’ils ne disparaissent pour laisser place au tramway. Dans cette lampe, il reste un peu de ça : une matière noble, familière, presque affective — quelque chose de doux, de solide, et de profondément ancré dans le paysage Niçois. L'ampoule aux teintes cuivrées apporte une touche d'élégance et de chaleur au platane.",
     "technic": [
-      "Bois de platane brut, résine noire teintée noire",
+      "Bois de platane brut, résine teintée noire",
       "Ampoule EGLO LED E27 dimmable, forme globe, Big Size, filament vintage spirale, ampoule Edison cuivrée vaporisée, 4 watts, 40 lumens, blanc chaud, 1600 Kelvin, G200, diamètre 20 cm",
-      "Cable en tissu polyester, couleur noire, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Cable en tissu polyester, couleur blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
       "Dimensions: L.15 x P.15 x H.25 cm",
       "Poids: 500 gr."
     ],
@@ -59,7 +59,7 @@
   {
     "id": 2,
     "isFeatured": true,
-    "name": "CUB Peira",
+    "name": "👸​ CUB Peïra",
     "slug": "cub-peira",
     "description": "Le CUB Peïra en marbre de Carrare.",
     "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",
@@ -67,6 +67,26 @@
       "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-v.mp4",
       "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-h.mp4"
     },
-    "images": []
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-15.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-16.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-17.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-18.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-19.jpg"
+    ]
   }
 ]

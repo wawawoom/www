@@ -119,7 +119,7 @@ const LampCard = (props: LampCardProps) => {
           className="lamp-name"
           color={WuiColorAlias.NEUTRAL_0}
           as={WuiTitleAs.H2}
-          look={WuiTitleLook.H6}
+          look={WuiTitleLook.H5}
         >
           {name}
         </WuiTitle>

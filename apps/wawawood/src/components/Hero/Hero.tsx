@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 
 import { WuiButton, WuiButtonColor, WuiButtonSize } from "@wawawoom/wui";
 
-import type Lamp from "../../interface/lamp.interface";
 import { useLampVideoSrc } from "../../hooks/useLampVideoSrc";
+import type Lamp from "../../interface/lamp.interface";
 import "./Hero.css";
 
 function tryPlayMutedVideo(el: HTMLVideoElement | null) {
   if (!el) return;
   el.muted = true;
+
   void el.play().catch(() => {
     /* autoplay policy, low power mode, or transient errors */
   });
@@ -91,7 +92,7 @@ const Hero = (props: {
           size={WuiButtonSize.M}
           onClick={handleOpenDetails}
         >
-          &gt; Détails
+          🔎&nbsp;&nbsp;Détails
         </WuiButton>
       </div>
     </>

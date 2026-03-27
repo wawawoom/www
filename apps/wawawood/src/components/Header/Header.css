@@ -25,4 +25,9 @@ header {
     width: 150px;
     opacity: 0.85;
   }
+
+  #instagram {
+    width: 24px;
+    height: 24px;
+  }
 }
