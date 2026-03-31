@@ -53,6 +53,13 @@
   }
 }
 
+.lamp-overlay-enable-audio {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+}
+
 .lamp-overlay-content {
   padding: 12px 16px;
 }

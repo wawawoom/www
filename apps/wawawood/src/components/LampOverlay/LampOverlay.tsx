@@ -34,6 +34,7 @@ interface LampOverlayProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onOpenModal: (lamp: Lamp) => void;
+  hasUserInteracted: boolean;
   /** When the overlay preview video is playing (Hero background should pause). */
   onOverlayVideoActiveChange?: (active: boolean) => void;
 }
@@ -43,6 +44,7 @@ const LampOverlay = ({
   onMouseEnter,
   onMouseLeave,
   onOpenModal,
+  hasUserInteracted,
   onOverlayVideoActiveChange,
 }: LampOverlayProps) => {
   const [position, setPosition] = useState<{
@@ -53,6 +55,7 @@ const LampOverlay = ({
   } | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [isAudioBlocked, setIsAudioBlocked] = useState(false);
   const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const videoTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -116,6 +119,7 @@ const LampOverlay = ({
 
     setIsVisible(false);
     setShowVideo(false);
+    setIsAudioBlocked(false);
 
     animationFrameRef.current = requestAnimationFrame(() => {
       animationFrameRef.current = requestAnimationFrame(() => {
@@ -162,21 +166,36 @@ const LampOverlay = ({
     const el = videoRef.current;
     el.playsInline = true;
 
-    const playWithSound = () => {
+    const playMuted = async () => {
+      el.muted = true;
+      el.defaultMuted = true;
+      await el.play();
+    };
+
+    const playWithSound = async () => {
       el.muted = false;
       el.defaultMuted = false;
       el.volume = 1;
-      return el.play();
+      await el.play();
     };
 
-    playWithSound().catch(() => {
-      /** Most browsers block unmuted autoplay without a recent user gesture; hover may not qualify. */
-      el.muted = true;
-      void el.play().catch((error) => {
-        console.error("Erreur lors de la lecture de la vidéo:", error);
+    if (!hasUserInteracted) {
+      setIsAudioBlocked(true);
+      void playMuted().catch((error) => {
+        console.error("Error while playing muted preview video:", error);
+      });
+      return;
+    }
+
+    void playWithSound().catch(() => {
+      /** Fallback for strict autoplay policies on specific browsers/devices. */
+      setIsAudioBlocked(true);
+      void playMuted().catch((error) => {
+        console.error("Error while playing muted preview video:", error);
       });
     });
-  }, [showVideo]);
+    setIsAudioBlocked(false);
+  }, [showVideo, hasUserInteracted]);
 
   useEffect(() => {
     onOverlayVideoActiveChange?.(showVideo);
@@ -227,6 +246,24 @@ const LampOverlay = ({
     onOpenModal(lamp);
   };
 
+  const handleEnableSound = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    const el = videoRef.current;
+    if (!el) return;
+
+    el.muted = false;
+    el.defaultMuted = false;
+    el.volume = 1;
+
+    void el.play()
+      .then(() => {
+        setIsAudioBlocked(false);
+      })
+      .catch((error) => {
+        console.error("Error while enabling preview audio:", error);
+      });
+  };
+
   if (!position) {
     return null;
   }
@@ -259,6 +296,15 @@ const LampOverlay = ({
             loop
             playsInline
           />
+        )}
+        {showVideo && isAudioBlocked && (
+          <WuiButton
+            className="lamp-overlay-enable-audio"
+            size={WuiButtonSize.S}
+            onClick={handleEnableSound}
+          >
+            Enable sound
+          </WuiButton>
         )}
       </div>
 

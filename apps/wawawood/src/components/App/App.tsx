@@ -25,6 +25,10 @@ const App = () => {
   const [lamps, setLamps] = useState<Lamp[]>([]);
   const [lampOverlayVideoActive, setLampOverlayVideoActive] =
     useState<boolean>(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState<boolean>(() => {
+    if (typeof navigator === "undefined") return false;
+    return navigator.userActivation?.hasBeenActive ?? false;
+  });
   const featuredLamp = lamps.find((lamp) => lamp.isFeatured) ?? null;
 
   // Dérivé de l’URL : la modal est ouverte quand l’URL contient un slug valide
@@ -69,6 +73,27 @@ const App = () => {
 
     return () => controller.abort();
   }, [retryKey]);
+
+  useEffect(() => {
+    if (hasUserInteracted) return;
+
+    const markAsInteracted = () => {
+      setHasUserInteracted(true);
+    };
+
+    window.addEventListener("pointerdown", markAsInteracted, { once: true });
+    window.addEventListener("keydown", markAsInteracted, { once: true });
+    window.addEventListener("touchstart", markAsInteracted, {
+      once: true,
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("pointerdown", markAsInteracted);
+      window.removeEventListener("keydown", markAsInteracted);
+      window.removeEventListener("touchstart", markAsInteracted);
+    };
+  }, [hasUserInteracted]);
 
   if (dbLoadStatus === "loading") {
     return <LoadingScreen />;
@@ -117,6 +142,7 @@ const App = () => {
           lamps={lamps}
           onOpenModal={handleOpenModal}
           onLampOverlayVideoActiveChange={setLampOverlayVideoActive}
+          hasUserInteracted={hasUserInteracted}
         />
       )}
 

@@ -14,7 +14,7 @@
     display: grid;
     position: relative;
     z-index: 1;
-    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(286px, 1fr));
     gap: var(--cards-gap-desktop);
   }
 }

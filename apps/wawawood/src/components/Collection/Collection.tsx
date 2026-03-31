@@ -6,10 +6,16 @@ interface CollectionProps {
   lamps: Lamp[];
   onOpenModal: (lamp: Lamp) => void;
   onLampOverlayVideoActiveChange?: (active: boolean) => void;
+  hasUserInteracted: boolean;
 }
 
 const Collection = (props: CollectionProps) => {
-  const { lamps, onOpenModal, onLampOverlayVideoActiveChange } = props;
+  const {
+    lamps,
+    onOpenModal,
+    onLampOverlayVideoActiveChange,
+    hasUserInteracted,
+  } = props;
 
   return (
     <section className="collection">
@@ -19,6 +25,7 @@ const Collection = (props: CollectionProps) => {
           {...lamp}
           onOpenModal={onOpenModal}
           onLampOverlayVideoActiveChange={onLampOverlayVideoActiveChange}
+          hasUserInteracted={hasUserInteracted}
         />
       ))}
     </section>

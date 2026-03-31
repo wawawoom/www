@@ -15,10 +15,17 @@ import "./LampCard.css";
 interface LampCardProps extends Lamp {
   onOpenModal: (lamp: Lamp) => void;
   onLampOverlayVideoActiveChange?: (active: boolean) => void;
+  hasUserInteracted: boolean;
 }
 
 const LampCard = (props: LampCardProps) => {
-  const { images, name, onOpenModal, onLampOverlayVideoActiveChange } = props;
+  const {
+    images,
+    name,
+    onOpenModal,
+    onLampOverlayVideoActiveChange,
+    hasUserInteracted,
+  } = props;
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hideTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -133,6 +140,7 @@ const LampCard = (props: LampCardProps) => {
           onMouseLeave={handleOverlayMouseLeave}
           onOpenModal={onOpenModal}
           onOverlayVideoActiveChange={onLampOverlayVideoActiveChange}
+          hasUserInteracted={hasUserInteracted}
         />
       )}
     </>

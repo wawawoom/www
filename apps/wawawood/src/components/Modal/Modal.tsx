@@ -113,6 +113,23 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
     };
   }, [mediaList]);
 
+  useEffect(() => {
+    const container = carouselRef.current;
+    if (!container || mediaList.length === 0) return;
+
+    const activeThumbnail = container.querySelector(
+      `.modal-thumbnail[data-media-index="${selectedMediaIndex}"]`
+    ) as HTMLElement | null;
+
+    if (!activeThumbnail) return;
+
+    activeThumbnail.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [selectedMediaIndex, mediaList.length]);
+
   if (!isOpen || !lamp || mediaList.length === 0) {
     return null;
   }
@@ -121,6 +138,18 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
 
   const handleThumbnailClick = (index: number) => {
     setSelectedMediaIndex(index);
+  };
+
+  const handleShowPreviousMedia = () => {
+    setSelectedMediaIndex((prev) =>
+      prev === 0 ? mediaList.length - 1 : prev - 1
+    );
+  };
+
+  const handleShowNextMedia = () => {
+    setSelectedMediaIndex((prev) =>
+      prev === mediaList.length - 1 ? 0 : prev + 1
+    );
   };
 
   const getScrollAmount = (): number => {
@@ -172,6 +201,25 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
         </button>
 
         <div className="modal-media-container">
+          {mediaList.length > 1 && (
+            <>
+              <button
+                className="modal-media-nav modal-media-nav-prev"
+                onClick={handleShowPreviousMedia}
+                aria-label="Média précédent"
+              >
+                ‹
+              </button>
+              <button
+                className="modal-media-nav modal-media-nav-next"
+                onClick={handleShowNextMedia}
+                aria-label="Média suivant"
+              >
+                ›
+              </button>
+            </>
+          )}
+
           {selectedMedia.type === "video" ? (
             <video
               src={selectedMedia.src}
@@ -207,6 +255,7 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
                     className={`modal-thumbnail ${
                       index === selectedMediaIndex ? "active" : ""
                     }`}
+                    data-media-index={index}
                     onClick={() => handleThumbnailClick(index)}
                   >
                     {media.type === "video" ? (
