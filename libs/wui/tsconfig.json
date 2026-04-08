@@ -23,6 +23,6 @@
       "@wawawoom/design-token/enum": ["../design-token/src/enum/index.ts"]
     }
   },
-  "include": ["src", ".storybook"],
+  "include": ["src", ".storybook", "../wui-rn/src/utils/hexToRgba.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

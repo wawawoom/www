@@ -1,31 +1,21 @@
 {
   "name": "rn",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "dev": "pnpm run start",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
   "dependencies": {
-    "@react-navigation/elements": "^2.9.12",
-    "@react-navigation/native": "^7.2.0",
-    "@react-navigation/native-stack": "^7.14.7",
-    "expo": "~55.0.8",
-    "expo-status-bar": "~55.0.4",
+    "expo": "~55.0.12",
+    "expo-linear-gradient": "^55.0.12",
+    "expo-status-bar": "~55.0.5",
+    "expo-video": "~55.0.14",
     "react": "19.2.0",
-    "react-native": "0.83.2",
-    "react-native-safe-area-context": "~5.6.2",
-    "react-native-screens": "~4.23.0",
-    "wui-rn": "workspace:*",
-    "zustand": "^5.0.12"
-  },
-  "devDependencies": {
-    "@expo/metro-config": "~55.0.11",
-    "@types/react": "~19.2.10",
-    "typescript": "~5.9.2"
+    "react-native": "0.83.4",
+    "react-native-svg": "^15.15.4"
   },
   "private": true
 }

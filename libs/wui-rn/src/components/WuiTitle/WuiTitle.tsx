@@ -2,10 +2,11 @@ import React from "react";
 import { Text } from "react-native";
 
 import { WuiColorAlias, WuiTitleAs } from "@wawawoom/design-token/enum";
+
 import {
-  titleSizeStyles,
   type TitleVisualLevel,
   getTitleStyles,
+  titleSizeStyles,
 } from "./WuiTitle.styles";
 import type { WuiTitleProps } from "./WuiTitleProps";
 
@@ -20,11 +21,8 @@ export const WuiTitle = (props: WuiTitleProps) => {
     ...rest
   } = props;
 
-  // Ignore invalid strings (e.g. Storybook text control typing a label instead of h1–h6).
   const visualLevel: TitleVisualLevel =
-    look !== undefined &&
-    typeof look === "string" &&
-    look in titleSizeStyles
+    look !== undefined && typeof look === "string" && look in titleSizeStyles
       ? (look as TitleVisualLevel)
       : as;
 
