@@ -1,22 +1,27 @@
 import { ScrollView, StyleSheet } from "react-native";
 
-import { CardsList } from "./components/CardsList/CardsLists";
-import { Header } from "./components/Header/Header";
-import { HeroVideo } from "./components/HeroVideo/HeroVideo";
+import { CardsList } from "../CardsList/CardsLists";
+import { Header } from "../Header/Header";
+import { HeroSection } from "../HeroSection/HeroSection";
 
-export default function VideoScreen() {
+export const Main = () => {
   return (
     <ScrollView style={styles.contentContainer}>
       <Header />
 
-      <HeroVideo />
+      <HeroSection />
 
       <CardsList />
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  loaderContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   contentContainer: {
     flex: 1,
     backgroundColor: "black",

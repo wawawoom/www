@@ -8,7 +8,8 @@ export {
   WuiTitleAs,
   WuiTitleLook,
 } from "@wawawoom/design-token/enum";
-export { WuiButton, type WuiButtonProps } from "./components/WuiButton/WuiButton";
+export { WuiButton } from "./components/WuiButton/WuiButton";
+export { type WuiButtonProps } from "./components/WuiButton/WuiButtonProps";
 export { WuiText } from "./components/WuiText/WuiText";
 export {
   WuiTitle,
