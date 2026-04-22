@@ -4,7 +4,15 @@ import { StyleSheet, View } from "react-native";
 import { useEvent } from "expo";
 import { LinearGradient } from "expo-linear-gradient";
 import { VideoView, useVideoPlayer } from "expo-video";
-import { WuiTitle, WuiTitleLook } from "wui-rn";
+import {
+  WuiButton,
+  WuiButtonColor,
+  WuiButtonSize,
+  WuiText,
+  WuiTextSize,
+  WuiTitle,
+  WuiTitleLook,
+} from "wui-rn";
 
 import { useDb } from "../../store/UseDb";
 
@@ -61,6 +69,19 @@ export const HeroSection = () => {
         <WuiTitle look={WuiTitleLook.H4} style={styles.lampName}>
           {heroLamp?.name}
         </WuiTitle>
+
+        {heroLamp?.description && (
+          <WuiText size={WuiTextSize.L} style={styles.lampDescription}>
+            {heroLamp?.description}
+          </WuiText>
+        )}
+
+        <WuiButton
+          color={WuiButtonColor.SECONDARY}
+          size={WuiButtonSize.M}
+          label="🔎&nbsp;&nbsp;Détails"
+          style={styles.detailsButton}
+        />
       </View>
 
       <LinearGradient
@@ -95,10 +116,9 @@ const styles = StyleSheet.create({
 
   infosContainer: {
     position: "absolute",
-    bottom: 0,
+    bottom: 40,
     left: 0,
     right: 0,
-    height: 120,
     marginBottom: 64,
     paddingHorizontal: 16,
     alignItems: "flex-start",
@@ -109,5 +129,16 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     backgroundColor: "rgba(0,0,0,0.5)",
     color: "white",
+  },
+
+  lampDescription: {
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    color: "white",
+  },
+
+  detailsButton: {
+    marginTop: 16,
   },
 });
