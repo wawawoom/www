@@ -1,10 +1,18 @@
 [
   {
     "id": 0,
+    "isFeatured": true,
     "name": "♥️ Issa Nissa",
     "slug": "issa-nissa",
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
-    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    "details": "Une pièce unique qui capte le regard et raconte une histoire. Ce luminaire artisanal marie un cube de chêne ébonisé à une résine rouge translucide, laissant passer la lumière avec profondeur et caractère. Noir, rouge, blanc. Une composition minimaliste qui rend hommage aux couleurs de Nice, entre élégance et modernité. Chaque détail est pensé : la matière, la transparence, le contraste. Une création singulière, à mi-chemin entre objet d’art et source de lumière. Pièce unique, elle trouvera sa place chez ceux qui cherchent une pièce forte et authentique.",
+    "technic": [
+      "Bois de chêne brut ébonisé au vinaigre et paille de fer, résine rouge transparente",
+      "Ampoule CALEX Glassfiber Ampoule LED E27 à filament décoratif vintage G125 Ampoule titan 3.8 Watts",
+      "Cable en tissu polyester, couleur blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 700 gr."
+    ],
     "logo": "https://wawawoom.fr/projects/cdn/wawawood/logo/cub-issa-nissa.svg",
     "video": {
       "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-issa-nissa/cub-issa-nissa-v.mp4",
@@ -19,7 +27,8 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-6.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-7.jpg"
     ],
-    "tags": ["Nouveau", "En stock"]
+    "tags": ["Unique"],
+    "price": 300
   },
 
   {
@@ -30,7 +39,7 @@
     "details": "Cette version de la lampe CUB est réalisée en platane, un bois clair et dense. Ses nuances vont du brun au doré avec un veinage zébré et subtil. C’est une essence qu’on connaît bien ici dans le Sud de la France. Il fait parti du paysage, de nos villes, de la mémoire collective. Le platane, c’est aussi l’arbre qui donne de l'ombre, de la fraîcheur. Celui qui accompagne les chauds étés du Sud, les trottoirs brûlants, les rues qu’il rafraichit simplement par sa présence. Il y a quelque chose de Nissarte dans ce bois. Il me rappelle ces grands platanes qui faisaient autrefois l’ombre de l’avenue Jean Médecin, avant qu’ils ne disparaissent pour laisser place au tramway. Dans cette lampe, il reste un peu de ça : une matière noble, familière, presque affective, quelque chose de doux, de solide, et de profondément ancré dans le paysage Niçois. L'ampoule aux teintes cuivrées apporte une touche d'élégance et de chaleur au platane.",
     "technic": [
       "Bois de platane brut, résine teintée noire",
-      "Ampoule EGLO LED E27 dimmable, forme globe, Big Size, filament vintage spirale, ampoule Edison cuivrée vaporisée, 4 watts, 40 lumens, blanc chaud, 1600 Kelvin, G200, diamètre 20 cm",
+      "Apoule CALEX XXL Rose Organic Neo. 4 Watts 70 Lumens.",
       "Cable en tissu polyester, couleur blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
       "Dimensions: L.15 x P.15 x H.25 cm",
       "Poids: 500 gr."
@@ -53,16 +62,22 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-11.jpg"
     ],
     "tags": ["En stock"],
-    "price": 499
+    "price": 250
   },
 
   {
     "id": 2,
-    "isFeatured": true,
     "name": "👸 CUB Peïra",
     "slug": "cub-peira",
-    "description": "Le CUB Peïra en marbre de Carrare.",
-    "details": "<strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur adipisicingsit amet consectetur.",
+    "description": "Le CUB Peïra entre matière et lumière",
+    "details": "Un bloc de marbre de Carrare, taillé dans la masse, dense, minéral, intemporel. Le blanc froid de la pierre évoque la neige immobile, silencieuse, éternelle. Au sommet, une sphère irisée capte et diffracte la lumière en reflets changeants. Des nuances arc-en-ciel glissent à sa surface, comme une aurore figée dans le verre. Contraste absolu entre le poids du marbre et la légèreté lumineuse. Une présence sculpturale, presque magique, qui transforme l’espace.",
+    "technic": [
+      "Marbre de Carrare brut",
+      "Ampoule CALEX XXL Rainbow Organic Neo. 4 Watts 460 Lumens.",
+      "Cable en tissu polyester, couleur blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 5 kg."
+    ],
     "video": {
       "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-v.mp4",
       "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-peira/cub-peira-h.mp4"
@@ -79,7 +94,6 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-9.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-10.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-12.jpg",
-      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-2.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-13.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-14.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-15.jpg",
@@ -87,6 +101,7 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-17.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-18.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-19.jpg"
-    ]
+    ],
+    "price": 800
   }
 ]
