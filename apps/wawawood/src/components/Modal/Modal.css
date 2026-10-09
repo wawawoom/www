@@ -314,3 +314,49 @@
     margin-bottom: 10px;
   }
 }
+
+.modal-button-icon {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+.modal-pin-button {
+  margin-left: 12px;
+}
+
+/* Pin button over the carousel media: desktop only, same size as the nav arrows */
+.modal-media-pin {
+  display: none;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    background: #e60023;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &[data-with-nav="true"] {
+      left: 124px;
+    }
+
+    &:hover {
+      background: #ad081b;
+    }
+  }
+}
+
+.modal-media-pin-icon {
+  width: 22px;
+  height: 22px;
+}

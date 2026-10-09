@@ -3,9 +3,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   WuiBadge,
   WuiBadgeColor,
+  WuiButton,
+  WuiButtonColor,
   WuiColorAlias,
-  WuiLink,
-  WuiLinkColor,
   WuiText,
   WuiTextAs,
   WuiTextSize,
@@ -16,6 +16,16 @@ import {
 } from "@wawawoom/wui";
 
 import type Lamp from "../../interface/lamp.interface";
+import { WHATSAPP_NUMBER } from "../../constants/social";
+import {
+  getLampDescription,
+  getLampPageUrl,
+  getLampPlainName,
+  getLampTitle,
+} from "../../utils/lampMeta";
+import { toAbsoluteUrl } from "../../utils/siteUrl";
+import PinterestIcon from "../PinterestIcon/PinterestIcon";
+import WhatsAppIcon from "../WhatsAppIcon/WhatsAppIcon";
 import "./Modal.css";
 
 interface ModalProps {
@@ -53,11 +63,12 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
 
     // Ajouter toutes les images
     if (lamp.images && lamp.images.length > 0) {
-      lamp.images.forEach((image) => {
+      const plainName = getLampPlainName(lamp);
+      lamp.images.forEach((image, index) => {
         medias.push({
           type: "image",
           src: image,
-          alt: `${lamp.name} - Image`,
+          alt: `${plainName} — lampe en bois artisanale, photo ${index + 1}`,
         });
       });
     }
@@ -135,6 +146,20 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
   }
 
   const selectedMedia = mediaList[selectedMediaIndex];
+
+  /** Pins the given image, or the lamp's Pinterest image by default. */
+  const openPinterest = (image = lamp.pinImage || lamp.images[0]) => {
+    const params = new URLSearchParams({
+      url: getLampPageUrl(lamp),
+      media: toAbsoluteUrl(image),
+      description: `${getLampTitle(lamp)} — ${getLampDescription(lamp)}`,
+    });
+    window.open(
+      `https://www.pinterest.com/pin/create/button/?${params}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   const handleThumbnailClick = (index: number) => {
     setSelectedMediaIndex(index);
@@ -218,6 +243,18 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
                 ›
               </button>
             </>
+          )}
+
+          {selectedMedia.type === "image" && (
+            <button
+              type="button"
+              className="modal-media-pin"
+              data-with-nav={mediaList.length > 1}
+              onClick={() => openPinterest(selectedMedia.src)}
+              aria-label="Épingler sur Pinterest"
+            >
+              <PinterestIcon className="modal-media-pin-icon" />
+            </button>
           )}
 
           {selectedMedia.type === "video" ? (
@@ -363,16 +400,31 @@ const Modal = ({ lamp, isOpen, onClose }: ModalProps) => {
             <div className="modal-price">{lamp.price} €</div>
           )} */}
 
-          <WuiLink
-            href={`mailto:wawawoodstudio@gmail.com?subject=${encodeURIComponent(
-              lamp.name
-            )}`}
-            color={WuiLinkColor.SECONDARY}
-            target="_blank"
-            rel="noreferrer"
+          <WuiButton
+            type="button"
+            color={WuiButtonColor.PRIMARY}
+            onClick={() => {
+              const text = `Salut Nico, Tu pourrais m'en dire plus au sujet de cette lampe: « ${lamp.name} ».\n${getLampPageUrl(lamp)}`;
+              window.open(
+                `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(text)}`,
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
           >
+            <WhatsAppIcon className="modal-button-icon" />
             Envoyer un message
-          </WuiLink>
+          </WuiButton>
+
+          <WuiButton
+            type="button"
+            color={WuiButtonColor.SECONDARY}
+            className="modal-pin-button"
+            onClick={() => openPinterest()}
+          >
+            <PinterestIcon className="modal-button-icon" />
+            Épingler
+          </WuiButton>
         </div>
       </div>
     </div>

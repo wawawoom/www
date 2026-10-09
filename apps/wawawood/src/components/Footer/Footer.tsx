@@ -6,6 +6,13 @@ import {
   WuiTitleLook,
 } from "@wawawoom/wui";
 
+import {
+  PINTEREST_COLOR,
+  PINTEREST_URL,
+  WHATSAPP_NUMBER,
+} from "../../constants/social";
+import PinterestIcon from "../PinterestIcon/PinterestIcon";
+import WhatsAppIcon from "../WhatsAppIcon/WhatsAppIcon";
 import "./Footer.css";
 
 const Footer = () => {
@@ -33,7 +40,37 @@ const Footer = () => {
               height={20}
               style={{ display: "inline-block", marginRight: 10 }}
             />{" "}
-            WaWaWoodStudio
+            Instagram
+          </WuiLink>
+
+          <WuiLink
+            href={PINTEREST_URL}
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <PinterestIcon
+              width={20}
+              height={20}
+              color={PINTEREST_COLOR}
+              style={{ display: "inline-block", marginRight: 10 }}
+            />{" "}
+            Pinterest
+          </WuiLink>
+
+          <WuiLink
+            href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`}
+            target="_blank"
+            rel="noreferrer"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <WhatsAppIcon
+              width={20}
+              height={20}
+              color="#25D366"
+              style={{ display: "inline-block", marginRight: 10 }}
+            />{" "}
+            WhatsApp
           </WuiLink>
         </div>
       </div>

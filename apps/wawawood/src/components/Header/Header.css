@@ -26,7 +26,19 @@ header {
     opacity: 0.85;
   }
 
-  #instagram {
+  .header-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    a {
+      display: flex;
+    }
+  }
+
+  #instagram,
+  #whatsapp,
+  #pinterest {
     width: 24px;
     height: 24px;
   }

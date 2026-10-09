@@ -1,2 +1,5 @@
 User-Agent: *
 Allow: /
+
+Sitemap: https://wawawoom.fr/sitemap.xml
+Sitemap: https://wawawoom.fr/projects/wawawood/sitemap.xml

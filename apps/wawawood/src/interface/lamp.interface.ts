@@ -9,6 +9,8 @@ interface Lamp {
   name: string;
   slug: string;
   images: string[];
+  pinImage?: string;
+  availability?: "in_stock" | "sold";
   video?: {
     desktop: string;
     mobile?: string;

@@ -57,3 +57,9 @@ export function setLinkRel(rel: string, href: string): void {
     })();
   el.setAttribute("href", href);
 }
+
+export function removeMetaProperty(property: string): void {
+  document.head
+    .querySelector(`meta[property="${escapeAttr(property)}"]`)
+    ?.remove();
+}

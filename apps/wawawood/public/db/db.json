@@ -1,7 +1,6 @@
 [
   {
     "id": 0,
-    "isFeatured": true,
     "name": "♥️ Issa Nissa",
     "slug": "issa-nissa",
     "description": "Une ode aux couleurs de Nice. Pièce unique en chêne et résine.",
@@ -27,6 +26,8 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-6.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-issa-nissa/cub-issa-nissa-7.jpg"
     ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-issa-nissa/cub-issa-nissa-pin-image.jpg",
+    "availability": "in_stock",
     "tags": ["Unique"],
     "price": 300
   },
@@ -39,7 +40,7 @@
     "details": "Cette version de la lampe CUB est réalisée en platane, un bois clair et dense. Ses nuances vont du brun au doré avec un veinage zébré et subtil. C’est une essence qu’on connaît bien ici dans le Sud de la France. Il fait parti du paysage, de nos villes, de la mémoire collective. Le platane, c’est aussi l’arbre qui donne de l'ombre, de la fraîcheur. Celui qui accompagne les chauds étés du Sud, les trottoirs brûlants, les rues qu’il rafraichit simplement par sa présence. Il y a quelque chose de Nissarte dans ce bois. Il me rappelle ces grands platanes qui faisaient autrefois l’ombre de l’avenue Jean Médecin, avant qu’ils ne disparaissent pour laisser place au tramway. Dans cette lampe, il reste un peu de ça : une matière noble, familière, presque affective, quelque chose de doux, de solide, et de profondément ancré dans le paysage Niçois. L'ampoule aux teintes cuivrées apporte une touche d'élégance et de chaleur au platane.",
     "technic": [
       "Bois de platane brut, résine teintée noire",
-      "Apoule CALEX XXL Rose Organic Neo. 4 Watts 70 Lumens.",
+      "Ampoule CALEX XXL Rose Organic Neo. 4 Watts 70 Lumens.",
       "Cable en tissu polyester, couleur blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
       "Dimensions: L.15 x P.15 x H.25 cm",
       "Poids: 500 gr."
@@ -61,6 +62,8 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-10.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-2/cub-ombra-fresca-2-11.jpg"
     ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-ombra-fresca-2/cub-ombra-fresca-2-pin-image.jpg",
+    "availability": "in_stock",
     "tags": ["En stock"],
     "price": 250
   },
@@ -102,6 +105,285 @@
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-18.jpg",
       "https://wawawoom.fr/projects/cdn/wawawood/img/cub-peira/cub-peira-19.jpg"
     ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-peira/cub-peira-pin-image.jpg",
+    "availability": "in_stock",
     "price": 800
+  },
+
+  {
+    "id": 4,
+    "name": "⚜️ CUB Oliviera n°2",
+    "slug": "cub-oliviera-2",
+    "description": "L'olivier, symbole méditéranéen.",
+    "details": "Taillée dans de l’olivier massif, le CUB Oliviera n°2 révèle un bois noble, aux veines tourmentées et profondément expressives. Chaque ligne raconte le temps, chaque contraste affirme une personnalité unique. Au sommet, l'ampoule vient dialoguer avec cette force naturelle. Reflets mouvants, éclats subtils, une lumière qui révèle autant qu’elle apaise. Entre puissance et finesse, cette pièce impose une présence chaleureuse et singulière. Un objet sculptural, enraciné, unique.",
+    "technic": [
+      "Bois d'olivier brut, résine teintée noire et transparente",
+      "Ampoule CALEX Glassfiber Ampoule LED E27 à filament décoratif vintage G125 Ampoule titan 3.8 Watts",
+      "Cable en tissu polyester, couleur dorée, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 800 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-oliviera-2/cub-oliviera-2-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-oliviera-2/cub-oliviera-2-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-15.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-16.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-17.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-2/cub-oliviera-2-18.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-oliviera-2/cub-oliviera-2-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 300
+  },
+
+  {
+    "id": 5,
+    "name": "⚜️ CUB Oliviera n°3",
+    "slug": "cub-oliviera-3",
+    "description": "L'olivier, symbole méditéranéen.",
+    "details": "Taillée dans de l’olivier massif, le CUB Oliviera n°3 révèle un bois noble, aux veines tourmentées et profondément expressives. Chaque ligne raconte le temps, chaque contraste affirme une personnalité unique. Au sommet, l'ampoule vient dialoguer avec cette force naturelle. Reflets mouvants, éclats subtils, une lumière qui révèle autant qu’elle apaise. Entre puissance et finesse, cette pièce impose une présence chaleureuse et singulière. Un objet sculptural, enraciné, unique.",
+    "technic": [
+      "Bois d'olivier brut, résine teintée noire et transparente",
+      "Ampoule CALEX Glassfiber Ampoule LED E27 à filament décoratif vintage G125 Ampoule titan 3.8 Watts",
+      "Cable en tissu polyester, couleur dorée, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 800 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-oliviera-3/cub-oliviera-3-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-oliviera-3/cub-oliviera-3-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-15.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-16.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-oliviera-3/cub-oliviera-3-17.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-oliviera-3/cub-oliviera-3-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 300
+  },
+
+  {
+    "id": 6,
+    "name": "☀️ CUB Brugnela n°1",
+    "slug": "cub-brugnela-1",
+    "description": "Le CUB en cyprès, lien entre le ciel et la terre.",
+    "details": "Taillée dans du cyprès massif, le CUB Brugnela n°1 révèle un bois clair et nerveux, aux lignes droites et au grain subtil. Une matière empreinte de calme, évoquant les silhouettes verticales et le silence des paysages du sud. Au sommet, l'ampoule vient apporter contraste et vibration. Reflets délicats, lumière vivante, comme un souffle qui traverse la matière. Entre verticalité et douceur, cette pièce dégage une élégance discrète mais affirmée.",
+    "technic": [
+      "Bois de cyprès brut",
+      "Ampoule Lighto | Filament LED | E27 | Raccord | Verre fumé | 125mm | 4 Watts",
+      "Cable en tissu polyester, couleur chinée noire et blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 400 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-1/cub-brugnela-1-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-1/cub-brugnela-1-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-1/cub-brugnela-1-11.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-brugnela-1/cub-brugnela-1-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 250
+  },
+
+  {
+    "id": 7,
+    "name": "☀️ CUB Brugnela n°2",
+    "slug": "cub-brugnela-2",
+    "description": "Le CUB en cyprès, lien entre le ciel et la terre.",
+    "details": "Taillée dans du cyprès massif, le CUB Brugnela n°2 révèle un bois clair et nerveux, aux lignes droites et au grain subtil. Une matière empreinte de calme, évoquant les silhouettes verticales et le silence des paysages du sud. Au sommet, l'ampoule vient apporter contraste et vibration. Reflets délicats, lumière vivante, comme un souffle qui traverse la matière. Entre verticalité et douceur, cette pièce dégage une élégance discrète mais affirmée.",
+    "technic": [
+      "Bois de cyprès brut",
+      "Ampoule Lighto | Filament LED | E27 | Raccord | Verre fumé | 125mm | 4 Watts",
+      "Cable en tissu polyester, couleur chinée noire et blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 400 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-2/cub-brugnela-2-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-2/cub-brugnela-2-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-15.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-16.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-2/cub-brugnela-2-17.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-brugnela-2/cub-brugnela-2-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 250
+  },
+
+  {
+    "id": 8,
+    "name": "☀️ CUB Brugnela n°3",
+    "slug": "cub-brugnela-3",
+    "description": "Le CUB en cyprès, lien entre le ciel et la terre.",
+    "details": "Taillée dans du cyprès massif, le CUB Brugnela n°3 révèle un bois clair et nerveux, aux lignes droites et au grain subtil. Une matière empreinte de calme, évoquant les silhouettes verticales et le silence des paysages du sud. Au sommet, l'ampoule vient apporter contraste et vibration. Reflets délicats, lumière vivante, comme un souffle qui traverse la matière. Entre verticalité et douceur, cette pièce dégage une élégance discrète mais affirmée.",
+    "technic": [
+      "Bois de cyprès brut",
+      "Lighto | Lampe LED | E27 | Globelamp | Coloré | G125 | 200mm | 4.6W",
+      "Cable en tissu polyester, couleur chinée noire et blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 400 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-3/cub-brugnela-3-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-brugnela-3/cub-brugnela-3-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-brugnela-3/cub-brugnela-3-15.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-brugnela-3/cub-brugnela-3-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 250
+  },
+
+  {
+    "id": 9,
+    "isFeatured": true,
+    "name": "🏔️ CUB Mounier",
+    "slug": "cub-mounier",
+    "description": "Marbre grand Antique d'Aubert. Entre neige et minéral.",
+    "details": "Un bloc de marbre Grand Antique d’Aubert, brut, rare, façonné par le temps. Ses veines sombres, profondes, traversent la pierre comme les reliefs d’un massif alpin, entre ombre et lumière. Le contraste du noir et du blanc évoque le massif du Mounier, minéral et silencieux, où la roche affleure sous les dernières neiges. La lumière vient se poser sur cette matière dense, révélant ses dessins singuliers sans jamais en effacer la force. Chaque fragment de pierre raconte une géologie ancienne, chaque veine compose un paysage unique. Entre puissance minérale et lumière sculpturale, Mounier est un morceau de montagne devenu objet lumineux. Une présence brute, intemporelle, façonnée par la nature.",
+    "technic": [
+      "Cube de marbre brut grand Antique d'Aubert",
+      "CALEX Glassfiber Ampoule LED E27 à filament décoratif vintage G125 Ampoule titan 3,8 W Edison",
+      "Cable en tissu polyester, couleur chinée noire et blanche, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.15 x P.15 x H.25 cm",
+      "Poids: 5 kg."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-mounier/cub-mounier-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-mounier/cub-mounier-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-mounier/cub-mounier-12.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-mounier/cub-mounier-pin-image.jpg",
+    "availability": "in_stock",
+    "price": 1500
+  },
+
+  {
+    "id": 10,
+    "name": "🍁 CUB Ombra Fresca II n°2",
+    "slug": "cub-ombra-fresca-ii-2",
+    "description": "Le grand CUB en platane de Saint Laurent du Var.",
+    "details": "Cette version de la grande lampe CUB est réalisée en platane, un bois clair et dense. Ses nuances vont du brun au doré avec un veinage zébré et subtil. C’est une essence qu’on connaît bien ici dans le Sud de la France. Il fait parti du paysage, de nos villes, de la mémoire collective. Le platane, c’est aussi l’arbre qui donne de l'ombre, de la fraîcheur. Celui qui accompagne les chauds étés du Sud, les trottoirs brûlants, les rues qu’il rafraichit simplement par sa présence. Il y a quelque chose de Nissarte dans ce bois. Il me rappelle ces grands platanes qui faisaient autrefois l’ombre de l’avenue Jean Médecin, avant qu’ils ne disparaissent pour laisser place au tramway. Dans cette lampe, il reste un peu de ça : une matière noble, familière, presque affective, quelque chose de doux, de solide, et de profondément ancré dans le paysage Niçois. L'ampoule aux teintes cuivrées apporte une touche d'élégance et de chaleur au platane.",
+    "technic": [
+      "Bois de platane brut, résine teintée noire",
+      "Ampoule CALEX led, rose poire E27 80Lm=15W blanc très chaud, Organic Evo",
+      "Cable en tissu polyester, couleur noire, diamètre 8 mm, longueur 2 mètres avec interrupteur",
+      "Dimensions: L.24 x P.24 x H.40 cm",
+      "Poids: 900 gr."
+    ],
+    "video": {
+      "mobile": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-v.mp4",
+      "desktop": "https://wawawoom.fr/projects/cdn/wawawood/video/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-h.mp4"
+    },
+    "images": [
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-1.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-2.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-3.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-4.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-5.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-6.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-7.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-8.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-9.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-10.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-11.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-12.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-13.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-14.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-15.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-16.jpg",
+      "https://wawawoom.fr/projects/cdn/wawawood/img/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-17.jpg"
+    ],
+    "pinImage": "https://wawawoom.fr/projects/cdn/wawawood/pinImage/cub-ombra-fresca-ii-2/cub-ombra-fresca-ii-2-pin-image.jpg",
+    "availability": "in_stock",
+    "tags": ["En stock"],
+    "price": 350
   }
 ]
